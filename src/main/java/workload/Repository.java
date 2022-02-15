@@ -6,8 +6,13 @@ import javax.transaction.Transactional;
 public abstract class Repository<Entity, Identification> implements PanacheRepositoryBase<Entity, Identification> {
 
     @Transactional
-    public Entity save(Entity entity) {
+    public Entity updateET(Entity entity) {
         return getEntityManager().merge(entity);
+    }
+
+    @Transactional
+    public void persistET(Entity entity) {
+        persist(entity);
     }
 
     @Transactional

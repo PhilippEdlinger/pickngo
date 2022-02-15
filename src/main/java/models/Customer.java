@@ -2,16 +2,11 @@ package models;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import java.util.List;
 
 @Entity
-public class Customer {
-    @Id
-    private Long id;
-    private String firstName;
-    private String lastName;
+public class Customer extends Person{
     private String phoneNr;
     private String email;
     @OneToMany(cascade = CascadeType.PERSIST)
@@ -22,37 +17,11 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(Long id, String firstName, String lastName, String phoneNr, String email, List<OrderET> orderETS) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public Customer(String firstName, String lastName, String phoneNr, String email, List<OrderET> orderETS) {
+        super(firstName, lastName);
         this.phoneNr = phoneNr;
         this.email = email;
         this.orderETS = orderETS;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 
     public String getPhoneNr() {
