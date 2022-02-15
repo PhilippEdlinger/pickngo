@@ -10,7 +10,7 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @OneToMany
-    private List<OrderPosition> orderPosition;
+    private List<OrderPosition> orderPositions;
     @ManyToOne(cascade = CascadeType.REFRESH)
     private Category category;
     private String imagePath;
@@ -23,8 +23,8 @@ public class Product {
     public Product() {
     }
 
-    public Product(List<OrderPosition> orderPosition, Category category, String imagePath, String name, Double price, String allergies) {
-        this.orderPosition = orderPosition;
+    public Product(List<OrderPosition> orderPositions, Category category, String imagePath, String name, Double price, String allergies) {
+        this.orderPositions = orderPositions;
         this.category = category;
         this.imagePath = imagePath;
         this.name = name;
@@ -40,12 +40,12 @@ public class Product {
         this.id = id;
     }
 
-    public List<OrderPosition> getOrderPosition() {
-        return orderPosition;
+    public List<OrderPosition> getOrderPositions() {
+        return orderPositions;
     }
 
-    public void setOrderPosition(List<OrderPosition> orderPosition) {
-        this.orderPosition = orderPosition;
+    public void setOrderPositions(List<OrderPosition> orderPositions) {
+        this.orderPositions = orderPositions;
     }
 
     public Category getCategory() {
