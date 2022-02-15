@@ -1,6 +1,7 @@
 package models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Product {
@@ -8,8 +9,8 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @ManyToOne
-    private OrderPosition orderPosition;
+    @OneToMany
+    private List<OrderPosition> orderPosition;
     @ManyToOne(cascade = CascadeType.REFRESH)
     private Category category;
     private String imagePath;
@@ -22,8 +23,7 @@ public class Product {
     public Product() {
     }
 
-    public Product(Long id, OrderPosition orderPosition, Category category, String imagePath, String name, Double price, String allergies) {
-        this.id = id;
+    public Product(List<OrderPosition> orderPosition, Category category, String imagePath, String name, Double price, String allergies) {
         this.orderPosition = orderPosition;
         this.category = category;
         this.imagePath = imagePath;
@@ -40,11 +40,11 @@ public class Product {
         this.id = id;
     }
 
-    public OrderPosition getOrderPosition() {
+    public List<OrderPosition> getOrderPosition() {
         return orderPosition;
     }
 
-    public void setOrderPosition(OrderPosition orderPosition) {
+    public void setOrderPosition(List<OrderPosition> orderPosition) {
         this.orderPosition = orderPosition;
     }
 
