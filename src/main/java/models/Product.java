@@ -11,7 +11,7 @@ public class Product {
     private Long id;
     @OneToMany
     private List<OrderPosition> orderPositions;
-    @ManyToOne(cascade = CascadeType.REFRESH)
+    @ManyToOne
     private Category category;
     private String imagePath;
     private String name;

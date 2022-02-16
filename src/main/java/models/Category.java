@@ -9,9 +9,10 @@ public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(unique = true)
     private String name;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.REFRESH)
     private List<Product> product;
 
     // constructor + getter and setter

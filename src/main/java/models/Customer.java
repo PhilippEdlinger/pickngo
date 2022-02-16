@@ -1,14 +1,18 @@
 package models;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import java.util.List;
 
 @Entity
 public class Customer extends Person{
-    private String phoneNr;
+    @Column(unique = true)
+    private String userName;
+    @Column(unique = true)
     private String email;
+    private String phoneNr;
     @OneToMany(cascade = CascadeType.PERSIST)
     private List<OrderET> orderETS;
 
@@ -17,8 +21,9 @@ public class Customer extends Person{
     public Customer() {
     }
 
-    public Customer(String firstName, String lastName, String phoneNr, String email, List<OrderET> orderETS) {
+    public Customer(String firstName, String lastName, String userName, String phoneNr, String email, List<OrderET> orderETS) {
         super(firstName, lastName);
+        this.userName = userName;
         this.phoneNr = phoneNr;
         this.email = email;
         this.orderETS = orderETS;
