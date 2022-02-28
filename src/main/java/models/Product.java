@@ -9,9 +9,9 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @OneToMany
+    @OneToMany(mappedBy = "orderPositionID.product")
     private List<OrderPosition> orderPositions;
-    @ManyToOne
+    @ManyToOne()
     private Category category;
     private String imagePath;
     private String name;

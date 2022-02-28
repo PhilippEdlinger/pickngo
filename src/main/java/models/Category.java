@@ -12,7 +12,7 @@ public class Category {
     @Column(unique = true)
     private String name;
 
-    @OneToMany(cascade = CascadeType.REFRESH)
+    @OneToMany(mappedBy = "category",cascade = CascadeType.REFRESH)
     private List<Product> product;
 
     // constructor + getter and setter

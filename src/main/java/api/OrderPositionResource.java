@@ -25,7 +25,7 @@ public class OrderPositionResource {
         return Response.accepted(orderPositionRepository.findAll()).build();
     }
 
-    @GET
+    /*@GET
     @Path("{id}")
     public Response getOrderPositionById(@PathParam("id") OrderPositionID orderPositionId){
         if (orderPositionId != null){
@@ -38,7 +38,7 @@ public class OrderPositionResource {
                     .build();
         }
 
-    }
+    }*/
 
     @PUT
     public Response createOrderPosition(OrderPosition orderPosition){
@@ -47,11 +47,12 @@ public class OrderPositionResource {
                 .build();
     }
 
+    /*
     @DELETE
     @Path("{id}")
     public Response deleteOrderPositionById(@PathParam("id") OrderPositionID orderPositionID ){
         return Response.accepted(orderPositionRepository.deleteById(orderPositionID)).build();
     }
-
+*/
 
 }

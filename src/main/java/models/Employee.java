@@ -5,7 +5,7 @@ import java.util.List;
 
 @Entity
 public class Employee extends Person {
-    @OneToMany(cascade = CascadeType.REFRESH)
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.REFRESH)
     private List<OrderET> orderETs;
 
     // constructor + getter and setter

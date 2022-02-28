@@ -13,7 +13,7 @@ public class Customer extends Person{
     @Column(unique = true)
     private String email;
     private String phoneNr;
-    @OneToMany(cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "customer",cascade = CascadeType.PERSIST)
     private List<OrderET> orderETS;
 
     // constructor + getter and setter
