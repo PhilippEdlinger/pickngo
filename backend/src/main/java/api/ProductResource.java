@@ -1,8 +1,6 @@
 package api;
 
-import models.Category;
 import models.Product;
-import workload.CategoryRepository;
 import workload.ProductRepository;
 
 import javax.inject.Inject;

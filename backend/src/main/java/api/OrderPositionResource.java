@@ -1,9 +1,6 @@
 package api;
 
-import models.Category;
 import models.OrderPosition;
-import models.OrderPositionID;
-import workload.CategoryRepository;
 import workload.OrderPositionRepository;
 
 import javax.inject.Inject;
