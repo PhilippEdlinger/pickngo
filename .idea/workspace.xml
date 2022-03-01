@@ -5,42 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35b2c24c-9a54-4aea-ba0e-4561f9728745" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.dockerignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/backend/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/docker/Dockerfile.jvm" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/docker/Dockerfile.jvm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/docker/Dockerfile.legacy-jar" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/docker/Dockerfile.legacy-jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/docker/Dockerfile.native" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/docker/Dockerfile.native" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/docker/Dockerfile.native-micro" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/docker/Dockerfile.native-micro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/api/CategoryResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/api/CategoryResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/api/CustomerResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/api/CustomerResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/api/EmployeeResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/api/EmployeeResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/api/OrderPositionResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/api/OrderPositionResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/api/OrderResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/api/OrderResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/api/ProductResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/api/ProductResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/models/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/models/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/models/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/OrderET.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/models/OrderET.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/OrderPosition.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/models/OrderPosition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/OrderPositionID.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/models/OrderPositionID.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/models/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/models/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/workload/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/workload/CategoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/workload/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/workload/CustomerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/workload/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/workload/EmployeeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/workload/OrderPositionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/workload/OrderPositionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/workload/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/workload/OrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/workload/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/workload/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/workload/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/workload/Repository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start-postgres-db.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/start-postgres-db.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +53,7 @@
       <option name="presentableId" value="Default" />
       <updated>1646125781135</updated>
       <workItem from="1646125784444" duration="698000" />
+      <workItem from="1646126705666" duration="316000" />
     </task>
     <servers />
   </component>
