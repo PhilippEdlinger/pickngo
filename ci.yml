@@ -33,4 +33,5 @@ jobs:
       - name: Run a multi-line script
         run: |
           mvn clean package
-          ln -s ./target
+          ls -a ./target
+        working-directory: quarkus/pickngo
