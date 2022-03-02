@@ -1,4 +1,4 @@
-
++
 name: CI
 
 # Controls when the workflow will run
@@ -30,8 +30,8 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: build application server
-      - run: |
+        run: |
           mvn clean package 
           ls -a ./target
-      - working-directory: quarkus/pickngo
+        working-directory: quarkus/pickngo
           
