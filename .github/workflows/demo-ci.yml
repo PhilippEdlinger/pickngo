@@ -36,6 +36,6 @@ jobs:
       - name: build application server
       - run: |
           mvn clean package 
-          ln -a ./target
+          ls -a ./target
       - working-directory: quarkus/pickngo
           
