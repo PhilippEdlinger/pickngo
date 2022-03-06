@@ -17,7 +17,7 @@ public class CustomerResource {
 
     @GET
     public Response getCustomers(){
-        return Response.accepted(repo.findAll()).build();
+        return Response.ok(repo.findAll()).build();
     }
 
     @GET
@@ -25,13 +25,13 @@ public class CustomerResource {
     public Response getCustomerById(@PathParam("id") Long id) {
         Customer customer = repo.findById(id);
 
-        return (customer == null ? Response.accepted(customer) : Response.status(404)).build();
+        return (customer == null ? Response.ok(customer) : Response.status(404)).build();
     }
 
     @POST
     public Response addCustomer(Customer customer) {
         return Response
-                .accepted(repo.updateET(customer))
+                .ok(repo.updateET(customer))
                 .build();
     }
 }

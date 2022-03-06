@@ -1,6 +1,6 @@
 package api;
 
-import models.OrderPosition;
+import models.OrderItem;
 import workload.OrderPositionRepository;
 
 import javax.inject.Inject;
@@ -19,7 +19,7 @@ public class OrderPositionResource {
 
     @GET
     public Response getOrderPosition() {
-        return Response.accepted(orderPositionRepository.findAll()).build();
+        return Response.ok(orderPositionRepository.findAll()).build();
     }
 
     /*@GET
@@ -27,20 +27,20 @@ public class OrderPositionResource {
     public Response getOrderPositionById(@PathParam("id") OrderPositionID orderPositionId){
         if (orderPositionId != null){
             return Response
-                    .accepted(orderPositionRepository.findById(orderPositionId))
+                    .ok(orderPositionRepository.findById(orderPositionId))
                     .build();
         }else {
             return Response
-                    .accepted(orderPositionRepository.findAll())
+                    .ok(orderPositionRepository.findAll())
                     .build();
         }
 
     }*/
 
     @PUT
-    public Response createOrderPosition(OrderPosition orderPosition){
+    public Response createOrderPosition(OrderItem orderItem){
         return Response
-                .accepted(orderPositionRepository.updateET(orderPosition))
+                .ok(orderPositionRepository.updateET(orderItem))
                 .build();
     }
 
@@ -48,7 +48,7 @@ public class OrderPositionResource {
     @DELETE
     @Path("{id}")
     public Response deleteOrderPositionById(@PathParam("id") OrderPositionID orderPositionID ){
-        return Response.accepted(orderPositionRepository.deleteById(orderPositionID)).build();
+        return Response.ok(orderPositionRepository.deleteById(orderPositionID)).build();
     }
 */
 

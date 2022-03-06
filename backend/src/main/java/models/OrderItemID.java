@@ -7,28 +7,20 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Embeddable
-public class OrderPositionID implements Serializable {
+public class OrderItemID implements Serializable {
+    private Long orderPosition;
     @ManyToOne
     private OrderET orderET;
-    private Long orderPosition;
     @ManyToOne(cascade = CascadeType.PERSIST)
     private Product product;
 
-    public OrderPositionID() {
+    public OrderItemID() {
     }
 
-    public OrderPositionID(OrderET orderET, Long orderPosition, Product product) {
-        this.orderET = orderET;
+    public OrderItemID(Long orderPosition, OrderET orderET, Product product) {
         this.orderPosition = orderPosition;
-        this.product = product;
-    }
-
-    public OrderET getOrderET() {
-        return orderET;
-    }
-
-    public void setOrderET(OrderET orderET) {
         this.orderET = orderET;
+        this.product = product;
     }
 
     public Long getOrderPosition() {
@@ -37,6 +29,14 @@ public class OrderPositionID implements Serializable {
 
     public void setOrderPosition(Long orderPosition) {
         this.orderPosition = orderPosition;
+    }
+
+    public OrderET getOrderET() {
+        return orderET;
+    }
+
+    public void setOrderET(OrderET orderET) {
+        this.orderET = orderET;
     }
 
     public Product getProduct() {
@@ -51,12 +51,12 @@ public class OrderPositionID implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        OrderPositionID that = (OrderPositionID) o;
-        return orderET.equals(that.orderET) && orderPosition.equals(that.orderPosition) && product.equals(that.product);
+        OrderItemID that = (OrderItemID) o;
+        return orderET.equals(that.orderET) && product.equals(that.product);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(orderET, orderPosition, product);
+        return Objects.hash(orderET, product);
     }
 }

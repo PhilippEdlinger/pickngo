@@ -4,27 +4,27 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 
 @Entity
-public class OrderPosition {
+public class OrderItem {
     @EmbeddedId
-    private OrderPositionID orderPositionID;
+    private OrderItemID orderItemID;
     private Integer quantity;
     private String message;
 
-    public OrderPosition() {
+    public OrderItem() {
     }
 
-    public OrderPosition(OrderPositionID orderPositionID, Integer quantity, String message) {
-        this.orderPositionID = orderPositionID;
+    public OrderItem(OrderItemID orderItemID, Integer quantity, String message) {
+        this.orderItemID = orderItemID;
         this.quantity = quantity;
         this.message = message;
     }
 
-    public OrderPositionID getOrderPositionID() {
-        return orderPositionID;
+    public OrderItemID getOrderPositionID() {
+        return orderItemID;
     }
 
-    public void setOrderPositionID(OrderPositionID orderPositionID) {
-        this.orderPositionID = orderPositionID;
+    public void setOrderPositionID(OrderItemID orderItemID) {
+        this.orderItemID = orderItemID;
     }
 
     public Integer getQuantity() {

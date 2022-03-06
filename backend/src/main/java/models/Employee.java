@@ -12,8 +12,8 @@ public class Employee extends Person {
     public Employee() {
     }
 
-    public Employee(String firstName, String lastName, List<OrderET> orderETs) {
-        super(firstName, lastName);
+    public Employee(String firstName, String lastName, String userName, String password, List<OrderET> orderETs) {
+        super(firstName, lastName, userName, password);
         this.orderETs = orderETs;
     }
 

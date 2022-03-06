@@ -9,10 +9,10 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @OneToMany(mappedBy = "orderPositionID.product")
-    private List<OrderPosition> orderPositions;
-    @ManyToOne()
-    private Category category;
+    @OneToMany(mappedBy = "orderItemID.product")
+    private List<OrderItem> orderItems;
+    @ManyToOne
+    private CategoryET categoryET;
     private String imagePath;
     private String name;
     private Double price;
@@ -23,9 +23,9 @@ public class Product {
     public Product() {
     }
 
-    public Product(List<OrderPosition> orderPositions, Category category, String imagePath, String name, Double price, String allergies) {
-        this.orderPositions = orderPositions;
-        this.category = category;
+    public Product(List<OrderItem> orderItems, CategoryET categoryET, String imagePath, String name, Double price, String allergies) {
+        this.orderItems = orderItems;
+        this.categoryET = categoryET;
         this.imagePath = imagePath;
         this.name = name;
         this.price = price;
@@ -40,20 +40,20 @@ public class Product {
         this.id = id;
     }
 
-    public List<OrderPosition> getOrderPositions() {
-        return orderPositions;
+    public List<OrderItem> getOrderPositions() {
+        return orderItems;
     }
 
-    public void setOrderPositions(List<OrderPosition> orderPositions) {
-        this.orderPositions = orderPositions;
+    public void setOrderPositions(List<OrderItem> orderItems) {
+        this.orderItems = orderItems;
     }
 
-    public Category getCategory() {
-        return category;
+    public CategoryET getCategory() {
+        return categoryET;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public void setCategory(CategoryET categoryET) {
+        this.categoryET = categoryET;
     }
 
     public String getImagePath() {

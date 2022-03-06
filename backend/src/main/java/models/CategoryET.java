@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class Category {
+public class CategoryET {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,15 +12,15 @@ public class Category {
     @Column(unique = true)
     private String name;
 
-    @OneToMany(mappedBy = "category",cascade = CascadeType.REFRESH)
+    @OneToMany(mappedBy = "categoryET",cascade = CascadeType.REFRESH)
     private List<Product> product;
 
     // constructor + getter and setter
 
-    public Category() {
+    public CategoryET() {
     }
 
-    public Category(Long id, String name, List<Product> product) {
+    public CategoryET(Long id, String name, List<Product> product) {
         this.id = id;
         this.name = name;
         this.product = product;

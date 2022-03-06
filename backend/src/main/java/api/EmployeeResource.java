@@ -16,7 +16,7 @@ public class EmployeeResource {
     @GET
     public Response getEmployees (){
         return Response
-                .accepted(employeeRepository.findAll())
+                .ok(employeeRepository.findAll())
                 .build();
     }
 
@@ -24,14 +24,14 @@ public class EmployeeResource {
     @Path("{id}")
     public Response getEmployeeById (@PathParam("id") Long employeeId){
             return Response
-                    .accepted(employeeRepository.findById(employeeId))
+                    .ok(employeeRepository.findById(employeeId))
                     .build();
     }
 
     @PUT
     public Response saveEmployee (Employee employee){
         return Response
-                .accepted(employeeRepository.updateET(employee))
+                .ok(employeeRepository.updateET(employee))
                 .build();
     }
 
@@ -39,7 +39,7 @@ public class EmployeeResource {
     @Path("{id}")
     public Response deleteEmployeeById(@PathParam("id") Long employeeId){
         return Response
-                .accepted(employeeRepository.removeById(employeeId))
+                .ok(employeeRepository.removeById(employeeId))
                 .build();
     }
 
