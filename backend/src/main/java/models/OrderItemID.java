@@ -8,7 +8,6 @@ import java.util.Objects;
 
 @Embeddable
 public class OrderItemID implements Serializable {
-    private Long orderPosition;
     @ManyToOne
     private OrderET orderET;
     @ManyToOne(cascade = CascadeType.PERSIST)
@@ -17,18 +16,9 @@ public class OrderItemID implements Serializable {
     public OrderItemID() {
     }
 
-    public OrderItemID(Long orderPosition, OrderET orderET, Product product) {
-        this.orderPosition = orderPosition;
+    public OrderItemID(OrderET orderET, Product product) {
         this.orderET = orderET;
         this.product = product;
-    }
-
-    public Long getOrderPosition() {
-        return orderPosition;
-    }
-
-    public void setOrderPosition(Long orderPosition) {
-        this.orderPosition = orderPosition;
     }
 
     public OrderET getOrderET() {
