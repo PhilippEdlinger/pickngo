@@ -1,9 +1,9 @@
 package workload;
 
-import models.Category;
+import models.CategoryET;
 
 import javax.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
-public class CategoryRepository extends Repository<Category, Long>{
+public class CategoryRepository extends Repository<CategoryET, Long>{
 }

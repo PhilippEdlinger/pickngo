@@ -9,8 +9,6 @@ import java.util.List;
 @Entity
 public class Customer extends Person{
     @Column(unique = true)
-    private String userName;
-    @Column(unique = true)
     private String email;
     private String phoneNr;
     @OneToMany(mappedBy = "customer",cascade = CascadeType.PERSIST)
@@ -21,35 +19,10 @@ public class Customer extends Person{
     public Customer() {
     }
 
-    public Customer(String firstName, String lastName, String userName, String phoneNr, String email, List<OrderET> orderETS) {
-        super(firstName, lastName);
-        this.userName = userName;
-        this.phoneNr = phoneNr;
+    public Customer(String firstName, String lastName, String userName, String password, String email, String phoneNr, List<OrderET> orderETS) {
+        super(firstName, lastName, userName, password);
         this.email = email;
-        this.orderETS = orderETS;
-    }
-
-    public String getPhoneNr() {
-        return phoneNr;
-    }
-
-    public void setPhoneNr(String phoneNr) {
         this.phoneNr = phoneNr;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public List<OrderET> getOrderETS() {
-        return orderETS;
-    }
-
-    public void setOrderETS(List<OrderET> orderETS) {
         this.orderETS = orderETS;
     }
 }

@@ -19,7 +19,7 @@ public class ProductResource {
 
     @GET
     public Response getProducts() {
-        return Response.accepted(productRepository.findAll()).build();
+        return Response.ok(productRepository.findAll()).build();
     }
 
     @GET
@@ -27,11 +27,11 @@ public class ProductResource {
     public Response getProductById(@PathParam("id") Long productId){
         if (productId != null){
             return Response
-                    .accepted(productRepository.findById(productId))
+                    .ok(productRepository.findById(productId))
                     .build();
         }else {
             return Response
-                    .accepted(productRepository.findAll())
+                    .ok(productRepository.findAll())
                     .build();
         }
 
@@ -40,14 +40,14 @@ public class ProductResource {
     @PUT
     public Response createProduct(Product product){
         return Response
-                .accepted(productRepository.updateET(product))
+                .ok(productRepository.updateET(product))
                 .build();
     }
 
     @DELETE
     @Path("{id}")
     public Response deleteProductById(@PathParam("id") Long productId ){
-        return Response.accepted(productRepository.deleteById(productId)).build();
+        return Response.ok(productRepository.deleteById(productId)).build();
     }
 
 

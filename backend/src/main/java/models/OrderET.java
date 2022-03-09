@@ -1,71 +1,41 @@
 package models;
 
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-public class OrderET {
-    @Id
-    private Long id;
+public class OrderET extends PanacheEntityBase {
+    @EmbeddedId
+    public OrderID orderID;
+    public OrderStatus orderStatus;
+    public LocalDateTime timeOfOrder;
+    public LocalDateTime planedToPickTime;
+    public LocalDateTime readyToPickTime;
+    public String msg;
     @ManyToOne
-    private Customer customer;
+    public Customer customer;
     @ManyToOne
-    private Employee employee;
-    @OneToMany(mappedBy = "orderPositionID.orderET", cascade = CascadeType.ALL)
-    private List<OrderPosition> orderPositions;
-    private LocalDateTime timeStamp;
+    public Employee employee;
+    @OneToMany(mappedBy = "orderItemID.orderET", cascade = CascadeType.ALL)
+    public List<OrderItem> orderItems;
 
     // constructor + getter and setter
 
     public OrderET() {
     }
 
-    public OrderET(Long id, Customer customer, Employee employee, List<OrderPosition> orderPositions, LocalDateTime timeStamp) {
-        this.id = id;
+    public OrderET(OrderID orderID, OrderStatus orderStatus, LocalDateTime timeOfOrder, LocalDateTime planedToPickTime, LocalDateTime readyToPickTime, String msg, Customer customer, Employee employee, List<OrderItem> orderItems) {
+        this.orderID = orderID;
+        this.orderStatus = orderStatus;
+        this.timeOfOrder = timeOfOrder;
+        this.planedToPickTime = planedToPickTime;
+        this.readyToPickTime = readyToPickTime;
+        this.msg = msg;
         this.customer = customer;
         this.employee = employee;
-        this.orderPositions = orderPositions;
-        this.timeStamp = timeStamp;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
-
-    public Employee getEmployee() {
-        return employee;
-    }
-
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
-    }
-
-    public List<OrderPosition> getOrderPositions() {
-        return orderPositions;
-    }
-
-    public void setOrderPositions(List<OrderPosition> orderPositions) {
-        this.orderPositions = orderPositions;
-    }
-
-    public LocalDateTime getTimeStamp() {
-        return timeStamp;
-    }
-
-    public void setTimeStamp(LocalDateTime timeStamp) {
-        this.timeStamp = timeStamp;
+        this.orderItems = orderItems;
     }
 }

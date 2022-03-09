@@ -1,6 +1,6 @@
 package api;
 
-import models.Category;
+import models.CategoryET;
 import workload.CategoryRepository;
 
 import javax.inject.Inject;
@@ -19,28 +19,28 @@ public class CategoryResource {
 
     @GET
     public Response getCategories() {
-        return Response.accepted(categoryRepository.findAll()).build();
+        return Response.ok(categoryRepository.findAll()).build();
     }
 
     @GET
     @Path("{id}")
     public Response getCategoryById(@PathParam("id") Long categoryId){
         return Response
-                .accepted(categoryRepository.findById(categoryId))
+                .ok(categoryRepository.findById(categoryId))
                 .build();
 }
 
     @PUT
-    public Response createCategory(Category category){
+    public Response createCategory(CategoryET categoryET){
         return Response
-                .accepted(categoryRepository.updateET(category))
+                .ok(categoryRepository.updateET(categoryET))
                 .build();
     }
 
     @DELETE
     @Path("{id}")
     public Response deleteCategoryById(@PathParam("id") Long categoryId ){
-        return Response.accepted(categoryRepository.deleteById(categoryId)).build();
+        return Response.ok(categoryRepository.deleteById(categoryId)).build();
     }
 
 

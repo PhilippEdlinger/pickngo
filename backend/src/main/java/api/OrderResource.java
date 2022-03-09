@@ -16,7 +16,7 @@ public class OrderResource {
     @GET
     public Response getOrders(){
         return Response
-                .accepted(orderRepository.findAll())
+                .ok(orderRepository.findAll())
                 .build();
     }
 
@@ -24,14 +24,14 @@ public class OrderResource {
     @Path("{id}")
     public Response getOrderById(@PathParam("id") Long orderId){
         return Response
-                .accepted(orderRepository.findById(orderId))
+                .ok(orderRepository.findById(orderId))
                 .build();
 }
 
     @PUT
     public Response saveOrder(OrderET order){
       return Response
-              .accepted(orderRepository.updateET(order))
+              .ok(orderRepository.updateET(order))
               .build();
     }
 
@@ -39,7 +39,7 @@ public class OrderResource {
     @Path("{id}")
     public Response deleteOrderById(@PathParam("id") Long orderId){
         return Response
-                .accepted(orderRepository.removeById(orderId))
+                .ok(orderRepository.removeById(orderId))
                 .build();
     }
 
