@@ -33,5 +33,5 @@ jobs:
         run: |
           mvn clean package 
           ls -a ./target
-        working-directory: quarkus/pickngo
+        working-directory: backend/
           
