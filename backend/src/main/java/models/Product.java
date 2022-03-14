@@ -1,12 +1,17 @@
 package models;
 
-import io.quarkus.hibernate.orm.panache.PanacheEntity;
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public abstract class Product extends PanacheEntity {
+@Inheritance(strategy = InheritanceType.JOINED)
+
+public abstract class Product extends PanacheEntityBase {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public Long id;
     public String name;
     public Double price;
     public String imagePath;
@@ -18,6 +23,8 @@ public abstract class Product extends PanacheEntity {
     public CategoryET categoryET;
     @ManyToOne
     public Menu menu;
+    @ManyToMany(mappedBy = "products")
+    public List<Tag> tags;
 
     // constructor + getter and setter
 
