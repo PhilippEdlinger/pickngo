@@ -2,9 +2,11 @@ package workload;
 
 import models.Employee;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import java.util.List;
 
+@ApplicationScoped
 public class EmployeeService {
     @Inject
     EmployeeRepository repo;
