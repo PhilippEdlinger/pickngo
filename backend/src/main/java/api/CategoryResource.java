@@ -18,17 +18,12 @@ public class CategoryResource {
     CategoryRepository categoryRepository;
 
     @GET
-    public Response getCategories() {
-        return Response.ok(categoryRepository.findAll()).build();
-    }
-
-    @GET
     @Path("{id}")
-    public Response getCategoryById(@PathParam("id") Long categoryId){
+    public Response getCategoryById(@PathParam("id") Long categoryId) {
         return Response
                 .ok(categoryRepository.findById(categoryId))
                 .build();
-}
+    }
 
     @PUT
     public Response createCategory(CategoryET categoryET){
@@ -37,11 +32,15 @@ public class CategoryResource {
                 .build();
     }
 
+    @GET
+    public Response getCategories() {
+        return Response.ok(categoryRepository.findAll()).build();
+    }
+
     @DELETE
     @Path("{id}")
     public Response deleteCategoryById(@PathParam("id") Long categoryId ){
         return Response.ok(categoryRepository.deleteById(categoryId)).build();
     }
-
 
 }
