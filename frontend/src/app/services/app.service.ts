@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class AppService {
 
   private currentSite: string | null = null;
-  private  title = 'Todolist';
+  private  title = 'pickngo';
 
 
   constructor() {

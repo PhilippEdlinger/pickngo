@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {AppService} from "../../services/app.service";
 import { Router } from '@angular/router';
+import {AppService} from "../../services/app.service";
 
 
 @Component({
@@ -34,7 +34,7 @@ export class LogInComponent implements OnInit {
 
     var name = (<HTMLInputElement>document.getElementById("usernameRegister")).value;
     var password = (<HTMLInputElement>document.getElementById("passwordRegister")).value;
-    this.http.post('http://localhost:8080/user', {  username: name, pasword: password}).subscribe();
+    this.http.post('http://localhost:4200/user', {  username: name, pasword: password}).subscribe();
     console.log("test send data to server: "+name + " , " + password );
   }
 
@@ -42,7 +42,7 @@ export class LogInComponent implements OnInit {
     console.log("test")
     this.router.navigate([`${pageName}`]);
 
-    this.http.get('http://localhost:8080/user/all').subscribe(response => {
+    this.http.get('http://localhost:4200/user/all').subscribe(response => {
       console.log(response);
     })
   }
