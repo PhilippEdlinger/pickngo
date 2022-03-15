@@ -2,6 +2,7 @@ package api;
 
 import models.Employee;
 import workload.EmployeeRepository;
+import workload.EmployeeService;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -11,12 +12,12 @@ import javax.ws.rs.core.Response;
 public class EmployeeResource {
 
     @Inject
-    EmployeeRepository employeeRepository;
+    EmployeeService service;
 
     @GET
     public Response getEmployees (){
         return Response
-                .ok(employeeRepository.findAll())
+                .ok(service.findAll())
                 .build();
     }
 
@@ -24,23 +25,14 @@ public class EmployeeResource {
     @Path("{id}")
     public Response getEmployeeById (@PathParam("id") Long employeeId){
             return Response
-                    .ok(employeeRepository.findById(employeeId))
+                    .ok(service.findById(employeeId))
                     .build();
     }
 
     @PUT
     public Response saveEmployee (Employee employee){
         return Response
-                .ok(employeeRepository.updateET(employee))
+                .ok(service.updateET(employee))
                 .build();
     }
-
-    @DELETE
-    @Path("{id}")
-    public Response deleteEmployeeById(@PathParam("id") Long employeeId){
-        return Response
-                .ok(employeeRepository.removeById(employeeId))
-                .build();
-    }
-
 }
