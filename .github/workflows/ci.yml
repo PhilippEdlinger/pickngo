@@ -42,4 +42,10 @@ jobs:
           mvn clean package 
           ls -a ./target
         working-directory: backend/
+        
+      - name: copy jar file to vm
+        run: |
+          scp target/*.jar server:
+        working-directory: server/
+
           
