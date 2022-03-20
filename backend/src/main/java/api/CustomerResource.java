@@ -2,6 +2,7 @@ package api;
 
 import models.Customer;
 import workload.CustomerRepository;
+import workload.CustomerService;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -13,17 +14,17 @@ import javax.ws.rs.core.Response;
 @Consumes(MediaType.APPLICATION_JSON)
 public class CustomerResource {
     @Inject
-    private CustomerRepository repo;
+    private CustomerService service;
 
     @GET
     public Response getCustomers(){
-        return Response.ok(repo.findAll()).build();
+        return Response.ok(service.findAll()).build();
     }
 
     @GET
     @Path("{id}")
     public Response getCustomerById(@PathParam("id") Long id) {
-        Customer customer = repo.findById(id);
+        Customer customer = service.findById(id);
 
         return (customer == null ? Response.ok(customer) : Response.status(404)).build();
     }
@@ -31,7 +32,7 @@ public class CustomerResource {
     @POST
     public Response addCustomer(Customer customer) {
         return Response
-                .ok(repo.updateET(customer))
+                .ok(service.updateET(customer))
                 .build();
     }
 }

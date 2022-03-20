@@ -1,21 +1,27 @@
 package models;
 
-import io.quarkus.hibernate.orm.panache.PanacheEntity;
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class Menu extends PanacheEntity {
+public class Menu extends PanacheEntityBase {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public Long id;
+    public Double price;
     @OneToMany(mappedBy = "menu", cascade = CascadeType.ALL)
     public List<Product> items;
+    public Boolean isDishOfTheDay;
 
     // constructor + getter and setter
-
     public Menu() {
     }
 
-    public Menu(List<Product> items) {
+    public Menu(Double price, List<Product> items, Boolean isDishOfTheDay) {
+        this.price = price;
         this.items = items;
+        this.isDishOfTheDay = isDishOfTheDay;
     }
 }
