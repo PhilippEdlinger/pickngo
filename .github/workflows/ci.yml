@@ -46,7 +46,7 @@ jobs:
       - name: copy jar file to vm
         run: |
           scp target/*.jar backend:
-          ssh backend ls -l
+          ssh pickngo ls -l
         working-directory: backend/
 
           
