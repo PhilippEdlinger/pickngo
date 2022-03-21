@@ -1,11 +1,14 @@
 package models;
 
 import javax.persistence.Embeddable;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import java.io.Serializable;
 import java.util.Objects;
 
 @Embeddable
 public class OrderID implements Serializable {
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long orderPosition;
 

@@ -6,5 +6,5 @@ import models.OrderItemID;
 import javax.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
-public class OrderPositionRepository extends Repository<OrderItem, OrderItemID> {
+public class OrderItemRepository extends Repository<OrderItem, OrderItemID> {
 }

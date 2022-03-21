@@ -10,15 +10,15 @@ public class Tag extends PanacheEntityBase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
-    public Long name;
+    public String name;
     @ManyToMany
     public List<Product> products;
 
     public Tag() {
     }
 
-    public Tag(Long id, Long name) {
-        this.id = id;
+    public Tag(String name, List<Product> products) {
         this.name = name;
+        this.products = products;
     }
 }

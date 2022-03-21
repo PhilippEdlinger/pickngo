@@ -2,6 +2,7 @@ package api;
 
 import models.OrderET;
 import workload.OrderRepository;
+import workload.OrderService;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -11,12 +12,12 @@ import javax.ws.rs.core.Response;
 public class OrderResource {
 
     @Inject
-    OrderRepository orderRepository;
+    private OrderService service;
 
     @GET
     public Response getOrders(){
         return Response
-                .ok(orderRepository.findAll())
+                .ok(service.findAll())
                 .build();
     }
 
@@ -24,14 +25,14 @@ public class OrderResource {
     @Path("{id}")
     public Response getOrderById(@PathParam("id") Long orderId){
         return Response
-                .ok(orderRepository.findById(orderId))
+                .ok(service.findById(orderId))
                 .build();
 }
 
     @PUT
     public Response saveOrder(OrderET order){
       return Response
-              .ok(orderRepository.updateET(order))
+              .ok(service.updateET(order))
               .build();
     }
 
@@ -39,7 +40,7 @@ public class OrderResource {
     @Path("{id}")
     public Response deleteOrderById(@PathParam("id") Long orderId){
         return Response
-                .ok(orderRepository.removeById(orderId))
+                .ok(service.removeById(orderId))
                 .build();
     }
 
