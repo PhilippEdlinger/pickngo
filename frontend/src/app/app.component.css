@@ -1,0 +1,35 @@
+
+
+html {
+  height:12vh;
+  background: #FF416C no-repeat;;
+}
+
+nav {
+  margin: 0 auto;
+  padding: 2vw 0;
+  position: static;
+}
+
+
+nav ul {
+  text-align: left;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  padding: 30px;
+  font-family: Roboto, serif;
+  color: whitesmoke;
+  font-size: 1.1vw;
+  text-decoration: none;
+  display: block;
+}
+
+nav ul li a:hover {
+  color: #a99b9b;
+}
+
