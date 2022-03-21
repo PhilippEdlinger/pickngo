@@ -10,6 +10,7 @@ import java.util.List;
 public class OrderET extends PanacheEntityBase {
     @EmbeddedId
     public OrderID orderID;
+    @Enumerated(EnumType.ORDINAL)
     public OrderStatus orderStatus;
     public LocalDateTime timeOfOrder;
     public LocalDateTime planedToPickTime;
