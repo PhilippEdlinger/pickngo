@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # pickngo Project
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
@@ -50,3 +51,8 @@ If you want to learn more about building native executables, please consult http
 ## Related Guides
 
 - RESTEasy JAX-RS ([guide](https://quarkus.io/guides/rest-json)): REST endpoint framework implementing JAX-RS and more.
+=======
+# Pick'N Go
+# PLACEHOLDER
+# PLACEHOLDER
+>>>>>>> origin/dev
