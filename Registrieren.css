@@ -34,7 +34,7 @@ body{
     font-size: 90px;
     font-family: 'comforta';
     font-weight: bold;
-    color: #8fc971;
+    color: #8ad2f1;
 }
 
 #login-form{
@@ -44,7 +44,7 @@ body{
 }
 header{
     margin-top: 0.5%;
-    margin-bottom: 8%;
+    margin-bottom: 4%;
     display: inline-flex;
     height: 10vh;
     width: 100%;
@@ -53,7 +53,7 @@ header{
 .input-label{
     font-family: nunito;
     font-weight: bold;
-    font-size: 38px;
+    font-size: 20px;
     color: #181818;
     margin: 0;
     margin-bottom: 2%;
@@ -62,10 +62,10 @@ header{
 input{
     height: 40px;
     width: 100%;
-    color: #8fc971;
+    color: #8ad2f1;
     box-sizing: border-box;
     border: none;
-    border-bottom: 2px solid #8fc971;
+    border-bottom: 2px solid #8ad2f1;
     margin-bottom: 3%;
     outline: none;
     font-size: large;
@@ -75,10 +75,10 @@ input{
 }
 
 ::placeholder {
-    color: #8fc971;
+    color: #8ad2f1;
 }
 
-#login-button{
+button{
     background-color: #3e3e3e;
     color: white;
     border-radius: 15px;
@@ -92,4 +92,8 @@ input{
 
 #signup-text{
     font-size: larger;
+}
+
+#login-button{
+    margin-left: 5%;
 }
