@@ -12,21 +12,35 @@ body{
     margin: 0;
     font-family: nunito;
 }
+#logo-container{
+    height: 100%;
+    width: 30%;
+    margin: 0px;
+}
 
 #cagitzer-logo{
-    height: 100%;
-    width: 10%;
-    background-image: url("./img/pickngo_logo.png");
-    background-position: center;
+    margin: 0;
+    background-image: url("./img/Logo_Cagitz.png");
+    background-position: center right;
     background-repeat: no-repeat;
-    background-size: 65%;
+    background-size: 50%;
+    height: 100%;
+    width: 35%;
+    float: left;
+}
+
+#logo-text{
+    margin-top: 5%;
+    font-family: comforta;
+    font-weight: bolder;
+    font-size: 25px;
 }
 
 #login-title{
     height: 100%;
     width: 46%;
     border-bottom: 2px solid #edf1f5;
-    margin-left: 17%;
+    margin-left: -2.5%;
 
     display: flex;
     justify-content: center;
