@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bodyBgC: #ffffff;
+    --cartBodyBgC: #000000a6;
+    --cartBgC: #ffffff;
+    --cartHeadingC: #000000;
+    --cartParaC: #000000;
+    --cartButtonGr: #68c45d;
+    --cartTimeSelection: #347eff;
+}
+
+#shoppingCartBody {
+    background-color: var(--cartBodyBgC);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#shoppingCart {
+    background-color: var(--cartBgC);
+    border-radius: 50px 0 0 50px;
+    width: 700px;
+    height: 900px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: grid;
+    place-items: center;
+}
+
+.product {
+    display: grid;
+    grid-template-columns: 1fr 3fr 2px 2fr;
+    align-items: center;
+    gap: 20px;
+}
+
+.product img {
+    object-fit: cover;
+    width: 100px;
+    height: 100px;
+    border-radius: 20%;
+}
+
+.textBox > div {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+}
+
+.borderBTW {
+    border: 1px solid black;
+    height: 100%;
+    width: 0px;
+}
+
+.modificationBox {
+    display: flex;
+}
+
+.modificationBox > div {
+    background-color: var(--cartButtonGr);
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    width: 60px;
+    border-radius: 20px
+}
+
+.modificationBox button {
+    border: none;
+}
+
+.minusB, .plusB {
+    width: 20px;
+    background-color: var(--cartButtonGr);
+}
+
+.minusB {
+    border-radius: 50px 0 0 50px;
+}
+
+.plusB {
+    border-radius: 0 50px 50px 0;
+}
+
+:is(.minusB, .plusB):hover {
+    background-color: #20720e;
+}

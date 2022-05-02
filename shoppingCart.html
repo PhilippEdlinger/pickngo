@@ -1,47 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/2a541da855.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/shoppingCart.css">
     <title>Home Page</title>
 </head>
-<body>
-    <button>The Button</button>
 
-    <div>
-        <h1>Warenkorb</h1>
-        <div>
-            <div>
-                <img src="./img/products/burger.jpg">
-                <div>
-                    <h5>Burger mit Wedges</h5>
-                    <div>
-                        <p>1x</p>
-                        <p>9,77€</p>
+<body>
+    <button id="theButton">The Button</button>
+    <div id="shoppingCartBody">
+        <div id="shoppingCart">
+            <h1>Warenkorb</h1>
+            <div id="products">
+                <div class="product">
+                    <img src="./img/products/burger.jpg">
+                    <div class="textBox">
+                        <h5>Burger mit Wedges</h5>
+                        <div>
+                            <p>1x</p>
+                            <p class="priceP">9,77€</p>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <div>
-                        <button>-</button>
-                        <p>1</p>
-                        <button>+</button>
+                    <div class="borderBTW"></div>
+                    <div class="modificationBox">
+                        <div>
+                            <button class="minusB">-</button>
+                            <p class="productNumberB">1</p>
+                            <button class="plusB">+</button>
+                        </div>
+                        <button class="deleteB">Löschen <i class="fa-solid fa-trash"></i></button>
                     </div>
-                    <button>Löschen <i class="fa-solid fa-trash"></i></button>
                 </div>
             </div>
+            <div id="priceBox">
+                <p>Gesamt</p>
+                <p>37,21€</p>
+            </div>
+            <p>Wenn sie jetzt bestellen, können Sie Ihre Bestellung um 14:30 Uhr abholen.</p>
+            <select name="preferedTime" id="preferedTime">
+                <option value="gleich">Gleich Abholen</option>
+                <option value="andere">Andere Zeit</option>
+            </select>
+            <button id="orderB">Bestellen</button>
         </div>
-        <div>
-            <p>Gesamt</p>
-            <p>37,21€</p>
-        </div>
-        <p>Wenn sie jetzt bestellen, können Sie Ihre Bestellung um 14:30 Uhr abholen.</p>
-        <select name="preferedTime" id="preferedTime">
-            <option value="gleich">Gleich Abholen</option>
-            <option value="andere">Andere Zeit</option>
-        </select>
-        <button>Bestellen</button>
     </div>
 </body>
+
 </html>
