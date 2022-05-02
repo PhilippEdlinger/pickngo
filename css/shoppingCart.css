@@ -7,7 +7,7 @@
     --bodyBgC: #ffffff;
     --cartBodyBgC: #000000a6;
     --cartBgC: #ffffff;
-    --cartHeadingC: #000000;
+    --cartHeadingC: #56b965;
     --cartParaC: #000000;
     --cartButtonGr: #68c45d;
     --cartTimeSelection: #347eff;
@@ -24,19 +24,45 @@
 
 #shoppingCart {
     background-color: var(--cartBgC);
+    display: grid;
     border-radius: 50px 0 0 50px;
     width: 700px;
     height: 900px;
     position: absolute;
     right: 0;
     bottom: 0;
-    display: grid;
-    place-items: center;
+    padding: 2vw;
 }
+
+#shoppingCart > h1 {
+    color: var(--cartHeadingC);
+    text-align: center;
+}
+
+#products {
+    display: grid;
+    gap:1vh;
+    height: 50vh;
+    overflow-y: scroll;
+}
+
+#products::-webkit-scrollbar {
+    width: 5px;
+}
+
+#products::-webkit-scrollbar-thumb {
+    background: #626262;
+}
+
+#products:hover::-webkit-scrollbar-thumb {
+    background: #000000;
+}
+
+
 
 .product {
     display: grid;
-    grid-template-columns: 1fr 3fr 2px 2fr;
+    grid-template-columns: 1fr 3fr 2px 1.2fr;
     align-items: center;
     gap: 20px;
 }
@@ -55,13 +81,14 @@
 }
 
 .borderBTW {
-    border: 1px solid black;
-    height: 100%;
+    border: 0.5px solid rgb(160, 160, 160);
+    height: 70%;
     width: 0px;
 }
 
 .modificationBox {
     display: flex;
+    justify-content: space-between;
 }
 
 .modificationBox > div {
@@ -90,6 +117,12 @@
     border-radius: 0 50px 50px 0;
 }
 
-:is(.minusB, .plusB):hover {
+:is(.minusB, .plusB):active {
     background-color: #20720e;
+}
+
+#priceBox {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
 }
