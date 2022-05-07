@@ -104,6 +104,9 @@ input{
     font-family: comforta;
 }
 
-#signup-text{
+#signup-text a{
     font-size: larger;
+    text-decoration: none;
+    text-underline: none;
+    color: black;
 }

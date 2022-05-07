@@ -109,6 +109,21 @@ button{
     font-size: larger;
 }
 
+.button{
+    background-color: #3e3e3e;
+    color: white;
+    border-radius: 15px;
+    height: 40px;
+    width: 30%;
+    margin-top: 5%;
+    font-weight: bolder;
+    font-size: larger;
+    font-family: comforta;
+    line-height: 40px;
+    text-align: center;
+    display: inline-block;
+}
+
 #login-button{
-    margin-left: 5%;
+ margin-left: 5%;
 }
