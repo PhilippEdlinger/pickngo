@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -12,6 +14,14 @@
     --cartButtonGr: #68c45d;
     --cartTimeSelection: #347eff;
     --ProductsTextColor: #323232;
+    --preferedTimeAreaColor: #2072ff;
+}
+
+body {
+    font-family: 'Comfortaa', cursive;}
+
+#theButton {
+    z-index: 2;
 }
 
 #shoppingCartBody {
@@ -21,12 +31,13 @@
     position: absolute;
     top: 0;
     left: 0;
+    z-index: -1;
 }
 
 #shoppingCart {
     background-color: var(--cartBgC);
     display: grid;
-    grid-template-rows: 0.5fr 6fr 1fr 1fr .5fr .5fr;
+    grid-template-rows: 0.5fr 6fr .5fr .3fr .6fr .6fr;
     gap: 1vh;
     border-radius: 50px 0 0 50px;
     width: 600px;
@@ -34,7 +45,7 @@
     position: absolute;
     right: 0;
     bottom: 0;
-    padding: 2vw;
+    padding: 2vh 3vw;
 }
 
 #shoppingCart > h1 {
@@ -44,8 +55,11 @@
 
 #products {
     display: grid;
+    grid-template-rows: repeat(auto-fill, 100px);
     gap:1vh;
     overflow-y: scroll;
+    border-bottom: 1px solid #323232;
+    
 }
 
 #products::-webkit-scrollbar {
@@ -60,20 +74,29 @@
     background: #000000;
 }
 
+.product:last-child {
+    margin-bottom: 1vh;
+}
+
 
 
 .product {
     display: grid;
-    grid-template-columns: 1fr 3fr 2px 1.5fr;
+    grid-template-columns: 1fr 3fr 2px 1.3fr;
     align-items: center;
     gap: 20px;
 }
 
-.product img {
+.product > img {
     object-fit: cover;
     width: 100px;
     height: 100px;
     border-radius: 20%;
+}
+
+.textBox {
+    display: grid;
+    gap: 2vh;
 }
 
 .textBox > div {
@@ -95,7 +118,9 @@
 
 .modificationBox {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    height: 70px;
 }
 
 .modificationBox > div {
@@ -104,14 +129,15 @@
     grid-auto-flow: column;
     justify-content: space-between;
     align-items: center;
-    width: 60px;
+    width: 70px;
+    height: 30px;
     border-radius: 20px;
     vertical-align: middle;
     color: var(--cartBgC);
 }
 
 .modificationBox > div :is(p, button) {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
 }
 
 .modificationBox button {
@@ -120,8 +146,13 @@
 
 .minusB, .plusB {
     color: var(--cartBgC);
-    width: 20px;
+    width: 27px;
+    height: 100%;
     background-color: var(--cartButtonGr);
+}
+
+.productNumberP {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .minusB {
@@ -136,6 +167,10 @@
     background-color: #20720e;
 }
 
+.deleteB {
+    height: 30px;
+}
+
 #priceBox {
     display: grid;
     grid-auto-flow: column;
@@ -144,17 +179,53 @@
     font-size: 1.4rem;
 }
 
-#preferedTime, #orderB {
+#preferedTime,#datePickerB, #orderB {
     border-radius: 10px;
     border: none;
     color: var(--cartBgC);
     text-align: center;
 }
 
+#orderInfo {
+    width: 70%;
+}
+
+#orderInfo span {
+    font-weight: 900;
+    font-size: 1.1rem;
+}
+
+#preferedTimeBox {
+    display: grid;
+    grid-auto-flow: column;
+}
+
 #preferedTime {
-    background-color: rgb(52, 160, 255);
+    background-color: var(--preferedTimeAreaColor);
+    width: 200px;
+    font-size: 1.15rem; 
+    /* margin-left: auto; */
+}
+
+#datePickerBox {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1vw;
+}
+
+#datePickerBox * {
+    font-size: 1rem;
+    border-radius: 10px;
+}
+
+#datePickerB {
+    background-color: var(--preferedTimeAreaColor);
 }
 
 #orderB {
     background-color: var(--cartButtonGr);
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: inherit;
+    text-decoration: none;
 }
