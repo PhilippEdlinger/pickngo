@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Anmeldung</title>
-    <link rel="stylesheet" href="../css/Anmeldung.css">
-    <link rel="icon" href="img/pickngo_logo.png">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="icon" href="../img/pickngo_logo.png">
 </head>
-<body>
-    <header>
+<body id="login-body">
+    <header id="login-header">
         <div id="logo-container">
             <div id="cagitzer-logo"></div>
             <p id="logo-text"> Pick 'n' Go</p>
@@ -16,9 +16,9 @@
     </header>
     <form id="login-form" >
         <p class="input-label">USERNAME ODER EMAIL</p>
-        <input type="text" placeholder="Username oder Email eingeben ..." id="login-email-user-input">
+        <input class="login-input" type="text" placeholder="Username oder Email eingeben ..." id="login-email-user-input">
         <p class="input-label">PASSWORT</p>
-        <input type="password" placeholder="Passwort eingeben ... " id="login-password-input">
+        <input class="login-input" type="password" placeholder="Passwort eingeben ... " id="login-password-input">
         <br><button id="login-button" >Anmelden</button>
         <p id="signup-text"><a href="./Registrieren.html" >Noch kein Konto?</a></p>
     </form>
