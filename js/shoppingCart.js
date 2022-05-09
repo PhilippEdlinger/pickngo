@@ -1,5 +1,5 @@
 $(() => {
-    $('#theButton').on('click', () => {
+    $('#shoppingCartB').on('click', () => {
         $('#shoppingCartBody').toggle();
     });
 
