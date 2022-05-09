@@ -1,0 +1,236 @@
+@font-face {
+    font-family: comforta;
+    src: url("./fonts/Comfortaa-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: nunito;
+    src: url("./fonts/Nunito-Italic-VariableFont_wght.ttf");
+}
+
+<!-- Anmelde Formular -->
+
+body{
+    margin: 0;
+    font-family: nunito;
+}
+#logo-container{
+    height: 100%;
+    width: 30%;
+    margin: 0px;
+}
+
+#cagitzer-logo{
+    margin: 0;
+    background-image: url("./img/Logo_Cagitz.png");
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    height: 100%;
+    width: 35%;
+    float: left;
+}
+
+#logo-text{
+    margin-top: 5%;
+    font-family: comforta;
+    font-weight: bolder;
+    font-size: 25px;
+}
+
+#login-title{
+    height: 100%;
+    width: 46%;
+    border-bottom: 2px solid #edf1f5;
+    margin-left: -2.5%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 90px;
+    font-family: 'comforta';
+    font-weight: bold;
+    color: #8fc971;
+}
+
+#login-form{
+    margin: auto;
+    height: 12%;
+    width: 25%;
+}
+header{
+    margin-top: 0.5%;
+    margin-bottom: 8%;
+    display: inline-flex;
+    height: 10vh;
+    width: 100%;
+}
+
+.input-label{
+    font-family: nunito;
+    font-weight: bold;
+    font-size: 38px;
+    color: #181818;
+    margin: 0;
+    margin-bottom: 2%;
+}
+
+input{
+    height: 40px;
+    width: 100%;
+    color: #8fc971;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid #8fc971;
+    margin-bottom: 3%;
+    outline: none;
+    font-size: large;
+    font-family: comforta;
+    font-weight: bolder;
+    margin-bottom: 5%;
+}
+
+::placeholder {
+    color: #8fc971;
+}
+
+#login-button{
+    background-color: #3e3e3e;
+    color: white;
+    border-radius: 15px;
+    height: 40px;
+    width: 30%;
+    margin-top: 5%;
+    font-weight: bolder;
+    font-size: larger;
+    font-family: comforta;
+}
+
+#signup-text a{
+    font-size: larger;
+    text-decoration: none;
+    text-underline: none;
+    color: black;
+}
+
+<!-- Registier Formular -->
+
+body{
+    margin: 0;
+    font-family: nunito;
+}
+
+#logo-container{
+    height: 100%;
+    width: 30%;
+    margin: 0px;
+}
+
+#cagitzer-logo{
+    margin: 0;
+    background-image: url("./img/Logo_Cagitz.png");
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    height: 100%;
+    width: 35%;
+    float: left;
+}
+
+#logo-text{
+    margin-top: 5%;
+    font-family: comforta;
+    font-weight: bolder;
+    font-size: 25px;
+}
+
+#login-title{
+    height: 100%;
+    width: 46%;
+    border-bottom: 2px solid #edf1f5;
+    margin-left: -1.5%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 90px;
+    font-family: 'comforta';
+    font-weight: bold;
+    color: #8ad2f1;
+}
+
+#login-form{
+    margin: auto;
+    height: 12%;
+    width: 25%;
+}
+header{
+    margin-top: 0.5%;
+    margin-bottom: 4%;
+    display: inline-flex;
+    height: 10vh;
+    width: 100%;
+}
+
+.input-label{
+    font-family: nunito;
+    font-weight: bold;
+    font-size: 20px;
+    color: #181818;
+    margin: 0;
+    margin-bottom: 2%;
+}
+
+input{
+    height: 40px;
+    width: 100%;
+    color: #8ad2f1;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid #8ad2f1;
+    margin-bottom: 3%;
+    outline: none;
+    font-size: large;
+    font-family: comforta;
+    font-weight: bolder;
+    margin-bottom: 5%;
+}
+
+::placeholder {
+    color: #8ad2f1;
+}
+
+button{
+    background-color: #3e3e3e;
+    color: white;
+    border-radius: 15px;
+    height: 40px;
+    width: 30%;
+    margin-top: 5%;
+    font-weight: bolder;
+    font-size: larger;
+    font-family: comforta;
+}
+
+#signup-text{
+    font-size: larger;
+}
+
+.button{
+    background-color: #3e3e3e;
+    color: white;
+    border-radius: 15px;
+    height: 40px;
+    width: 30%;
+    margin-top: 5%;
+    font-weight: bolder;
+    font-size: larger;
+    font-family: comforta;
+    line-height: 40px;
+    text-align: center;
+    display: inline-block;
+}
+
+#login-button{
+    margin-left: 5%;
+}
