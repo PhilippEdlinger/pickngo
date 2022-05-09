@@ -1,11 +1,11 @@
 @font-face {
     font-family: comforta;
-    src: url("./fonts/Comfortaa-VariableFont_wght.ttf");
+    src: url("../fonts/Comfortaa-VariableFont_wght.ttf");
 }
 
 @font-face {
     font-family: nunito;
-    src: url("./fonts/Nunito-Italic-VariableFont_wght.ttf");
+    src: url("../fonts/Nunito-Italic-VariableFont_wght.ttf");
 }
 
 body{
@@ -20,7 +20,7 @@ body{
 
 #cagitzer-logo{
     margin: 0;
-    background-image: url("./img/Logo_Cagitz.png");
+    background-image: url("../img/Logo_Cagitz.png");
     background-position: center right;
     background-repeat: no-repeat;
     background-size: 50%;
