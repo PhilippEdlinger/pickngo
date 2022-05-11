@@ -201,7 +201,7 @@
     color: #8ad2f1;
 }
 
-button{
+#login-form button{
     background-color: #3e3e3e;
     color: white;
     border-radius: 15px;
@@ -324,8 +324,8 @@ button{
     position: fixed;
     visibility: hidden;
     opacity: 0;
-    right: 15px;
-    bottom: 15px;
+    left: 10px;
+    bottom: 10px;
     z-index: 996;
     background: #0880e8;
     width: 40px;
