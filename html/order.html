@@ -42,12 +42,11 @@
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center ">
     <div class="container d-flex align-items-center justify-content-center justify-content-md-between header">
-      <div class="contact-info d-flex align-items-center" style="color:white;">
+      <a href="./index.html" class="contact-info d-flex align-items-center" style="color:white;">
         <i class="logo"></i><img src="../../img/pickngo_logo.png" width="50px">Pick'n Go</img>
 
-      </div>
+      </a>
       <div class="right-icons">
-        <i class="bi bi-cart-fill" style="font-size:30px; padding: 15px;color:white;"></i>
         <i class="fa fa-user-circle" style="font-size:30px;color:white;"></i>
       </div>
     </div>
@@ -56,54 +55,57 @@
   </header><!-- End Header -->
 
   <!-- ======= Icon Boxes Section ======= -->
-  <section id="icon-boxes" class="col-md-12 col-lg-12 d-flex icon-boxes">
-    <div class="container">
+  <section id="icon-boxes" class="col-12 d-flex icon-boxes orderSection">
+    <div class="">
 
       <div class="row">
-        <div class="col-md-5 col-lg-5 d-flex align-items-stretch mb-5 mb-lg-0" id="first" data-aos="fade-up">
-          <div class="icon-box">
+        <div class="col-4 d-flex align-items-stretch mb-5 mb-lg-0" id="first" data-aos="fade-up">
+          <div class="icon-box telefonNRBox">
             <div class="floating-label">
               <h4 class="title" style="text-align:center;">Für die Bestellbestätigung benötigen wir</h4>
               <h4 class="title" style="text-align:center;">Ihre Telefonnummer</h4>
               <input placeholder="Tel." type="tel" name="tel" id="tel" autocomplete="off">
               <div class="buttonDiv">
-                <a href="index2.html"><button type="submit">Bestätigen</button></a>
+                <a href="order2.html"><button type="submit">Bestätigen</button></a>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="col-md-7 col-lg-7 d-flex align-items-stretch mb-5 mb-lg-0" id="second" data-aos="fade-up"
+        <div class="col-8 d-flex align-items-stretch mb-5 mb-lg-0" id="second" data-aos="fade-up"
           data-aos-delay="100">
           <div id="productBox" class="icon-box">
             <h4 class="order">Meine Bestellung</h4>
-            <div class="itemBox">
-              <div class="imageBox">
-                <img src="../../img/risotto.jpg" alt="Risotto">
-                <div class="textBox">
-                  <p>1x Risotto</p>
-                  <p style="margin-left:300px;">9,77€</p>
+            <div id="orderProduct">
+              <div class="itemBox">
+                <div class="imageBox">
+                  <img src="../../img/risotto.jpg" alt="Risotto">
+                  <div class="textBox">
+                    <p>1x Risotto</p>
+                    <p>9,77€</p>
+                  </div>
+                </div>
+              </div>
+              <div class="itemBox">
+                <div class="imageBox">
+                  <img src="../../img/risotto.jpg" alt="Risotto">
+                  <div class="textBox">
+                    <p>1x Risotto</p>
+                    <p>9,77€</p>
+                  </div>
+                </div>
+              </div>
+              <div class="itemBox">
+                <div class="imageBox">
+                  <img src="../../img/risotto.jpg" alt="Risotto">
+                  <div class="textBox">
+                    <p>1x Risotto</p>
+                    <p>9,77€</p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="itemBox">
-              <div class="imageBox">
-                <img src="../../img/risotto.jpg" alt="Risotto">
-                <div class="textBox">
-                  <p>1x Risotto</p>
-                  <p style="margin-left:300px;">9,77€</p>
-                </div>
-              </div>
-            </div>
-            <div class="itemBox">
-              <div class="imageBox">
-                <img src="../../img/risotto.jpg" alt="Risotto">
-                <div class="textBox">
-                  <p>1x Risotto</p>
-                  <p style="margin-left:300px;">9,77€</p>
-                </div>
-              </div>
-            </div>
+            <div id="orderPrice"></div>
           </div>
         </div>
       </div>
