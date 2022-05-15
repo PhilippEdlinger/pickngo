@@ -17,14 +17,6 @@
     --preferedTimeAreaColor: #2072ff;
 }
 
-body {
-    font-family: 'Comfortaa', cursive;
-}
-
-#theButton {
-    z-index: 2;
-}
-
 #shoppingCart * {
     margin: initial;
     line-height: initial;
@@ -220,7 +212,8 @@ body {
 
 #preferedTime {
     background-color: var(--preferedTimeAreaColor);
-    width: 200px;
+    min-width: 120px;
+    max-width: 200px;
     font-size: 1.15rem; 
     /* margin-left: auto; */
 }
@@ -234,6 +227,7 @@ body {
 #datePickerBox * {
     font-size: 1rem;
     border-radius: 10px;
+    padding: 5px;
 }
 
 #datePickerB {
@@ -248,13 +242,63 @@ body {
     text-decoration: none;
 }
 
+@media screen and (max-width: 1400px) {
+    #shoppingCart {
+        width: 55vw;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #shoppingCart {
+        width: 70vw;
+    }
+}
+@media screen and (max-width: 750px) {
+    #shoppingCart {
+        width: 80vw;
+    }
+}
 @media screen and (max-width: 600px) {
+    #header {
+        position: fixed;
+        top: unset !important;
+        bottom: 0;
+    }
     #shoppingCartBody {
+        display: grid;
         justify-content: center;
-        place-items: center;
+        height: calc(100vh - 70px);
+        /* padding-top: 1vh; */
     }
     #shoppingCart {
         position: relative;
-        width: 90vw;
+        width: 100%;
+        height: calc(100vh - 70px);
+        border-radius: 0 0 0 0;
+    }
+    .product {
+        grid-template-columns: 1fr 3fr 1px 1fr;
+        gap: 7px;
+    }
+
+    .product > img {
+        width: 70px;
+        height: 70px;
+    }
+    .textBox h3 {
+        font-size: 1rem;
+    }
+
+    .textBox p {
+        font-size: 1rem;
+    }
+    .modificationBox {
+        gap: 7px;
+    }
+    #preferedTimeBox {
+        grid-template-columns: 1fr 2fr;
+    }
+    #preferedTime {
+        font-size: 1rem;
     }
 }
