@@ -95,16 +95,18 @@
     color: #8fc971;
 }
 
-#login-button{
+#login-buttons{
     background-color: #3e3e3e;
     color: white;
     border-radius: 15px;
-    height: 40px;
+    height: 45px;
     width: 30%;
     margin-top: 5%;
+    line-height: 45px;
     font-weight: bolder;
     font-size: larger;
     font-family: comforta;
+    text-align: center;
 }
 
 #signup-text a{
@@ -145,7 +147,7 @@
     font-size: 25px;
 }
 
-#login-title{
+#signup-title{
     height: 100%;
     width: 46%;
     border-bottom: 2px solid #edf1f5;
@@ -201,33 +203,21 @@
     color: #8ad2f1;
 }
 
-#login-form button{
-    background-color: #3e3e3e;
-    color: white;
-    border-radius: 15px;
-    height: 40px;
-    width: 30%;
-    margin-top: 5%;
-    font-weight: bolder;
-    font-size: larger;
-    font-family: comforta;
-}
-
 #signup-text{
     font-size: larger;
 }
 
-.signup-button{
+.signup-buttons{
     background-color: #3e3e3e;
     color: white;
     border-radius: 15px;
-    height: 40px;
+    height: 45px;
     width: 30%;
     margin-top: 5%;
     font-weight: bolder;
     font-size: larger;
     font-family: comforta;
-    line-height: 40px;
+    line-height: 45px;
     text-align: center;
     display: inline-block;
 }
