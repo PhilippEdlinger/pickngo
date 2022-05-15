@@ -19,6 +19,7 @@ html {
   overflow-y: scroll;
 }
 
+<<<<<<< HEAD
 #productBox::-webkit-scrollbar {
   width: 5px;
 }
@@ -50,6 +51,8 @@ html {
   text-align: right;
 }
 
+=======
+>>>>>>> b7a6e63ff860adcd38899c3e9c2aff74f91caaf0
 a {
   text-decoration: none;
   color: #0880e8;
@@ -205,12 +208,31 @@ button:active {
 
 .textBox {
   display: inline-block;
+<<<<<<< HEAD
+=======
+  position: relative;
+  width: auto;
+>>>>>>> b7a6e63ff860adcd38899c3e9c2aff74f91caaf0
   margin-left: 10px;
 }
 
 .textBox p {
+  position: relative;
   display: inline-block;
   font-size: 25px;
+  margin: 0;
+}
+
+.imageBox .price {
+  position: absolute;
+  top: 0;
+  right: -5em;
+
+  float: left;
+}
+
+.price {
+
 }
 
 
@@ -265,7 +287,11 @@ button:active {
 --------------------------------------------------------------*/
 
 #preloader {
+<<<<<<< HEAD
   background: url(../../Walk.gif) no-repeat center center;
+=======
+  background: url(../img/Walk.gif) no-repeat center center ;
+>>>>>>> b7a6e63ff860adcd38899c3e9c2aff74f91caaf0
   height: 100vh;
   width: 100%;
   position: fixed;
@@ -281,6 +307,7 @@ button:active {
   }
 }
 
+<<<<<<< HEAD
 /*--------------------------------------------------------------
 # Top Bar
 --------------------------------------------------------------*/
@@ -334,6 +361,8 @@ button:active {
 #topbar .cta a:hover {
   background: #f1a40a;
 }
+=======
+>>>>>>> b7a6e63ff860adcd38899c3e9c2aff74f91caaf0
 
 /*--------------------------------------------------------------
 # Header
@@ -373,6 +402,7 @@ button:active {
   max-height: 40px;
 }
 
+<<<<<<< HEAD
 .header-inner-pages {
   background: rgba(5, 87, 158, 0.9) !important;
 }
@@ -643,6 +673,8 @@ button:active {
   display: block;
 }
 
+=======
+>>>>>>> b7a6e63ff860adcd38899c3e9c2aff74f91caaf0
 
 /*--------------------------------------------------------------
 # Sections General

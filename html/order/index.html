@@ -31,23 +31,22 @@
 
 <body>
 
+<div id="preloader"></div>
+
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center ">
-    <div class="container d-flex align-items-center justify-content-between">
-
-      <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
+      <div class="container d-flex align-items-center justify-content-center justify-content-md-between header">
         <div class="contact-info d-flex align-items-center" style="color:white;">
           <i class="logo"></i><a href="../firstPage/shoppingCart.html" style="text-decoration: none;color:white;"><img src="../../img/pickngo_logo.png" width="50px">Pick'n Go</img></a>
 
         </div>
           <div class="right-icons">
             <i class="bi bi-cart-fill" style="font-size:30px; padding: 15px;color:white;"></i>
-          <i class="fa fa-user-circle" style="font-size:30px;color:white;"></i>
+            <i class="fa fa-user-circle" style="font-size:30px;color:white;"></i>
           </div>
-
       </div>
 
-    </div>
+
   </header><!-- End Header -->
 
     <!-- ======= Icon Boxes Section ======= -->
@@ -55,17 +54,20 @@
       <div class="container">
 
         <div class="row">
-          <div class="col-md-5 col-lg-5 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up">
+          <div class="col-md-5 col-lg-5 d-flex align-items-stretch mb-5 mb-lg-0" id="first" data-aos="fade-up">
             <div class="icon-box">
               <div class="floating-label">
-              <h4 class="title" style="text-align:center;font-size:40px;">Ihre Bestellung ist abholbereit um</h4>
-                <img src="../../img/comp_3.gif" style="width:465px;height:auto;">
-              <h4 class="title" style="text-align:center;font-size:60px;">14:30</h4>
+              <h4 class="title" style="text-align:center;">Für die Bestellbestätigung benötigen wir</h4>
+              <h4 class="title" style="text-align:center;">Ihre Telefonnummer</h4>
+                <input placeholder="Tel." type="tel" name="tel" id="tel" autocomplete="off">
+                <div class="buttonDiv">
+                <a href="index2.html"><button type="submit">Bestätigen</button></a>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="col-md-7 col-lg-7 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-md-7 col-lg-7 d-flex align-items-stretch mb-5 mb-lg-0" id="second" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
               <h4 class="order">Meine Bestellung</h4>
               <div class="itemBox">
@@ -73,7 +75,7 @@
                   <img src="../../img/risotto.jpg" alt="Risotto">
                    <div class="textBox">
                       <p>1x Risotto</p>
-                      <p style="margin-left:300px;">9,77€</p>
+                      <p class="price">9,77€</p>
                    </div>
                 </div>
               </div>
@@ -82,7 +84,7 @@
                   <img src="../../img/risotto.jpg" alt="Risotto">
                   <div class="textBox">
                     <p>1x Risotto</p>
-                    <p style="margin-left:300px;">9,77€</p>
+                    <p class="price">9,77€</p>
                   </div>
                 </div>
               </div>
@@ -91,7 +93,7 @@
                   <img src="../../img/risotto.jpg" alt="Risotto">
                   <div class="textBox">
                     <p>1x Risotto</p>
-                    <p style="margin-left:300px;">9,77€</p>
+                    <p class="price">9,77€</p>
                   </div>
                 </div>
               </div>
@@ -100,7 +102,7 @@
                   <img src="../../img/risotto.jpg" alt="Risotto">
                   <div class="textBox">
                     <p>1x Risotto</p>
-                    <p style="margin-left:300px;">9,77€</p>
+                    <p class="price">9,77€</p>
                   </div>
                 </div>
               </div>
@@ -114,10 +116,8 @@
     </section><!-- End Icon Boxes Section -->
 
 
-
-  <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
+-->
   <!-- Vendor JS Files -->
   <script src="../../vendor/aos/aos.js"></script>
   <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
