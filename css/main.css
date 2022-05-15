@@ -203,7 +203,6 @@
     color: #8ad2f1;
 }
 
-
 #signup-text{
     font-size: larger;
 }
@@ -315,8 +314,8 @@
     position: fixed;
     visibility: hidden;
     opacity: 0;
-    right: 15px;
-    bottom: 15px;
+    left: 10px;
+    bottom: 10px;
     z-index: 996;
     background: #0880e8;
     width: 40px;

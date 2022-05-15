@@ -18,13 +18,20 @@
 }
 
 body {
-    font-family: 'Comfortaa', cursive;}
+    font-family: 'Comfortaa', cursive;
+}
 
 #theButton {
     z-index: 2;
 }
 
+#shoppingCart * {
+    margin: initial;
+    line-height: initial;
+}
+
 #shoppingCartBody {
+    font-family: 'Comfortaa', cursive;
     background-color: var(--cartBodyBgC);
     width: 100vw;
     height: 100vh;
@@ -40,8 +47,8 @@ body {
     grid-template-rows: 0.5fr 6fr .5fr .3fr .6fr .6fr;
     gap: 1vh;
     border-radius: 50px 0 0 50px;
-    width: 600px;
-    height: 900px;
+    width: 40vw;
+    height: 90vh;
     position: absolute;
     right: 0;
     bottom: 0;
@@ -51,6 +58,7 @@ body {
 #shoppingCart > h1 {
     color: var(--cartHeadingC);
     text-align: center;
+    font-size: 2rem;
 }
 
 #products {
@@ -96,6 +104,7 @@ body {
 
 .textBox {
     display: grid;
+    align-items: center;
     gap: 2vh;
 }
 
@@ -104,6 +113,11 @@ body {
     grid-template-columns: auto auto;
     justify-content: space-between;
     color: var(--ProductsTextColor);
+}
+
+.textBox h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
 }
 
 .textBox p {
@@ -121,6 +135,7 @@ body {
     align-items: center;
     gap: 20px;
     height: 70px;
+    padding-right: 10px;
 }
 
 .modificationBox > div {
@@ -138,6 +153,7 @@ body {
 
 .modificationBox > div :is(p, button) {
     font-size: 1.25rem;
+    line-height: 120%;
 }
 
 .modificationBox button {
@@ -153,6 +169,7 @@ body {
 
 .productNumberP {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
 }
 
 .minusB {
@@ -198,6 +215,7 @@ body {
 #preferedTimeBox {
     display: grid;
     grid-auto-flow: column;
+    gap: 20px;
 }
 
 #preferedTime {
@@ -210,7 +228,7 @@ body {
 #datePickerBox {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 1vw;
+    gap: 10px;
 }
 
 #datePickerBox * {
@@ -228,4 +246,15 @@ body {
     font-weight: 600;
     padding: inherit;
     text-decoration: none;
+}
+
+@media screen and (max-width: 600px) {
+    #shoppingCartBody {
+        justify-content: center;
+        place-items: center;
+    }
+    #shoppingCart {
+        position: relative;
+        width: 90vw;
+    }
 }
