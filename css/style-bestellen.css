@@ -71,6 +71,12 @@ input:focus {
   display: flex;
 }
 
+.floating-label img {
+  display: grid;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
 input#tel {
   width: 100%;
 }
@@ -352,6 +358,22 @@ button:active {
 
   .icon-boxes .icon-box {
     padding: 20px 18px !important;
+  }
+
+  .contact-info {
+    color: #6161ff !important;
+  }
+
+  .floating-label h4{
+    font-size: 30px !important;
+  }
+
+  .floating-label img {
+    display: grid;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 350px !important;
+    height: auto !important;
   }
 }
 
