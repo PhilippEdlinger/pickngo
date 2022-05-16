@@ -6,3 +6,8 @@ David Altenhofer, David Precup, Sami Abbas Ali, Philipp Edlinger
   
 ## Projektauftraggeber
 Prof. Hans-Christian Hammer, Prof. Christian Aberger
+
+## Verwendete Technologie
+- Quarkus (backend)
+- Angular (frontend)
+- PostgreSQL (Datenbank)
