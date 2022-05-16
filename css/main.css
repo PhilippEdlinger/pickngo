@@ -9,8 +9,6 @@
 }
 
 /* <!-- Anmelde Formular --> */
-
-
 #login-body{
     margin: 0;
     font-family: nunito;
@@ -239,6 +237,7 @@ header > div > div > a {
 .slider {
     display: flex;
     justify-content: center;
+    gap: 2vw;
 }
 .slider > img{
     margin: 0.2vw;

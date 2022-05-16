@@ -59,7 +59,7 @@
     gap:1vh;
     overflow-y: scroll;
     border-bottom: 1px solid #323232;
-    
+    padding-bottom: 10px;    
 }
 
 #products::-webkit-scrollbar {
@@ -242,6 +242,15 @@
     text-decoration: none;
 }
 
+.speciality > div > img {
+    border-radius: 10px;
+}
+
+.speisenProdukt img {
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
 @media screen and (max-width: 1400px) {
     #shoppingCart {
         width: 55vw;
@@ -300,5 +309,27 @@
     }
     #preferedTime {
         font-size: 1rem;
+    }
+    .speisenProdukt img {
+        width: 100%;
+    }
+    .buttonDave {
+        margin-top: 0;
+    }
+    .speciality > div > img {
+        width: 35%;
+    }
+    .menuBox {
+        display: grid;
+        gap: 5vw;
+    }
+    .menuBox > a > span {
+        display: none;
+    }
+    .menuBox > div {
+        display: grid;
+        grid-auto-flow: column;
+        align-items: center;
+        gap: 5vw;
     }
 }
