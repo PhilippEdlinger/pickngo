@@ -332,4 +332,8 @@
         align-items: center;
         gap: 5vw;
     }
+    #sectionDave {
+        position: relative;
+        margin-top: 2vh;
+    }
 }
