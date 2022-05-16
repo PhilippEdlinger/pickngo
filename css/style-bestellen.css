@@ -365,7 +365,7 @@ button:active {
   }
 
   .floating-label h4{
-    font-size: 30px !important;
+    font-size: 23px !important;
   }
 
   .floating-label img {
@@ -459,10 +459,6 @@ section {
 
 #second {
   height: 680px;
-}
-
-#first {
-  max-height: 300px;
 }
 
 .icon-boxes {
