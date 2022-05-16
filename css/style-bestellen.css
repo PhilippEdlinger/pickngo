@@ -336,9 +336,25 @@ button:active {
 
 @media screen and (max-width: 1070px) {
   .orderSection > div > div {
-    grid-template-columns: 70vw;
+    grid-template-columns: 98vw;
+  }
+  .orderSection p {
+    font-size: 90%;
+  }
+
+  .imageBox .textBox {
+    grid-template-columns: 90% 10%;
+  }
+
+  #orderProduct::-webkit-scrollbar {
+    width: 1px;
+  }
+
+  .icon-boxes .icon-box {
+    padding: 20px 18px !important;
   }
 }
+
 
 
 /*--------------------------------------------------------------
@@ -384,7 +400,6 @@ button:active {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  overflow: hidden;
   height: 80%;
 }
 

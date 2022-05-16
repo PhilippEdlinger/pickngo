@@ -549,6 +549,7 @@ header > div > div > a {
 }
 
 .title h4 {
+    margin-top: 15px;
     display: block;
     font-size: 20px;
 }
@@ -596,7 +597,7 @@ header > div > div > a {
 }
 .icon-boxes .title {
     font-weight: 700;
-    margin-bottom: 15px;
+    margin-top: 10px;
     font-size: 18px;
 }
 .icon-boxes .title a {
