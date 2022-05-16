@@ -136,7 +136,7 @@ input:not(:valid):not(:focus)+label+.icon {
 }
 
 #orderPrice {
-  margin-top: 2vh;
+  margin-top: 4vh;
   height: 20%;
   display: grid;
   grid-auto-flow: column;
@@ -152,6 +152,7 @@ input:not(:valid):not(:focus)+label+.icon {
 }
 
 .orderSection {
+  height: 85%;
   display: grid;
   justify-content: center;
 }
