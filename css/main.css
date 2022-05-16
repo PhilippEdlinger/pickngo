@@ -8,7 +8,7 @@
     src: url("../fonts/Nunito-Italic-VariableFont_wght.ttf");
 }
 
-<!-- Anmelde Formular -->
+/* <!-- Anmelde Formular --> */
 
 
 #login-body{
@@ -30,6 +30,10 @@
     height: 100%;
     width: 35%;
     float: left;
+}
+
+header > div > div > a {
+    text-decoration: none;
 }
 
 #logo-text{
@@ -116,7 +120,7 @@
     color: black;
 }
 
-<!-- Registier Formular -->
+/* <!-- Registier Formular --> */
 
 #signup-body{
     margin: 0;

@@ -21,7 +21,7 @@ $(() => {
                         <h3 class="productName" title="${name}">${name}</h5>
                         <div>
                         <p>${amount}x</p>
-                        <p class="priceP">${p.price}€</p>
+                        <p class="priceP">${p.price}</p>
                         </div>
                     </div>
                     <div class="borderBTW"></div>
