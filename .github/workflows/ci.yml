@@ -39,7 +39,6 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: build-application-server
         run: |
-          hugo --minify
           tar -czf frontend.tgz frontend
         working-directory: ./
       - name: deploy
