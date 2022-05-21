@@ -5,9 +5,9 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the dev branch
   push:
-    branches: [ dev ]
+    branches: [ github-action ]
   pull_request:
-    branches: [ dev ]
+    branches: [ github-action ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -37,11 +37,21 @@ jobs:
         run: echo Hello, world!
 
       # Runs a set of commands using the runners shell
-
-      - name: copy frontend to vm
+      - name: build-application-server
         run: |
-          ls
-          scp ../../* pickngo
-          ssh pickngo ls -l
-      #  working-directory: backend/
+          hugo --minify
+          tar -czf frontend.tgz frontend
+        working-directory: ./
+      - name: deploy
+        run: |
+          ssh pickngo sudo rm -rfv /var/www/html/*
+          scp *.tgz pickngo:
+          ssh pickngo sudo tar -xvzf frontend.tgz
+          ssh pickngo sudo mv frontend/* /var/www/html/
+          ssh pickngo pwd
+          ssh pickngo sudo ls /var/www/html/
+        working-directory: ./
+
+
+
 
