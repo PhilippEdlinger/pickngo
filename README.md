@@ -12,3 +12,4 @@ Prof. Hans-Christian Hammer, Prof. Christian Aberger
 - Quarkus (backend)
 - Angular (frontend)
 - PostgreSQL (Datenbank)
+
