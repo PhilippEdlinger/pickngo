@@ -43,12 +43,12 @@ jobs:
         working-directory: ./
       - name: deploy
         run: |
-          ssh pickngo sudo rm -rfv /var/www/html/*
-          scp *.tgz pickngo:
-          ssh pickngo sudo tar -xvzf frontend.tgz
-          ssh pickngo sudo mv frontend/* /var/www/html/
-          ssh pickngo pwd
-          ssh pickngo sudo ls /var/www/html/
+          ssh server sudo rm -rfv /var/www/html/*
+          scp *.tgz server:
+          ssh server sudo tar -xvzf frontend.tgz
+          ssh server sudo mv frontend/* /var/www/html/
+          ssh server pwd
+          ssh server sudo ls /var/www/html/
         working-directory: ./
 
 
