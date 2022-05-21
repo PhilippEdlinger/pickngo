@@ -40,7 +40,7 @@ jobs:
 
       - name: copy frontend to vm
         run: |
-          pwd
+          ls
           scp ../../* pickngo
           ssh pickngo ls -l
       #  working-directory: backend/
