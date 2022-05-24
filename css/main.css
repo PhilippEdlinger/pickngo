@@ -1,0 +1,699 @@
+@font-face {
+    font-family: comforta;
+    src: url("../fonts/Comfortaa-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: nunito;
+    src: url("../fonts/Nunito-Italic-VariableFont_wght.ttf");
+}
+
+/* <!-- Anmelde Formular --> */
+#login-body{
+    margin: 0;
+    font-family: nunito;
+}
+#logo-container{
+    height: 100%;
+    width: 30%;
+    margin: 0px;
+}
+
+#cagitzer-logo{
+    margin: 0;
+    background-image: url("../img/Logo_Cagitz.png");
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    height: 100%;
+    width: 35%;
+    float: left;
+}
+
+header > div > div > a {
+    text-decoration: none;
+}
+
+#logo-text{
+    margin-top: 5%;
+    font-family: comforta;
+    font-weight: bolder;
+    font-size: 25px;
+}
+
+#login-title{
+    height: 100%;
+    width: 46%;
+    border-bottom: 2px solid #edf1f5;
+    margin-left: -2.5%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 90px;
+    font-family: 'comforta';
+    font-weight: bold;
+    color: #8fc971;
+}
+
+#login-form{
+    margin: auto;
+    height: 12%;
+    width: 25%;
+}
+#login-header{
+    margin-top: 0.5%;
+    margin-bottom: 8%;
+    display: inline-flex;
+    height: 10vh;
+    width: 100%;
+}
+
+.input-label{
+    font-family: nunito;
+    font-weight: bold;
+    font-size: 38px;
+    color: #181818;
+    margin: 0;
+    margin-bottom: 2%;
+}
+
+.login-input{
+    height: 40px;
+    width: 100%;
+    color: #8fc971;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid #8fc971;
+    margin-bottom: 3%;
+    outline: none;
+    font-size: large;
+    font-family: comforta;
+    font-weight: bolder;
+    margin-bottom: 5%;
+}
+
+.login-input::placeholder {
+    color: #8fc971;
+}
+
+#login-buttons{
+    background-color: #3e3e3e;
+    color: white;
+    border-radius: 15px;
+    height: 45px;
+    width: 30%;
+    margin-top: 5%;
+    line-height: 45px;
+    font-weight: bolder;
+    font-size: larger;
+    font-family: comforta;
+    text-align: center;
+}
+
+#signup-text a{
+    font-size: larger;
+    text-decoration: none;
+    text-underline: none;
+    color: black;
+}
+
+/* <!-- Registier Formular --> */
+
+#signup-body{
+    margin: 0;
+    font-family: nunito;
+}
+
+#logo-container{
+    height: 100%;
+    width: 30%;
+    margin: 0px;
+}
+
+#cagitzer-logo{
+    margin: 0;
+    background-image: url("../img/Logo_Cagitz.png");
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    height: 100%;
+    width: 35%;
+    float: left;
+}
+
+#logo-text{
+    margin-top: 5%;
+    font-family: comforta;
+    font-weight: bolder;
+    font-size: 25px;
+}
+
+#signup-title{
+    height: 100%;
+    width: 46%;
+    border-bottom: 2px solid #edf1f5;
+    margin-left: -1.5%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 90px;
+    font-family: 'comforta';
+    font-weight: bold;
+    color: #8ad2f1;
+}
+
+#login-form{
+    margin: auto;
+    height: 12%;
+    width: 25%;
+}
+#signup-header{
+    margin-top: 0.5%;
+    margin-bottom: 4%;
+    display: inline-flex;
+    height: 10vh;
+    width: 100%;
+}
+
+.input-label{
+    font-family: nunito;
+    font-weight: bold;
+    font-size: 20px;
+    color: #181818;
+    margin: 0;
+    margin-bottom: 2%;
+}
+
+.signup-input{
+    height: 40px;
+    width: 100%;
+    color: #8ad2f1;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid #8ad2f1;
+    margin-bottom: 3%;
+    outline: none;
+    font-size: large;
+    font-family: comforta;
+    font-weight: bolder;
+    margin-bottom: 5%;
+}
+
+.signup-input::placeholder {
+    color: #8ad2f1;
+}
+
+#signup-text{
+    font-size: larger;
+}
+
+.signup-buttons{
+    background-color: #3e3e3e;
+    color: white;
+    border-radius: 15px;
+    height: 45px;
+    width: 30%;
+    margin-top: 5%;
+    font-weight: bolder;
+    font-size: larger;
+    font-family: comforta;
+    line-height: 45px;
+    text-align: center;
+    display: inline-block;
+}
+
+#login-button{
+    margin-left: 5%;
+}
+
+
+/*--------------------------------------------------------------
+# Main Spezial
+--------------------------------------------------------------*/
+
+
+.slider {
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
+}
+.slider > img{
+    margin: 0.2vw;
+}
+
+.imgBox {
+    width: 20vw;
+    height: auto;
+}
+
+.slider > img{
+    width: 16.4vw;
+    height: auto;
+}
+
+.icon-box > i{
+    display: flex;
+    justify-content: center;
+}
+
+/*--------------------------------------------------------------
+# Main Menu
+--------------------------------------------------------------*/
+
+
+.sliderSmall {
+    display: flex;
+    justify-content: center;
+}
+
+.sliderSmall > img{
+    margin: 0.2vw;
+}
+
+.sliderSmall > img{
+    width: 15vw;
+    height: auto;
+}
+.buttonDiv {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgSize{
+    width: 50%;
+    height: 30%;
+}
+
+.order {
+    border-bottom: solid 1px rgba(0, 0, 0, .1);
+}
+
+.imageBox {
+    margin-top: 20px;
+}
+
+.imageBox img{
+    border-radius: 15px;
+    object-fit: cover;
+    width: 100px;
+    height: 90px;
+    border: .5px solid grey;
+}
+
+.textBox {
+    display:inline-block;
+    margin-left: 10px;
+}
+
+.textBox p {
+    display: inline-block;
+    font-size: 25px;
+}
+
+.back-to-top {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    left: 10px;
+    bottom: 10px;
+    z-index: 996;
+    background: #0880e8;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    transition: all 0.4s;
+}
+.back-to-top i {
+    font-size: 28px;
+    color: #fff;
+    line-height: 0;
+}
+.back-to-top:hover {
+    background: #2194f7;
+    color: #fff;
+}
+.back-to-top.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.fa-solid .fa-cart-shopping {
+    border: 1px solid red;
+    font-size: 30px;
+}
+.right {
+    width: 100px;
+    height: 100px;
+}
+
+#topbar {
+    height: 60px;
+    padding: 0;
+    font-size: 14px;
+    transition: all 0.5s;
+    overflow: hidden;
+    color: rgba(255, 255, 255, 0.8);
+    z-index: 996;
+}
+#topbar.topbar-scrolled {
+    top: -60px;
+}
+#topbar .contact-info a {
+    line-height: 0;
+    color: rgba(255, 255, 255, 0.8);
+    transition: 0.3s;
+}
+#topbar .contact-info a:hover {
+    text-decoration: underline;
+}
+#topbar .contact-info i {
+    color: #f6b024;
+    line-height: 0;
+    margin-right: 5px;
+}
+#topbar .contact-info .phone-icon {
+    margin-left: 15px;
+}
+#topbar .cta {
+    background: transparent;
+}
+#topbar .cta a {
+    color: #fff;
+    background: #f6b024;
+    padding: 6px 24px 8px 24px;
+    display: inline-block;
+    transition: 0.3s;
+    border-radius: 50px;
+}
+#topbar .cta a:hover {
+    background: #f1a40a;
+}
+
+#header {
+    z-index: 997;
+    height: 70px;
+    top: 0px;
+    background-color: #6161ff;
+}
+#header.header-scrolled {
+    top: 0;
+}
+#header .logo {
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+#header .logo a {
+    color: #fff;
+}
+#header .logo img {
+    max-height: 40px;
+}
+
+.header-inner-pages {
+    background: rgba(5, 87, 158, 0.9) !important;
+}
+
+.topbar-inner-pages {
+    background: rgba(6, 98, 178, 0.9) !important;
+}
+
+.navbar {
+    padding: 0;
+}
+.navbar ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+.navbar li {
+    position: relative;
+}
+.navbar > ul > li {
+    position: relative;
+    white-space: nowrap;
+    padding: 10px 0 10px 24px;
+}
+.navbar a, .navbar a:focus {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    white-space: nowrap;
+    transition: 0.3s;
+    position: relative;
+}
+.navbar a i, .navbar a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+}
+.navbar > ul > li > a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #f6b024;
+    visibility: hidden;
+    width: 0px;
+    transition: all 0.3s ease-in-out 0s;
+}
+.navbar a:hover:before, .navbar li:hover > a:before, .navbar .active:before {
+    visibility: visible;
+    width: 100%;
+}
+.navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
+    color: #fff;
+}
+.navbar .dropdown ul {
+    display: block;
+    position: absolute;
+    left: 14px;
+    top: calc(100% + 30px);
+    margin: 0;
+    padding: 10px 0;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    background: #fff;
+    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+    transition: 0.3s;
+    border-radius: 8px;
+}
+.navbar .dropdown ul li {
+    min-width: 200px;
+}
+.navbar .dropdown ul a {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: none;
+    color: #032e54;
+}
+.navbar .dropdown ul a i {
+    font-size: 12px;
+}
+.navbar .dropdown ul a:hover, .navbar .dropdown ul .active:hover, .navbar .dropdown ul li:hover > a {
+    color: #0880e8;
+}
+.navbar .dropdown:hover > ul {
+    opacity: 1;
+    top: 100%;
+    visibility: visible;
+}
+.navbar .dropdown .dropdown ul {
+    top: 0;
+    left: calc(100% - 30px);
+    visibility: hidden;
+}
+.navbar .dropdown .dropdown:hover > ul {
+    opacity: 1;
+    top: 0;
+    left: 100%;
+    visibility: visible;
+}
+
+
+.section-bg {
+    background-color: #f1f8ff;
+}
+
+.section-title {
+    text-align: center;
+    padding-bottom: 30px;
+}
+.section-title h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 0;
+    color: #054a85;
+}
+.section-title p {
+    margin-bottom: 0;
+    font-style: italic;
+}
+
+.title h4 {
+    margin-top: 15px;
+    display: block;
+    font-size: 20px;
+}
+
+
+#first {
+    max-height: 100%;
+}
+
+#second {
+    max-width: 100%;
+}
+
+
+.centerText{
+    text-align: center;
+}
+
+.icon-boxes {
+    padding-top: 0;
+    z-index: 100;
+    position: absolute;
+    top: 15%;
+}
+
+.icon-boxes .icon-box {
+    padding: 40px 30px;
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 5px 10px 29px 0 rgba(68, 88, 144, 0.2);
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;
+    width: 100%;
+}
+.icon-boxes .icon {
+    margin: 0 auto 20px auto;
+    display: inline-block;
+    text-align: center;
+}
+.icon-boxes .icon i {
+    font-size: 36px;
+    line-height: 1;
+    color: #f6b024;
+}
+.icon-boxes .title {
+    font-weight: 700;
+    margin-top: 10px;
+    font-size: 18px;
+}
+.icon-boxes .title a {
+    color: #05579e;
+}
+.icon-boxes .description {
+    font-size: 15px;
+    line-height: 28px;
+    margin-bottom: 0;
+    color: #777777;
+}
+
+/*--------------------------------------------------------------
+# Clients
+--------------------------------------------------------------*/
+.clients .swiper-slide img {
+    opacity: 0.5;
+    transition: 0.3s;
+}
+.clients .swiper-slide:hover img {
+    opacity: 1;
+}
+.clients .swiper-pagination {
+    margin-top: 20px;
+    position: relative;
+}
+.clients .swiper-pagination .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    opacity: 1;
+    border: 1px solid #0880e8;
+}
+.clients .swiper-pagination .swiper-pagination-bullet-active {
+    background-color: #0880e8;
+}
+.clients .owl-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+.clients .owl-item img {
+    width: 60%;
+    opacity: 0.5;
+    transition: 0.3s;
+}
+.clients .owl-item img:hover {
+    opacity: 1;
+}
+.clients .owl-nav, .clients .owl-dots {
+    margin-top: 5px;
+    text-align: center;
+}
+.clients .owl-dot {
+    display: inline-block;
+    margin: 0 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ddd !important;
+}
+.clients .owl-dot.active {
+    background-color: #0880e8 !important;
+}
+
+/*BUTTON*/
+
+.buttonDave {
+      width: auto;
+      min-width: 100px;
+      border-radius: 24px;
+      text-align: center;
+      padding: 15px 40px;
+      margin-top: 35px;
+      background-color: #B1E173;
+      color: #fff;
+      font-size: 14px;
+      margin-left: auto;
+      font-weight: 500;
+      box-shadow: 0px 2px 6px -1px rgba(0, 0, 0, .13);
+      border: none;
+      transition: all .3s ease;
+      outline: 0;
+  }
+
+
+.buttonDave:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 2px 6px -1px rgba(182,157,230, .65);
+}
+
+.buttonDave:active {
+    transform:  scale(.99);
+}
+
+#sectionDave .row:last-of-type {
+    margin-bottom: 3vh;
+}

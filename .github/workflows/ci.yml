@@ -37,17 +37,11 @@ jobs:
         run: echo Hello, world!
 
       # Runs a set of commands using the runners shell
-      - name: build application server
+
+      - name: copy frontend to vm
         run: |
-          mvn clean package 
-          ls -a ./target
-        working-directory: backend/
-        
-      - name: copy jar file to vm
-        run: |
-          scp target/*.jar pickngo
+          ls
+          scp ../../* pickngo
           ssh pickngo ls -l
-        working-directory: backend/
+      #  working-directory: backend/
 
-
-          
