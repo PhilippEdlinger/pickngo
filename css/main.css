@@ -9,7 +9,7 @@
 }
 
 /* <!-- Anmelde Formular --> */
-@media only screen and (max-width: 400px){
+@media only screen and (max-width: 420px){
 
         #login-body{
             margin: 0;
@@ -121,7 +121,7 @@
 
     }
 
-@media only screen and (min-width: 401px) {
+@media only screen and (min-width: 430px) {
     #login-body {
         margin: 0;
         font-family: nunito;
