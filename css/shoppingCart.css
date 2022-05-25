@@ -397,4 +397,8 @@
         text-align: center;
         padding-bottom: .3vh;
     }
+    .icon-boxes {
+        position: relative;
+        top: 0%;
+      }
 }
