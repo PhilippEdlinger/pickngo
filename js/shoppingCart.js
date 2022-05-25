@@ -6,6 +6,8 @@ $(() => {
         } else {
             $('body').css('overflow', 'hidden');
 
+            $('.activeMenuItem').removeClass('activeMenuItem');
+            $('#shoppingCartB').addClass('activeMenuItem');
 
             let json = localStorage.getItem('shoppingCart');
             json = JSON.parse(json);
@@ -20,8 +22,8 @@ $(() => {
                     <div class="textBox">
                         <h3 class="productName" title="${name}">${name}</h5>
                         <div>
-                        <p>${amount}x</p>
-                        <p class="priceP">${p.price}</p>
+                            <p class="amount">${amount}x</p>
+                            <p class="priceP">${p.price}</p>
                         </div>
                     </div>
                     <div class="borderBTW"></div>
@@ -36,7 +38,7 @@ $(() => {
                 </div>
                 `);
 
-                sum += amount * parseInt(price);
+                sum += amount * parseFloat(price);
             }
 
             writeSum(sum);
@@ -48,6 +50,7 @@ $(() => {
                     pc = calcAmount(p, -1);
 
                     $(e.target).siblings('.productNumberP').text(pc);
+                    $(p).find('.amount').text(pc + 'x')
                     calcSum();
                 }
             });
@@ -59,6 +62,7 @@ $(() => {
                     pc = calcAmount(p, 1);
 
                     $(e.target).siblings('.productNumberP').text(pc);
+                    $(p).find('.amount').text(pc + 'x')
                     calcSum();
                 }
             });
@@ -87,13 +91,14 @@ $(() => {
                 sum = 0;
                 for (let p of json.products) {
                     const { amount, price } = p;
-                    sum += amount * parseInt(price);
+                    sum += amount * parseFloat(price);
                 }
 
                 writeSum(sum);
             }
 
             function writeSum(sum) {
+                sum = Math.round(sum * 100) / 100;
                 $('#shoppingCartPrice').text(sum + '€');
             }
         }
@@ -138,24 +143,30 @@ $(() => {
         let i = $('#preferedTime option:selected').index();
 
         if (i == 0) {
-            $('#datePickerBox').remove();
+            $('#preferedTimePicker').remove();
             $('#orderInfo').html('Wenn sie jetzt bestellen, können Sie Ihre Bestellung um <span>14:30 Uhr</span> abholen.');
         } else if (i == 1) {
             $('#preferedTimeBox').append(`
-                <div id="datePickerBox">
-                    <input type="datetime-local" id="preferedTimePicker">
-                    <button id="datePickerB">Bestätigen</button>
-                </div>
+                <input type="datetime-local" id="preferedTimePicker">
             `);
 
-            $('#datePickerB').on('click', () => {
+            $('#preferedTimePicker').on('change', () => {
                 let dateTime = new Date($('#preferedTimePicker').val());
                 let date = `${dateTime.getDate()}.${dateTime.getMonth()}.`;
-                let time = dateTime.toLocaleTimeString().toLowerCase();
+                let time = `${dateTime.getHours()}:${dateTime.getMinutes() < 10 ? '0' : ''}${dateTime.getMinutes()}`;
                 // $('#datePickerBox').remove();
 
                 $('#orderInfo').html('Sie können Ihre Bestellung am <span>' + date + ' um ' + time + ' Uhr</span> abholen.');
             });
+
+            // $('#datePickerB').on('click', () => {
+            //     let dateTime = new Date($('#preferedTimePicker').val());
+            //     let date = `${dateTime.getDate()}.${dateTime.getMonth()}.`;
+            //     let time = dateTime.toLocaleTimeString().toLowerCase();
+            //     // $('#datePickerBox').remove();
+
+            //     $('#orderInfo').html('Sie können Ihre Bestellung am <span>' + date + ' um ' + time + ' Uhr</span> abholen.');
+            // });
         }
     });
 

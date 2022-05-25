@@ -47,7 +47,7 @@
     padding: 2vh 3vw;
 }
 
-#shoppingCart > h1 {
+#shoppingCart>h1 {
     color: var(--cartHeadingC);
     text-align: center;
     font-size: 2rem;
@@ -56,10 +56,10 @@
 #products {
     display: grid;
     grid-template-rows: repeat(auto-fill, 100px);
-    gap:1vh;
+    gap: 1vh;
     overflow-y: scroll;
     border-bottom: 1px solid #323232;
-    padding-bottom: 10px;    
+    padding-bottom: 10px;
 }
 
 #products::-webkit-scrollbar {
@@ -87,7 +87,7 @@
     gap: 20px;
 }
 
-.product > img {
+.product>img {
     object-fit: cover;
     width: 100px;
     height: 100px;
@@ -100,7 +100,7 @@
     gap: 2vh;
 }
 
-.textBox > div {
+.textBox>div {
     display: grid;
     grid-template-columns: auto auto;
     justify-content: space-between;
@@ -130,7 +130,7 @@
     padding-right: 10px;
 }
 
-.modificationBox > div {
+.modificationBox>div {
     background-color: var(--cartButtonGr);
     display: grid;
     grid-auto-flow: column;
@@ -143,7 +143,7 @@
     color: var(--cartBgC);
 }
 
-.modificationBox > div :is(p, button) {
+.modificationBox>div :is(p, button) {
     font-size: 1.25rem;
     line-height: 120%;
 }
@@ -152,7 +152,8 @@
     border: none;
 }
 
-.minusB, .plusB {
+.minusB,
+.plusB {
     color: var(--cartBgC);
     width: 27px;
     height: 100%;
@@ -188,7 +189,9 @@
     font-size: 1.4rem;
 }
 
-#preferedTime,#datePickerB, #orderB {
+#preferedTime,
+#datePickerB,
+#orderB {
     border-radius: 10px;
     border: none;
     color: var(--cartBgC);
@@ -214,25 +217,25 @@
     background-color: var(--preferedTimeAreaColor);
     min-width: 120px;
     max-width: 200px;
-    font-size: 1.15rem; 
+    font-size: 1.15rem;
     /* margin-left: auto; */
 }
 
-#datePickerBox {
+/* #datePickerBox {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 10px;
-}
+} */
 
-#datePickerBox * {
+#preferedTimePicker {
     font-size: 1rem;
     border-radius: 10px;
     padding: 5px;
 }
 
-#datePickerB {
+/* #datePickerB {
     background-color: var(--preferedTimeAreaColor);
-}
+} */
 
 #orderB {
     background-color: var(--cartButtonGr);
@@ -242,7 +245,7 @@
     text-decoration: none;
 }
 
-.speciality > div > img {
+.speciality>div>img {
     border-radius: 10px;
 }
 
@@ -262,38 +265,44 @@
         width: 70vw;
     }
 }
+
 @media screen and (max-width: 750px) {
     #shoppingCart {
         width: 80vw;
     }
 }
+
 @media screen and (max-width: 600px) {
     #header {
         position: fixed;
         top: unset !important;
         bottom: 0;
     }
+
     #shoppingCartBody {
         display: grid;
         justify-content: center;
         height: calc(100vh - 70px);
         /* padding-top: 1vh; */
     }
+
     #shoppingCart {
         position: relative;
         width: 100%;
         height: calc(100vh - 70px);
         border-radius: 0 0 0 0;
     }
+
     .product {
         grid-template-columns: 1fr 3fr 1px 1fr;
         gap: 7px;
     }
 
-    .product > img {
+    .product>img {
         width: 70px;
         height: 70px;
     }
+
     .textBox h3 {
         font-size: 1rem;
     }
@@ -301,39 +310,91 @@
     .textBox p {
         font-size: 1rem;
     }
+
     .modificationBox {
         gap: 7px;
     }
+
     #preferedTimeBox {
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: 3fr 4fr;
     }
+
     #preferedTime {
         font-size: 1rem;
     }
+
     .speisenProdukt img {
         width: 100%;
     }
+
     .buttonDave {
         margin-top: 0;
     }
-    .speciality > div > img {
+
+    .speciality>div>img {
         width: 35%;
     }
+
+    header>div,
+    header>div>div {
+        height: 100%;
+        width: 100%;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
     .menuBox {
-        display: grid;
-        gap: 5vw;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr 1fr;
+        place-items: center;
     }
-    .menuBox > a > span {
-        display: none;
-    }
+
+    /*
     .menuBox > div {
         display: grid;
         grid-auto-flow: column;
         align-items: center;
         gap: 5vw;
+    } */
+    .menuBox>div {
+        display: contents;
     }
+
+    .menuBox>a,
+    .menuBox>div> :is(i, a) {
+        display: grid !important;
+        place-items: center;
+        height: 100%;
+        width: 100%;
+    }
+    .menuBox>a>span {
+        display: none;
+    }
+
+    :is(.menuBox>a,
+        .menuBox>div> :is(i, a)):not(.activeMenuItem):hover {
+            background-color: rgb(89, 48, 255);
+        }
+
+    .activeMenuItem {
+        background-color: rgb(76, 1, 182);
+    }
+
     #sectionDave {
         position: relative;
         margin-top: 2vh;
+    }
+
+    main::before {
+        display: grid;
+        place-items: center;
+        content: 'Cagitzer';
+        width: 100vw;
+        height: 5vh;
+        font-size: 1.5rem;
+        background-color: black;
+        color: rgb(227, 227, 227);
+        text-align: center;
+        padding-bottom: .3vh;
     }
 }

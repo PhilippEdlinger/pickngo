@@ -18,7 +18,8 @@ $(() => {
         </div>
     `);
 
-        sum += amount * parseInt(price);
+        sum += amount * parseFloat(price);
+        sum = Math.round(sum*100)/100;
     }
     $('#orderPrice').append(`
         <h5>Gesamt</h5>

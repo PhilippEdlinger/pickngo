@@ -9,225 +9,341 @@
 }
 
 /* <!-- Anmelde Formular --> */
-#login-body{
-    margin: 0;
-    font-family: nunito;
-}
-#logo-container{
-    height: 100%;
-    width: 30%;
-    margin: 0px;
-}
+@media only screen and (max-width: 420px){
 
-#cagitzer-logo{
-    margin: 0;
-    background-image: url("../img/Logo_Cagitz.png");
-    background-position: center right;
-    background-repeat: no-repeat;
-    background-size: 50%;
-    height: 100%;
-    width: 35%;
-    float: left;
-}
+        #login-body{
+            margin: 0;
+            font-family: nunito;
+        }
+        #logo-container{
+            height: 100%;
+            width: 30%;
+            margin: 0px;
+        }
 
-header > div > div > a {
-    text-decoration: none;
-}
+        #cagitzer-logo{
+            margin: 0;
+            background-image: url("../img/Logo_Cagitz.png");
+            background-position: center right;
+            background-repeat: no-repeat;
+            background-size: 50%;
+            height: 100%;
+            width: 35%;
+            float: left;
+            display: none;
+        }
 
-#logo-text{
-    margin-top: 5%;
-    font-family: comforta;
-    font-weight: bolder;
-    font-size: 25px;
-}
+        header > div > div > a {
+            text-decoration: none;
+        }
 
-#login-title{
-    height: 100%;
-    width: 46%;
-    border-bottom: 2px solid #edf1f5;
-    margin-left: -2.5%;
+        #logo-text{
+            display: none;
+            margin-top: 5%;
+            font-family: comforta;
+            font-weight: bolder;
+        }
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 90px;
-    font-family: 'comforta';
-    font-weight: bold;
-    color: #8fc971;
-}
+        #login-title{
+            height: 100%;
+            width: 46%;
+            border-bottom: 2px solid #edf1f5;
+            margin-left: -2.5%;
 
-#login-form{
-    margin: auto;
-    height: 12%;
-    width: 25%;
-}
-#login-header{
-    margin-top: 0.5%;
-    margin-bottom: 8%;
-    display: inline-flex;
-    height: 10vh;
-    width: 100%;
-}
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            font-family: 'comforta';
+            font-weight: bold;
+            color: #8fc971;
+        }
 
-.input-label{
-    font-family: nunito;
-    font-weight: bold;
-    font-size: 38px;
-    color: #181818;
-    margin: 0;
-    margin-bottom: 2%;
-}
+        #login-form {
+            margin: auto;
+            height: 12%;
+            width: 60%;
+        }
 
-.login-input{
-    height: 40px;
-    width: 100%;
-    color: #8fc971;
-    box-sizing: border-box;
-    border: none;
-    border-bottom: 2px solid #8fc971;
-    margin-bottom: 3%;
-    outline: none;
-    font-size: large;
-    font-family: comforta;
-    font-weight: bolder;
-    margin-bottom: 5%;
-}
+        #login-header{
+            margin-top: 50%;
+            margin-bottom: 8%;
+            display: inline-flex;
+            height: 5vh;
+            width: 100%;
+        }
 
-.login-input::placeholder {
-    color: #8fc971;
-}
+        .input-label{
+            font-family: nunito;
+            font-weight: bold;
+            font-size: 16px;
+            color: #181818;
+            margin: 0;
+            margin-bottom: 2%;
+        }
 
-#login-buttons{
-    background-color: #3e3e3e;
-    color: white;
-    border-radius: 15px;
-    height: 45px;
-    width: 30%;
-    margin-top: 5%;
-    line-height: 45px;
-    font-weight: bolder;
-    font-size: larger;
-    font-family: comforta;
-    text-align: center;
-}
+        .login-input{
+            height: 35px;
+            width: 100%;
+            color: #8fc971;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: 2px solid #8fc971;
+            margin-bottom: 3%;
+            outline: none;
+            font-family: comforta;
+            font-weight: bolder;
+            margin-bottom: 5%;
+        }
 
-#signup-text a{
-    font-size: larger;
-    text-decoration: none;
-    text-underline: none;
-    color: black;
-}
+        .login-input::placeholder {
+            color: #8fc971;
+        }
 
+        #login-buttons{
+            background-color: #3e3e3e;
+            color: white;
+            border-radius: 15px;
+            height: 40px;
+            width: 40%;
+            margin-top: 5%;
+            line-height: 45px;
+            font-weight: bolder;
+            font-family: comforta;
+            text-align: center;
+        }
+
+        #signup-text a{
+            text-decoration: none;
+            text-underline: none;
+            color: black;
+        }
+
+    }
+
+@media only screen and (min-width: 430px) {
+    #login-body {
+        margin: 0;
+        font-family: nunito;
+    }
+
+    #logo-container {
+        height: 100%;
+        width: 30%;
+        margin: 0px;
+    }
+
+    #cagitzer-logo {
+        margin: 0;
+        background-image: url("../img/Logo_Cagitz.png");
+        background-position: center right;
+        background-repeat: no-repeat;
+        background-size: 50%;
+        height: 100%;
+        width: 35%;
+        float: left;
+    }
+
+    header > div > div > a {
+        text-decoration: none;
+    }
+
+    #logo-text {
+        margin-top: 5%;
+        font-family: comforta;
+        font-weight: bolder;
+        font-size: 25px;
+    }
+
+    #login-title {
+        height: 100%;
+        width: 46%;
+        border-bottom: 2px solid #edf1f5;
+        margin-left: -2.5%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 90px;
+        font-family: 'comforta';
+        font-weight: bold;
+        color: #8fc971;
+    }
+
+    #login-form {
+        margin: auto;
+        height: 12%;
+        width: 25%;
+    }
+
+    #login-header {
+        margin-top: 0.5%;
+        margin-bottom: 8%;
+        display: inline-flex;
+        height: 10vh;
+        width: 100%;
+    }
+
+    .input-label {
+        font-family: nunito;
+        font-weight: bold;
+        font-size: 38px;
+        color: #181818;
+        margin: 0;
+        margin-bottom: 2%;
+    }
+
+    .login-input {
+        height: 40px;
+        width: 100%;
+        color: #8fc971;
+        box-sizing: border-box;
+        border: none;
+        border-bottom: 2px solid #8fc971;
+        margin-bottom: 3%;
+        outline: none;
+        font-size: large;
+        font-family: comforta;
+        font-weight: bolder;
+        margin-bottom: 5%;
+    }
+
+    .login-input::placeholder {
+        color: #8fc971;
+    }
+
+    #login-buttons {
+        background-color: #3e3e3e;
+        color: white;
+        border-radius: 15px;
+        height: 45px;
+        width: 30%;
+        margin-top: 5%;
+        line-height: 45px;
+        font-weight: bolder;
+        font-size: larger;
+        font-family: comforta;
+        text-align: center;
+    }
+
+    #signup-text a {
+        font-size: larger;
+        text-decoration: none;
+        text-underline: none;
+        color: black;
+    }
+}
 /* <!-- Registier Formular --> */
+@media only screen and (min-width: 401px) {
+    #signup-body {
+        margin: 0;
+        font-family: nunito;
+    }
 
-#signup-body{
-    margin: 0;
-    font-family: nunito;
+    #logo-container {
+        height: 100%;
+        width: 30%;
+        margin: 0px;
+    }
+
+    #cagitzer-logo {
+        margin: 0;
+        background-image: url("../img/Logo_Cagitz.png");
+        background-position: center right;
+        background-repeat: no-repeat;
+        background-size: 50%;
+        height: 100%;
+        width: 35%;
+        float: left;
+    }
+
+    #logo-text {
+        margin-top: 5%;
+        font-family: comforta;
+        font-weight: bolder;
+        font-size: 25px;
+    }
+
+    #signup-title {
+        height: 100%;
+        width: 46%;
+        border-bottom: 2px solid #edf1f5;
+        margin-left: -1.5%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 90px;
+        font-family: 'comforta';
+        font-weight: bold;
+        color: #8ad2f1;
+    }
+
+    /*
+    #login-form{
+        margin: auto;
+        height: 12%;
+        width: 25%;
+    }*/
+    #signup-header {
+        margin-top: 0.5%;
+        margin-bottom: 4%;
+        display: inline-flex;
+        height: 10vh;
+        width: 100%;
+    }
+
+    .input-label {
+        font-family: nunito;
+        font-weight: bold;
+        font-size: 20px;
+        color: #181818;
+        margin: 0;
+        margin-bottom: 2%;
+    }
+
+    .signup-input {
+        height: 40px;
+        width: 100%;
+        color: #8ad2f1;
+        box-sizing: border-box;
+        border: none;
+        border-bottom: 2px solid #8ad2f1;
+        margin-bottom: 3%;
+        outline: none;
+        font-size: large;
+        font-family: comforta;
+        font-weight: bolder;
+        margin-bottom: 5%;
+    }
+
+    .signup-input::placeholder {
+        color: #8ad2f1;
+    }
+
+    #signup-text {
+        font-size: larger;
+    }
+
+    .signup-buttons {
+        background-color: #3e3e3e;
+        color: white;
+        border-radius: 15px;
+        height: 45px;
+        width: 30%;
+        margin-top: 5%;
+        font-weight: bolder;
+        font-size: larger;
+        font-family: comforta;
+        line-height: 45px;
+        text-align: center;
+        display: inline-block;
+    }
+
+    #login-button {
+        margin-left: 5%;
+    }
 }
-
-#logo-container{
-    height: 100%;
-    width: 30%;
-    margin: 0px;
-}
-
-#cagitzer-logo{
-    margin: 0;
-    background-image: url("../img/Logo_Cagitz.png");
-    background-position: center right;
-    background-repeat: no-repeat;
-    background-size: 50%;
-    height: 100%;
-    width: 35%;
-    float: left;
-}
-
-#logo-text{
-    margin-top: 5%;
-    font-family: comforta;
-    font-weight: bolder;
-    font-size: 25px;
-}
-
-#signup-title{
-    height: 100%;
-    width: 46%;
-    border-bottom: 2px solid #edf1f5;
-    margin-left: -1.5%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 90px;
-    font-family: 'comforta';
-    font-weight: bold;
-    color: #8ad2f1;
-}
-
-#login-form{
-    margin: auto;
-    height: 12%;
-    width: 25%;
-}
-#signup-header{
-    margin-top: 0.5%;
-    margin-bottom: 4%;
-    display: inline-flex;
-    height: 10vh;
-    width: 100%;
-}
-
-.input-label{
-    font-family: nunito;
-    font-weight: bold;
-    font-size: 20px;
-    color: #181818;
-    margin: 0;
-    margin-bottom: 2%;
-}
-
-.signup-input{
-    height: 40px;
-    width: 100%;
-    color: #8ad2f1;
-    box-sizing: border-box;
-    border: none;
-    border-bottom: 2px solid #8ad2f1;
-    margin-bottom: 3%;
-    outline: none;
-    font-size: large;
-    font-family: comforta;
-    font-weight: bolder;
-    margin-bottom: 5%;
-}
-
-.signup-input::placeholder {
-    color: #8ad2f1;
-}
-
-#signup-text{
-    font-size: larger;
-}
-
-.signup-buttons{
-    background-color: #3e3e3e;
-    color: white;
-    border-radius: 15px;
-    height: 45px;
-    width: 30%;
-    margin-top: 5%;
-    font-weight: bolder;
-    font-size: larger;
-    font-family: comforta;
-    line-height: 45px;
-    text-align: center;
-    display: inline-block;
-}
-
-#login-button{
-    margin-left: 5%;
-}
-
 
 /*--------------------------------------------------------------
 # Main Spezial
@@ -692,4 +808,8 @@ header > div > div > a {
 
 .buttonDave:active {
     transform:  scale(.99);
+}
+
+#sectionDave .row:last-of-type {
+    margin-bottom: 3vh;
 }
