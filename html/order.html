@@ -31,6 +31,8 @@
 
   <!-- Template Main CSS File -->
   <link href="../css/style-bestellen.css" rel="stylesheet">
+  <link href="../css/main.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/shoppingCart.css">
   <script src="../js/order.js"></script>
 
 </head>
@@ -41,53 +43,60 @@
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center ">
-    <div class="container d-flex align-items-center justify-content-center justify-content-md-between header">
-      <a href="./index.html" class="contact-info d-flex align-items-center" style="color:white;">
-        <i class="logo"></i><img src="../img/pickngo_logo.png" width="50px">Pick'n Go</img>
+    <div class="container d-flex align-items-center justify-content-between">
 
-      </a>
-      <div class="right-icons">
-        <a href="login-register/Anmeldung.html"><i class="fa fa-user-circle" style="font-size:30px;color:white;"></i></a>
+      <div class="container d-flex align-items-center justify-content-center justify-content-md-between menuBox">
+        <a href="./" class="contact-info d-flex align-items-center" style="color:white;">
+          <img src="../img/pickngo_logo.png" width="50px"><span>Pick'n Go</span></img>
+
+        </a>
+        <div class="right-icons">
+          <i id="shoppingCartB" class="bi bi-cart-fill activeMenuItem"
+            style="font-size:30px; padding: 15px;color:white;"></i>
+          <a href="login-register/Anmeldung.html"> <i class="fa fa-user-circle" style="font-size:30px;color:white;"></i>
+          </a>
+        </div>
+
       </div>
+
     </div>
+  </header>
 
+  <main>
+    <!-- ======= Icon Boxes Section ======= -->
+    <section id="icon-boxes" class="col-12 d-flex icon-boxes orderSection">
+      <div class="">
 
-  </header><!-- End Header -->
-
-  <!-- ======= Icon Boxes Section ======= -->
-  <section id="icon-boxes" class="col-12 d-flex icon-boxes orderSection">
-    <div class="">
-
-      <div class="row">
-        <div class="col-4 d-flex align-items-stretch mb-5 mb-lg-0" id="first" data-aos="fade-up">
-          <div class="icon-box telefonNRBox">
-            <div class="floating-label">
-              <h4 class="title" style="text-align:center;">Für die Bestellbestätigung benötigen wir</h4>
-              <h4 class="title" style="text-align:center;">Ihre Telefonnummer</h4>
-              <input placeholder="Tel." type="tel" name="tel" id="tel" autocomplete="off">
-              <div class="buttonDiv">
-                <a href="order2.html"><button type="submit">Bestätigen</button></a>
+        <div class="row">
+          <div class="col-4 d-flex align-items-stretch mb-5 mb-lg-0" id="first" data-aos="fade-up">
+            <div class="icon-box telefonNRBox">
+              <div class="floating-label">
+                <h4 class="title" style="text-align:center;">Für die Bestellbestätigung benötigen wir</h4>
+                <h4 class="title" style="text-align:center;">Ihre Telefonnummer</h4>
+                <input placeholder="Tel." type="tel" name="tel" id="tel" autocomplete="off">
+                <div class="buttonDiv">
+                  <a href="order2.html"><button type="submit">Bestätigen</button></a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="col-8 d-flex align-items-stretch mb-5 mb-lg-0" id="second" data-aos="fade-up"
-          data-aos-delay="100">
-          <div id="productBox" class="icon-box">
-            <h4 class="order">Meine Bestellung</h4>
-            <div id="orderProduct">
+          <div class="col-8 d-flex align-items-stretch mb-5 mb-lg-0" id="second" data-aos="fade-up"
+            data-aos-delay="100">
+            <div id="productBox" class="icon-box">
+              <h4 class="order">Meine Bestellung</h4>
+              <div id="orderProduct">
+              </div>
+              <div id="orderPrice"></div>
             </div>
-            <div id="orderPrice"></div>
           </div>
         </div>
+
+
+
       </div>
-
-
-
-    </div>
-  </section><!-- End Icon Boxes Section -->
-
+    </section><!-- End Icon Boxes Section -->
+  </main>
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a>
