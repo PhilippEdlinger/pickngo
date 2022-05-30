@@ -1,5 +1,6 @@
 package models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
 import javax.json.bind.annotation.JsonbTransient;
@@ -20,8 +21,10 @@ public class OrderET extends PanacheEntityBase {
     @ManyToOne
     public Customer customer;
     @ManyToOne
+    @JsonIgnore
     public Employee employee;
     @OneToMany(mappedBy = "orderItemID.orderET", cascade = CascadeType.ALL)
+    @JsonIgnore
     public List<OrderItem> orderItems;
 
     // constructor + getter and setter
