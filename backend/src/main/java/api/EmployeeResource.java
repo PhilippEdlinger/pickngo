@@ -1,6 +1,7 @@
 package api;
 
 import models.Employee;
+import workload.DTOs.SignUPDTO;
 import workload.EmployeeRepository;
 import workload.EmployeeService;
 
@@ -27,12 +28,5 @@ public class EmployeeResource {
             return Response
                     .ok(service.findById(employeeId))
                     .build();
-    }
-
-    @PUT
-    public Response saveEmployee (Employee employee){
-        return Response
-                .ok(service.updateET(employee))
-                .build();
     }
 }

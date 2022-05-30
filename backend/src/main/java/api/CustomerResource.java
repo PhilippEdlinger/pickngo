@@ -1,8 +1,8 @@
 package api;
 
 import models.Customer;
-import workload.CustomerRepository;
 import workload.CustomerService;
+import workload.DTOs.SignUPDTO;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -30,15 +30,16 @@ public class CustomerResource {
     }
 
     @POST
-    public Response addCustomer(Customer customer) {
-        return Response
-                .ok(service.updateET(customer))
-                .build();
+    @Path("signUp")
+    public Response signUP(Customer customer) {
+        SignUPDTO signUPDTO = service.signUP(customer);
+        return Response.ok(signUPDTO).build();
     }
 
     @POST
-    @Path("signUp")
-    public Response signUP(Customer customer) {
-        return Response.ok(service.signUP(customer)).build();
+    @Path("signIn/{username}/{password}")
+    public Response signIn(@PathParam("username") String username, @PathParam("password") String password) {
+        SignUPDTO signInDTO = service.signIn(username, password);
+        return Response.ok(signInDTO).build();
     }
 }

@@ -14,6 +14,7 @@
 /home/sami/Documents/ITP/pickngo2/backend/src/main/java/models/OrderET.java
 /home/sami/Documents/ITP/pickngo2/backend/src/main/java/models/Customer.java
 /home/sami/Documents/ITP/pickngo2/backend/src/main/java/models/OrderStatus.java
+/home/sami/Documents/ITP/pickngo2/backend/src/main/java/workload/DTOs/SignUPDTO.java
 /home/sami/Documents/ITP/pickngo2/backend/src/main/java/models/Tag.java
 /home/sami/Documents/ITP/pickngo2/backend/src/main/java/api/ProductResource.java
 /home/sami/Documents/ITP/pickngo2/backend/src/main/java/api/EmployeeResource.java
@@ -26,7 +27,7 @@
 /home/sami/Documents/ITP/pickngo2/backend/src/main/java/workload/FoodItemRepo.java
 /home/sami/Documents/ITP/pickngo2/backend/src/main/java/models/Product.java
 /home/sami/Documents/ITP/pickngo2/backend/src/main/java/workload/DrinkItemRepo.java
+/home/sami/Documents/ITP/pickngo2/backend/src/main/java/workload/DTOs/OrderIDDTO.java
 /home/sami/Documents/ITP/pickngo2/backend/src/main/java/workload/CustomerRepository.java
 /home/sami/Documents/ITP/pickngo2/backend/src/main/java/api/OrderResource.java
-/home/sami/Documents/ITP/pickngo2/backend/src/main/java/workload/OrderIDDTO.java
 /home/sami/Documents/ITP/pickngo2/backend/src/main/java/models/FoodItem.java

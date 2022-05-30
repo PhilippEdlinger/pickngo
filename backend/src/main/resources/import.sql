@@ -1,4 +1,4 @@
-insert into person(firstname, lastname, password, username)
+insert into person(username, firstname, lastname, password)
 values('peter', 'Peter', 'Griffin', 'password'),
       ('bart', 'Bart', 'Simpson',  'password'),
       ('david', 'David', 'Altenhofer',  'password'),

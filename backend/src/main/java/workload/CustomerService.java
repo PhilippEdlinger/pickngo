@@ -5,6 +5,7 @@ import workload.DTOs.SignUPDTO;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
+import java.util.HashMap;
 import java.util.List;
 
 @ApplicationScoped
@@ -26,18 +27,71 @@ public class CustomerService {
     }
 
     public SignUPDTO signUP(Customer customer) {
+        SignUPDTO signUPDTO = checkCustomer(customer);;
 
-        return checkCustomer(customer);
+        if (signUPDTO.isSuccess()) {
+            repo.persistET(customer);
+            signUPDTO.setCustomer(customer);
+        }
+        return signUPDTO;
+    }
+
+    public SignUPDTO signIn(String useranme, String password) {
+        SignUPDTO signInDTO = new SignUPDTO();
+        if (repo.getEntityManager().createQuery("select c from Customer c " +
+                        "where c.userName = :username and c.password = :password", Customer.class)
+                .setParameter("username", useranme).setParameter("password", password).getResultList().size() > 0
+                || repo.getEntityManager().createQuery("select c from Customer c " +
+                        "where c.email = :username and c.password = :password", Customer.class)
+                .setParameter("username", useranme).setParameter("password", password).getResultList().size() > 0
+        ) {
+            signInDTO.setSuccess(true);
+            signInDTO.setCustomer(repo.finByUsername(useranme));
+        } else {
+            signInDTO.setSuccess(false);
+            signInDTO.setMsgs(new HashMap<>());
+            signInDTO.getMsgs().put("msg", "Username oder Password ist falsch!");
+        }
+
+        return signInDTO;
     }
 
     private SignUPDTO checkCustomer(Customer customer) {
         SignUPDTO signUPDTO = new SignUPDTO();
-        if (repo.getEntityManager().createQuery("select c from Customer c " +
-                "where c.userName = :username", Customer.class)
-                .setParameter("username", customer.userName).getSingleResult() != null) {
+
+        if (customer.getUserName().length() < 5) {
+            signUPDTO.getMsgs().put("username", "Username muss mehr als 5 Zeichen haben!");
+            signUPDTO.setSuccess(false);
+        }
+        if (customer.getEmail().length() < 5) {
+            signUPDTO.getMsgs().put("email", "Email Addresse muss mehr als 5 Zeichen haben!");
+            signUPDTO.setSuccess(false);
+        }
+        if (usernameExists(customer.getUserName())) {
             signUPDTO.getMsgs().put("username", "Username " + customer.userName + "exisitiert schon!");
+            signUPDTO.setSuccess(false);
+        }
+        if (emailExists(customer.getEmail())) {
+            signUPDTO.getMsgs().put("email", "Email Addresse " + customer.userName + "exisitiert schon!");
+            signUPDTO.setSuccess(false);
+        }
+
+        if (signUPDTO.getMsgs() == null || signUPDTO.getMsgs().size() <= 0) {
+            signUPDTO.setSuccess(true);
         }
 
         return signUPDTO;
+    }
+
+    private boolean usernameExists(String username) {
+        return repo.getEntityManager().createQuery("select c from Customer c " +
+                        "where c.userName = :username", Customer.class)
+                .setParameter("username", username).getResultList().size() > 0;
+    }
+
+    private boolean emailExists(String email) {
+        return repo.getEntityManager().createQuery("select c from Customer c " +
+                        "where c.email = :email", Customer.class)
+                .setParameter("email", email).getResultList().size() > 0;
     }
 }
