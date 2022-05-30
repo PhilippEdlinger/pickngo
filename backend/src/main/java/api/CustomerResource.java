@@ -35,11 +35,4 @@ public class CustomerResource {
         SignUPDTO signUPDTO = service.signUP(customer);
         return Response.ok(signUPDTO).build();
     }
-
-    @POST
-    @Path("signIn/{username}/{password}")
-    public Response signIn(@PathParam("username") String username, @PathParam("password") String password) {
-        SignUPDTO signInDTO = service.signIn(username, password);
-        return Response.ok(signInDTO).build();
-    }
 }
