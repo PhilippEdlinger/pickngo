@@ -3,3 +3,5 @@ node_module
 .vscode
 node_modules
 target
+.angular
+dist
