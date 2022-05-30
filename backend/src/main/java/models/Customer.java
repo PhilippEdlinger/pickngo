@@ -1,5 +1,7 @@
 package models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -13,6 +15,7 @@ public class Customer extends Person{
     private String email;
     private String phoneNr;
     @OneToMany(mappedBy = "customer",cascade = CascadeType.PERSIST)
+    @JsonIgnore
     private List<OrderET> orderETS;
 
     // constructor + getter and setter

@@ -1,5 +1,6 @@
 package models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
 import javax.json.bind.annotation.JsonbTransient;
@@ -18,12 +19,15 @@ public class OrderET extends PanacheEntityBase {
     public LocalDateTime readyToPickTime;
     public String msg;
     @JsonbTransient
+    @JsonIgnore
     @ManyToOne
     public Customer customer;
     @JsonbTransient
     @ManyToOne
+    @JsonIgnore
     public Employee employee;
     @OneToMany(mappedBy = "orderItemID.orderET", cascade = CascadeType.ALL)
+    @JsonIgnore
     public List<OrderItem> orderItems;
 
     // constructor + getter and setter
