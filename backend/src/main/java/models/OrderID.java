@@ -8,11 +8,15 @@ import java.util.Objects;
 
 @Embeddable
 public class OrderID implements Serializable {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     private Long orderPosition;
 
     public OrderID() {
+    }
+
+    public OrderID(Long orderPosition) {
+        this.orderPosition = orderPosition;
     }
 
     public OrderID(Long id, Long orderPosition) {

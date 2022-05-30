@@ -21,7 +21,6 @@ public class CategoryResource {
     @GET
     @Path("{id}")
     public Response getCategoryById(@PathParam("id") Long categoryId) {
-        System.out.println("--------------->" +  categoryRepository.findAll());
         return Response
                 .ok(categoryRepository.findById(categoryId))
                 .build();
@@ -29,7 +28,6 @@ public class CategoryResource {
 
     @GET
     public Response getCategories() {
-        System.out.println("--------------->" +  categoryRepository.findAll().list().get(0).name);
         return Response.ok(categoryRepository.findAll().list()).build();
     }
 

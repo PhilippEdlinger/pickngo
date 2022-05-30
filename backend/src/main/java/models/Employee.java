@@ -1,5 +1,6 @@
 package models;
 
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.*;
 import java.util.List;
 
@@ -14,6 +15,14 @@ public class Employee extends Person {
 
     public Employee(String firstName, String lastName, String userName, String password, List<OrderET> orderETs) {
         super(firstName, lastName, userName, password);
+        this.orderETs = orderETs;
+    }
+
+    public List<OrderET> getOrderETs() {
+        return orderETs;
+    }
+
+    public void setOrderETs(List<OrderET> orderETs) {
         this.orderETs = orderETs;
     }
 }

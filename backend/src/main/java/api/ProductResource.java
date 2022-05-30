@@ -1,6 +1,10 @@
 package api;
 
+import models.DrinkItem;
+import models.FoodItem;
 import models.Product;
+import workload.DrinkItemRepo;
+import workload.FoodItemRepo;
 import workload.ProductRepository;
 
 import javax.inject.Inject;
@@ -15,33 +19,37 @@ public class ProductResource {
 
 
     @Inject
-    ProductRepository productRepository;
+    private ProductRepository productRepository;
+    @Inject
+    private FoodItemRepo foodItemRepo;
+    @Inject
+    private DrinkItemRepo drinkItemRepo;
 
     @GET
     public Response getProducts() {
-        return Response.ok(productRepository.findAll()).build();
+        return Response.ok(productRepository.findAll().list()).build();
     }
 
     @GET
     @Path("{id}")
-    public Response getProductById(@PathParam("id") Long productId){
-        if (productId != null){
-            return Response
-                    .ok(productRepository.findById(productId))
-                    .build();
-        }else {
-            return Response
-                    .ok(productRepository.findAll())
-                    .build();
-        }
-
+    public Response getProductById(@PathParam("id") Long productId) {
+        return Response
+                .ok(productRepository.findById(productId))
+                .build();
     }
 
-    @PUT
-    public Response createProduct(Product product){
-        return Response
-                .ok(productRepository.updateET(product))
-                .build();
+    @POST
+    @Path("foodItem")
+    public Response persistFoodItem(FoodItem foodItem) {
+        foodItemRepo.persistET(foodItem);
+        return Response.ok().build();
+    }
+
+    @POST
+    @Path("drinkItem")
+    public Response persistDrinkItem(DrinkItem drinkItem) {
+        drinkItemRepo.persistET(drinkItem);
+        return Response.ok().build();
     }
 
     @DELETE
@@ -49,6 +57,4 @@ public class ProductResource {
     public Response deleteProductById(@PathParam("id") Long productId ){
         return Response.ok(productRepository.deleteById(productId)).build();
     }
-
-
 }

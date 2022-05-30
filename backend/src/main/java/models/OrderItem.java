@@ -20,4 +20,28 @@ public class OrderItem extends PanacheEntityBase {
         this.quantity = quantity;
         this.message = message;
     }
+
+    public OrderItemID getOrderItemID() {
+        return orderItemID;
+    }
+
+    public void setOrderItemID(OrderItemID orderItemID) {
+        this.orderItemID = orderItemID;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
 }

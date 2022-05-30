@@ -16,4 +16,20 @@ public class DrinkItem extends Product {
         this.volume = volume;
         this.warm = warm;
     }
+
+    public Double getVolume() {
+        return volume;
+    }
+
+    public void setVolume(Double volume) {
+        this.volume = volume;
+    }
+
+    public Boolean getWarm() {
+        return warm;
+    }
+
+    public void setWarm(Boolean warm) {
+        this.warm = warm;
+    }
 }

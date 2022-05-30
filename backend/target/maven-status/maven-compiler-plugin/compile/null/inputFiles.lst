@@ -23,7 +23,10 @@
 /home/sami/Documents/ITP/pickngo2/backend/src/main/java/workload/OrderItemRepository.java
 /home/sami/Documents/ITP/pickngo2/backend/src/main/java/api/CategoryResource.java
 /home/sami/Documents/ITP/pickngo2/backend/src/main/java/models/Employee.java
+/home/sami/Documents/ITP/pickngo2/backend/src/main/java/workload/FoodItemRepo.java
 /home/sami/Documents/ITP/pickngo2/backend/src/main/java/models/Product.java
+/home/sami/Documents/ITP/pickngo2/backend/src/main/java/workload/DrinkItemRepo.java
 /home/sami/Documents/ITP/pickngo2/backend/src/main/java/workload/CustomerRepository.java
 /home/sami/Documents/ITP/pickngo2/backend/src/main/java/api/OrderResource.java
+/home/sami/Documents/ITP/pickngo2/backend/src/main/java/workload/OrderIDDTO.java
 /home/sami/Documents/ITP/pickngo2/backend/src/main/java/models/FoodItem.java
