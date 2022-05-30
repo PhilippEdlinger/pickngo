@@ -1,35 +1,62 @@
 package workload;
 
 import models.Customer;
+import models.Person;
 import workload.DTOs.SignUPDTO;
 
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import java.util.HashMap;
 
+@ApplicationScoped
 public class PersonService {
-    public SignUPDTO signIn(String useranme, String password) {
-        public void y() {
+    @Inject
+    private PersonRepo repo;
 
+    public SignUPDTO signIn(String username, String password) {
+        SignUPDTO signUPDTO;
+        if (repo.findByUsername(username) != null) {
+            signUPDTO = signInWithusernaem(username, password);
+        } else {
+            signUPDTO = signInWithEmail(username, password);
         }
+
+        if (!signUPDTO.isSuccess()) {
+            signUPDTO.getMsgs().put("msg", "Ihr Benutzername, Email oder Passwort ist falsch!");
+        }
+
+        return signUPDTO;
     }
-        /*
+
+    public SignUPDTO signInWithEmail(String email, String password) {
         SignUPDTO signInDTO = new SignUPDTO();
         if (repo.getEntityManager().createQuery("select c from Customer c " +
-                        "where c.userName = :username and c.password = :password", Customer.class)
-                .setParameter("username", useranme).setParameter("password", password).getResultList().size() > 0
-                || repo.getEntityManager().createQuery("select c from Customer c " +
-                        "where c.email = :username and c.password = :password", Customer.class)
-                .setParameter("username", useranme).setParameter("password", password).getResultList().size() > 0
+                        "where c.email = :email and c.password = :password", Customer.class)
+                .setParameter("email", email).setParameter("password", password).getResultList().size() > 0
         ) {
             signInDTO.setSuccess(true);
-            signInDTO.setCustomer(repo.finByUsername(useranme));
+            signInDTO.setPerson(repo.findByEmail(email));
         } else {
             signInDTO.setSuccess(false);
-            signInDTO.setMsgs(new HashMap<>());
-            signInDTO.getMsgs().put("msg", "Username oder Password ist falsch!");
         }
 
         return signInDTO;
     }
-    */
 
+    public SignUPDTO signInWithusernaem(String username, String password) {
+        SignUPDTO signInDTO = new SignUPDTO();
+        var yo = "select p from Person p " +
+                "where p.userName = :username and p.password = :password";
+        if (repo.getEntityManager().createQuery("select p from Person p " +
+                        "where p.userName = :username and p.password = :password", Person.class)
+                .setParameter("username", username).setParameter("password", password).getResultList().size() > 0
+        ) {
+            signInDTO.setSuccess(true);
+            signInDTO.setPerson(repo.findByUsername(username));
+        } else {
+            signInDTO.setSuccess(false);
+        }
+
+        return signInDTO;
+    }
 }

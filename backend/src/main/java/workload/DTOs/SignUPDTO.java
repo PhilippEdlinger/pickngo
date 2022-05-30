@@ -1,13 +1,14 @@
 package workload.DTOs;
 
 import models.Customer;
+import models.Person;
 
 import java.util.HashMap;
 
 public class SignUPDTO {
     private boolean success;
-    private HashMap<String, String> msgs;
-    private Customer customer;
+    private HashMap<String, String> msgs = new HashMap<>();
+    private Person person;
 
     public SignUPDTO() {
     }
@@ -21,10 +22,10 @@ public class SignUPDTO {
         this.msgs = msgs;
     }
 
-    public SignUPDTO(boolean success, HashMap<String, String> msgs, Customer customer) {
+    public SignUPDTO(boolean success, HashMap<String, String> msgs, Person person) {
         this.success = success;
         this.msgs = msgs;
-        this.customer = customer;
+        this.person = person;
     }
 
     public boolean isSuccess() {
@@ -43,11 +44,11 @@ public class SignUPDTO {
         this.msgs = msgs;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public Person getPerson() {
+        return person;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setPerson(Person person) {
+        this.person = person;
     }
 }

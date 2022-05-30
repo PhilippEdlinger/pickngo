@@ -40,7 +40,7 @@ insert into fooditem(id, isdishoftheday, isvegan, isvegetarian)
 values (1, false, false, false),
       (2, true, true, true),
       (3, false, false, true),
-      (4, false, true, true), 
+      (4, false, true, true),
       (5, false, false, false),
       (6, false, false, false),
       (8, true, false, false);

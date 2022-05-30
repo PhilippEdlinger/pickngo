@@ -15,6 +15,7 @@ public class CategoryET extends PanacheEntityBase {
     @Column(unique = true)
     public String name;
 
+    @JsonIgnore
     @JsonbTransient
     @OneToMany(mappedBy = "categoryET",cascade = CascadeType.REFRESH)
     public List<Product> product;
