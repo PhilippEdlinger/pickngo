@@ -26,8 +26,7 @@ public class CustomerResource {
     @Path("{id}")
     public Response getCustomerById(@PathParam("id") Long id) {
         Customer customer = service.findById(id);
-
-        return (customer == null ? Response.ok(customer) : Response.status(404)).build();
+        return (customer != null ? Response.ok(customer) : Response.status(404)).build();
     }
 
     @POST
@@ -35,5 +34,11 @@ public class CustomerResource {
         return Response
                 .ok(service.updateET(customer))
                 .build();
+    }
+
+    @POST
+    @Path("signUp")
+    public Response signUP(Customer customer) {
+        return Response.ok(service.signUP(customer)).build();
     }
 }

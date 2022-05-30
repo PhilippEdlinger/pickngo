@@ -22,25 +22,25 @@ public class OrderResource {
     }
 
     @GET
-    @Path("{id}")
-    public Response getOrderById(@PathParam("id") Long orderId){
+    @Path("{id}/{orderPosition}")
+    public Response getOrderById(@PathParam("id") Long orderId, @PathParam("orderPosition") Long orderPosition){
         return Response
-                .ok(service.findById(orderId))
+                .ok(service.findById(orderId, orderPosition))
                 .build();
 }
 
     @PUT
     public Response saveOrder(OrderET order){
       return Response
-              .ok(service.updateET(order))
+              .ok(service.persistET(order))
               .build();
     }
 
     @DELETE
-    @Path("{id}")
-    public Response deleteOrderById(@PathParam("id") Long orderId){
+    @Path("{id}/{orderPosition}")
+    public Response deleteOrderById(@PathParam("id") Long orderId, @PathParam("orderPosition") Long orderPosition){
         return Response
-                .ok(service.removeById(orderId))
+                .ok(service.removeById(orderId, orderPosition))
                 .build();
     }
 

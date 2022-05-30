@@ -18,4 +18,28 @@ public class FoodItem extends Product{
         this.isVegetarian = isVegetarian;
         this.isDishOfTheDay = isDishOfTheDay;
     }
+
+    public Boolean getVegan() {
+        return isVegan;
+    }
+
+    public void setVegan(Boolean vegan) {
+        isVegan = vegan;
+    }
+
+    public Boolean getVegetarian() {
+        return isVegetarian;
+    }
+
+    public void setVegetarian(Boolean vegetarian) {
+        isVegetarian = vegetarian;
+    }
+
+    public Boolean getDishOfTheDay() {
+        return isDishOfTheDay;
+    }
+
+    public void setDishOfTheDay(Boolean dishOfTheDay) {
+        isDishOfTheDay = dishOfTheDay;
+    }
 }

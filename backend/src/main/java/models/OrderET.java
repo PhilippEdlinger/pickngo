@@ -18,8 +18,11 @@ public class OrderET extends PanacheEntityBase {
     public LocalDateTime planedToPickTime;
     public LocalDateTime readyToPickTime;
     public String msg;
+    @JsonbTransient
+    @JsonIgnore
     @ManyToOne
     public Customer customer;
+    @JsonbTransient
     @ManyToOne
     @JsonIgnore
     public Employee employee;
@@ -41,6 +44,78 @@ public class OrderET extends PanacheEntityBase {
         this.msg = msg;
         this.customer = customer;
         this.employee = employee;
+        this.orderItems = orderItems;
+    }
+
+    public OrderID getOrderID() {
+        return orderID;
+    }
+
+    public void setOrderID(OrderID orderID) {
+        this.orderID = orderID;
+    }
+
+    public OrderStatus getOrderStatus() {
+        return orderStatus;
+    }
+
+    public void setOrderStatus(OrderStatus orderStatus) {
+        this.orderStatus = orderStatus;
+    }
+
+    public LocalDateTime getTimeOfOrder() {
+        return timeOfOrder;
+    }
+
+    public void setTimeOfOrder(LocalDateTime timeOfOrder) {
+        this.timeOfOrder = timeOfOrder;
+    }
+
+    public LocalDateTime getPlanedToPickTime() {
+        return planedToPickTime;
+    }
+
+    public void setPlanedToPickTime(LocalDateTime planedToPickTime) {
+        this.planedToPickTime = planedToPickTime;
+    }
+
+    public LocalDateTime getReadyToPickTime() {
+        return readyToPickTime;
+    }
+
+    public void setReadyToPickTime(LocalDateTime readyToPickTime) {
+        this.readyToPickTime = readyToPickTime;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
+
+    public List<OrderItem> getOrderItems() {
+        return orderItems;
+    }
+
+    public void setOrderItems(List<OrderItem> orderItems) {
         this.orderItems = orderItems;
     }
 }
