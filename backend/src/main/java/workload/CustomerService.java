@@ -7,6 +7,8 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import java.util.HashMap;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @ApplicationScoped
 public class CustomerService {
@@ -31,11 +33,12 @@ public class CustomerService {
 
         if (signUPDTO.isSuccess()) {
             repo.persistET(customer);
-            signUPDTO.setCustomer(customer);
+            signUPDTO.setPerson(customer);
         }
         return signUPDTO;
     }
 
+    /*
     public SignUPDTO signIn(String useranme, String password) {
         SignUPDTO signInDTO = new SignUPDTO();
         if (repo.getEntityManager().createQuery("select c from Customer c " +
@@ -54,25 +57,38 @@ public class CustomerService {
         }
 
         return signInDTO;
-    }
+    }*/
 
     private SignUPDTO checkCustomer(Customer customer) {
         SignUPDTO signUPDTO = new SignUPDTO();
 
+        Pattern pattern = Pattern
+                .compile("^[A-zäöüßÄÖÜ\\.\\_\\-\\d]{2,40}@([A-z\\-\\_]+\\.){1,5}[A-z]{2,10}$");
+
         if (customer.getUserName().length() < 5) {
-            signUPDTO.getMsgs().put("username", "Username muss mehr als 5 Zeichen haben!");
+            signUPDTO.getMsgs().put("username", "Der Benutzername muss mehr als 5 Zeichen haben!");
             signUPDTO.setSuccess(false);
         }
-        if (customer.getEmail().length() < 5) {
-            signUPDTO.getMsgs().put("email", "Email Addresse muss mehr als 5 Zeichen haben!");
+        if (customer.getEmail().length() < 7) {
+            signUPDTO.getMsgs().put("email", "Die Email Addresse muss mehr als 6 Zeichen haben!");
+            signUPDTO.setSuccess(false);
+        }
+
+        if (customer.getPassword().length() < 7 ) {
+            signUPDTO.getMsgs().put("password", "Das Passwort Addresse muss mehr als 6 Zeichen haben!");
             signUPDTO.setSuccess(false);
         }
         if (usernameExists(customer.getUserName())) {
-            signUPDTO.getMsgs().put("username", "Username " + customer.userName + "exisitiert schon!");
+            signUPDTO.getMsgs().put("username", "Der Username " + customer.getUserName() + " exisitiert schon!");
             signUPDTO.setSuccess(false);
         }
         if (emailExists(customer.getEmail())) {
-            signUPDTO.getMsgs().put("email", "Email Addresse " + customer.userName + "exisitiert schon!");
+            signUPDTO.getMsgs().put("email", "Die Email Addresse " + customer.getEmail() + " exisitiert schon!");
+            signUPDTO.setSuccess(false);
+        }
+
+        if (!pattern.matcher(customer.getEmail()).find()) {
+            signUPDTO.getMsgs().put("email", "Die Email Addresse muss ein richtiges Format haben!");
             signUPDTO.setSuccess(false);
         }
 

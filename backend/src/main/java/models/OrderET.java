@@ -18,16 +18,15 @@ public class OrderET extends PanacheEntityBase {
     public LocalDateTime planedToPickTime;
     public LocalDateTime readyToPickTime;
     public String msg;
-    @JsonbTransient
     @JsonIgnore
+    @JsonbTransient
     @ManyToOne
     public Customer customer;
+    @JsonIgnore
     @JsonbTransient
     @ManyToOne
-    @JsonIgnore
     public Employee employee;
     @OneToMany(mappedBy = "orderItemID.orderET", cascade = CascadeType.ALL)
-    @JsonIgnore
     public List<OrderItem> orderItems;
 
     // constructor + getter and setter

@@ -1,5 +1,6 @@
 package models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
 import javax.json.bind.annotation.JsonbTransient;
@@ -9,7 +10,7 @@ import java.util.List;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 
-public abstract class Product extends PanacheEntityBase {
+public class Product extends PanacheEntityBase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
@@ -18,11 +19,13 @@ public abstract class Product extends PanacheEntityBase {
     public String imagePath;
     public String allergies;
     public Integer preparationTime;
+    @JsonIgnore
     @JsonbTransient
     @OneToMany(mappedBy = "orderItemID.product")
     public List<OrderItem> orderItems;
     @ManyToOne
     public CategoryET categoryET;
+    @JsonIgnore
     @JsonbTransient
     @ManyToOne
     public Menu menu;

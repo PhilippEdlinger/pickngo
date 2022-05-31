@@ -9,7 +9,6 @@ import javax.persistence.Entity;
 @Entity
 public class OrderItem extends PanacheEntityBase {
     @EmbeddedId
-    @JsonIgnore
     public OrderItemID orderItemID;
     public Integer quantity;
     public String message;

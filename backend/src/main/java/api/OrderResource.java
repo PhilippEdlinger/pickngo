@@ -29,7 +29,7 @@ public class OrderResource {
                 .build();
 }
 
-    @PUT
+    @POST
     public Response saveOrder(OrderET order){
       return Response
               .ok(service.persistET(order))

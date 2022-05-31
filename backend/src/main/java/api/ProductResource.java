@@ -8,6 +8,7 @@ import workload.FoodItemRepo;
 import workload.ProductRepository;
 
 import javax.inject.Inject;
+import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -38,6 +39,18 @@ public class ProductResource {
                 .build();
     }
 
+    @GET
+    @Path("drinks")
+    public Response getDrinks() {
+        return Response.ok(drinkItemRepo.findAll().list()).build();
+    }
+
+    @GET
+    @Path("foods")
+    public Response getFoods() {
+        return Response.ok(foodItemRepo.findAll().list()).build();
+    }
+
     @POST
     @Path("foodItem")
     public Response persistFoodItem(FoodItem foodItem) {
@@ -50,11 +63,5 @@ public class ProductResource {
     public Response persistDrinkItem(DrinkItem drinkItem) {
         drinkItemRepo.persistET(drinkItem);
         return Response.ok().build();
-    }
-
-    @DELETE
-    @Path("{id}")
-    public Response deleteProductById(@PathParam("id") Long productId ){
-        return Response.ok(productRepository.deleteById(productId)).build();
     }
 }

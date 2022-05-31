@@ -4,6 +4,7 @@ import models.CategoryET;
 import workload.CategoryRepository;
 
 import javax.inject.Inject;
+import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -39,10 +40,12 @@ public class CategoryResource {
                 .build();
     }
 
+    /*
     @DELETE
     @Path("{id}")
+    @Transactional
     public Response deleteCategoryById(@PathParam("id") Long categoryId ){
         return Response.ok(categoryRepository.deleteById(categoryId)).build();
     }
-
+*/
 }
