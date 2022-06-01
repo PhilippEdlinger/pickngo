@@ -32,7 +32,13 @@ jobs:
           server: ${{ secrets.SERVER }}
           alias: server
 
-      - name: build jar file
+      - name: quarkus backend build jar file
+      - run: |
+          cd ../../backend/
+          mvn package -Dquarkus.package.type=uber-jar
+          mv ../../backend/target/pickngo-1.0.0-SNAPSHOT-runner.jar ../../../pickngo/
 
+          
+          
 
 
