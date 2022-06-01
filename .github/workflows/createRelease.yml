@@ -1,24 +1,25 @@
+name: "pre-release"
+
 on:
   push:
-    branches: [ feature/gh-action ]
-  pull_request:
-    branches: [ feature/gh-action ]
-
-name: Upload Release Asset
+    branches:
+      - "feature/gh-action"
 
 jobs:
-  build:
-    name: Upload Release Asset
-    runs-on: ubuntu-latest
+  pre-release:
+    name: "Pre Release"
+    runs-on: "ubuntu-latest"
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-        
-      - name: Create Release With Asset
-        id: Release-AIO
-        uses: Hs1r1us/Release-AIO@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # ...
+      - name: "Build & test"
+        run: |
+          echo "done!"
+
+      - uses: "marvinpinto/action-automatic-releases@latest"
         with:
-          tag_name: ${{ github.ref }}
-          asset_files: './test.txt'
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Development Build"
+          files: test.txt
