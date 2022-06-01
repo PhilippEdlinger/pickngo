@@ -53,7 +53,8 @@ jobs:
           artifacts: "backend/target/*.jar"
           body: |
             Changes in this Release
-            -
+            - PLACEHOLDER
+            
           draft: false
           prerelease: false
 
