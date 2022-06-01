@@ -1,5 +1,5 @@
 
-name: CI
+name: deployy
 
 # Controls when the workflow will run
 on:
@@ -32,8 +32,11 @@ jobs:
           server: ${{ secrets.SERVER }}
           alias: server
 
+      - name: Starting Deployment
+        run: echo starting deployment
+
       - name: quarkus backend build jar file
-      - run: |
+        run: |
           cd ../../backend/
           mvn package -Dquarkus.package.type=uber-jar
           mv ../../backend/target/pickngo-1.0.0-SNAPSHOT-runner.jar ../../../pickngo/
