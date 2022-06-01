@@ -27,9 +27,7 @@ jobs:
         run: echo starting deployment
 
       - name: TESTING
-        run: |
-          cd ../
-          ls
+        run: ls
         
       - name: quarkus backend build jar file
         working-directory: /home/runner/work/pickngo/pickngo
