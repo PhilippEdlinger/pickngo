@@ -27,7 +27,7 @@ jobs:
 
       - name: TESTING
         run: |
-          echo ls
+          ls
           working-directory: ./backend
 
       - name: quarkus backend build jar file
