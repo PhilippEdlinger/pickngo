@@ -25,6 +25,11 @@ jobs:
       - name: Starting Deployment
         run: echo starting deployment
 
+      - name: TESTING
+        run: |
+          pwd
+          ls
+
       - name: quarkus backend build jar file
         run: |
           cd ../../backend/
