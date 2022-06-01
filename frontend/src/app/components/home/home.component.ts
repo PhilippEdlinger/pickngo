@@ -14,6 +14,10 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  shoppingCart() {
+    this.hide = false;
+  }
+
 
 
 }

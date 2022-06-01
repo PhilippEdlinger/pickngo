@@ -16,6 +16,7 @@
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
     rel="stylesheet">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
           crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"
@@ -38,8 +39,8 @@
 
       </a>
       <div class="right-icons">
-        <i id="shoppingCartB" class="bi bi-cart-fill" style="font-size:30px; padding: 15px;color:white;"></i>
-        <i class="fa fa-user-circle" style="font-size:30px;color:white;" routerLink="login"></i>
+        <i id="shoppingCartB" (click)="shoppingCart()" class="bi bi-cart-fill" style="font-size:30px; padding: 15px;color:white;"></i>
+        <i class="fa fa-car" style="font-size:30px;color:white;" routerLink="login"></i>
       </div>
 
     </div>
@@ -341,7 +342,7 @@
     </div>
   </section><!-- End Icon Boxes Section -->
 
-  <div id="shoppingCartBody" style="display: none;" [ngStyle]="{'display:' 'grid'}">
+  <div id="shoppingCartBody" style="display: none;" [ngStyle]="{'display:' : [hide] ? 'none' : 'grid'}">
     <div id="shoppingCart">
       <h1>Warenkorb</h1>
       <div id="products">
