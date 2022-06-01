@@ -28,12 +28,11 @@ jobs:
       - name: TESTING
         run: |
           pwd
-          ls
 
       - name: quarkus backend build jar file
         working-directory: /home/runner/work/pickngo/pickngo
         run: |
-          cd backend/
+          cd ./backend/
           mvn package -Dquarkus.package.type=uber-jar
           mv ../../backend/target/pickngo-1.0.0-SNAPSHOT-runner.jar ../../../pickngo/
 
