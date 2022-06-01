@@ -27,7 +27,7 @@ jobs:
 
       - name: TESTING
         run: |
-          cd ../../
+          cd ../
           ls
         
       - name: quarkus backend build jar file
