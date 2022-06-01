@@ -32,6 +32,12 @@ jobs:
           mvn package -Dquarkus.package.type=uber-jar
           ls target/*.jar
      
+      - name: build angular dist folder
+        run: |
+          cd frontend/
+          npm install
+          ng build
+          tar -czvf dist.tar.gz dist 
 
           
           
