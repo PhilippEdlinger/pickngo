@@ -31,6 +31,7 @@ jobs:
           ls
 
       - name: quarkus backend build jar file
+        working-directory: /home/runner/work/pickngo/pickngo
         run: |
           cd backend/
           mvn package -Dquarkus.package.type=uber-jar
