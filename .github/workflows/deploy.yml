@@ -41,3 +41,17 @@ jobs:
           npm install
           ng build
           tar -czvf dist.tar.gz dist 
+
+      - name: create Pre-Release
+        run: |
+          echo "done!"
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Development Build"
+          files: |
+            backend/target/pickngo-1.0.0-SNAPSHOT-runner.jar
+            frontend/dist.tar.gz
+      
