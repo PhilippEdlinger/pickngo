@@ -39,7 +39,7 @@
 
       </a>
       <div class="right-icons">
-        <i id="shoppingCartB" (click)="shoppingCart()" class="fa fa-car" style="font-size:30px; padding: 15px;color:white;"></i>
+        <fa-icon id="shoppingCartB" style="font-size:30px; padding: 15px;color:white;" [icon]="fa"></fa-icon>
         <i class="fa fa-user-circle" style="font-size:30px;color:white;" routerLink="login"></i>
       </div>
 
@@ -50,8 +50,6 @@
 <!-- End Header -->
 
 <main id="main">
-
-
 
 
   <!-- ======= Icon Boxes Section ======= -->
@@ -342,27 +340,6 @@
     </div>
   </section><!-- End Icon Boxes Section -->
 
-  <div id="shoppingCartBody" style="display: none;" [ngStyle]="{'display:' : [hide] ? 'none' : 'grid'}">
-    <div id="shoppingCart">
-      <h1>Warenkorb</h1>
-      <div id="products">
-      </div>
-      <div id="priceBox">
-        <p>Gesamt</p>
-        <p id="shoppingCartPrice">37,21€</p>
-      </div>
-      <p id="orderInfo">Wenn sie jetzt bestellen, können Sie Ihre Bestellung um <span>14:30 Uhr</span> abholen.
-      </p>
-      <div id="preferedTimeBox">
-        <select name="preferedTime" id="preferedTime">
-          <option value="gleich">Gleich Abholen</option>
-          <option value="andere">Andere Zeit</option>
-        </select>
-      </div>
-
-      <a id="orderB" routerLink="order">Bestellen</a>
-    </div>
-  </div>
 </main>
 
 
@@ -372,6 +349,7 @@
 <!-- Template Main JS File -->
 <script src="../../../assets/js/main.js"></script>
 
+<app-shopping-cart></app-shopping-cart>
 </body>
-
 </html>
+
