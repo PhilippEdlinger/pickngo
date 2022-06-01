@@ -1,5 +1,7 @@
 package api;
 
+import io.quarkus.mailer.Mail;
+import io.quarkus.mailer.Mailer;
 import models.OrderET;
 import workload.OrderRepository;
 import workload.OrderService;
@@ -13,6 +15,8 @@ public class OrderResource {
 
     @Inject
     private OrderService service;
+    @Inject
+    Mailer mailer;
 
     @GET
     public Response getOrders(){
@@ -31,9 +35,25 @@ public class OrderResource {
 
     @POST
     public Response saveOrder(OrderET order){
-      return Response
-              .ok(service.persistET(order))
-              .build();
+        var orderET = service.persistET(order);
+        String emailText = "";
+
+        for (var o : orderET.orderItems) {
+            emailText += """
+                   
+                    """;
+        }
+
+        mailer.send(
+                Mail.withText("dp.precup@gmail.com",
+                        "Ahoy from Quarkus",
+                        "A simple email sent from a Quarkus application."
+                )
+        );
+
+        return Response
+                .ok(orderET)
+                .build();
     }
 
     @DELETE
