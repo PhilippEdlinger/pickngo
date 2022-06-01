@@ -1,5 +1,5 @@
 
-name: deployy
+name: deploy
 
 # Controls when the workflow will run
 on:
@@ -26,8 +26,9 @@ jobs:
         run: echo starting deployment
 
       - name: TESTING
+        working-directory: /home/runner/work/pickngo/pickngo
         run: |
-          pwd
+          ls
 
       - name: quarkus backend build jar file
         working-directory: /home/runner/work/pickngo/pickngo
