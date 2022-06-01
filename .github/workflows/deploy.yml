@@ -42,28 +42,12 @@ jobs:
           ng build
           tar -czvf dist.tar.gz dist 
 
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: "${{ github.ref }} ${{ steps.version.outputs.version }}"
-          release_name: " Release ${{ github.ref }} ${{ steps.version.outputs.version }} "
-          draft: false
-          prerelease: false
-          
       - name: Upload Release Asset
-        id: upload-release-asset 
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+          upload_url: ${{ github.event.release.upload_url }} 
           asset_path: ./backend/target/pickngo-1.0.0-SNAPSHOT-runner.jar
-          asset_name: pickngo-1.0.0-SNAPSHOT-runner.jar
-          asset_content_type: application/tar
-
-
-
-
+          asset_name: backendJar
+          asset_content_type: application/java-archive
