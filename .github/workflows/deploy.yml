@@ -27,9 +27,9 @@ jobs:
 
       - name: TESTING
         run: |
+          cd ../../
           ls
-        working-directory: ${GITHUB_WORKSPACE} 
-
+        
       - name: quarkus backend build jar file
         working-directory: /home/runner/work/pickngo/pickngo
         run: |
