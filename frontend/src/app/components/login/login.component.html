@@ -1,2 +1,46 @@
 <!DOCTYPE html>
-<p>login works!</p>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anmeldung</title>
+    <link rel="icon" href="../../../assets/img/pickngo_logo.png">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body id="login-body">
+<header id="login-header">
+    <div id="logo-container">
+        <div routerLink="/" id="cagitzer-logo"></div>
+        <p id="logo-text"> Pick 'n' Go</p>
+    </div>
+    <div id="login-title">Anmelden</div>
+</header>
+<!-- <header id="header" class="fixed-top d-flex align-items-center ">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="container d-flex align-items-center justify-content-center justify-content-md-between menuBox">
+        <a href="../index.html class="contact-info d-flex align-items-center" style="color:white;">
+          <img src="../../img/pickngo_logo.png" width="50px"><span>Pick'n Go</span></img>
+
+        </a>
+        <div class="right-icons">
+          <i id="shoppingCartB" class="bi bi-cart-fill activeMenuItem"
+            style="font-size:30px; padding: 15px;color:white;"></i>
+          <a href="Anmeldung.html"> <i class="fa fa-user-circle" style="font-size:30px;color:white;"></i>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </header> -->
+<form id="login-form" >
+    <p class="input-label">USERNAME ODER EMAIL</p>
+    <input class="login-input" type="text" placeholder="Username oder Email eingeben ..." id="login-email-user-input">
+    <p class="input-label">PASSWORT</p>
+    <input class="login-input" type="password" placeholder="Passwort eingeben ... " id="login-password-input">
+    <br><div routerLink="/"  id="login-buttons">Anmelden</div>
+    <p routerLink="../register" id="signup-text">>Noch kein Konto?</p>
+</form>
+</body>
+</html>
