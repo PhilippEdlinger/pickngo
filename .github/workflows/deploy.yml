@@ -35,6 +35,7 @@ jobs:
       - name: build angular dist folder
         run: |
           cd frontend/
+          npm install -g @angular/cli
           npm install
           ng build
           tar -czvf dist.tar.gz dist 
