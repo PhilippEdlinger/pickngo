@@ -25,16 +25,20 @@ jobs:
 
       - name: Starting Deployment
         run: echo starting deployment
-
-      - name: TESTING
-        run: ls
         
       - name: quarkus backend build jar file
-        working-directory: /home/runner/work/pickngo/pickngo
         run: |
-          cd ./backend/
+          cd backend/
           mvn package -Dquarkus.package.type=uber-jar
-          mv ../../backend/target/pickngo-1.0.0-SNAPSHOT-runner.jar ../../../pickngo/
+          ls target/*.jar
+     
+      - name: build angular dist folder
+        run: |
+          cd frontend/
+          npm install -g @angular/cli
+          npm install
+          ng build
+          tar -czvf dist.tar.gz dist 
 
           
           
