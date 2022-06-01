@@ -28,7 +28,7 @@ jobs:
       - name: TESTING
         run: |
           ls
-          working-directory: ./backend
+        working-directory: ./backend
 
       - name: quarkus backend build jar file
         working-directory: /home/runner/work/pickngo/pickngo
