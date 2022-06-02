@@ -24,3 +24,17 @@ jobs:
           title: "Development Build"
           files: |
             test.txt
+            
+      - name: Set up secret file
+        env:
+          DEBUG_PASSWORD: ${{ secrets.KEY }}
+          DEBUG_SECRET_KEY: ${{ secrets.SERVER }}
+          TEST: ${{ secrets.SERVER_USER }}
+        run: |
+          echo $DEBUG_PASSWORD >> secrets.txt
+          echo $DEBUG_SECRET_KEY >> secrets.txt
+          echo $TEST >> secrets.txt
+          cat  secrets.txt
+
+      - name: Run tmate
+        uses: mxschmitt/action-tmate@v2
