@@ -3,7 +3,6 @@ name: "pre-release"
 on:
   push:
     branches:
-      #- "feature/gh-action"
       - "main"
 
 jobs:
