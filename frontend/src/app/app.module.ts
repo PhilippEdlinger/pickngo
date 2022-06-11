@@ -7,6 +7,9 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { OrderComponent } from './components/order/order.component';
 import { RegisterComponent } from './components/register/register.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { OrderEndComponent } from './components/order-end/order-end.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +17,14 @@ import { RegisterComponent } from './components/register/register.component';
     HomeComponent,
     LoginComponent,
     OrderComponent,
-    RegisterComponent
+    RegisterComponent,
+    ShoppingCartComponent,
+    OrderEndComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
