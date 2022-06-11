@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pickngo-angular';
+  hide: boolean = true;
+
+  hideShoppC() {
+    this.hide = !this.hide;
+  }
 }

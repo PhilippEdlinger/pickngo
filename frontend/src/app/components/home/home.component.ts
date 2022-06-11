@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { Menu } from 'src/app/models/Menu';
+import { Product } from 'src/app/models/Product';
 
 @Component({
   selector: 'app-home',
@@ -8,19 +9,13 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 })
 
 export class HomeComponent implements OnInit {
-
-  hide: boolean = true;
-  fa = faShoppingCart;
-
+  menus:Menu[];
+  vorspeisenProducts:Product[];
+  mainProducts:Product[];
+  desertProducts:Product[];
+  drinkProducts:Product[];
   constructor() { }
 
   ngOnInit(): void {
   }
-
-  shoppingCart() {
-    this.hide = false;
-  }
-
-
-
 }

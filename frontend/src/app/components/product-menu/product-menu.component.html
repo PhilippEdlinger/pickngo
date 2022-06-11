@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="d-flex align-items-stretch mb-5 mb-lg-0 first" data-aos="fade-up">
+        <div class="icon-box">
+            <h4 class="title" style="text-align:center;">{{menu.title}}</h4>
+            <div class="floating-label speciality">
+                <div class="slider" *ngFor="let p of menu.products">
+                    <app-menu-img url={{p.imgUrl}}></app-menu-img>
+                </div>
+                <h4 class="title" style="text-align:center;">{{menu.description}}</h4>
+                <h4 class="title" style="text-align:center;">{{menu.price}}</h4>
+                <div class="buttonDiv">
+                    <button type="submit" class="buttonDave">In den Warenkorb</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

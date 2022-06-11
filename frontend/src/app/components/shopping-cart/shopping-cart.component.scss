@@ -28,6 +28,14 @@ $preferedTimeAreaColor: #2072ff;
   z-index: 110;
 }
 
+#shoppingCartBody fa-icon {
+  position: absolute;
+  right: 50vw;
+  top: 15px;
+  font-size: 2.3rem;
+  color: rgb(225, 225, 225);
+}
+
 #shoppingCart {
   background-color: $cartBgC;
   display: grid;
@@ -154,6 +162,10 @@ $preferedTimeAreaColor: #2072ff;
     justify-content: center;
     height: calc(100vh - 70px);
     /* padding-top: 1vh; */
+  }
+
+  #shoppingCartBody fa-icon {
+    display: none;
   }
 
   #shoppingCart {

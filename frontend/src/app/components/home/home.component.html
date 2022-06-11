@@ -18,338 +18,55 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-          crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"
-          integrity="sha256-xH4q8N0pEzrZMaRmd7gQVcTZiFei+HfRTBPJ1OGXC0k=" crossorigin="anonymous"></script>
+    integrity="sha256-xH4q8N0pEzrZMaRmd7gQVcTZiFei+HfRTBPJ1OGXC0k=" crossorigin="anonymous"></script>
   <script src="../../../assets/js/shoppingCart.js"></script>
 
 </head>
 
 <body>
 
-<div id="preloader"></div>
+  <div id="preloader"></div>
 
-<!-- ======= Header ======= -->
-<header id="header" class="fixed-top d-flex align-items-center ">
-  <div class="container d-flex align-items-center justify-content-between">
-
-    <div class="container d-flex align-items-center justify-content-center justify-content-md-between menuBox">
-      <a href="./" class="contact-info d-flex align-items-center activeMenuItem" style="color:white;">
-        <img src="../../../assets/img/pickngo_logo.png" width="50px" alt="pickngo-logo"><span>Pick'n Go</span>
-
-      </a>
-      <div class="right-icons">
-        <fa-icon id="shoppingCartB" style="font-size:30px; padding: 15px;color:white;" [icon]="fa"></fa-icon>
-        <i class="fa fa-user-circle" style="font-size:30px;color:white;" routerLink="login"></i>
-      </div>
-
-    </div>
-
-  </div>
-</header>
-<!-- End Header -->
-
-<main id="main">
+  <main id="main">
 
 
-  <!-- ======= Icon Boxes Section ======= -->
-  <section id="sectionDave" class="col-md-12 col-lg-12 icon-boxes">
-    <div class="container">
+    <!-- ======= Icon Boxes Section ======= -->
+    <section id="sectionDave" class="col-md-12 col-lg-12 icon-boxes">
+      <div class="container">
 
-      <h2 class="centerText">Spezialitäten</h2>
-      <hr>
-
-      <div class="row">
-        <div class="d-flex align-items-stretch mb-5 mb-lg-0 first" data-aos="fade-up">
-          <div class="icon-box">
-            <h4 class="title" style="text-align:center;">Montagsmenu #1</h4>
-            <div class="floating-label speciality">
-              <div class="slider">
-                <img src="../../../assets/img/salat.jpg" alt="Salat" class="imgBox">
-                <img src="../../../assets/img/burger.jpg" alt="Burger" class="imgBox">
-                <img src="../../../assets/img/birne.jpg" alt="Birne" class="imgBox">
-              </div>
-              <h4 class="title" style="text-align:center;">Bauernsalat mit einem Cheeseburger und Süßer Birne</h4>
-              <h4 class="title" style="text-align:center;">29.99€</h4>
-              <div class="buttonDiv">
-                <button type="submit" class="buttonDave">In den Warenkorb</button>
-              </div>
-            </div>
+        <div *ngIf="menus.length > 0">
+          <h2 class="centerText">Spezialitäten</h2>
+          <hr>
+          <div *ngFor="let m of menus">
+            <app-product-menu [menu]=(m)></app-product-menu>
+            <br>
           </div>
+          <br>
+          <br>
         </div>
-      </div>
-
-      <br>
-
-      <div class="row">
-        <div class="d-flex align-items-stretch mb-5 mb-lg-0 first" data-aos="fade-up">
-          <div class="icon-box">
-            <h4 class="title" style="text-align:center;">Montagsmenu #2</h4>
-            <div class="floating-label speciality">
-              <div class="slider">
-                <img src="../../../assets/img/suppe.jpg" alt="Suppe" class="imgBox">
-                <img src="../../../assets/img/schnitzel.jpg" alt="schnitzel" class="imgBox">
-                <img src="../../../assets/img/apfelringe.jpg" alt="apfelringe" class="imgBox">
-              </div>
-              <h4 class="title" style="text-align:center;">Grießnockerlsuppe mit Wiener Schnitzel und Apfelringe
-              </h4>
-              <h4 class="title" style="text-align:center;">29.99€</h4>
-              <div class="buttonDiv">
-                <button type="submit" class="buttonDave">In den Warenkorb</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <br>
-      <br>
-      <h1 class="centerText">À la carte</h1>
-
-      <br>
-
-      <h2 class="centerText">Vorspeisen</h2>
-        <hr>
-
-        <div class="row">
-
-          <div class="col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0 first" data-aos="fade-up">
-            <div class="icon-box">
-              <i class="bi bi-apple" style="font-size:1vw; color:green; opacity: 0.6;"> </i>
-              <div class="floating-label speisenProdukt">
-                <div class="sliderSmall">
-                  <img src="../../../assets/img/suppe.jpg" alt="Grießnockerlsuppe" class="imgBox productImg">
-                </div>
-                <h4 class="title productName" style="text-align:center;">Grießnockerlsuppe</h4>
-                <h4 class="title productPrice" style="text-align:center;">7.99€</h4>
-                <div class="buttonDiv">
-                  <button type="submit" class="buttonDave">In den Warenkorb</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0 first" data-aos="fade-up">
-            <div class="icon-box">
-              <i class="bi bi-apple" style="font-size:1vw; color:green; opacity: 0.6;"> </i>
-              <div class="floating-label speisenProdukt">
-                <div class="sliderSmall">
-                  <img src="../../../assets/img/pilz.jpg" alt="Steinpilz" class="imgBox productImg">
-                </div>
-                <h4 class="title productName" style="text-align:center;">Steinpilze</h4>
-                <h4 class="title productPrice" style="text-align:center;">4.99€</h4>
-                <div class="buttonDiv">
-                  <button type="submit" class="buttonDave">In den Warenkorb</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0 first" data-aos="fade-up">
-            <div class="icon-box">
-              <i class="bi bi-apple" style="font-size:1vw; color:green; opacity: 0.6;"> </i>
-              <div class="floating-label speisenProdukt">
-                <div class="sliderSmall">
-                  <img src="../../../assets/img/salat.jpg" alt="Salatteller" class="imgBox productImg">
-                </div>
-                <h4 class="title productName" style="text-align:center;">Salatteller</h4>
-                <h4 class="title productPrice" style="text-align:center;">3.99€</h4>
-                <div class="buttonDiv">
-                  <button type="submit" class="buttonDave">In den Warenkorb</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
+        <h1 class="centerText">À la carte</h1>
 
         <br>
 
-        <h2 class="centerText">Hauptspeisen</h2>
-          <hr>
+        <app-product-category [products]=(vorspeisenProducts) [title]="'Vorspeise'"></app-product-category>
+        <app-product-category [products]=(mainProducts) [title]="'Vorspeise'"></app-product-category>
+        <app-product-category [products]=(desertProducts) [title]="'Vorspeise'"></app-product-category>
+        <app-product-category [products]=(drinkProducts) [title]="'Vorspeise'"></app-product-category>
 
-          <div class="row">
+      </div>
+    </section><!-- End Icon Boxes Section -->
 
-            <div class="col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0 first" data-aos="fade-up">
-              <div class="icon-box">
-                <i class="bi bi-piggy-bank-fill" style="font-size:1vw; color:pink; opacity: 0.6;"> </i>
-                <div class="floating-label speisenProdukt">
-                  <div class="sliderSmall">
-                    <img src="../../../assets/img/schnitzel.jpg" alt="Wienerschnitzel" class="imgBox productImg">
-                  </div>
-                  <h4 class="title productName" style="text-align:center;">Wienerschnitzel mit Kartoffeln</h4>
-                  <h4 class="title productPrice" style="text-align:center;">14.99€</h4>
-                  <div class="buttonDiv">
-                    <button type="submit" class="buttonDave">In den Warenkorb</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0 first" data-aos="fade-up">
-              <div class="icon-box">
-                <i class="bi bi-piggy-bank-fill" style="font-size:1vw; color:pink; opacity: 0.6;"> </i>
-                <div class="floating-label speisenProdukt">
-                  <div class="sliderSmall">
-                    <img src="../../../assets/img/burger.jpg" alt="Burger" class="imgBox productImg">
-                  </div>
-                  <h4 class="title productName" style="text-align:center;">Burger mit Wedges</h4>
-                  <h4 class="title productPrice" style="text-align:center;">13.99€</h4>
-                  <div class="buttonDiv">
-                    <button type="submit" class="buttonDave">In den Warenkorb</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0 first" data-aos="fade-up">
-              <div class="icon-box">
-                <i class="bi bi-apple" style="font-size:1vw; color:green; opacity: 0.6;"> </i>
-                <div class="floating-label speisenProdukt">
-                  <div class="sliderSmall">
-                    <img src="../../../assets/img/risotto.jpg" alt="Risotto" class="imgBox productImg">
-                  </div>
-                  <h4 class="title productName" style="text-align:center;">Risotto</h4>
-                  <h4 class="title productPrice" style="text-align:center;">10.99€</h4>
-                  <div class="buttonDiv">
-                    <button type="submit" class="buttonDave">In den Warenkorb</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <br>
-
-          <h2 class="centerText">Nachspeisen</h2>
-            <hr>
-
-            <div class="row">
-
-              <div class="col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0 first" data-aos="fade-up">
-                <div class="icon-box">
-                  <i class="bi bi-apple" style="font-size:1vw; color:green; opacity: 0.6;"> </i>
-                  <div class="floating-label speisenProdukt">
-                    <div class="sliderSmall">
-                      <img src="../../../assets/img/apfelringe.jpg" alt="apfelringe" class="imgBox productImg">
-                    </div>
-                    <h4 class="title productName" style="text-align:center;">Apfelringe mit Vanille Eis</h4>
-                    <h4 class="title productPrice" style="text-align:center;">7.99€</h4>
-                    <div class="buttonDiv">
-                      <button type="submit" class="buttonDave">In den Warenkorb</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0 first" data-aos="fade-up">
-                <div class="icon-box">
-                  <i class="bi bi-apple" style="font-size:1vw; color:green; opacity: 0.6;"> </i>
-                  <div class="floating-label speisenProdukt">
-                    <div class="sliderSmall">
-                      <img src="../../../assets/img/birne.jpg" alt="Kandierte Birne" class="imgBox productImg">
-                    </div>
-                    <h4 class="title productName" style="text-align:center;">Kandierte Birne</h4>
-                    <h4 class="title productPrice" style="text-align:center;">6.99€</h4>
-                    <div class="buttonDiv">
-                      <button type="submit" class="buttonDave">In den Warenkorb</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0 first" data-aos="fade-up">
-                <div class="icon-box">
-                  <i class="bi bi-apple" style="font-size:1vw; color:green; opacity: 0.6;"> </i>
-                  <div class="floating-label speisenProdukt">
-                    <div class="sliderSmall">
-                      <img src="../../../assets/img/praline.jpg" alt="praline" class="imgBox productImg">
-                    </div>
-                    <h4 class="title productName" style="text-align:center;">6 x Hausgemachte Praline</h4>
-                    <h4 class="title productPrice" style="text-align:center;">3.99€</h4>
-                    <div class="buttonDiv">
-                      <button type="submit" class="buttonDave">In den Warenkorb</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
+  </main>
 
 
-            <br>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
-            <h2 class="centerText">Getränke</h2>
-              <hr>
+  <!-- Template Main JS File -->
+  <script src="../../../assets/js/main.js"></script>
 
-              <div class="row">
-
-                <div class="col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0 first" data-aos="fade-up">
-                  <div class="icon-box">
-                    <i class="bi bi-apple" style="font-size:1vw; color:green; opacity: 0;"> </i>
-                    <div class="floating-label speisenProdukt">
-                      <div class="sliderSmall">
-                        <img src="../../../assets/img/cocacola.jpg" alt="CocaCola" class="imgBox productImg">
-                      </div>
-                      <h4 class="title productName" style="text-align:center;">Coca Cola</h4>
-                      <h4 class="title productPrice" style="text-align:center;">2.49€</h4>
-                      <div class="buttonDiv">
-                        <button type="submit" class="buttonDave">In den Warenkorb</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0 first" data-aos="fade-up">
-                  <div class="icon-box">
-                    <i class="bi bi-apple" style="font-size:1vw; color:green; opacity: 0;"> </i>
-                    <div class="floating-label speisenProdukt">
-                      <div class="sliderSmall">
-                        <img src="../../../assets/img/sprite.jpeg" alt="sprite" class="imgBox productImg">
-                      </div>
-                      <h4 class="title productName" style="text-align:center;">Sprite</h4>
-                      <h4 class="title productPrice" style="text-align:center;">2.49€</h4>
-                      <div class="buttonDiv">
-                        <button type="submit" class="buttonDave">In den Warenkorb</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0 first" data-aos="fade-up">
-                  <div class="icon-box">
-                    <i class="bi bi-apple" style="font-size:1vw; color:green; opacity: 0;"> </i>
-                    <div class="floating-label speisenProdukt">
-                      <div class="sliderSmall">
-                        <img src="../../../assets/img/fanta.jpg" alt="fanta" class="imgBox productImg">
-                      </div>
-                      <h4 class="title productName" style="text-align:center;">Fanta</h4>
-                      <h4 class="title productPrice" style="text-align:center;">2.49€</h4>
-                      <div class="buttonDiv">
-                        <button type="submit" class="buttonDave">In den Warenkorb</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-
-
-    </div>
-  </section><!-- End Icon Boxes Section -->
-
-</main>
-
-
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-  class="bi bi-arrow-up-short"></i></a>
-
-<!-- Template Main JS File -->
-<script src="../../../assets/js/main.js"></script>
-
-<app-shopping-cart></app-shopping-cart>
 </body>
-</html>
 
+</html>

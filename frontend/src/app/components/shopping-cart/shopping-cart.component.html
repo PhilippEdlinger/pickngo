@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<div id="shoppingCartBody">
+<div id="shoppingCartBody" [ngStyle]="{'display': hide ? 'none' : 'block'}">
+    <fa-icon (click)="onClose()" id="shoppingCartB" [icon]="faClose">
+    </fa-icon>
     <div id="shoppingCart">
         <h1>Warenkorb</h1>
         <div id="products">
