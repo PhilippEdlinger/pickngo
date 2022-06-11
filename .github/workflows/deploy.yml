@@ -61,8 +61,6 @@ jobs:
       
       - name: copy components to vm
         run: |
-          #ssh server rm pickngo-1.0.0-SNAPSHOT-runner.jar server
-          #ssh server rm dist.tar.gz 
           scp backend/target/pickngo-1.0.0-SNAPSHOT-runner.jar server
           scp frontend/dist.tar.gz server:
           ssh server ls -al
