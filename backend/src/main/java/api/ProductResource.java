@@ -1,5 +1,6 @@
 package api;
 
+import io.smallrye.mutiny.Uni;
 import models.DrinkItem;
 import models.FoodItem;
 import models.Product;
@@ -12,6 +13,7 @@ import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.io.File;
 
 @Path("product")
 @Produces(MediaType.APPLICATION_JSON)
@@ -63,5 +65,16 @@ public class ProductResource {
     public Response persistDrinkItem(DrinkItem drinkItem) {
         drinkItemRepo.persistET(drinkItem);
         return Response.ok().build();
+    }
+
+    @GET
+    @Path("/img/{fileName}")
+    @Produces("image/jpeg")
+    public Uni<Response> getFile(@PathParam("fileName") String fileName) {
+        File nf = new File(this.getClass().getClassLoader().getResource("/imgs/products/" + fileName).getFile());
+        Response.ResponseBuilder response = Response.ok((Object) nf);
+        response.header("Content-Disposition", "attachment;filename=" + nf);
+        Uni<Response> re = Uni.createFrom().item(response.build());
+        return re;
     }
 }

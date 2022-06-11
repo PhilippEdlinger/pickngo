@@ -12,6 +12,7 @@ import java.util.Objects;
 @Embeddable
 public class OrderItemID implements Serializable {
     @JsonIgnore
+    @JsonbTransient
     @ManyToOne
     private OrderET orderET;
     @ManyToOne(cascade = CascadeType.PERSIST)

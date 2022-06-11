@@ -15,7 +15,21 @@ public class Tag extends PanacheEntityBase {
     public String name;
     @JsonIgnore
     @JsonbTransient
-    @ManyToMany
+    @ManyToMany(cascade = {
+            CascadeType.PERSIST,
+            CascadeType.REFRESH,
+            CascadeType.DETACH,
+            CascadeType.MERGE
+    })
+    @JoinTable(name = "product_tag",
+            inverseJoinColumns = @JoinColumn(name = "product_id",
+                    nullable = false,
+                    updatable = false),
+            joinColumns = @JoinColumn(name = "tag_id",
+                    nullable = false,
+                    updatable = false),
+            foreignKey = @ForeignKey(ConstraintMode.CONSTRAINT),
+            inverseForeignKey = @ForeignKey(ConstraintMode.CONSTRAINT))
     public List<Product> products;
 
     public Tag() {

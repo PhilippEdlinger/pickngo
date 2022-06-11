@@ -1,6 +1,5 @@
 package models;
 
-import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.*;
 import java.util.List;
 

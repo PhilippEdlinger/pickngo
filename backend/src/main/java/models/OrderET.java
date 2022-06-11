@@ -22,6 +22,7 @@ public class OrderET extends PanacheEntityBase {
     @JsonbTransient
     @ManyToOne
     public Customer customer;
+    public String phoneNR;
     @JsonIgnore
     @JsonbTransient
     @ManyToOne
@@ -34,7 +35,7 @@ public class OrderET extends PanacheEntityBase {
     public OrderET() {
     }
 
-    public OrderET(OrderID orderID, OrderStatus orderStatus, LocalDateTime timeOfOrder, LocalDateTime planedToPickTime, LocalDateTime readyToPickTime, String msg, Customer customer, Employee employee, List<OrderItem> orderItems) {
+    public OrderET(OrderID orderID, OrderStatus orderStatus, LocalDateTime timeOfOrder, LocalDateTime planedToPickTime, LocalDateTime readyToPickTime, String msg, Customer customer, String phoneNR, Employee employee, List<OrderItem> orderItems) {
         this.orderID = orderID;
         this.orderStatus = orderStatus;
         this.timeOfOrder = timeOfOrder;
@@ -42,6 +43,7 @@ public class OrderET extends PanacheEntityBase {
         this.readyToPickTime = readyToPickTime;
         this.msg = msg;
         this.customer = customer;
+        this.phoneNR = phoneNR;
         this.employee = employee;
         this.orderItems = orderItems;
     }
@@ -100,6 +102,14 @@ public class OrderET extends PanacheEntityBase {
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
+    }
+
+    public String getPhoneNR() {
+        return phoneNR;
+    }
+
+    public void setPhoneNR(String phoneNR) {
+        this.phoneNR = phoneNR;
     }
 
     public Employee getEmployee() {

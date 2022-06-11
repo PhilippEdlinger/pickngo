@@ -9,7 +9,6 @@ import java.util.List;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-
 public class Product extends PanacheEntityBase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,9 +26,33 @@ public class Product extends PanacheEntityBase {
     public CategoryET categoryET;
     @JsonIgnore
     @JsonbTransient
-    @ManyToOne
-    public Menu menu;
-    @ManyToMany(mappedBy = "products")
+    @ManyToMany
+    @JoinTable(name = "menu_product",
+            inverseJoinColumns = @JoinColumn(name = "menu_id",
+                    nullable = false,
+                    updatable = false),
+            joinColumns = @JoinColumn(name = "product_id",
+                    nullable = false,
+                    updatable = false),
+            foreignKey = @ForeignKey(ConstraintMode.CONSTRAINT),
+            inverseForeignKey = @ForeignKey(ConstraintMode.CONSTRAINT))
+    public List<Menu> menus;
+    @ManyToMany(
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.REFRESH,
+                    CascadeType.DETACH,
+                    CascadeType.MERGE
+            })
+    @JoinTable(name = "product_tag",
+            inverseJoinColumns = @JoinColumn(name = "tag_id",
+                    nullable = false,
+                    updatable = false),
+            joinColumns = @JoinColumn(name = "product_id",
+                    nullable = false,
+                    updatable = false),
+            foreignKey = @ForeignKey(ConstraintMode.CONSTRAINT),
+            inverseForeignKey = @ForeignKey(ConstraintMode.CONSTRAINT))
     public List<Tag> tags;
 
     // constructor + getter and setter
@@ -37,7 +60,7 @@ public class Product extends PanacheEntityBase {
     public Product() {
     }
 
-    public Product(String name, Double price, String imagePath, String allergies, Integer preparationTime, List<OrderItem> orderItems, CategoryET categoryET) {
+    public Product(String name, Double price, String imagePath, String allergies, Integer preparationTime, List<OrderItem> orderItems, CategoryET categoryET, List<Menu> menus, List<Tag> tags) {
         this.name = name;
         this.price = price;
         this.imagePath = imagePath;
@@ -45,6 +68,8 @@ public class Product extends PanacheEntityBase {
         this.preparationTime = preparationTime;
         this.orderItems = orderItems;
         this.categoryET = categoryET;
+        this.menus = menus;
+        this.tags = tags;
     }
 
     public Long getId() {
@@ -111,12 +136,12 @@ public class Product extends PanacheEntityBase {
         this.categoryET = categoryET;
     }
 
-    public Menu getMenu() {
-        return menu;
+    public List<Menu> getMenus() {
+        return menus;
     }
 
-    public void setMenu(Menu menu) {
-        this.menu = menu;
+    public void setMenus(List<Menu> menus) {
+        this.menus = menus;
     }
 
     public List<Tag> getTags() {

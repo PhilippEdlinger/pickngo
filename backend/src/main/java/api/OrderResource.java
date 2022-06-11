@@ -3,14 +3,16 @@ package api;
 import io.quarkus.mailer.Mail;
 import io.quarkus.mailer.Mailer;
 import models.OrderET;
-import workload.OrderRepository;
 import workload.OrderService;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 @Path("order")
+@Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
 public class OrderResource {
 
     @Inject
@@ -36,20 +38,21 @@ public class OrderResource {
     @POST
     public Response saveOrder(OrderET order){
         var orderET = service.persistET(order);
+
+/*
         String emailText = "";
 
         for (var o : orderET.orderItems) {
-            emailText += """
-                   
-                    """;
+            var p = o.orderItemID.getProduct();
+            emailText += p.getName() + " | " + p.getPreparationTime() + " | " + p.getPrice() + "\n";
         }
 
         mailer.send(
                 Mail.withText("dp.precup@gmail.com",
                         "Ahoy from Quarkus",
-                        "A simple email sent from a Quarkus application."
+                        emailText
                 )
-        );
+        );*/
 
         return Response
                 .ok(orderET)
