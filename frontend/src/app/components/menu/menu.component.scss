@@ -5,3 +5,50 @@ header {
     justify-content: space-between;
     padding: 0 5vw;
 }
+
+header > a {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    font-weight: 900;
+}
+
+@media screen and (max-width: 600px) {
+    .menuBox {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr 1fr;
+        place-items: center;
+    }
+
+    /*
+  .menuBox > div {
+      display: grid;
+      grid-auto-flow: column;
+      align-items: center;
+      gap: 5vw;
+  } */
+    .menuBox>div {
+        display: contents;
+    }
+
+    .menuBox>a,
+    .menuBox>div> :is(i, a) {
+        display: grid !important;
+        place-items: center;
+        height: 100%;
+        width: 100%;
+    }
+
+    .menuBox>a>span {
+        display: none;
+    }
+
+    :is(.menuBox>a,
+        .menuBox>div> :is(i, a)):not(.activeMenuItem):hover {
+        background-color: rgb(89, 48, 255);
+    }
+
+    .activeMenuItem {
+        background-color: rgb(76, 1, 182);
+    }
+}

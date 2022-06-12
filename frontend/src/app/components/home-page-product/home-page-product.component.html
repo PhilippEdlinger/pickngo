@@ -1,15 +1,11 @@
-<div class="col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0 first" data-aos="fade-up">
-    <div class="icon-box">
-      <i class="bi bi-apple" style="font-size:1vw; color:green; opacity: 0.6;"> </i>
-      <div class="floating-label speisenProdukt">
-        <div class="sliderSmall">
-          <img src={{product.imgUrl}} alt={{product.title}} class="imgBox productImg">
-        </div>
-        <h4 class="title productName" style="text-align:center;">{{product.title}}</h4>
-        <h4 class="title productPrice" style="text-align:center;">{{product.price}}€</h4>
-        <div class="buttonDiv">
-          <button type="submit" class="buttonDave">In den Warenkorb</button>
-        </div>
-      </div>
+<div class="icon-box">
+  <i class="bi bi-apple" style="font-size:1vw; color:green; opacity: 0.6;"> </i>
+  <div class="floating-label speisenProdukt">
+    <img src={{product.imageName}} alt={{product.name}} class="imgBox productImg">
+    <h4 class="title productName" style="text-align:center;">{{product.name}}</h4>
+    <h4 class="title productPrice" style="text-align:center;">{{product.price}}€</h4>
+    <div class="buttonDiv">
+      <button type="submit" class="buttonDave">In den Warenkorb</button>
     </div>
   </div>
+</div>

@@ -3,13 +3,11 @@ package api;
 import io.smallrye.mutiny.Uni;
 import models.DrinkItem;
 import models.FoodItem;
-import models.Product;
 import workload.DrinkItemRepo;
 import workload.FoodItemRepo;
-import workload.ProductRepository;
+import workload.ProductService;
 
 import javax.inject.Inject;
-import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -22,7 +20,7 @@ public class ProductResource {
 
 
     @Inject
-    private ProductRepository productRepository;
+    private ProductService productService;
     @Inject
     private FoodItemRepo foodItemRepo;
     @Inject
@@ -30,14 +28,14 @@ public class ProductResource {
 
     @GET
     public Response getProducts() {
-        return Response.ok(productRepository.findAll().list()).build();
+        return Response.ok(productService.findAll().list()).build();
     }
 
     @GET
     @Path("{id}")
     public Response getProductById(@PathParam("id") Long productId) {
         return Response
-                .ok(productRepository.findById(productId))
+                .ok(productService.findById(productId))
                 .build();
     }
 
@@ -51,6 +49,24 @@ public class ProductResource {
     @Path("foods")
     public Response getFoods() {
         return Response.ok(foodItemRepo.findAll().list()).build();
+    }
+
+    @GET
+    @Path("vorspeise")
+    public Response getVorspeise() {
+        return Response.ok(productService.getVorspeise()).build();
+    }
+
+    @GET
+    @Path("hauptspeise")
+    public Response getHauptspeise() {
+        return Response.ok(productService.getHauptspeise()).build();
+    }
+
+    @GET
+    @Path("desert")
+    public Response getDesert() {
+        return Response.ok(productService.getDesert()).build();
     }
 
     @POST

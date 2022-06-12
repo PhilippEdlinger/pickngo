@@ -1,5 +1,5 @@
 export interface Product {
-    title: String;
-    imgUrl: String;
+    name: String;
+    imageName: String;
     price: number;
 }

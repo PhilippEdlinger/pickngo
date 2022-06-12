@@ -15,7 +15,7 @@ public class Product extends PanacheEntityBase {
     public Long id;
     public String name;
     public Double price;
-    public String imagePath;
+    public String imageName;
     public String allergies;
     public Integer preparationTime;
     @JsonIgnore
@@ -60,10 +60,10 @@ public class Product extends PanacheEntityBase {
     public Product() {
     }
 
-    public Product(String name, Double price, String imagePath, String allergies, Integer preparationTime, List<OrderItem> orderItems, CategoryET categoryET, List<Menu> menus, List<Tag> tags) {
+    public Product(String name, Double price, String imageName, String allergies, Integer preparationTime, List<OrderItem> orderItems, CategoryET categoryET, List<Menu> menus, List<Tag> tags) {
         this.name = name;
         this.price = price;
-        this.imagePath = imagePath;
+        this.imageName = imageName;
         this.allergies = allergies;
         this.preparationTime = preparationTime;
         this.orderItems = orderItems;
@@ -96,12 +96,12 @@ public class Product extends PanacheEntityBase {
         this.price = price;
     }
 
-    public String getImagePath() {
-        return imagePath;
+    public String getImageName() {
+        return imageName;
     }
 
-    public void setImagePath(String imagePath) {
-        this.imagePath = imagePath;
+    public void setImageName(String imageName) {
+        this.imageName = imageName;
     }
 
     public String getAllergies() {

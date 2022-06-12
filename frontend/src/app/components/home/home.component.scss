@@ -12,6 +12,23 @@
   --preferedTimeAreaColor: #2072ff;
 }
 
+#sectionDave {
+margin: 10vh;  
+}
+
+#sectionDave > h1 {
+  font-size: 2.2rem;
+  margin-bottom: 2vh;
+}
+
+#menuBox > h1 {
+  font-size: 1.8rem;
+}
+
+#menuBox > hr {
+  margin: 2vh 0;
+}
+
 
 .product:last-child {
   margin-bottom: 1vh;
@@ -183,43 +200,6 @@
     width: 100%;
     margin: 0 !important;
     padding: 0 !important;
-  }
-
-  .menuBox {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr 1fr;
-    place-items: center;
-  }
-
-  /*
-  .menuBox > div {
-      display: grid;
-      grid-auto-flow: column;
-      align-items: center;
-      gap: 5vw;
-  } */
-  .menuBox>div {
-    display: contents;
-  }
-
-  .menuBox>a,
-  .menuBox>div> :is(i, a) {
-    display: grid !important;
-    place-items: center;
-    height: 100%;
-    width: 100%;
-  }
-  .menuBox>a>span {
-    display: none;
-  }
-
-  :is(.menuBox>a,
-        .menuBox>div> :is(i, a)):not(.activeMenuItem):hover {
-    background-color: rgb(89, 48, 255);
-  }
-
-  .activeMenuItem {
-    background-color: rgb(76, 1, 182);
   }
 
   #sectionDave {

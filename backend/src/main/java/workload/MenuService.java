@@ -28,4 +28,8 @@ public class MenuService extends Repository<Menu, Long>{
     public Boolean delete(Long id) {
         return removeById(id);
     }
+
+    public List<Menu> getDishOfTheDay() {
+        return getEntityManager().createQuery("select m from Menu m where m.isDishOfTheDay = true", Menu.class).getResultList();
+    }
 }

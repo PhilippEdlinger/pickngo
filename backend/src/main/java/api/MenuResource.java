@@ -26,6 +26,12 @@ public class MenuResource {
         return Response.ok(service.getById(id)).build();
     }
 
+    @GET
+    @Path("dishoftheday")
+    public Response getDishOfTheDay() {
+        return Response.ok(service.getDishOfTheDay()).build();
+    }
+
     @POST
     public Response add(Menu menu) {
         return Response.ok(service.add(menu)).build();

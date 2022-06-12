@@ -34,28 +34,27 @@
 
     <!-- ======= Icon Boxes Section ======= -->
     <section id="sectionDave" class="col-md-12 col-lg-12 icon-boxes">
-      <div class="container">
 
-        <div *ngIf="menus.length > 0">
-          <h2 class="centerText">Spezialitäten</h2>
-          <hr>
-          <div *ngFor="let m of menus">
-            <app-product-menu [menu]=(m)></app-product-menu>
-            <br>
-          </div>
-          <br>
+      <div id="menuBox" *ngIf="menus">
+        <h1 class="centerText">Spezialitäten</h1>
+        <hr>
+        <div id="menuProductBox">
+          <app-product-menu *ngFor="let m of menus; let i = index" [menu]=(m) [name]="'Spezial-Combi #' + (i + 1)">
+          </app-product-menu>
           <br>
         </div>
-        <h1 class="centerText">À la carte</h1>
-
         <br>
-
-        <app-product-category [products]=(vorspeisenProducts) [title]="'Vorspeise'"></app-product-category>
-        <app-product-category [products]=(mainProducts) [title]="'Vorspeise'"></app-product-category>
-        <app-product-category [products]=(desertProducts) [title]="'Vorspeise'"></app-product-category>
-        <app-product-category [products]=(drinkProducts) [title]="'Vorspeise'"></app-product-category>
-
+        <br>
       </div>
+      <h1 class="centerText">À la carte</h1>
+
+      <br>
+
+      <app-product-category [urlName]="'vorspeise'" [title]="'Vorspeise'"></app-product-category>
+      <app-product-category [urlName]="'hauptspeise'" [title]="'Hauptspeise'"></app-product-category>
+      <app-product-category [urlName]="'desert'" [title]="'Nachspeise'"></app-product-category>
+      <app-product-category [urlName]="'drinks'" [title]="'Drinks'"></app-product-category>
+
     </section><!-- End Icon Boxes Section -->
 
   </main>

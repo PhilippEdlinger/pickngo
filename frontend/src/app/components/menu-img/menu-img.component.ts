@@ -10,6 +10,7 @@ export class MenuImgComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.url = 'http://localhost:8080/product/img/' + this.url;
   }
 
 }

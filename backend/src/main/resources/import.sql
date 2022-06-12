@@ -23,18 +23,27 @@ insert into tag(name)
 values ('Kalt'),
       ('Warm');
 
+insert into menu(isdishoftheday, price)
+values (true, 20),
+       (true, 30);
 
+insert into product(name, price, categoryet_id, imageName, allergies, preparationtime)
+values('Wiener Schnitzel', 8.50, 2, 'schnitzel.jpg', 'ACG',20),
+      ('Vegetarischer Salat', 4.50, 1, 'salat.jpg', 'ACG', 10),
+      ('Mohr im Hemd', 3.90, 3, 'praline.jpg', 'ACG', 5),
+      ('Gebaeck', 2.50, 4, 'burger.jpg', 'ACG',1),
+      ('Altwiener Backfleisch', 17.00, 2, 'fleisch.jpg', null, 25),
+      ('Cordon Bleu', 14.00, 2, 'schnitzel.jpg', null, 10),
+      ('Coca Cola', 2.50, 5, 'coke.jpg', null, 0),
+      ('Gekochtes Rindfleisch', 15.00, 2, 'pilzrisotto.jpg', null, 15),
+      ('Fanta', 2.99, 5, 'fanta.jpg', null, 0);
 
-insert into product(name, price, categoryet_id, imagepath, allergies, preparationtime)
-values('Wiener Schnitzel', 8.50, 2, null, 'ACG',20),
-      ('Vegetarischer Salat', 4.50, 1, null, 'ACG', 10),
-      ('Mohr im Hemd', 3.90, 3, null, 'ACG', 5),
-      ('Gebaeck', 2.50, 4, null, 'ACG',1),
-      ('Altwiener Backfleisch', 17.00, 2, null, null, 25),
-      ('Cordon Bleu', 14.00, 2,null, null, 10),
-      ('Coca Cola', 2.50, 5, null, null, 0),
-      ('Gekochtes Rindfleisch', 15.00, 2, null, null, 15),
-      ('Fanta', 2.99, 5, null, null, 0);
+insert into menu_product(product_id, menu_id)
+values (1, 1),
+       (2,1),
+       (3,1),
+       (7,2),
+       (8,2);
 
 insert into fooditem(id, isdishoftheday, isvegan, isvegetarian)
 values (1, false, false, false),
