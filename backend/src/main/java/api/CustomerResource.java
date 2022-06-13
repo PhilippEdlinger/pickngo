@@ -35,4 +35,5 @@ public class CustomerResource {
         SignUPDTO signUPDTO = service.signUP(customer);
         return Response.ok(signUPDTO).build();
     }
+
 }
