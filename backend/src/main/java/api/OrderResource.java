@@ -41,17 +41,18 @@ public class OrderResource {
 
 
         String emailText = "";
-        String emailFooter = "\n Vielen Dank, dass Sie beim Cagitzer x Pick'n'Go bestellt haben! \n"
+        String emailHeader = "\n Vielen Dank, dass Sie beim Cagitzer x Pick'n'Go bestellt haben! \n \n Ihre Bestellung: \n";
+        String emailFooter = "\n Cagitzer x Pick'n'Go! \n  Adresse: Mühlbachstraße 91, 4063 Hörsching \n Telefon: 07221 72294 \n";
 
         for (var o : orderET.orderItems) {
             var p = o.orderItemID.getProduct();
-            emailText += p.getName() + " - | - " + p.getPreparationTime() + " - | - " + p.getPrice() + "\n";
+            emailText += " |"  p.getName() + "|  -  |" + p.getPreparationTime() + "|  -  |" + p.getPrice() + + "| " "\n";
         }
 
         mailer.send(
                 Mail.withText("dp.precup@gmail.com",
                         "Ihre Bestellungsbestätigung von Pick'n'Go",
-                        emailText + emailFooter
+                        emailHeader + emailText + emailFooter
                 )
         );
 
