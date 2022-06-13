@@ -39,7 +39,7 @@ public class OrderResource {
     public Response saveOrder(OrderET order){
         var orderET = service.persistET(order);
 
-/*
+
         String emailText = "";
 
         for (var o : orderET.orderItems) {
@@ -49,10 +49,10 @@ public class OrderResource {
 
         mailer.send(
                 Mail.withText("dp.precup@gmail.com",
-                        "Ahoy from Quarkus",
+                        "Ihre Bestellungsbestätigung von Pick'n'Go",
                         emailText
                 )
-        );*/
+        );
 
         return Response
                 .ok(orderET)
