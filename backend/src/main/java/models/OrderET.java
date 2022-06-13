@@ -10,8 +10,10 @@ import java.util.List;
 
 @Entity
 public class OrderET extends PanacheEntityBase {
-    @EmbeddedId
-    public OrderID orderID;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private Long orderPosition;
     @Enumerated(EnumType.ORDINAL)
     public OrderStatus orderStatus;
     public LocalDateTime timeOfOrder;
@@ -27,7 +29,7 @@ public class OrderET extends PanacheEntityBase {
     @JsonbTransient
     @ManyToOne
     public Employee employee;
-    @OneToMany(mappedBy = "orderItemID.orderET", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "orderItemID.orderET", cascade = CascadeType.ALL)
     public List<OrderItem> orderItems;
 
     // constructor + getter and setter
@@ -35,8 +37,7 @@ public class OrderET extends PanacheEntityBase {
     public OrderET() {
     }
 
-    public OrderET(OrderID orderID, OrderStatus orderStatus, LocalDateTime timeOfOrder, LocalDateTime planedToPickTime, LocalDateTime readyToPickTime, String msg, Customer customer, String phoneNR, Employee employee, List<OrderItem> orderItems) {
-        this.orderID = orderID;
+    public OrderET(OrderStatus orderStatus, LocalDateTime timeOfOrder, LocalDateTime planedToPickTime, LocalDateTime readyToPickTime, String msg, Customer customer, String phoneNR, Employee employee, List<OrderItem> orderItems) {
         this.orderStatus = orderStatus;
         this.timeOfOrder = timeOfOrder;
         this.planedToPickTime = planedToPickTime;
@@ -48,12 +49,20 @@ public class OrderET extends PanacheEntityBase {
         this.orderItems = orderItems;
     }
 
-    public OrderID getOrderID() {
-        return orderID;
+    public Long getId() {
+        return id;
     }
 
-    public void setOrderID(OrderID orderID) {
-        this.orderID = orderID;
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getOrderPosition() {
+        return orderPosition;
+    }
+
+    public void setOrderPosition(Long orderPosition) {
+        this.orderPosition = orderPosition;
     }
 
     public OrderStatus getOrderStatus() {

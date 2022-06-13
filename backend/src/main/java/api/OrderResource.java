@@ -4,6 +4,7 @@ import io.quarkus.mailer.Mail;
 import io.quarkus.mailer.Mailer;
 import models.OrderET;
 import workload.OrderService;
+import workload.ProductService;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -18,6 +19,8 @@ public class OrderResource {
     @Inject
     private OrderService service;
     @Inject
+    private ProductService productService;
+    @Inject
     Mailer mailer;
 
     @GET
@@ -31,30 +34,30 @@ public class OrderResource {
     @Path("{id}/{orderPosition}")
     public Response getOrderById(@PathParam("id") Long orderId, @PathParam("orderPosition") Long orderPosition) {
         return Response
-                .ok(service.findById(orderId, orderPosition))
+                .ok(service.findById(orderId))
                 .build();
     }
 
     @POST
     public Response saveOrder(OrderET order) {
         var orderET = service.persistET(order);
-        var oi = service.getAllOrderItemsFrom(orderET.orderID);
 
+        String emailAdress = orderET.getCustomer().getEmail();
         String emailText = "";
         String emailHeader = "\n Vielen Dank, dass Sie beim Cagitzer x Pick'n'Go bestellt haben! \n \n Ihre Bestellung: \n";
         String emailFooter = "\n Cagitzer x Pick'n'Go! \n Adresse: Mühlbachstraße 91, 4063 Hörsching \n Telefon: 07221 72294 \n";
 
-        for (var o : oi) {
-            var p = o.orderItemID.getProduct();
+        for (var o : order.getOrderItems()) {
+            var p = productService.findById(o.orderItemID.getProduct().id);
             emailText += "  " + p.getName() + "  -  " + p.getPreparationTime() + "  -  " + p.getPrice() + "  " + "\n";
         }
 
-        mailer.send(
+        /*mailer.send(
                 Mail.withText("dp.precup@gmail.com",
                         "Ihre Bestellungsbestätigung von Pick'n'Go",
                         emailHeader + emailText + emailFooter
                 )
-        );
+        );*/
 
         return Response
                 .ok(orderET)
@@ -65,7 +68,7 @@ public class OrderResource {
     @Path("{id}/{orderPosition}")
     public Response deleteOrderById(@PathParam("id") Long orderId, @PathParam("orderPosition") Long orderPosition) {
         return Response
-                .ok(service.removeById(orderId, orderPosition))
+                .ok(service.removeById(orderId))
                 .build();
     }
 

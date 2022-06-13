@@ -59,15 +59,15 @@ values (7, 330, false),
       (9, 500, false);
 
 
-insert into orderet(id, orderposition, customer_id, employee_id, msg, timeOfOrder, orderstatus, planedtopicktime, readytopicktime)
-values (1, 1, 2, 1, 'Bisschen Scharf', '2022-03-03T10:15:30', 1,'2022-03-03T10:15:30', '2022-03-03T10:15:30'),
-(2 , 2, 3, 1, 'Bitte ohne Zitronensaft', '2022-01-03T10:15:30', 1, '2022-03-03T10:15:30', '2022-03-03T10:15:30'),
-(3 , 3, 4, 1, 'Bitte ohne Tomaten', '2022-02-03T10:15:30', 2, '2022-03-03T10:15:30', '2022-03-03T10:15:30'),
-(4, 4, 3, 1, null, '2022-01-03T10:15:30', 3, '2022-03-03T10:15:30', '2022-03-03T10:15:30');
+insert into orderet(orderposition, customer_id, employee_id, msg, timeOfOrder, orderstatus, planedtopicktime, readytopicktime)
+values (1, 2, 1, 'Bisschen Scharf', '2022-03-03T10:15:30', 1,'2022-03-03T10:15:30', '2022-03-03T10:15:30'),
+( 2, 3, 1, 'Bitte ohne Zitronensaft', '2022-01-03T10:15:30', 1, '2022-03-03T10:15:30', '2022-03-03T10:15:30'),
+(3, 4, 1, 'Bitte ohne Tomaten', '2022-02-03T10:15:30', 2, '2022-03-03T10:15:30', '2022-03-03T10:15:30'),
+(4, 3, 1, null, '2022-01-03T10:15:30', 3, '2022-03-03T10:15:30', '2022-03-03T10:15:30');
 
 
-insert into orderItem(orderet_orderposition, product_id, orderet_id, quantity, message)
-values (1, 1, 1, 5, null),
-       (2, 1, 2, 2, null),
-       (3, 2, 3, 7, null),
-       (4, 3, 4, 1, null);
+insert into orderItem(product_id, orderet_id, quantity, message)
+values (1, 1, 5, null),
+       (2, 1, 2, null),
+       (2, 3, 7, null),
+       (3, 4, 1, null);
