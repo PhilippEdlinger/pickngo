@@ -1,7 +1,7 @@
 import { Menu } from "./Menu";
 import { Product } from "./Product";
 
-export interface ShoppingList {
+export interface Orders {
     menus: [
         {
             menuId: number;
