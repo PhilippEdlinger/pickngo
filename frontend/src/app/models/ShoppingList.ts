@@ -8,4 +8,10 @@ export interface ShoppingList {
             amount: number;
         }
     ]
+    products: [
+        {
+            productId: number;
+            amount: number;
+        }
+    ]
 }
