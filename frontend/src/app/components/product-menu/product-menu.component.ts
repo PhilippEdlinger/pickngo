@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Menu } from 'src/app/models/Menu';
 
 @Component({
@@ -9,6 +9,7 @@ import { Menu } from 'src/app/models/Menu';
 export class ProductMenuComponent implements OnInit {
   @Input() menu: Menu;
   @Input() name: String;
+  @Output() eventEmitter = new EventEmitter;
   title: String = '';
   constructor() { }
 
@@ -18,5 +19,9 @@ export class ProductMenuComponent implements OnInit {
         this.title += p[i].name + ', ';
       }
       this.title += p[p.length - 2].name + ' und ' + p[p.length - 1].name + '';
+  }
+
+  onClick() {
+    this.eventEmitter.emit(this.menu);
   }
 }

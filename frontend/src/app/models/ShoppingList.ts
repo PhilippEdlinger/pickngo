@@ -4,13 +4,13 @@ import { Product } from "./Product";
 export interface Orders {
     menus: [
         {
-            menuId: number;
+            menu: Menu;
             amount: number;
         }
     ]
     products: [
         {
-            productId: number;
+            product: Product;
             amount: number;
         }
     ]

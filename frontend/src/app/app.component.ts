@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Menu } from './models/Menu';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'pickngo-angular';
   hide: boolean = true;
+  menu: Menu;
 
   hideShoppC() {
     this.hide = !this.hide;

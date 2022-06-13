@@ -41,7 +41,7 @@ public class OrderResource {
 
 
         String emailText = "";
-        String emailFooter = "\n Vielen Dank, dass Sie beim Cagitzer x Pick'n'Go bestellt haben! \n"
+        String emailFooter = "\n Vielen Dank, dass Sie beim Cagitzer x Pick'n'Go bestellt haben! \n";
 
         for (var o : orderET.orderItems) {
             var p = o.orderItemID.getProduct();
