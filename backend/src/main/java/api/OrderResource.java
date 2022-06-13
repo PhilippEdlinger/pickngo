@@ -41,16 +41,17 @@ public class OrderResource {
 
 
         String emailText = "";
+        String emailFooter = "\n Vielen Dank, dass Sie beim Cagitzer x Pick'n'Go bestellt haben! \n"
 
         for (var o : orderET.orderItems) {
             var p = o.orderItemID.getProduct();
-            emailText += p.getName() + " | " + p.getPreparationTime() + " | " + p.getPrice() + "\n";
+            emailText += p.getName() + " - | - " + p.getPreparationTime() + " - | - " + p.getPrice() + "\n";
         }
 
         mailer.send(
                 Mail.withText("dp.precup@gmail.com",
                         "Ihre Bestellungsbestätigung von Pick'n'Go",
-                        emailText
+                        emailText + emailFooter
                 )
         );
 
