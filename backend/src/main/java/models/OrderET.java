@@ -27,7 +27,7 @@ public class OrderET extends PanacheEntityBase {
     @JsonbTransient
     @ManyToOne
     public Employee employee;
-    @OneToMany(mappedBy = "orderItemID.orderET", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "orderItemID.orderET", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     public List<OrderItem> orderItems;
 
     // constructor + getter and setter

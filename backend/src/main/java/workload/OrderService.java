@@ -2,6 +2,7 @@ package workload;
 
 import models.OrderET;
 import models.OrderID;
+import models.OrderItem;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -20,6 +21,12 @@ public class OrderService {
     public OrderET findById(Long orderId, Long orderPosition) {
         OrderID orderID = new OrderID(orderId, orderPosition);
         return repo.findById(orderID);
+    }
+
+    public List<OrderItem> getAllOrderItemsFrom(OrderID orderID) {
+        return repo.getEntityManager().createQuery("select oi from OrderItem oi " +
+                "where oi.orderItemID.orderET.orderID = :orderID", OrderItem.class)
+                .setParameter("orderID", orderID).getResultList();
     }
 
     public OrderET persistET(OrderET order) {
