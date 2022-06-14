@@ -49,7 +49,7 @@ public class OrderResource {
 
         for (var o : order.getOrderItems()) {
             var p = productService.findById(o.orderItemID.getProduct().id);
-            emailText += " " + p.getName() + " - " + p.getPrice() + "€ " + "\n";
+            emailText += " " + p.getName() + ": " + p.getPrice() + " € " + "\n";
 
         }
 
