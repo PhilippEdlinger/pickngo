@@ -21,7 +21,7 @@
                 <input formControlName="email" class="signup-input form-control" type="text" placeholder="Email eingeben ..." id="signup-email-input"
                        [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" />
                 <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
-                    <div *ngIf="f['email'].errors['required']">Email is required</div>
+                    <div *ngIf="f['email'].errors['required']">Pflichtfeld</div>
                 </div>
             </div>
 
@@ -30,7 +30,7 @@
                 <input formControlName="username" class="signup-input form-control" type="text" placeholder="Username eingeben ..." id="signup-user-input"
                        [ngClass]="{ 'is-invalid': submitted && f['username'].errors }" />
                 <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
-                    <div *ngIf="f['username'].errors['required']">Username is required</div>
+                    <div *ngIf="f['username'].errors['required']">Pflichtfeld</div>
                 </div>
             </div>
 
@@ -38,9 +38,6 @@
                 <label class="input-label-signup">TELEFONNUMMER (optional)</label>
                 <input formControlName="tel" class="signup-input form-control" type="text" placeholder="Telefonnummer eingeben ..." id="signup-email-user-input"
                        [ngClass]="{ 'is-invalid': submitted && f['tel'].errors }" />
-                <div *ngIf="submitted && f['tel'].errors" class="invalid-feedback">
-                    <div *ngIf="f['tel'].errors['required']">Phonenumber is required</div>
-                </div>
             </div>
 
             <div class="form-group">
@@ -48,7 +45,7 @@
                 <input formControlName="password" class="signup-input form-control" type="password" placeholder="Passwort eingeben ... " id="signup-password-input"
                        [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" />
                 <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
-                    <div *ngIf="f['password'].errors['required']">Password is required</div>
+                    <div *ngIf="f['password'].errors['required']">Pflichtfeld</div>
                 </div>
             </div>
 
@@ -57,16 +54,16 @@
                 <input formControlName="passwordRepeat" class="signup-input form-control" type="password" placeholder="Passwort erneut eingeben ... " id="signup-password2-input"
                        [ngClass]="{ 'is-invalid': submitted && f['passwordRepeat'].errors }" />
                 <div *ngIf="submitted && f['passwordRepeat'].errors" class="invalid-feedback">
-                    <div *ngIf="f['passwordRepeat'].errors['required']">Passwörter stimmt nicht überein</div>
+                    <div *ngIf="f['passwordRepeat'].errors['required']">Passwörter stimmen nicht überein</div>
                 </div>
             </div>
 
             <div class="form-group">
                 <button class="register-button">
-                    <span *ngIf="loading" id="signup-button" class="spinner-border spinner-border-sm mr-1"></span>
+                    <span *ngIf="loading" routerLink="/" id="signup-button" class="spinner-border spinner-border-sm mr-1"></span>
                     Register
                 </button>
-                <a routerLink="/" id="login-button" class="btn btn-link signup-buttons">Anmelden</a>
+                <a routerLink="../login" id="login-button" class="btn btn-link signup-buttons">Anmelden</a>
             </div>
         </form>
     </div>

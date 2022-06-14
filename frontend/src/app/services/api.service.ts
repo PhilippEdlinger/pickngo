@@ -3,12 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {User} from "../models/User";
 import {BehaviorSubject, map, Observable} from "rxjs";
 import {Router} from "@angular/router";
-<<<<<<< HEAD
-import {Menu} from "../models/Menu";
-import {Success} from "../models/Success";
-=======
 import { LogInDTO } from '../models/LogInDTO';
->>>>>>> e38ead4da3872fa858e44c10d2045480c1f9ac13
 
 @Injectable({
   providedIn: 'root'
@@ -31,13 +26,12 @@ export class ApiService {
   }
 
   login(username: any, password: any) {
-
-    return this.http.post<User>(`http://localhost:8080/person/signIn/${username}/${password}`, {username, password})
-        .pipe(map((user: User) => {
+    return this.http.post<LogInDTO>(`http://localhost:8080/person/signIn/${username}/${password}`, {username, password})
+        .pipe(map((user: LogInDTO) => {
           // store user details and jwt token in local storage to keep user logged in between page refreshes
           console.log(user);
           localStorage.setItem('user', JSON.stringify(user));
-          this.userSubject.next(user);
+          this.userSubject.next(user.person);
           return user;
         }));
   }
@@ -51,13 +45,10 @@ export class ApiService {
 
   register(user: User): Observable<LogInDTO> {
     console.log(user);
-<<<<<<< HEAD
+
     localStorage.removeItem('user');
     this.userSubject.next(null);
-    return this.http.post(`${this.apiUrl}/customer/signUp`, user);
-=======
     return this.http.post<LogInDTO>(`${this.apiUrl}/customer/signUp`, user);
->>>>>>> e38ead4da3872fa858e44c10d2045480c1f9ac13
   }
 
   getAll() {
