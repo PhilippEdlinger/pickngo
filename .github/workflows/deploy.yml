@@ -59,8 +59,8 @@ jobs:
             backend/target/pickngo-1.0.0-SNAPSHOT-runner.jar
             frontend/dist.tar.gz
       
-    #  - name: copy components to vm
-    #    run: |
-    #     scp backend/target/pickngo-1.0.0-SNAPSHOT-runner.jar server
-    #    scp frontend/dist.tar.gz server:
-    #   ssh server ls -al
+      - name: copy components to vm
+        run: |
+          scp pickngo-1.0.0-SNAPSHOT-runner.jar ${{ secrets.SERVER_USER }}@server:/home/${{ secrets.SERVER_USER }}
+          scp dist.tar.gz ${{ secrets.SERVER_USER }}@server:/home/${{ secrets.SERVER_USER }}
+    
