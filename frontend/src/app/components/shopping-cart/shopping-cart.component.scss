@@ -77,6 +77,10 @@ $preferedTimeAreaColor: #2072ff;
   background: #000000;
 }
 
+.product:last-child {
+  margin-bottom: 1vh;
+}
+
 #priceBox {
   display: grid;
   grid-auto-flow: column;

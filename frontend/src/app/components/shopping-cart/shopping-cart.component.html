@@ -4,6 +4,7 @@
     <div id="shoppingCart">
         <h1>Warenkorb</h1>
         <div id="products">
+            <app-shopping-cart-item *ngFor="let oi of order.orderItems; let i = index;" [(orderItem)]="order.orderItems[i]" (deleteOrderItem)="deleteOrderItem(oi)"></app-shopping-cart-item>
         </div>
         <div id="priceBox">
             <p>Gesamt</p>
