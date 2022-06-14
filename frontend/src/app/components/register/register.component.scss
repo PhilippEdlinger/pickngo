@@ -1,0 +1,27 @@
+button.register-button {
+  background-color: #3e3e3e;
+  color: white;
+  border-radius: 28px;
+  height: 45px;
+  width: auto;
+  margin-top: 5%;
+  margin-bottom: 10px;
+  line-height: 45px;
+  font-weight: bolder;
+  font-size: larger;
+  font-family: comforta, serif;
+  text-align: center;
+  border: none;
+}
+
+button.register-button:active {
+  background-color: #252525;
+}
+
+#login-button {
+  border-radius: 28px;
+}
+
+#login-button:active {
+  background-color: #252525;
+}

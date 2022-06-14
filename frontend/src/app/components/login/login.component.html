@@ -7,40 +7,53 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body id="login-body">
-<header id="login-header">
-    <div id="logo-container">
-        <div routerLink="/" id="cagitzer-logo"></div>
-        <p id="logo-text"> Pick 'n' Go</p>
-    </div>
-    <div id="login-title">Anmelden</div>
-</header>
-<!-- <header id="header" class="fixed-top d-flex align-items-center ">
-    <div class="container d-flex align-items-center justify-content-between">
-
-      <div class="container d-flex align-items-center justify-content-center justify-content-md-between menuBox">
-        <a href="../index.html class="contact-info d-flex align-items-center" style="color:white;">
-          <img src="../../img/pickngo_logo.png" width="50px"><span>Pick'n Go</span></img>
-
-        </a>
-        <div class="right-icons">
-          <i id="shoppingCartB" class="bi bi-cart-fill activeMenuItem"
-            style="font-size:30px; padding: 15px;color:white;"></i>
-          <a href="Anmeldung.html"> <i class="fa fa-user-circle" style="font-size:30px;color:white;"></i>
-          </a>
+    <header id="login-header">
+        <div id="logo-container">
         </div>
+        <div id="login-title">Anmelden</div>
+    </header>
 
-      </div>
+    <div class="container">
+        <form [formGroup]="form" id="login-form" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label class="input-label">USERNAME</label>
+                <input formControlName="username" class="login-input form-control" type="text" placeholder="Username eingeben ..." id="login-email-user-input"
+                       [ngClass]="{ 'is-invalid': submitted && f['username'].errors }" />
+                    <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
+                        <div *ngIf="f['username'].errors['required']">Username is required</div>
+                    </div>
+            </div>
 
+            <div class="form-group">
+                <label class="input-label">PASSWORT</label>
+                <input class="login-input form-control" formControlName="password" type="password"
+                       placeholder="Passwort eingeben ... " id="login-password-input" [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" />
+                <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+                    <div *ngIf="f['password'].errors['required']">Password is required</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button [disabled]="loading" class="login-button">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Anmelden
+                </button>
+                <div class="register-link">
+                    <br><a routerLink="../register" id="signup-text" class="btn btn-link cta">
+                    <span>Noch kein Konto?</span>
+                    <svg width="13px" height="10px" viewBox="0 0 13 10">
+                        <path d="M1,5 L11,5"></path>
+                        <polyline points="8 1 12 5 8 9"></polyline>
+                    </svg>
+                </a>
+                </div>
+            </div>
+
+        </form>
     </div>
-  </header> -->
-<form id="login-form" >
-    <p class="input-label">USERNAME ODER EMAIL</p>
-    <input class="login-input" type="text" placeholder="Username oder Email eingeben ..." id="login-email-user-input">
-    <p class="input-label">PASSWORT</p>
-    <input class="login-input" type="password" placeholder="Passwort eingeben ... " id="login-password-input">
-    <br><div routerLink="/"  id="login-buttons">Anmelden</div>
-    <p routerLink="../register" id="signup-text">>Noch kein Konto?</p>
-</form>
+
+
 </body>
 </html>
