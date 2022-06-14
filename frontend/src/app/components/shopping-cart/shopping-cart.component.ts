@@ -25,7 +25,7 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   deleteOrderItem(orderItem: OrderItem): void {
-    this.order.orderItems.splice(this.order.orderItems.findIndex(oi => oi.orderItemId.product.id === orderItem.orderItemId.product.id, 1));
+    this.order.orderItems.splice(this.order.orderItems.findIndex(oi => oi.orderItemId.product.id === orderItem.orderItemId.product.id), 1);
     console.log(this.order);
     this.orderData.changeOrder(this.order);
   }
