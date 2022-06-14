@@ -45,13 +45,13 @@ public class OrderResource {
         String emailAdress = orderET.getCustomer().getEmail();
         String emailText = "";
         String emailHeader = "\n Vielen Dank, dass Sie beim Cagitzer x Pick'n'Go bestellt haben! \n \n Ihre Bestellung lautet: \n";
-        String emailTime = "\n Ihre Bestellung ist in 30 Minuten abholbereit! \n \n"
+        String emailTime = "\n Ihre Bestellung ist in 30 Minuten abholbereit! \n \n";
         String emailFooter = "\n Cagitzer x Pick'n'Go! \n Adresse: Mühlbachstraße 91, 4063 Hörsching \n Telefon: 07221 72294 \n";
 
 
         for (var o : order.getOrderItems()) {
             var p = productService.findById(o.orderItemID.getProduct().id);
-            emailText += " " + p.getName() + p.getProduct +": " + p.getPrice() + " € " + "\n";
+            emailText += " " + p.getName() + ": " + p.getPrice() + " € " + "\n";
 
         }
 
