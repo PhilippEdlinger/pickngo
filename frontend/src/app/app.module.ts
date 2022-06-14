@@ -16,6 +16,7 @@ import { ProductMenuComponent } from './components/product-menu/product-menu.com
 import { MenuImgComponent } from './components/menu-img/menu-img.component';
 import { HomePageProductComponent } from './components/home-page-product/home-page-product.component';
 import { ProductCategoryComponent } from './components/product-category/product-category.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -32,12 +33,13 @@ import { ProductCategoryComponent } from './components/product-category/product-
     HomePageProductComponent,
     ProductCategoryComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FontAwesomeModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FontAwesomeModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -6,28 +6,69 @@
     <title>Registrieren</title>
     <link rel="icon" href="../../../assets/img/pickngo_logo.png">
 </head>
-<header id="signup-header">
-    <div id="logo-container-signup">
-        <a routerLink="/"><div id="cagitzer-logo"></div></a>
-        <p id="logo-text"> Pick 'n' Go</p>
-    </div>
-    <div id="signup-title">Registrieren</div>
-</header>
+
 <body id="signup-body">
-<form id="login-form" >
-    <p class="input-label-signup">EMAIL*</p>
-    <input class="signup-input" type="text" placeholder="Email eingeben ..." id="signup-email-input">
-    <p class="input-label-signup">USERNAME</p>
-    <input class="signup-input" type="text" placeholder="Username eingeben ..." id="signup-user-input">
-    <p class="input-label-signup">TELEFONNUMMER (optional)</p>
-    <input class="signup-input" type="text" placeholder="Telefonnummer eingeben ..." id="signup-email-user-input">
-    <p class="input-label-signup">PASSWORT*</p>
-    <input class="signup-input" type="password" placeholder="Passwort eingeben ... " id="signup-password-input">
-    <p class="input-label-signup">PASSWORT WIEDERHOLEN*</p>
-    <input class="signup-input" type="password" placeholder="Passwort erneut eingeben ... " id="signup-password2-input">
-    <br>
-    <div routerLink="/" class="signup-buttons" id="signup-button">Registrieren</div>
-    <div routerLink="../login" id="login-button" class="signup-buttons">Anmelden</div>
-</form>
+    <header id="signup-header">
+        <div id="logo-container-signup">
+        </div>
+        <div id="signup-title">Registrieren</div>
+    </header>
+
+    <div class="container">
+        <form [formGroup]="form" id="login-form" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label class="input-label-signup">EMAIL*</label>
+                <input formControlName="email" class="signup-input form-control" type="text" placeholder="Email eingeben ..." id="signup-email-input"
+                       [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" />
+                <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                    <div *ngIf="f['email'].errors['required']">Email is required</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="input-label-signup">USERNAME</label>
+                <input formControlName="username" class="signup-input form-control" type="text" placeholder="Username eingeben ..." id="signup-user-input"
+                       [ngClass]="{ 'is-invalid': submitted && f['username'].errors }" />
+                <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
+                    <div *ngIf="f['username'].errors['required']">Username is required</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="input-label-signup">TELEFONNUMMER (optional)</label>
+                <input formControlName="tel" class="signup-input form-control" type="text" placeholder="Telefonnummer eingeben ..." id="signup-email-user-input"
+                       [ngClass]="{ 'is-invalid': submitted && f['tel'].errors }" />
+                <div *ngIf="submitted && f['tel'].errors" class="invalid-feedback">
+                    <div *ngIf="f['tel'].errors['required']">Phonenumber is required</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="input-label-signup">PASSWORT*</label>
+                <input formControlName="password" class="signup-input form-control" type="password" placeholder="Passwort eingeben ... " id="signup-password-input"
+                       [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" />
+                <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+                    <div *ngIf="f['password'].errors['required']">Password is required</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="input-label-signup">PASSWORT WIEDERHOLEN*</label>
+                <input formControlName="passwordRepeat" class="signup-input form-control" type="password" placeholder="Passwort erneut eingeben ... " id="signup-password2-input"
+                       [ngClass]="{ 'is-invalid': submitted && f['passwordRepeat'].errors }" />
+                <div *ngIf="submitted && f['passwordRepeat'].errors" class="invalid-feedback">
+                    <div *ngIf="f['passwordRepeat'].errors['required']">Passwörter stimmt nicht überein</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button [disabled]="loading" class="register-button">
+                    <span *ngIf="loading" id="signup-button" class="spinner-border spinner-border-sm mr-1"></span>
+                    Register
+                </button>
+                <a routerLink="../login" id="login-button" class="btn btn-link signup-buttons">Anmelden</a>
+            </div>
+        </form>
+    </div>
 </body>
 </html>

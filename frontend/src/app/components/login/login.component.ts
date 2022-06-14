@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
+import {ApiService} from "../../services/api.service";
+import {first} from "rxjs";
 
 @Component({
   selector: 'app-login',
@@ -10,30 +12,48 @@ import {Router} from "@angular/router";
 export class LoginComponent implements OnInit {
 
   form: FormGroup;
+  loading = false;
+  submitted = false;
 
   constructor(private fb: FormBuilder,
-              private router: Router) {
+              private route: ActivatedRoute,
+              private router: Router,
+              private service: ApiService) {
 
-    this.form = this.fb.group({
-      email: ['',Validators.required],
-      password: ['',Validators.required]
-    });
+        this.form = this.fb.group({
+          username: ['',Validators.required],
+          password: ['',Validators.required]
+        });
   }
 
-  login() {
-    const val = this.form.value;
+    // convenience getter for easy access to form fields
+    get f() { return this.form.controls; }
 
-    if (val.email && val.password) {
-     val
-          .subscribe(
-              () => {
-                console.log("User is logged in");
-                this.router.navigateByUrl('/');
-              }
-          );
+    onSubmit() {
+        this.submitted = true;
+
+        // stop here if form is invalid
+        if (this.form.invalid) {
+            return;
+        }
+
+        this.loading = true;
+        this.service.login(this.f['username'].value, this.f['password'].value)
+            .pipe(first())
+            .subscribe({
+                next: () => {
+                    // get return url from query parameters or default to home page
+                    const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+                    this.router.navigateByUrl(returnUrl);
+                },
+                error: error => {
+                    alert('Ungültige Anmeldedaten')
+                    this.loading = false;
+                }
+            });
     }
-  }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+    }
+
 }
