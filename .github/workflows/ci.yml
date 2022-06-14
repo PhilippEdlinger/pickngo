@@ -30,10 +30,18 @@ jobs:
           user: ${{ secrets.SERVER_USER }}
           server: ${{ secrets.SERVER }}
           alias: server
+     
+     
 
       - name: Starting Deployment
         run: echo starting deployment
-
+        
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin' # See 'Supported distributions' for available options
+          java-version: '17'
+     # - run: java -cp java HelloWorldApp
+      
       - name: quarkus backend build jar file
         run: |
           cd backend/
