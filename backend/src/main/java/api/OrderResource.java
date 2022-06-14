@@ -49,11 +49,8 @@ public class OrderResource {
 
         for (var o : order.getOrderItems()) {
             var p = productService.findById(o.orderItemID.getProduct().id);
-<<<<<<< HEAD
-            emailText += "  " + p.getName() + "  -  " + p.getPrice() + "€  " + "\n";
-=======
-            emailText += "  " + p.getName() + "  -  " + p.getPreparationTime() + "  -  " + p.getPrice() + " € " + "\n";
->>>>>>> 2827d801f0cd40b0efb1b1cd8e4222c843d610ff
+            emailText += " " + p.getName() + " - " + p.getPrice() + "€ " + "\n";
+
         }
 
         mailer.send(
