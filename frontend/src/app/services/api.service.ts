@@ -3,6 +3,8 @@ import {HttpClient} from "@angular/common/http";
 import {User} from "../models/User";
 import {BehaviorSubject, map, Observable} from "rxjs";
 import {Router} from "@angular/router";
+import {Menu} from "../models/Menu";
+import {Success} from "../models/Success";
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +15,7 @@ export class ApiService {
 
   private userSubject: BehaviorSubject<User | null>;
   public user: Observable<User | null>;
+  public success: boolean = false;
 
   constructor(private http: HttpClient, private router: Router) {
     this.userSubject = new BehaviorSubject<User | null>(JSON.parse(localStorage.getItem('user') || '{}'));
@@ -24,6 +27,7 @@ export class ApiService {
   }
 
   login(username: any, password: any) {
+
     return this.http.post<User>(`http://localhost:8080/person/signIn/${username}/${password}`, {username, password})
         .pipe(map((user: User) => {
           // store user details and jwt token in local storage to keep user logged in between page refreshes
@@ -43,6 +47,8 @@ export class ApiService {
 
   register(user: User) {
     console.log(user);
+    localStorage.removeItem('user');
+    this.userSubject.next(null);
     return this.http.post(`${this.apiUrl}/customer/signUp`, user);
   }
 
