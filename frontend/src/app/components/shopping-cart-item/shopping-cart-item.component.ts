@@ -17,7 +17,7 @@ export class ShoppingCartItemComponent {
   }
 
   dec() {
-    if (this.orderItem.quantity > 0) {
+    if (this.orderItem.quantity > 1) {
       this.orderItem.quantity--;
       this.orderItemChange.emit(this.orderItem);
     }

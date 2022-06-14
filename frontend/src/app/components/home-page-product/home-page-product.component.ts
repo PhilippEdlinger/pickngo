@@ -22,7 +22,6 @@ export class HomePageProductComponent implements OnInit {
   }
 
   onClick() {
-
     let oi = new OrderItem();
     let oiId = new OrderItemID();
     oiId.product = this.product;

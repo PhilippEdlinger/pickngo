@@ -46,7 +46,7 @@ public class PersonService {
     public SignUPDTO signInWithusernaem(String username, String password) {
         SignUPDTO signInDTO = new SignUPDTO();
         if (repo.getEntityManager().createQuery("select p from Person p " +
-                        "where p.userName = :username and p.password = :password", Person.class)
+                        "where p.username = :username and p.password = :password", Person.class)
                 .setParameter("username", username).setParameter("password", password).getResultList().size() > 0
         ) {
             signInDTO.setSuccess(true);
