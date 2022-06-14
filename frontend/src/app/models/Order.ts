@@ -3,7 +3,7 @@ import { Product } from "./Product";
 
 export class Order {
     id: number;
-    planedToPickTime: Date;
+    planedToPickTime: Date = new Date();
     customer: {
         id: number;
     };

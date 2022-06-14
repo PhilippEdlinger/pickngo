@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {User} from "../models/User";
 import {BehaviorSubject, map, Observable} from "rxjs";
 import {Router} from "@angular/router";
+import { LogInDTO } from '../models/LogInDTO';
 
 @Injectable({
   providedIn: 'root'
@@ -41,9 +42,9 @@ export class ApiService {
     this.router.navigate(['/login']);
   }
 
-  register(user: User) {
+  register(user: User): Observable<LogInDTO> {
     console.log(user);
-    return this.http.post(`${this.apiUrl}/customer/signUp`, user);
+    return this.http.post<LogInDTO>(`${this.apiUrl}/customer/signUp`, user);
   }
 
   getAll() {
