@@ -8,7 +8,7 @@ import javax.enterprise.context.ApplicationScoped;
 public class PersonRepo extends Repository<Person, Long> {
     public Person findByUsername(String username) {
         return getEntityManager().createQuery("select p from Person p " +
-                        "where p.userName = :un", Person.class)
+                        "where p.username = :un", Person.class)
                 .setParameter("un", username)
                 .getResultStream().findFirst().orElse(null);
     }
