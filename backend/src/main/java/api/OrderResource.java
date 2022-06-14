@@ -49,15 +49,15 @@ public class OrderResource {
 
         for (var o : order.getOrderItems()) {
             var p = productService.findById(o.orderItemID.getProduct().id);
-            emailText += "  " + p.getName() + "  -  " + p.getPreparationTime() + "  -  " + p.getPrice() + "  " + "\n";
+            emailText += "  " + p.getName() + "  -  " + p.getPrice() + "€  " + "\n";
         }
 
-        /*mailer.send(
+        mailer.send(
                 Mail.withText("dp.precup@gmail.com",
                         "Ihre Bestellungsbestätigung von Pick'n'Go",
                         emailHeader + emailText + emailFooter
                 )
-        );*/
+        );
 
         return Response
                 .ok(orderET)
