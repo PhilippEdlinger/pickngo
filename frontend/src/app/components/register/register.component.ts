@@ -41,16 +41,9 @@ export class RegisterComponent implements OnInit {
     }
 
     this.loading = true;
-    this.service.register(this.form.value)
-        .pipe(first())
-        .subscribe(
-            data => {
-              this.router.navigate(['../login'], { relativeTo: this.route });
-            },
-            error => {
-              alert('Something went wrong')
-              this.loading = false;
-            });
+    this.service.register(this.form.value).subscribe(u => {
+      console.log(u);
+    });
   }
 
   ngOnInit(): void {

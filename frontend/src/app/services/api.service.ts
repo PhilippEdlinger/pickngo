@@ -24,9 +24,10 @@ export class ApiService {
   }
 
   login(username: any, password: any) {
-    return this.http.post<User>(`http://localhost:8080/person/signIn${username}/${password}`, {username, password})
+    return this.http.post<User>(`http://localhost:8080/person/signIn/${username}/${password}`, {username, password})
         .pipe(map((user: User) => {
           // store user details and jwt token in local storage to keep user logged in between page refreshes
+          console.log(user);
           localStorage.setItem('user', JSON.stringify(user));
           this.userSubject.next(user);
           return user;
@@ -41,6 +42,7 @@ export class ApiService {
   }
 
   register(user: User) {
+    console.log(user);
     return this.http.post(`${this.apiUrl}/customer/signUp`, user);
   }
 
