@@ -42,7 +42,9 @@ export class RegisterComponent implements OnInit {
 
     this.loading = true;
     this.service.register(this.form.value).subscribe(u => {
-      console.log(u);
+      if (u.success) {
+
+      } else {}
     });
   }
 

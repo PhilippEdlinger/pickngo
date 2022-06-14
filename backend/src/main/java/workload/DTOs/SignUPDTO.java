@@ -1,6 +1,5 @@
 package workload.DTOs;
 
-import models.Customer;
 import models.Person;
 
 import java.util.HashMap;

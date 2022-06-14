@@ -10,15 +10,16 @@
             <p>Gesamt</p>
             <p id="shoppingCartPrice">37,21€</p>
         </div>
-        <p id="orderInfo">Wenn sie jetzt bestellen, können Sie Ihre Bestellung um <span>14:30 Uhr</span> abholen.
+        <p id="orderInfo">Wenn sie jetzt bestellen, können Sie Ihre Bestellung am {{order.planedToPickTime.getDate()}}.{{order.planedToPickTime.getMonth() + 1}}.{{order.planedToPickTime.getFullYear()}} um <span> {{order.planedToPickTime.getHours()}}:{{order.planedToPickTime.getMinutes()}} Uhr</span> abholen.
         </p>
         <div id="preferedTimeBox">
             <select name="preferedTime" id="preferedTime">
                 <option value="gleich">Gleich Abholen</option>
                 <option value="andere">Andere Zeit</option>
             </select>
+            <input [ngStyle]="{'display': hideInput ? 'none' : 'block'}" type="datetime-local" id="preferedTimePicker">
         </div>
 
-        <a id="orderB" routerLink="order">Bestellen</a>
+        <a id="orderB" routerLink="order" (click)="onClose()">Bestellen</a>
     </div>
 </div>

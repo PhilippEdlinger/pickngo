@@ -11,10 +11,12 @@ import { OrderDataService } from 'src/app/services/order-data.service';
 })
 export class ShoppingCartComponent implements OnInit {
   @Input() hide: boolean = true;
+  hideInput: boolean = true;
   order: Order;
   @Output() closeShoppC = new EventEmitter();
   faClose = faXmark;
-  constructor(private orderData: OrderDataService) { }
+
+  constructor(private orderData: OrderDataService) {}
 
   ngOnInit(): void {
     this.orderData.currentOrder.subscribe(o => this.order = o);
