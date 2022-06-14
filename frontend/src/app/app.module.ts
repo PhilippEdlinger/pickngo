@@ -16,6 +16,7 @@ import { ProductMenuComponent } from './components/product-menu/product-menu.com
 import { MenuImgComponent } from './components/menu-img/menu-img.component';
 import { HomePageProductComponent } from './components/home-page-product/home-page-product.component';
 import { ProductCategoryComponent } from './components/product-category/product-category.component';
+import { ShoppingCartItemComponent } from './components/shopping-cart-item/shopping-cart-item.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ProductCategoryComponent } from './components/product-category/product-
     ProductMenuComponent,
     MenuImgComponent,
     HomePageProductComponent,
-    ProductCategoryComponent
+    ProductCategoryComponent,
+    ShoppingCartItemComponent
   ],
   imports: [
     BrowserModule,

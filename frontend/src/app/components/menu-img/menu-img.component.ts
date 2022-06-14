@@ -5,12 +5,7 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './menu-img.component.html',
   styleUrls: ['./menu-img.component.scss']
 })
-export class MenuImgComponent implements OnInit {
+export class MenuImgComponent {
   @Input() url:String;
   constructor() { }
-
-  ngOnInit(): void {
-    this.url = 'http://localhost:8080/product/img/' + this.url;
-  }
-
 }
