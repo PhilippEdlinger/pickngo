@@ -65,21 +65,21 @@ public class CustomerService {
         Pattern pattern = Pattern
                 .compile("^[A-zäöüßÄÖÜ\\.\\_\\-\\d]{2,40}@([A-z\\-\\_]+\\.){1,5}[A-z]{2,10}$");
 
-        if (customer.getUserName().length() < 5) {
+        if (customer.getUsername() == null || customer.getUsername().length() < 5) {
             signUPDTO.getMsgs().put("username", "Der Benutzername muss mehr als 5 Zeichen haben!");
             signUPDTO.setSuccess(false);
         }
-        if (customer.getEmail().length() < 7) {
+        if (customer.getEmail() == null || customer.getEmail().length() < 7) {
             signUPDTO.getMsgs().put("email", "Die Email Addresse muss mehr als 6 Zeichen haben!");
             signUPDTO.setSuccess(false);
         }
 
-        if (customer.getPassword().length() < 7 ) {
+        if (customer.getPassword() == null || customer.getPassword().length() < 7 ) {
             signUPDTO.getMsgs().put("password", "Das Passwort Addresse muss mehr als 6 Zeichen haben!");
             signUPDTO.setSuccess(false);
         }
-        if (usernameExists(customer.getUserName())) {
-            signUPDTO.getMsgs().put("username", "Der Username " + customer.getUserName() + " exisitiert schon!");
+        if (usernameExists(customer.getUsername())) {
+            signUPDTO.getMsgs().put("username", "Der Username " + customer.getUsername() + " exisitiert schon!");
             signUPDTO.setSuccess(false);
         }
         if (emailExists(customer.getEmail())) {
@@ -92,7 +92,7 @@ public class CustomerService {
             signUPDTO.setSuccess(false);
         }
 
-        if (signUPDTO.getMsgs() == null || signUPDTO.getMsgs().size() <= 0) {
+        if (signUPDTO.getMsgs().size() <= 0) {
             signUPDTO.setSuccess(true);
         }
 
@@ -101,7 +101,7 @@ public class CustomerService {
 
     private boolean usernameExists(String username) {
         return repo.getEntityManager().createQuery("select c from Customer c " +
-                        "where c.userName = :username", Customer.class)
+                        "where c.username= :username", Customer.class)
                 .setParameter("username", username).getResultList().size() > 0;
     }
 
