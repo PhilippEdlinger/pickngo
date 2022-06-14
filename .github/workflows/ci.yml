@@ -40,7 +40,7 @@ jobs:
         with:
           distribution: 'temurin' # See 'Supported distributions' for available options
           java-version: '17'
-      - run: java -cp java HelloWorldApp
+     # - run: java -cp java HelloWorldApp
       
       - name: quarkus backend build jar file
         run: |
