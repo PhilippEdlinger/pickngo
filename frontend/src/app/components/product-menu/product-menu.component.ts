@@ -15,10 +15,16 @@ export class ProductMenuComponent implements OnInit {
 
   ngOnInit(): void {
     const p = this.menu.products;
-      for (let i = 0; i < p.length - 2; i++) {
-        this.title += p[i].name + ', ';
-      }
-      this.title += p[p.length - 2].name + ' und ' + p[p.length - 1].name + '';
+    this.menu.price = 0;
+
+    for (let p of this.menu.products) {
+      this.menu.price += p.price;
+    }
+    
+    for (let i = 0; i < p.length - 2; i++) {
+      this.title += p[i].name + ', ';
+    }
+    this.title += p[p.length - 2].name + ' und ' + p[p.length - 1].name + '';
   }
 
   onClick() {

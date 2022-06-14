@@ -6,7 +6,7 @@
         </div>
         <h4 class="title" style="text-align:center;">{{title}}</h4>
         <h4 class="description" style="text-align:center;">{{menu.description}}</h4>
-        <h4 class="price" style="text-align:center;">{{menu.price}}</h4>
+        <h4 class="price" style="text-align:center;">{{menu.price.toFixed(2)}}€</h4>
         <div class="buttonDiv">
             <button (click)="onClick()" class="buttonDave">In den Warenkorb</button>
         </div>
