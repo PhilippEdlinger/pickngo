@@ -4,7 +4,7 @@
         <h3 class="productName" title="${name}">{{orderItem.orderItemId.product.name}}</h3>
         <div>
             <p class="amount">{{orderItem.quantity}}x</p>
-            <p class="priceP">{{orderItem.orderItemId.product.price}}</p>
+            <p class="priceP">{{orderItem.orderItemId.product.price.toFixed(2)}}€</p>
         </div>
     </div>
     <div class="borderBTW"></div>

@@ -4,11 +4,11 @@
     <div id="shoppingCart">
         <h1>Warenkorb</h1>
         <div id="products">
-            <app-shopping-cart-item *ngFor="let oi of order.orderItems; let i = index;" [(orderItem)]="order.orderItems[i]" (deleteOrderItem)="deleteOrderItem(oi)"></app-shopping-cart-item>
+            <app-shopping-cart-item *ngFor="let oi of order.orderItems; let i = index;" [(orderItem)]="order.orderItems[i]" (deleteOrderItem)="deleteOrderItem(oi)" (orderItemChange)="change(oi)"></app-shopping-cart-item>
         </div>
         <div id="priceBox">
             <p>Gesamt</p>
-            <p id="shoppingCartPrice">37,21€</p>
+            <p id="shoppingCartPrice">{{sum.toFixed(2)}}€</p>
         </div>
         <p id="orderInfo">Wenn sie jetzt bestellen, können Sie Ihre Bestellung am {{order.planedToPickTime.getDate()}}.{{order.planedToPickTime.getMonth() + 1}}.{{order.planedToPickTime.getFullYear()}} um <span> {{order.planedToPickTime.getHours()}}:{{order.planedToPickTime.getMinutes()}} Uhr</span> abholen.
         </p>

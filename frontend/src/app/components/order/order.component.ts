@@ -21,6 +21,7 @@ export class OrderComponent implements OnInit {
   logedIn: boolean = false;
   user: any;
   bestellt: boolean = false;
+  sum: number = 0;
 
   constructor(private orderData: OrderDataService, private fb: FormBuilder, private productService: ProductService, private ls: ApiService) {
     this.form = this.fb.group({
@@ -29,8 +30,13 @@ export class OrderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.orderData.currentOrder.subscribe(o => this.order = o);
-    this.ls.user.subscribe(u => { this.logedIn = (u != null && u!.id >= 0); this.user = u; })
+    this.orderData.currentOrder.subscribe(o => {this.order = o;
+      this.sum = 0;
+      for (let oi of o.orderItems) {
+          this.sum += oi.orderItemId.product.price * oi.quantity;
+      }
+    });
+    this.ls.user.subscribe(u => { this.logedIn = (u != null && u!.id >= 0); this.user = u;})
   }
 
   deleteOrderItem(orderItem: OrderItem): void {
@@ -62,5 +68,11 @@ export class OrderComponent implements OnInit {
         this.bestellt = false;
       }, 7000);
     }
+  }
+
+  change(orderItem: OrderItem): void {
+    this.order.orderItems[this.order.orderItems.findIndex(oi => oi.orderItemId.product.id === orderItem.orderItemId.product.id)] = orderItem;
+    console.log(this.order);
+    this.orderData.changeOrder(this.order);
   }
 }

@@ -15,11 +15,18 @@ export class ShoppingCartComponent implements OnInit {
   order: Order;
   @Output() closeShoppC = new EventEmitter();
   faClose = faXmark;
+  sum: number = 0;
 
-  constructor(private orderData: OrderDataService) {}
+  constructor(private orderData: OrderDataService) { }
 
   ngOnInit(): void {
-    this.orderData.currentOrder.subscribe(o => this.order = o);
+    this.orderData.currentOrder.subscribe(o => {
+      this.order = o;
+      this.sum = 0;
+      for (let oi of o.orderItems) {
+        this.sum += oi.orderItemId.product.price * oi.quantity;
+      }
+    });
   }
 
   onClose(): void {
@@ -28,6 +35,12 @@ export class ShoppingCartComponent implements OnInit {
 
   deleteOrderItem(orderItem: OrderItem): void {
     this.order.orderItems.splice(this.order.orderItems.findIndex(oi => oi.orderItemId.product.id === orderItem.orderItemId.product.id), 1);
+    console.log(this.order);
+    this.orderData.changeOrder(this.order);
+  }
+
+  change(orderItem: OrderItem): void {
+    this.order.orderItems[this.order.orderItems.findIndex(oi => oi.orderItemId.product.id === orderItem.orderItemId.product.id)] = orderItem;
     console.log(this.order);
     this.orderData.changeOrder(this.order);
   }

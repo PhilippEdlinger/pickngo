@@ -7,13 +7,17 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './shopping-cart-item.component.html',
   styleUrls: ['./shopping-cart-item.component.scss']
 })
-export class ShoppingCartItemComponent {
+export class ShoppingCartItemComponent implements OnInit {
   @Input() orderItem: OrderItem;
   @Output() orderItemChange = new EventEmitter<OrderItem>();
   @Output() deleteOrderItem = new EventEmitter();
   faTrash = faTrash;
 
   constructor() {
+  }
+
+  ngOnInit(): void {
+      this.orderItem.orderItemId.product.price.toFixed(2); 
   }
 
   dec() {

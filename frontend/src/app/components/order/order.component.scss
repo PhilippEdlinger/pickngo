@@ -149,13 +149,22 @@ input:not(:valid):not(:focus)+label+.icon {
   font-size: 1.4rem;
 }
 
+#productBox {
+  height: 70vh;
+}
+
 #orderProduct {
   height: 80%;
   overflow-y: scroll;
   overflow-x: hidden;
-  // padding: 0 2rem 1rem 0;
+  display: grid;
+  grid-template-rows: repeat(auto-fill, 100px);
+  gap: 1vh;
+  padding: 1vh 0;
   border-bottom: 1px solid black;
 }
+
+// #orderProduct > * {margin-bottom: 1vh;}
 
 #orderPrice {
   margin-top: 4vh;

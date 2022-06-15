@@ -36,12 +36,15 @@
                     <div class="col-4 d-flex align-items-stretch mb-5 mb-lg-0" id="first" data-aos="fade-up">
                         <div class="icon-box telefonNRBox">
                             <div class="floating-label">
-                                <h4 [ngStyle]="{'display': !logedIn ? 'none' : 'block'}" class="title" style="text-align:center;">Für die Bestellbestätigung benötigen wir
+                                <h4 [ngStyle]="{'display': !logedIn ? 'none' : 'block'}" class="title"
+                                    style="text-align:center;">Für die Bestellbestätigung benötigen wir
                                 </h4>
-                                <h4 [ngStyle]="{'display': !logedIn ? 'none' : 'block'}" class="title" style="text-align:center;">Ihre Telefonnummer</h4>
+                                <h4 [ngStyle]="{'display': !logedIn ? 'none' : 'block'}" class="title"
+                                    style="text-align:center;">Ihre Telefonnummer</h4>
                                 <form [formGroup]="form" id="login-form" (ngSubmit)="onSubmit()">
 
-                                    <input [ngStyle]="{'display': !logedIn ? 'none' : 'block'}" placeholder="Tel." type="tel" name="tel" id="tel" autocomplete="off"/>
+                                    <input [ngStyle]="{'display': !logedIn ? 'none' : 'block'}" placeholder="Tel."
+                                        type="tel" name="tel" id="tel" autocomplete="off" />
                                     <button class="buttonDiv">Bestätigen</button>
                                 </form>
                             </div>
@@ -65,10 +68,13 @@
                             <h4 class="order">Meine Bestellung</h4>
                             <div id="orderProduct">
                                 <app-shopping-cart-item *ngFor="let oi of order.orderItems; let i = index;"
-                                    [(orderItem)]="order.orderItems[i]" (deleteOrderItem)="deleteOrderItem(oi)">
+                                    [(orderItem)]="order.orderItems[i]" (deleteOrderItem)="deleteOrderItem(oi)" (orderItemChange)="change(oi)">
                                 </app-shopping-cart-item>
                             </div>
-                            <div id="orderPrice"></div>
+                            <div id="orderPrice">
+                                <h5>Gesamt</h5>
+                                <p id="shoppingCartPrice">{{sum.toFixed(2)}}€</p>
+                            </div>
                         </div>
                     </div>
                 </div>
