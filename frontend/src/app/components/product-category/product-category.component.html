@@ -1,0 +1,8 @@
+<div id="categoryBox" *ngIf="products && products.length > 0">
+    <h2 class="centerText">{{title}}</h2>
+    <hr>
+
+    <div id="products">
+        <app-home-page-product *ngFor="let p of products" [product]=(p)></app-home-page-product>
+    </div>
+</div>

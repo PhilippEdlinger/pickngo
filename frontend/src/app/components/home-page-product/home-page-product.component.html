@@ -1,0 +1,15 @@
+<div class="icon-box">
+  <i class="bi bi-apple" style="font-size:1vw; color:green; opacity: 0.6;"> </i>
+  <div class="floating-label speisenProdukt">
+    <img src={{product.imageName}} alt={{product.name}} class="imgBox productImg">
+    <h4 class="title productName" style="text-align:center;">{{product.name}}</h4>
+    <h4 class="title productPrice" style="text-align:center;">{{product.price.toFixed(2)}}€</h4>
+    <div class="buttonDiv">
+      <button (click)="onClick()" class="buttonDave">In den Warenkorb</button>
+    </div>
+  </div>
+</div>
+
+<div [ngStyle]="{'display': !bestellt ? 'none' : 'block'}" id="bestellungInfo">
+  <p>Das Produkt wurde in den Warenkorb platziert!</p>
+</div>

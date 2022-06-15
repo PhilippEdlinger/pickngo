@@ -1,0 +1,13 @@
+<header id="header" class="fixed-top d-flex align-items-center ">
+    <a routerLink="./" class="contact-info d-flex align-items-center activeMenuItem" style="color:white;">
+        <img src="../../../assets/img/pickngo_logo.png" width="50px" alt="pickngo-logo"><span>Pick'n Go</span>
+    </a>
+    <div class="right-icons">
+        <fa-icon (click)="onClickShoppingCart()" id="shoppingCartB" style="font-size:30px; padding: 15px;color:white;"
+            [icon]="shoppingCartIcon">
+        </fa-icon>
+        <a href="login">
+            <i class="fa fa-user-circle" style="font-size:30px;color:white;" routerLink="login"></i>
+        </a>
+    </div>
+</header>

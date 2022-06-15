@@ -1,0 +1,16 @@
+.icon-box {
+    display: grid;
+    place-items: center;
+}
+
+#bestellungInfo {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: #303030;
+    color: rgb(245, 245, 245);
+    height: 60px;
+    width: 400px;
+    padding: 20px 10px;
+    font-family: 1rem;
+  }

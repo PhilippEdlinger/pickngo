@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Home</title>
+
+  <!-- Favicons -->
+  <link href="../../../assets/img/pickngo_logo.png" rel="icon">
+  <link href="../../../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"
+    integrity="sha256-xH4q8N0pEzrZMaRmd7gQVcTZiFei+HfRTBPJ1OGXC0k=" crossorigin="anonymous"></script>
+  <script src="../../../assets/js/shoppingCart.js"></script>
+
+</head>
+
+<body>
+
+  <div id="preloader"></div>
+
+  <main id="main">
+
+
+    <!-- ======= Icon Boxes Section ======= -->
+    <section id="sectionDave" class="col-md-12 col-lg-12 icon-boxes">
+
+      <div id="menuBox" *ngIf="menus">
+        <h1 class="centerText">Spezialitäten</h1>
+        <hr>
+        <div id="menuProductBox">
+          <app-product-menu *ngFor="let m of menus; let i = index" [menu]=(m) [name]="'Spezial-Combi #' + (i + 1)">
+          </app-product-menu>
+          <br>
+        </div>
+        <br>
+        <br>
+      </div>
+      <h1 class="centerText">À la carte</h1>
+
+      <br>
+
+      <app-product-category [urlName]="'vorspeise'" [title]="'Vorspeise'"></app-product-category>
+      <app-product-category [urlName]="'hauptspeise'" [title]="'Hauptspeise'"></app-product-category>
+      <app-product-category [urlName]="'desert'" [title]="'Nachspeise'"></app-product-category>
+      <app-product-category [urlName]="'drinks'" [title]="'Drinks'"></app-product-category>
+
+    </section><!-- End Icon Boxes Section -->
+
+  </main>
+
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Template Main JS File -->
+  <script src="../../../assets/js/main.js"></script>
+
+</body>
+
+</html>
