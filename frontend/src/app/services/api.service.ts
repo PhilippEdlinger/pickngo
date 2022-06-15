@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {User} from "../models/User";
 import {BehaviorSubject, map, Observable} from "rxjs";
 import {Router} from "@angular/router";

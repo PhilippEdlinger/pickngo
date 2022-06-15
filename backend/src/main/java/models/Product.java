@@ -20,7 +20,7 @@ public class Product extends PanacheEntityBase {
     public Integer preparationTime;
     @JsonIgnore
     @JsonbTransient
-    @OneToMany(mappedBy = "orderItemID.product")
+    @OneToMany(mappedBy = "orderItemId.product")
     public List<OrderItem> orderItems;
     @ManyToOne
     public CategoryET categoryET;

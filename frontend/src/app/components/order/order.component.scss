@@ -15,6 +15,21 @@ html {
   overflow: visible;
 }
 
+section {
+  width: 100vw;
+  // height: 70vh;
+  padding: 0 10vw;
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
+}
+
+.row {
+  display: grid;
+  place-items: center;
+  gap: 3vw;
+}
+
 a {
   text-decoration: none;
   color: #0880e8;
@@ -138,7 +153,7 @@ input:not(:valid):not(:focus)+label+.icon {
   height: 80%;
   overflow-y: scroll;
   overflow-x: hidden;
-  padding: 0 2rem 1rem 0;
+  // padding: 0 2rem 1rem 0;
   border-bottom: 1px solid black;
 }
 
@@ -159,7 +174,7 @@ input:not(:valid):not(:focus)+label+.icon {
 }
 
 .orderSection {
-  height: 85%;
+  // height: 85%;
   display: grid;
   justify-content: center;
 }
@@ -209,7 +224,7 @@ button {
   text-align: center;
   padding: 15px 40px;
   margin-top: 35px;
-  background-color: #B1E173;
+  background-color: #8dd72b;
   color: #fff;
   font-size: 14px;
   margin-left: auto;
@@ -218,6 +233,18 @@ button {
   border: none;
   transition: all .3s ease;
   outline: 0;
+}
+
+#bestellungInfo {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: #303030;
+  color: rgb(245, 245, 245);
+  height: 60px;
+  width: 400px;
+  padding: 20px 10px;
+  font-family: 1rem;
 }
 
 .buttonDiv {
@@ -423,7 +450,7 @@ button:active {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  height: 80%;
+  // height: 80%;
 }
 
 .section-bg {
@@ -459,7 +486,7 @@ section {
 --------------------------------------------------------------*/
 
 #second {
-  height: 680px;
+  // height: 680px;
 }
 
 .icon-boxes {

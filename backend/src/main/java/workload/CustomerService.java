@@ -65,7 +65,7 @@ public class CustomerService {
         Pattern pattern = Pattern
                 .compile("^[A-zäöüßÄÖÜ\\.\\_\\-\\d]{2,40}@([A-z\\-\\_]+\\.){1,5}[A-z]{2,10}$");
 
-        if (customer.getUsername() == null || customer.getUsername().length() < 5) {
+        if (customer.getUsername() == null || customer.getUsername().length() <= 5) {
             signUPDTO.getMsgs().put("username", "Der Benutzername muss mehr als 5 Zeichen haben!");
             signUPDTO.setSuccess(false);
         }

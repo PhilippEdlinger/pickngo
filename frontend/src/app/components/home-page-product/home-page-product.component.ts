@@ -13,6 +13,7 @@ import { OrderDataService } from 'src/app/services/order-data.service';
 export class HomePageProductComponent implements OnInit {
   @Input() product: Product;
   order: Order;
+  bestellt: boolean = false;
 
   constructor(private orderData: OrderDataService) { }
 
@@ -31,5 +32,11 @@ export class HomePageProductComponent implements OnInit {
 
     console.log(this.order);
     this.orderData.changeOrder(this.order);
+
+
+    this.bestellt = true;
+    setTimeout(() => {
+      this.bestellt = false;
+    }, 7000);
   }
 }

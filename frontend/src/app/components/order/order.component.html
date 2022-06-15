@@ -12,14 +12,14 @@
 
     <!-- Google Fonts -->
     <link
-            href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-            rel="stylesheet">
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
 
     <!-- Vendor CSS Files -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
 
 </head>
@@ -27,55 +27,64 @@
 <body>
 
 
-<main>
-    <!-- ======= Icon Boxes Section ======= -->
-    <section id="icon-boxes" class="col-12 d-flex icon-boxes orderSection">
-        <div class="">
+    <main>
+        <!-- ======= Icon Boxes Section ======= -->
+        <section id="icon-boxes" class="col-12 d-flex icon-boxes orderSection">
+            <div class="">
 
-            <div class="row">
-                <div class="col-4 d-flex align-items-stretch mb-5 mb-lg-0" id="first" data-aos="fade-up">
-                    <div class="icon-box telefonNRBox">
-                        <div class="floating-label">
-                            <h4 class="title" style="text-align:center;">Für die Bestellbestätigung benötigen wir</h4>
-                            <h4 class="title" style="text-align:center;">Ihre Telefonnummer</h4>
-                            <input placeholder="Tel." type="tel" name="tel" id="tel" autocomplete="off">
-                            <div class="buttonDiv">
-                                <button routerLink="../ordered" type="submit">Bestätigen</button>
+                <div class="row">
+                    <div class="col-4 d-flex align-items-stretch mb-5 mb-lg-0" id="first" data-aos="fade-up">
+                        <div class="icon-box telefonNRBox">
+                            <div class="floating-label">
+                                <h4 [ngStyle]="{'display': !logedIn ? 'none' : 'block'}" class="title" style="text-align:center;">Für die Bestellbestätigung benötigen wir
+                                </h4>
+                                <h4 [ngStyle]="{'display': !logedIn ? 'none' : 'block'}" class="title" style="text-align:center;">Ihre Telefonnummer</h4>
+                                <form [formGroup]="form" id="login-form" (ngSubmit)="onSubmit()">
+
+                                    <input [ngStyle]="{'display': !logedIn ? 'none' : 'block'}" placeholder="Tel." type="tel" name="tel" id="tel" autocomplete="off"/>
+                                    <button class="buttonDiv">Bestätigen</button>
+                                </form>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div [ngStyle]="{'display': !ordered ? 'none' : 'block'}" data-aos="fade-up">
-                    <div class="icon-box">
-                        <div class="floating-label">
-                            <h4 class="title" style="text-align:center;font-size:40px;">Ihre Bestellung ist abholbereit um</h4>
-                            <img src="../../../assets/img/comp_3.gif" style="width:465px;height:auto;">
-                            <h4 class="title" style="text-align:center;font-size:60px;">14:30</h4>
+                    <div [ngStyle]="{'display': !ordered ? 'none' : 'block'}" data-aos="fade-up">
+                        <div class="icon-box">
+                            <div class="floating-label">
+                                <h4 class="title" style="text-align:center;font-size:40px;">Ihre Bestellung ist
+                                    abholbereit um</h4>
+                                <img src="../../../assets/img/comp_3.gif" style="width:465px;height:auto;">
+                                <h4 class="title" style="text-align:center;font-size:60px;">14:30</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-8 d-flex align-items-stretch mb-5 mb-lg-0" id="second" data-aos="fade-up"
+                        data-aos-delay="100">
+                        <div id="productBox" class="icon-box">
+                            <h4 class="order">Meine Bestellung</h4>
+                            <div id="orderProduct">
+                                <app-shopping-cart-item *ngFor="let oi of order.orderItems; let i = index;"
+                                    [(orderItem)]="order.orderItems[i]" (deleteOrderItem)="deleteOrderItem(oi)">
+                                </app-shopping-cart-item>
+                            </div>
+                            <div id="orderPrice"></div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-8 d-flex align-items-stretch mb-5 mb-lg-0" id="second" data-aos="fade-up"
-                     data-aos-delay="100">
-                    <div id="productBox" class="icon-box">
-                        <h4 class="order">Meine Bestellung</h4>
-                        <div id="orderProduct">
-                            <app-shopping-cart-item *ngFor="let oi of order.orderItems; let i = index;" [(orderItem)]="order.orderItems[i]" (deleteOrderItem)="deleteOrderItem(oi)"></app-shopping-cart-item>
-                        </div>
-                        <div id="orderPrice"></div>
-                    </div>
-                </div>
+
+
             </div>
+        </section><!-- End Icon Boxes Section -->
 
-
-
+        <div [ngStyle]="{'display': !bestellt ? 'none' : 'block'}" id="bestellungInfo">
+            <p>Ihre Bestellung wurde erfolgreich durchgeführt!</p>
         </div>
-    </section><!-- End Icon Boxes Section -->
-</main>
+    </main>
 
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-        class="bi bi-arrow-up-short"></i></a>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
 
 
 </body>

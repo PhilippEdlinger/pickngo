@@ -1,11 +1,10 @@
 import { OrderItem} from "./OrderItem";
-import { Product } from "./Product";
+import { User } from "./User";
 
 export class Order {
     id: number;
     planedToPickTime: Date = new Date();
-    customer: {
-        id: number;
-    };
+    customer: User;
+    phoneNr: String;
     orderItems: OrderItem[] = [];
 }

@@ -10,7 +10,6 @@ import { OrderComponent } from './components/order/order.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { OrderEndComponent } from './components/order-end/order-end.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { ProductMenuComponent } from './components/product-menu/product-menu.component';
 import { MenuImgComponent } from './components/menu-img/menu-img.component';
@@ -27,7 +26,6 @@ import {ReactiveFormsModule} from "@angular/forms";
     OrderComponent,
     RegisterComponent,
     ShoppingCartComponent,
-    OrderEndComponent,
     MenuComponent,
     ProductMenuComponent,
     MenuImgComponent,

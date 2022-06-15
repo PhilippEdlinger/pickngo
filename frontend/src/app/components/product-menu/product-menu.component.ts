@@ -15,6 +15,7 @@ export class ProductMenuComponent implements OnInit {
   @Input() name: String;
   title: String = '';
   order: Order;
+  bestellt: boolean = false;
 
   constructor(private orderData: OrderDataService) { }
 
@@ -37,6 +38,7 @@ export class ProductMenuComponent implements OnInit {
 
   onClick() {
     for (let p of this.menu.products) {
+
       let oi = new OrderItem();
       let oiId = new OrderItemID();
       oiId.product = p;
@@ -44,7 +46,13 @@ export class ProductMenuComponent implements OnInit {
       this.order.orderItems.push(oi);
     }
 
+
     console.log(this.order);
     this.orderData.changeOrder(this.order);
+
+    this.bestellt = true;
+    setTimeout(() => {
+      this.bestellt = false;
+    }, 7000);
   }
 }

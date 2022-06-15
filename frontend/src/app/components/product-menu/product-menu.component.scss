@@ -13,4 +13,15 @@
     font-weight: 900;
 }
 
-
+#bestellungInfo {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: #303030;
+    color: rgb(245, 245, 245);
+    height: 60px;
+    width: 400px;
+    padding: 20px 10px;
+    font-family: 1rem;
+    z-index: 1000;
+  }
