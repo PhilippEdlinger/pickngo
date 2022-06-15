@@ -1,0 +1,74 @@
+name: deploy
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the dev branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: install ssh key
+        uses: caberger/install-ssh-key@v1.0
+        with:
+          ssh-private-key: ${{ secrets.KEY }}
+          user: ${{ secrets.SERVER_USER }}
+          server: ${{ secrets.SERVER }}
+          alias: server
+     
+     
+
+      - name: Starting Deployment
+        run: echo starting deployment
+        
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin' # See 'Supported distributions' for available options
+          java-version: '17'
+     # - run: java -cp java HelloWorldApp
+      
+      - name: quarkus backend build jar file
+        run: |
+          cd backend/
+          mvn package -Dquarkus.package.type=uber-jar
+          ls target/*.jar
+      - name: build angular dist folder
+        run: |
+          cd frontend/
+          npm install -g @angular/cli
+          npm install
+          ng build
+          tar -czvf dist.tar.gz dist 
+      - name: create Pre-Release
+        run: |
+          echo "done!"
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Development Build"
+          files: |
+            backend/target/pickngo-1.0.0-SNAPSHOT-runner.jar
+            frontend/dist.tar.gz
+      
+    #  - name: copy components to vm
+    #    run: |
+    #     scp backend/target/pickngo-1.0.0-SNAPSHOT-runner.jar server
+    #    scp frontend/dist.tar.gz server:
+    #   ssh server ls -al
