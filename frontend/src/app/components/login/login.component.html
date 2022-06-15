@@ -21,32 +21,30 @@
                 <label class="input-label">USERNAME</label>
                 <input formControlName="username" class="login-input form-control" type="text" placeholder="Username eingeben ..." id="login-email-user-input"
                        [ngClass]="{ 'is-invalid': submitted && f['username'].errors }" />
-                    <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
-                        <div *ngIf="f['username'].errors['required']">Username is required</div>
-                    </div>
+
+
+
             </div>
 
             <div class="form-group">
                 <label class="input-label">PASSWORT</label>
                 <input class="login-input form-control" formControlName="password" type="password"
                        placeholder="Passwort eingeben ... " id="login-password-input" [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" />
-                <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
-                    <div *ngIf="f['password'].errors['required']">Password is required</div>
-                </div>
+
             </div>
 
             <div class="form-group">
                 <button [disabled]="loading" class="login-button">
-                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    <span *ngIf="login.success" class="spinner-border spinner-border-sm mr-1"></span>
                     Anmelden
                 </button>
                 <div class="register-link">
                     <br><a routerLink="../register" id="signup-text" class="btn btn-link cta">
                     <span>Noch kein Konto?</span>
-                    <svg width="13px" height="10px" viewBox="0 0 13 10">
+                    <span><svg width="13px" height="10px" viewBox="0 0 13 10">
                         <path d="M1,5 L11,5"></path>
                         <polyline points="8 1 12 5 8 9"></polyline>
-                    </svg>
+                    </svg></span>
                 </a>
                 </div>
             </div>

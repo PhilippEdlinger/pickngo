@@ -14,6 +14,7 @@ export class ApiService {
 
   private userSubject: BehaviorSubject<User | null>;
   public user: Observable<User | null>;
+  public success: boolean = false;
 
   constructor(private http: HttpClient, private router: Router) {
     this.userSubject = new BehaviorSubject<User | null>(JSON.parse(localStorage.getItem('user') || '{}'));
@@ -25,12 +26,12 @@ export class ApiService {
   }
 
   login(username: any, password: any) {
-    return this.http.post<User>(`http://localhost:8080/person/signIn/${username}/${password}`, {username, password})
-        .pipe(map((user: User) => {
+    return this.http.post<LogInDTO>(`http://localhost:8080/person/signIn/${username}/${password}`, {username, password})
+        .pipe(map((user: LogInDTO) => {
           // store user details and jwt token in local storage to keep user logged in between page refreshes
           console.log(user);
           localStorage.setItem('user', JSON.stringify(user));
-          this.userSubject.next(user);
+          this.userSubject.next(user.person);
           return user;
         }));
   }
@@ -44,6 +45,9 @@ export class ApiService {
 
   register(user: User): Observable<LogInDTO> {
     console.log(user);
+
+    localStorage.removeItem('user');
+    this.userSubject.next(null);
     return this.http.post<LogInDTO>(`${this.apiUrl}/customer/signUp`, user);
   }
 

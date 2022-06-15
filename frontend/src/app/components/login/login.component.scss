@@ -12,9 +12,10 @@
   font-family: comforta, serif;
   text-align: center;
   border: none;
+  padding: 0 10px 0 10px;
 }
 
-.login-button:active {
+.login-button:hover {
   background-color: #252525;
 }
 
@@ -33,8 +34,8 @@ a {
   margin-top: 110px;
 }
 
-register-link {
-  margin-top: 10em;
+.register-link {
+  margin-top: 1em;
 }
 
 .cta {
@@ -57,12 +58,12 @@ register-link {
 }
 .cta span {
   position: relative;
-  font-size: 16px;
   line-height: 18px;
-  font-weight: 900;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   vertical-align: middle;
+  font-weight: bolder;
+  font-size: large;
 }
 .cta svg {
   position: relative;

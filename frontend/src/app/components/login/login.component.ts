@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from "@angular/router";
 import {ApiService} from "../../services/api.service";
 import {first} from "rxjs";
+import {LogInDTO} from "../../models/LogInDTO";
 
 @Component({
   selector: 'app-login',
@@ -14,6 +15,7 @@ export class LoginComponent implements OnInit {
   form: FormGroup;
   loading = false;
   submitted = false;
+  login: LogInDTO = new LogInDTO();
 
   constructor(private fb: FormBuilder,
               private route: ActivatedRoute,
@@ -37,20 +39,17 @@ export class LoginComponent implements OnInit {
             return;
         }
 
-        this.loading = true;
         this.service.login(this.f['username'].value, this.f['password'].value)
-            .pipe(first())
-            .subscribe({
-                next: () => {
-                    // get return url from query parameters or default to home page
-                    const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-                    this.router.navigateByUrl(returnUrl);
-                },
-                error: error => {
-                    alert('Ungültige Anmeldedaten')
-                    this.loading = false;
+            .subscribe(u => {
+                if (u.success) {
+                    this.login.success = true;
+                    this.router.navigate(['/']);
+                    console.log('Success')
+                } else {
+                    this.login.success = false;
                 }
             });
+        console.log(this.login);
     }
 
     ngOnInit(): void {

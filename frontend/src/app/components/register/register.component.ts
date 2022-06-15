@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit {
     this.form = this.fb.group({
       email: ['', Validators.required],
       username: ['',Validators.required],
-      tel: ['',Validators.required],
+      tel: [''],
       password: ['',Validators.required],
       passwordRepeat: ['',Validators.required]
     });
@@ -40,11 +40,14 @@ export class RegisterComponent implements OnInit {
       return;
     }
 
-    this.loading = true;
     this.service.register(this.form.value).subscribe(u => {
       if (u.success) {
-
-      } else {}
+        console.log('Success')
+        this.loading = true;
+        this.router.navigate(['/']);
+      } else {
+        this.loading = false;
+      }
     });
   }
 
