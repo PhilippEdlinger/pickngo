@@ -61,6 +61,6 @@ jobs:
       
       - name: copy components to vm
         run: |
-          sudo scp pickngo-1.0.0-SNAPSHOT-runner.jar ${{ secrets.SERVER_USER }}@server:/home/${{ secrets.SERVER_USER }}
-          sudo scp dist.tar.gz ${{ secrets.SERVER_USER }}@server:/home/${{ secrets.SERVER_USER }}
+          sudo scp pickngo-1.0.0-SNAPSHOT-runner.jar ubuntu@pickngo:/home/ubuntu
+          sudo scp dist.tar.gz ubuntu@pickngo:/home/ubuntu
     
