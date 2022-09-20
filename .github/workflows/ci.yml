@@ -1,27 +1,26 @@
-<<<<<<< HEAD
-name: CI
-
+name: deploy
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the dev branch
   push:
-    branches: [ main ]
+    branches: [ dev ]
   pull_request:
-    branches: [ main ]
-
+    branches: [ dev]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:        
+jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
       - name: install ssh key
@@ -31,75 +30,44 @@ jobs:
           user: ${{ secrets.SERVER_USER }}
           server: ${{ secrets.SERVER }}
           alias: server
+     
+     
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: build application server
-        run: |
-          mvn clean package 
-          ls -a ./target
-        working-directory: backend/
+      - name: Starting Deployment
+        run: echo starting deployment
         
-      - name: copy jar file to vm
-        run: |
-          scp target/*.jar backend:
-          ssh backend ls -l
-        working-directory: backend/
-=======
-
-name: CI
-
-# Controls when the workflow will run
-on:
-  # Triggers the workflow on push or pull request events but only for the dev branch
-  push:
-    branches: [ dev ]
-  pull_request:
-    branches: [ dev ]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:        
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-      
-      - name: install ssh key
-        uses: caberger/install-ssh-key@v1.0
+      - uses: actions/setup-java@v3
         with:
-          ssh-private-key: ${{ secrets.KEY }}
-          user: ${{ secrets.SERVER_USER }}
-          server: ${{ secrets.SERVER }}
-          alias: server
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: build application server
+          distribution: 'temurin' # See 'Supported distributions' for available options
+          java-version: '17'
+     # - run: java -cp java HelloWorldApp
+      
+      - name: quarkus backend build jar file
         run: |
-          mvn clean package 
-          ls -a ./target
-        working-directory: backend/
-        
-      - name: copy jar file to vm
+          cd backend/
+          mvn package -Dquarkus.package.type=uber-jar
+          ls target/*.jar
+      - name: build angular dist folder
         run: |
-          scp target/*.jar pickngo
-          ssh pickngo ls -l
-        working-directory: backend/
-
-
-          
->>>>>>> origin/dev
+          cd frontend/
+          npm install -g @angular/cli
+          npm install
+          ng build
+          tar -czvf dist.tar.gz dist 
+      - name: create Pre-Release
+        run: |
+          echo "done!"
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Development Build"
+          files: |
+            backend/target/pickngo-1.0.0-SNAPSHOT-runner.jar
+            frontend/dist.tar.gz
+      
+    #  - name: copy components to vm
+    #    run: |
+    #     scp pickngo-1.0.0-SNAPSHOT-runner.jar ubuntu@pickngo:/home/ubuntu
+    #     scp dist.tar.gz ubuntu@pickngo:/home/ubuntu

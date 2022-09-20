@@ -1,14 +1,18 @@
 package api;
 
 import models.Employee;
+import workload.DTOs.SignUPDTO;
 import workload.EmployeeRepository;
 import workload.EmployeeService;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 @Path("employee")
+@Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
 public class EmployeeResource {
 
     @Inject
@@ -27,12 +31,5 @@ public class EmployeeResource {
             return Response
                     .ok(service.findById(employeeId))
                     .build();
-    }
-
-    @PUT
-    public Response saveEmployee (Employee employee){
-        return Response
-                .ok(service.updateET(employee))
-                .build();
     }
 }

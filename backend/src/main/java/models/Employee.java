@@ -16,4 +16,12 @@ public class Employee extends Person {
         super(firstName, lastName, userName, password);
         this.orderETs = orderETs;
     }
+
+    public List<OrderET> getOrderETs() {
+        return orderETs;
+    }
+
+    public void setOrderETs(List<OrderET> orderETs) {
+        this.orderETs = orderETs;
+    }
 }

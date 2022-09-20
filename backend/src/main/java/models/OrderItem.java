@@ -8,16 +8,40 @@ import javax.persistence.Entity;
 @Entity
 public class OrderItem extends PanacheEntityBase {
     @EmbeddedId
-    public OrderItemID orderItemID;
+    public OrderItemID orderItemId;
     public Integer quantity;
     public String message;
 
     public OrderItem() {
     }
 
-    public OrderItem(OrderItemID orderItemID, Integer quantity, String message) {
-        this.orderItemID = orderItemID;
+    public OrderItem(OrderItemID orderItemId, Integer quantity, String message) {
+        this.orderItemId = orderItemId;
         this.quantity = quantity;
+        this.message = message;
+    }
+
+    public OrderItemID getOrderItemId() {
+        return orderItemId;
+    }
+
+    public void setOrderItemId(OrderItemID orderItemId) {
+        this.orderItemId = orderItemId;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
         this.message = message;
     }
 }

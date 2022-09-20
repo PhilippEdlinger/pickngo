@@ -4,6 +4,7 @@ import models.CategoryET;
 import workload.CategoryRepository;
 
 import javax.inject.Inject;
+import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -17,6 +18,7 @@ public class CategoryResource {
     @Inject
     CategoryRepository categoryRepository;
 
+
     @GET
     @Path("{id}")
     public Response getCategoryById(@PathParam("id") Long categoryId) {
@@ -25,6 +27,12 @@ public class CategoryResource {
                 .build();
     }
 
+    @GET
+    public Response getCategories() {
+        return Response.ok(categoryRepository.findAll().list()).build();
+    }
+
+
     @PUT
     public Response createCategory(CategoryET categoryET){
         return Response
@@ -32,15 +40,12 @@ public class CategoryResource {
                 .build();
     }
 
-    @GET
-    public Response getCategories() {
-        return Response.ok(categoryRepository.findAll()).build();
-    }
-
+    /*
     @DELETE
     @Path("{id}")
+    @Transactional
     public Response deleteCategoryById(@PathParam("id") Long categoryId ){
         return Response.ok(categoryRepository.deleteById(categoryId)).build();
     }
-
+*/
 }

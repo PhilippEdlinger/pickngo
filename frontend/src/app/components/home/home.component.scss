@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+:root {
+  --bodyBgC: #ffffff;
+  --cartBodyBgC: #000000a6;
+  --cartBgC: #ffffff;
+  --cartHeadingC: #56b965;
+  --cartParaC: #000000;
+  --cartButtonGr: #68c45d;
+  --cartTimeSelection: #347eff;
+  --ProductsTextColor: #323232;
+  --preferedTimeAreaColor: #2072ff;
+}
+
+#sectionDave {
+margin: 10vh;  
+}
+
+#sectionDave > h1 {
+  font-size: 2.2rem;
+  margin-bottom: 2vh;
+}
+
+#menuBox > h1 {
+  font-size: 1.8rem;
+}
+
+#menuBox > hr {
+  margin: 2vh 0;
+}
+
+
+.product:last-child {
+  margin-bottom: 1vh;
+}
+
+.product {
+  display: grid;
+  grid-template-columns: 1fr 3fr 2px 1.3fr;
+  align-items: center;
+  gap: 20px;
+}
+
+.product>img {
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+  border-radius: 20%;
+}
+
+.textBox {
+  display: grid;
+  align-items: center;
+  gap: 2vh;
+}
+
+.textBox>div {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  color: var(--ProductsTextColor);
+}
+
+.textBox h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.textBox p {
+  font-size: 1.2rem;
+}
+
+.borderBTW {
+  border: 0.5px solid rgb(160, 160, 160);
+  height: 70%;
+  width: 0;
+}
+
+.modificationBox {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 70px;
+  padding-right: 10px;
+}
+
+.modificationBox>div {
+  background-color: var(--cartButtonGr);
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 70px;
+  height: 30px;
+  border-radius: 20px;
+  vertical-align: middle;
+  color: var(--cartBgC);
+}
+
+.modificationBox>div :is(p, button) {
+  font-size: 1.25rem;
+  line-height: 120%;
+}
+
+.modificationBox button {
+  border: none;
+}
+
+.minusB,
+.plusB {
+  color: var(--cartBgC);
+  width: 27px;
+  height: 100%;
+  background-color: var(--cartButtonGr);
+}
+
+.productNumberP {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+
+.minusB {
+  border-radius: 20px 0 0 20px;
+}
+
+.plusB {
+  border-radius: 0 20px 20px 0;
+}
+
+:is(.minusB, .plusB):active {
+  background-color: #20720e;
+}
+
+.deleteB {
+  height: 30px;
+}
+
+
+/* #datePickerB {
+    background-color: var(--preferedTimeAreaColor);
+} */
+
+
+
+.speciality>div>img {
+  border-radius: 10px;
+}
+
+.speisenProdukt img {
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+
+
+@media screen and (max-width: 600px) {
+  #header {
+    position: fixed;
+    top: unset !important;
+    bottom: 0;
+  }
+
+  .product {
+    grid-template-columns: 1fr 3fr 1px 1fr;
+    gap: 7px;
+  }
+
+  .product>img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .textBox h3 {
+    font-size: 1rem;
+  }
+
+  .textBox p {
+    font-size: 1rem;
+  }
+
+  .modificationBox {
+    gap: 7px;
+  }
+
+  .speisenProdukt img {
+    width: 100%;
+  }
+
+  .buttonDave {
+    margin-top: 0;
+  }
+
+  .speciality>div>img {
+    width: 35%;
+  }
+
+  header>div,
+  header>div>div {
+    height: 100%;
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  #sectionDave {
+    position: relative;
+    margin-top: 2vh;
+  }
+
+  main::before {
+    display: grid;
+    place-items: center;
+    content: 'Cagitzer';
+    width: 100vw;
+    height: 5vh;
+    font-size: 1.5rem;
+    background-color: black;
+    color: rgb(227, 227, 227);
+    text-align: center;
+    padding-bottom: .3vh;
+  }
+  .icon-boxes {
+    position: relative;
+    top: 0;
+  }
+}
