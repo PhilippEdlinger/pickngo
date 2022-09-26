@@ -36,14 +36,14 @@
                     <div class="col-4 d-flex align-items-stretch mb-5 mb-lg-0" id="first" data-aos="fade-up">
                         <div class="icon-box telefonNRBox">
                             <div class="floating-label">
-                                <h4 [ngStyle]="{'display': !logedIn ? 'none' : 'block'}" class="title"
+                                <h4 [ngStyle]="{'display': logedIn ? 'none' : 'block'}" class="title"
                                     style="text-align:center;">Für die Bestellbestätigung benötigen wir
                                 </h4>
-                                <h4 [ngStyle]="{'display': !logedIn ? 'none' : 'block'}" class="title"
+                                <h4 [ngStyle]="{'display': logedIn ? 'none' : 'block'}" class="title"
                                     style="text-align:center;">Ihre Telefonnummer</h4>
                                 <form [formGroup]="form" id="login-form" (ngSubmit)="onSubmit()">
 
-                                    <input [ngStyle]="{'display': !logedIn ? 'none' : 'block'}" placeholder="Tel."
+                                    <input [ngStyle]="{'display': logedIn ? 'none' : 'block'}" placeholder="Tel."
                                         type="tel" name="tel" id="tel" autocomplete="off" />
                                     <button class="buttonDiv">Bestätigen</button>
                                 </form>
@@ -51,7 +51,7 @@
                         </div>
                     </div>
 
-                    <div [ngStyle]="{'display': !ordered ? 'none' : 'block'}" data-aos="fade-up">
+                    <div [ngStyle]="{'display': ordered ? 'none' : 'block'}" data-aos="fade-up">
                         <div class="icon-box">
                             <div class="floating-label">
                                 <h4 class="title" style="text-align:center;font-size:40px;">Ihre Bestellung ist
