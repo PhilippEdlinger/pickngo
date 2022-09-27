@@ -40,11 +40,11 @@
                                     style="text-align:center;">Für die Bestellbestätigung benötigen wir
                                 </h4>
                                 <h4 [ngStyle]="{'display': logedIn ? 'none' : 'block'}" class="title"
-                                    style="text-align:center;">Ihre Telefonnummer</h4>
+                                    style="text-align:center;">Ihre Email</h4>
                                 <form [formGroup]="form" id="login-form" (ngSubmit)="onSubmit()">
 
-                                    <input [ngStyle]="{'display': logedIn ? 'none' : 'block'}" placeholder="Tel."
-                                        type="tel" name="tel" id="tel" autocomplete="off" />
+                                    <input [ngStyle]="{'display': logedIn ? 'none' : 'block'}" placeholder="Email"
+                                        type="email" name="tel" id="tel" autocomplete="off" />
                                     <button class="buttonDiv">Bestätigen</button>
                                 </form>
                             </div>
