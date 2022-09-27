@@ -591,11 +591,18 @@ a {
   height: 100px;
 }
 
+svg.svg-inline--fa.fa-xmark {
+
+  color: black !important;
+  border: 1px solid red !important;
+}
+
 #header {
   z-index: 997;
   height: 70px;
   top: 0;
-  background-color: #7BAE7F;
+  background-color: #73956F;
+  //position: sticky;
 }
 #header.header-scrolled {
   top: 0;
@@ -717,7 +724,7 @@ a {
   text-align: center;
   padding: 15px 40px;
   margin-top: 35px;
-  background-color: #8dd72b;
+  background-color: #72c091;
   color: #ffffff;
   font-size: 1rem;
   margin-left: auto;
