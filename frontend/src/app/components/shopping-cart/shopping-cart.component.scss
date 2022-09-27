@@ -1,12 +1,10 @@
+@use './../../color.scss' as c;
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 
-
-$bodyBgC: #ffffff;
 $cartBodyBgC: #000000a6;
-$cartBgC: #ffffff;
-$cartHeadingC: #56b965;
+$cartHeadingC: c.$fontC;
 $cartParaC: #000000;
-$cartButtonGr: #68c45d;
+$cartButtonGr: c.$primaryC;
 $cartTimeSelection: #347eff;
 $ProductsTextColor: #323232;
 $preferedTimeAreaColor: #2072ff;
@@ -33,11 +31,11 @@ $preferedTimeAreaColor: #2072ff;
   right: 50vw;
   top: 15px;
   font-size: 2.3rem;
-  color: rgb(225, 225, 225);
+  color: c.$backGC;
 }
 
 #shoppingCart {
-  background-color: $cartBgC;
+  background-color: c.$backGC;
   display: grid;
   grid-template-rows: 0.5fr 6fr .5fr .3fr .6fr .6fr;
   gap: 1vh;
@@ -94,7 +92,7 @@ $preferedTimeAreaColor: #2072ff;
 #orderB {
   border-radius: 10px;
   border: none;
-  color: $cartBgC;
+  color: c.$backGC;
   text-align: center;
 }
 

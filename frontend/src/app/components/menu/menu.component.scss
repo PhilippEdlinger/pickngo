@@ -51,4 +51,11 @@ header > a {
     .activeMenuItem {
         background-color: rgb(76, 1, 182);
     }
+
+    header {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+    }
 }
