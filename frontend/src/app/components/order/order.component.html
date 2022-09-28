@@ -14,6 +14,7 @@
                                 style="text-align:center;">Ihre Telefonnummer</h4>
                             <form [formGroup]="form" id="login-form" (ngSubmit)="onSubmit()">
 
+
                                 <input [ngStyle]="{'display': logedIn ? 'none' : 'block'}" placeholder="Tel." type="tel"
                                     name="tel" id="tel" autocomplete="off" />
                                 <button class="buttonDiv">Bestätigen</button>
