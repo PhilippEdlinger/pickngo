@@ -475,8 +475,9 @@ a {
 
 
 .slider {
-  display: flex;
+  // display: flex;
   justify-content: center;
+  // grid-auto-flow: ;
   gap: 2vw;
 }
 .slider > img{
@@ -484,7 +485,7 @@ a {
 }
 
 .imgBox {
-  width: 15vw;
+  width: 100%;
   height: auto;
   border-radius: 10px;
 }
