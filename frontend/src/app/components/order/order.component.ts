@@ -28,6 +28,7 @@ export class OrderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.bestellt = false;
     this.orderData.currentOrder.subscribe(o => {this.order = o;
       this.sum = 0;
       for (let oi of o.orderItems) {
@@ -60,9 +61,6 @@ export class OrderComponent implements OnInit {
       this.orderData.changeOrder(new Order());
 
       this.bestellt = true;
-      setTimeout(() => {
-        this.bestellt = false;
-      }, 7000);
     }
   }
 

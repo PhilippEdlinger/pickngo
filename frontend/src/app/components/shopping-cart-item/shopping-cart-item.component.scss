@@ -1,3 +1,5 @@
+@use './../../color.scss' as c;
+
 $bodyBgC: #ffffff;
 $cartBodyBgC: #000000a6;
 $cartBgC: #ffffff;
@@ -59,7 +61,7 @@ $preferedTimeAreaColor: #2072ff;
   }
   
   .modificationBox>div {
-    background-color: $cartButtonGr;
+    background-color: c.$color2;
     display: grid;
     grid-auto-flow: column;
     justify-content: space-between;
@@ -85,7 +87,7 @@ $preferedTimeAreaColor: #2072ff;
     color: var(--cartBgC);
     width: 27px;
     height: 100%;
-    background-color: $cartButtonGr;
+    background-color: c.$color2;
   }
   
   .productNumberP {

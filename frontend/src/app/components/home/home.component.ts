@@ -13,6 +13,7 @@ import { ProductService } from 'src/app/services/product.service';
 export class HomeComponent implements OnInit {
   menus: Menu[];
 
+
   constructor(private menuService: MenuService) { }
 
   ngOnInit(): void {

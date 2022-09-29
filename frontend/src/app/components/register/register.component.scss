@@ -1,5 +1,7 @@
+@use '../../color.scss' as c;
+
 button.register-button {
-  background-color: #3e3e3e;
+  background-color: c.$registerC;
   color: white;
   border-radius: 28px;
   height: 45px;
@@ -12,15 +14,15 @@ button.register-button {
   font-family: comforta, serif;
   text-align: center;
   border: none;
-  padding: 0 10px 0 10px;
+  padding: 0 15px 0 15px;
 }
 
 button.register-button:hover {
-  background-color: #252525;
+  background-color: rgb(85, 129, 176);
 }
 
 #login-button {
-  background-color: #3e3e3e;
+  background-color: c.$backGC;
   color: white;
   border-radius: 28px;
   height: 45px;
@@ -37,5 +39,5 @@ button.register-button:hover {
 }
 
 #login-button:hover {
-  background-color: #252525;
+  background-color: c.$color2;
 }
