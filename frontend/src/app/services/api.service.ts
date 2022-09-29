@@ -19,18 +19,28 @@ export class ApiService {
   constructor(private http: HttpClient, private router: Router) {
     this.userSubject = new BehaviorSubject<User | null>(JSON.parse(localStorage.getItem('user') || '{}'));
     this.user = this.userSubject.asObservable();
+    // this.checkUser();
+    this.user.subscribe(u => console.log(u));
   }
 
   public get userValue(): User | null {
     return this.userSubject.value;
   }
 
+  // checkUser() {
+  //   let userId = localStorage.getItem('user');
+  //   console.log(userId);
+  //   if (userId != null) {
+  //     this.getById(userId).subscribe(u => {this.userSubject.next(u); console.log(u)});
+  //   }
+  // }
+
   login(username: any, password: any) {
     return this.http.post<LogInDTO>(`http://localhost:8080/person/signIn/${username}/${password}`, {username, password})
         .pipe(map((user: LogInDTO) => {
           // store user details and jwt token in local storage to keep user logged in between page refreshes
           console.log(user);
-          localStorage.setItem('user', JSON.stringify(user));
+          localStorage.setItem('user', JSON.stringify(user.person));
           this.userSubject.next(user.person);
           return user;
         }));
