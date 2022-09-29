@@ -24,6 +24,7 @@ export class ProductService {
   }
 
   order(order: Order): Observable<Order> {
+    console.log(order);
     return this.http.post<Order>('http://localhost:8080/order', order, httpOptions);
   }
 }

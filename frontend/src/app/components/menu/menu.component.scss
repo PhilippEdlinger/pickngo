@@ -1,18 +1,45 @@
+<<<<<<< HEAD
 @use '../../color.scss' as c;
 
 header {
+=======
+// header {
+//     display: grid;
+//     place-items: center;
+//     grid-auto-flow: column;
+//     justify-content: space-between;
+//     // padding: 0 5vw;
+// }
+
+// header > a {
+//     display: grid;
+//     grid-auto-flow: column;
+//     align-items: center;
+//     font-weight: 900;
+// }
+
+header > div {
     display: grid;
-    align-items: center;
-    grid-auto-flow: column;
-    justify-content: space-between;
-    padding: 0 5vw;
+    place-items: center;
 }
 
-header > a {
+.menuBox {
+>>>>>>> 71a6e46e613fdbcf4dabe69443a4dfbff20d2196
     display: grid;
-    grid-auto-flow: column;
     align-items: center;
-    font-weight: 900;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    width: 90vw;
+}
+
+.menuBox * {
+    height: fit-content;
+    place-items: center;
+}
+
+.menuBox > div, .menuBox > a {
+    display: grid;
+    grid-template-columns: 50px 100px;
 }
 
 span .pickngo {
@@ -58,10 +85,141 @@ span .pickngo {
         background-color: rgb(76, 1, 182);
     }
 
-    header {
+    #header {
         position: fixed;
         bottom: 0;
         left: 0;
         width: 100vw;
     }
+}
+
+@media screen and (max-width: 600px) {
+    #header {
+        position: fixed;
+        top: unset !important;
+        bottom: 0;
+    }
+
+    #shoppingCartBody {
+        display: grid;
+        justify-content: center;
+        height: calc(100vh - 70px);
+        /* padding-top: 1vh; */
+    }
+
+    #shoppingCart {
+        position: relative;
+        width: 100%;
+        height: calc(100vh - 70px);
+        border-radius: 0 0 0 0;
+    }
+
+    .product {
+        grid-template-columns: 1fr 3fr 1px 1fr;
+        gap: 7px;
+    }
+
+    .product>img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .textBox h3 {
+        font-size: 1rem;
+    }
+
+    .textBox p {
+        font-size: 1rem;
+    }
+
+    .modificationBox {
+        gap: 7px;
+    }
+
+    #preferedTimeBox {
+        grid-template-columns: 3fr 4fr;
+    }
+
+    #preferedTime {
+        font-size: 1rem;
+    }
+
+    .speisenProdukt img {
+        width: 100%;
+    }
+
+    .buttonDave {
+        margin-top: 0;
+    }
+
+    .speciality>div>img {
+        width: 35%;
+    }
+
+    header>div,
+    header>div>div {
+        height: 100%;
+        width: 100%;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .menuBox {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr 1fr;
+        place-items: center;
+    }
+
+    /*
+    .menuBox > div {
+        display: grid;
+        grid-auto-flow: column;
+        align-items: center;
+        gap: 5vw;
+    } */
+    .menuBox>div {
+        display: contents;
+    }
+
+    .menuBox>a,
+    .menuBox>div> :is(i, a) {
+        display: grid !important;
+        place-items: center;
+        height: 100%;
+        width: 100%;
+    }
+    .menuBox>a>span {
+        display: none;
+    }
+
+    :is(.menuBox>a,
+        .menuBox>div> :is(i, a)):not(.activeMenuItem):hover {
+            background-color: rgb(89, 48, 255);
+        }
+
+    .activeMenuItem {
+        background-color: rgb(76, 1, 182);
+    }
+
+    #sectionDave {
+        position: relative;
+        margin-top: 2vh;
+    }
+
+    main::before {
+        display: grid;
+        place-items: center;
+        content: 'Cagitzer';
+        width: 100vw;
+        height: 5vh;
+        font-size: 1.5rem;
+        background-color: black;
+        color: rgb(227, 227, 227);
+        text-align: center;
+        padding-bottom: .3vh;
+    }
+    .icon-boxes {
+        position: relative;
+        top: 0%;
+      }
 }
