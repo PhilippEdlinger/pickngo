@@ -35,7 +35,7 @@ $preferedTimeAreaColor: #2072ff;
 }
 
 #shoppingCart {
-  background-color: c.$backGC;
+  background-color: c.$fontC;
   display: grid;
   grid-template-rows: 0.5fr 6fr .5fr .3fr .6fr .6fr;
   gap: 1vh;
@@ -92,7 +92,7 @@ $preferedTimeAreaColor: #2072ff;
 #orderB {
   border-radius: 10px;
   border: none;
-  color: c.$backGC;
+  color: c.$fontC;
   text-align: center;
 }
 
@@ -132,7 +132,7 @@ $preferedTimeAreaColor: #2072ff;
 }
 
 #orderB {
-  background-color: c.$color2;
+  background-color: c.$primaryC;
   font-size: 1.5rem;
   font-weight: 600;
   padding: inherit;

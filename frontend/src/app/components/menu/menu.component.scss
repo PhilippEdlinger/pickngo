@@ -1,3 +1,5 @@
+@use '../../color.scss' as c;
+
 header {
     display: grid;
     align-items: center;
@@ -11,6 +13,10 @@ header > a {
     grid-auto-flow: column;
     align-items: center;
     font-weight: 900;
+}
+
+span .pickngo {
+    color: c.$fontC;
 }
 
 @media screen and (max-width: 600px) {

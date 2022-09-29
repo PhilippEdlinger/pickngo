@@ -1,5 +1,7 @@
+@use '../../color.scss' as c;
+
 .login-button {
-  background-color: #3e3e3e;
+  background-color: c.$backGC;
   color: white;
   border-radius: 28px;
   height: 45px;
@@ -16,7 +18,7 @@
 }
 
 .login-button:hover {
-  background-color: #252525;
+  background-color: c.$color2;
 }
 
 html, body {
@@ -51,7 +53,7 @@ a {
   left: 0;
   display: block;
   border-radius: 28px;
-  background: #8fc971;
+  background: c.$backGC;
   width: 56px;
   height: 56px;
   transition: all 0.3s ease;
@@ -79,7 +81,7 @@ a {
 }
 .cta:hover:before {
   width: 100%;
-  background: #8ad2f1;
+  background: c.$registerC !important;
 }
 .cta:hover svg {
   transform: translateX(0);

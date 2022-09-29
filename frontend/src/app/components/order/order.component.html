@@ -33,7 +33,7 @@
             <div class="">
 
                 <div class="row">
-                    <div class="col-4 d-flex align-items-stretch mb-5 mb-lg-0" id="first" data-aos="fade-up">
+                    <div [ngStyle]="{'display': bestellt ? 'none' : 'block'}"  class="col-4 d-flex align-items-stretch mb-5 mb-lg-0" id="first" data-aos="fade-up">
                         <div class="icon-box telefonNRBox">
                             <div class="floating-label">
                                 <h4 [ngStyle]="{'display': logedIn ? 'none' : 'block'}" class="title"
@@ -51,7 +51,7 @@
                         </div>
                     </div>
 
-                    <div [ngStyle]="{'display': !ordered ? 'none' : 'block'}" data-aos="fade-up">
+                    <div [ngStyle]="{'display': !bestellt ? 'none' : 'block'}" data-aos="fade-up">
                         <div class="icon-box">
                             <div class="floating-label">
                                 <h4 class="title" style="text-align:center;font-size:40px;">Ihre Bestellung ist
