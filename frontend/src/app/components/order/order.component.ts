@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Observable } from 'rxjs';
-import { LogInDTO } from 'src/app/models/LogInDTO';
 import { Order } from 'src/app/models/Order';
 import { OrderItem } from 'src/app/models/OrderItem';
 import { User } from 'src/app/models/User';
@@ -37,29 +35,27 @@ export class OrderComponent implements OnInit {
           this.sum += oi.orderItemId.product.price * oi.quantity;
       }
     });
-    this.ls.user.subscribe(u => { this.logedIn = (u != null && u!.id >= 0); this.user = u;})
+    this.ls.user.subscribe(u => { this.logedIn = (u != null && u.id >= 0); console.log(u); this.user = u;})
   }
 
   deleteOrderItem(orderItem: OrderItem): void {
     this.order.orderItems.splice(this.order.orderItems.findIndex(oi => oi.orderItemId.product.id === orderItem.orderItemId.product.id), 1);
-    console.log(this.order);
     this.orderData.changeOrder(this.order);
   }
 
   onSubmit() {
     if (this.order.orderItems.length > 0) {
+      let u = this.user;
 
-      let us = this.user as LogInDTO;
-      let u = us.person as User;
-      console.log(u);
       if (u != null && u.id != null) {
         console.log('yo');
         this.order.customer = u;
       }
 
+      console.log(this.order);
+
       let p = this.order.planedToPickTime;
       this.order.planedToPickTime = new Date(`${p.getDate()}-${p.getMonth() + 1}-${p.getFullYear()}T${p.getHours()}:${p.getMinutes()}:${p.getSeconds()}`);
-      console.log(this.order);
       this.productService.order(this.order).subscribe(o => { console.log(o); });
 
       this.orderData.changeOrder(new Order());
@@ -70,7 +66,6 @@ export class OrderComponent implements OnInit {
 
   change(orderItem: OrderItem): void {
     this.order.orderItems[this.order.orderItems.findIndex(oi => oi.orderItemId.product.id === orderItem.orderItemId.product.id)] = orderItem;
-    console.log(this.order);
     this.orderData.changeOrder(this.order);
   }
 }

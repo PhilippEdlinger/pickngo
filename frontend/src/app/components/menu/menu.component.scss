@@ -1,6 +1,26 @@
 @use '../../color.scss' as c;
 
-header {
+// header {
+//     display: grid;
+//     place-items: center;
+//     grid-auto-flow: column;
+//     justify-content: space-between;
+//     // padding: 0 5vw;
+// }
+
+// header > a {
+//     display: grid;
+//     grid-auto-flow: column;
+//     align-items: center;
+//     font-weight: 900;
+// }
+
+header > div {
+    display: grid;
+    place-items: center;
+}
+
+.menuBox {
     display: grid;
     align-items: center;
     grid-template-columns: auto auto;

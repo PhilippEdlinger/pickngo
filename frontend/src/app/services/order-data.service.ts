@@ -10,12 +10,13 @@ export class OrderDataService {
   currentOrder = this.orderSource.asObservable();
 
   constructor() {
-    // let order = localStorage.getItem('order');
-    // if (order != null) {
-    //   let o: Order = JSON.parse(order);
-    //   console.log(o);
-    //   this.changeOrder(o);
-    // }
+    let order = localStorage.getItem('order');
+    console.log(order);
+    if (order != null) {
+      let o: Order = JSON.parse(order);
+      console.log(o);
+      // this.changeOrder(o);
+    }
   }
 
   changeOrder(order: Order) {
