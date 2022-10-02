@@ -29,7 +29,7 @@ a {
 
 #login-title {
   margin-top: 5vh;
-  color: c.$color2 !important;
+  color: c.$color2  !important;
 }
 
 #signup-title {
@@ -41,46 +41,63 @@ a {
 // }
 
 .login-input::placeholder {
-  color: c.$color2 !important;
+  color: c.$color2  !important;
 }
 
 .login-input {
-  color: c.$color2 !important;
-  border-bottom: 2px solid c.$color2 !important;
+  color: c.$color2  !important;
+  border-bottom: 2px solid c.$color2  !important;
 }
 
 .input-label {
-  color: c.$color3 !important;
+  color: c.$color3  !important;
 }
 
 #signup-title {
-  color: c.$registerC !important;
+  color: c.$registerC  !important;
 }
 
 .signup-input {
-  color: c.$registerC !important;
-  border-bottom: 2px solid c.$registerC !important;
+  color: c.$registerC  !important;
+  border-bottom: 2px solid c.$registerC  !important;
 }
 
 .signup-input::placeholder {
-  color: c.$registerC !important;
+  color: c.$registerC  !important;
+}
+
+@media screen and (max-width: 600px) {
+  .icon-boxes .icon-box {
+    padding: 10px !important;
+  }
+
+  .buttonDiv > .buttonDave {
+    min-width: none;
+    padding: 15px 20px;
+  }
+
+  // .speciality .buttonDave {
+  //   min-width: none;
+  //   padding: 15px 20px;
+  // }
 }
 
 
 /* <!-- Anmelde Formular --> */
-@media only screen and (max-width: 420px){
+@media only screen and (max-width: 420px) {
 
-  #login-body{
+  #login-body {
     margin: 0;
     font-family: nunito, serif;
   }
-  #logo-container{
+
+  #logo-container {
     height: 100%;
     width: 30%;
     margin: 0;
   }
 
-  #cagitzer-logo{
+  #cagitzer-logo {
     margin: 0;
     background-image: url("assets/img/Logo_Cagitz.png");
     background-position: center right;
@@ -92,18 +109,18 @@ a {
     display: none;
   }
 
-  header > div > div > a {
+  header>div>div>a {
     text-decoration: none;
   }
 
-  #logo-text{
+  #logo-text {
     display: none;
     margin-top: 5%;
     font-family: comforta, serif;
     font-weight: bolder;
   }
 
-  #login-title{
+  #login-title {
     height: 100%;
     width: 46%;
     border-bottom: 2px solid #edf1f5;
@@ -122,7 +139,7 @@ a {
     width: 60%;
   }
 
-  #login-header{
+  #login-header {
     margin-top: 50%;
     margin-bottom: 8%;
     display: inline-flex;
@@ -130,14 +147,14 @@ a {
     width: 100%;
   }
 
-  .input-label{
+  .input-label {
     font-family: nunito, serif;
     font-weight: bold;
     font-size: 16px;
     margin: 0 0 2%;
   }
 
-  .login-input{
+  .login-input {
     height: 35px;
     width: 100%;
     box-sizing: border-box;
@@ -149,7 +166,7 @@ a {
     margin-bottom: 5%;
   }
 
-  #login-buttons{
+  #login-buttons {
     background-color: #3e3e3e;
     color: white;
     border-radius: 15px;
@@ -162,7 +179,7 @@ a {
     text-align: center;
   }
 
-  #signup-text a{
+  #signup-text a {
     text-decoration: none;
     text-underline-offset: none;
     color: black;
@@ -193,7 +210,7 @@ a {
     float: left;
   }
 
-  header > div > div > a {
+  header>div>div>a {
     text-decoration: none;
   }
 
@@ -272,6 +289,7 @@ a {
     color: black;
   }
 }
+
 /* <!-- Registier Formular --> */
 @media only screen and (max-width: 420px) {
   #signup-body {
@@ -494,7 +512,8 @@ a {
   // grid-auto-flow: ;
   gap: 2vw;
 }
-.slider > img{
+
+.slider>img {
   margin: 0.2vw;
 }
 
@@ -504,12 +523,12 @@ a {
   border-radius: 10px;
 }
 
-.slider > img{
+.slider>img {
   width: 16.4vw;
   height: auto;
 }
 
-.icon-box > i{
+.icon-box>i {
   display: flex;
   justify-content: center;
 }
@@ -524,21 +543,22 @@ a {
   justify-content: center;
 }
 
-.sliderSmall > img{
+.sliderSmall>img {
   margin: 0.2vw;
 }
 
-.sliderSmall > img{
+.sliderSmall>img {
   width: 15vw;
   height: auto;
 }
+
 .buttonDiv {
   display: grid;
   align-items: center;
   justify-content: center;
 }
 
-.imgSize{
+.imgSize {
   width: 50%;
   height: 30%;
 }
@@ -551,7 +571,7 @@ a {
   margin-top: 20px;
 }
 
-.imageBox img{
+.imageBox img {
   border-radius: 15px;
   object-fit: cover;
   width: 100px;
@@ -560,7 +580,7 @@ a {
 }
 
 .textBox {
-  display:inline-block;
+  display: inline-block;
   margin-left: 10px;
 }
 
@@ -582,26 +602,29 @@ a {
   border-radius: 50px;
   transition: all 0.4s;
 }
+
 .back-to-top i {
   font-size: 28px;
   color: #fff;
   line-height: 0;
 }
+
 .back-to-top:hover {
   background: #2194f7;
   color: #fff;
 }
+
 .back-to-top.active {
   visibility: visible;
   opacity: 1;
 }
 
 .fa-user-circle {
-  color: c.$fontC !important;
+  color: c.$fontC  !important;
 }
 
 .fa-user-circle:before {
-  color: c.$fontC !important;
+  color: c.$fontC  !important;
 }
 
 .right {
@@ -625,9 +648,11 @@ svg.svg-inline--fa .fa-trash {
   background-color: #73956F;
   position: sticky;
 }
+
 #header.header-scrolled {
   top: 0;
 }
+
 #header .logo {
   font-size: 30px;
   margin: 0;
@@ -637,9 +662,11 @@ svg.svg-inline--fa .fa-trash {
   letter-spacing: 2px;
   text-transform: uppercase;
 }
+
 #header .logo a {
   color: #fff;
 }
+
 #header .logo img {
   max-height: 40px;
 }
@@ -660,6 +687,7 @@ svg.svg-inline--fa .fa-trash {
   text-align: center;
   padding-bottom: 30px;
 }
+
 .section-title h2 {
   font-size: 32px;
   font-weight: bold;
@@ -668,6 +696,7 @@ svg.svg-inline--fa .fa-trash {
   padding-bottom: 0;
   color: #054a85;
 }
+
 .section-title p {
   margin-bottom: 0;
   font-style: italic;
@@ -689,7 +718,7 @@ svg.svg-inline--fa .fa-trash {
 }
 
 
-.centerText{
+.centerText {
   text-align: center;
 }
 
@@ -710,24 +739,29 @@ svg.svg-inline--fa .fa-trash {
   border-radius: 10px;
   width: 100%;
 }
+
 .icon-boxes .icon {
   margin: 0 auto 20px auto;
   display: inline-block;
   text-align: center;
 }
+
 .icon-boxes .icon i {
   font-size: 36px;
   line-height: 1;
   color: #f6b024;
 }
+
 .icon-boxes .title {
   font-weight: 700;
   margin-top: 10px;
   font-size: 18px;
 }
+
 .icon-boxes .title a {
   color: #05579e;
 }
+
 .icon-boxes .description {
   font-size: 15px;
   line-height: 28px;
@@ -759,11 +793,11 @@ svg.svg-inline--fa .fa-trash {
 
 .buttonDave:hover {
   transform: translateY(-3px);
-  box-shadow: 0 2px 6px -1px rgba(182,157,230, .65);
+  box-shadow: 0 2px 6px -1px rgba(182, 157, 230, .65);
 }
 
 .buttonDave:active {
-  transform:  scale(.99);
+  transform: scale(.99);
 }
 
 #sectionDave .row:last-of-type {
