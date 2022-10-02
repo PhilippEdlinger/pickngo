@@ -66,6 +66,7 @@ span .pickngo {
     .menuBox>a,
     .menuBox>div> :is(i, a) {
         display: grid !important;
+        grid-template-columns: auto;
         place-items: center;
         height: 100%;
         width: 100%;
