@@ -14,6 +14,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class OrderComponent implements OnInit {
   order: Order;
+  orderCopy: Order;
   ordered = false;
   form: FormGroup;
   logedIn: boolean = false;
@@ -29,13 +30,18 @@ export class OrderComponent implements OnInit {
 
   ngOnInit(): void {
     this.bestellt = false;
-    this.orderData.currentOrder.subscribe(o => {this.order = o;
+    this.orderData.currentOrder.subscribe(o => {
+      this.order = o;
       this.sum = 0;
       for (let oi of o.orderItems) {
-          this.sum += oi.orderItemId.product.price * oi.quantity;
+        this.sum += oi.orderItemId.product.price * oi.quantity;
       }
     });
-    this.ls.user.subscribe(u => { this.logedIn = (u != null && u.id >= 0); console.log(u); this.user = u;})
+    this.orderCopy = this.order;
+    console.log(this.order);
+    // this.order = new Order();
+    console.log(this.orderCopy);
+    this.ls.user.subscribe(u => { this.logedIn = (u != null && u.id >= 0); console.log(u); this.user = u; })
   }
 
   deleteOrderItem(orderItem: OrderItem): void {
@@ -61,6 +67,7 @@ export class OrderComponent implements OnInit {
       this.orderData.changeOrder(new Order());
 
       this.bestellt = true;
+      this.ordered = true;
     }
   }
 

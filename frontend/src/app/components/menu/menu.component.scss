@@ -15,6 +15,9 @@
 //     font-weight: 900;
 // }
 
+header {
+    z-index: 110;
+}
 header > div {
     display: grid;
     place-items: center;
