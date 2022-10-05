@@ -64,10 +64,18 @@ public class ProductResource {
     }
 
     @GET
+    @Path("klimaBox")
+    public Response getKlimaBox() {
+        return Response.ok(productService.getKlimaBox()).build();
+    }
+
+    @GET
     @Path("desert")
     public Response getDesert() {
         return Response.ok(productService.getDesert()).build();
     }
+
+
 
     @POST
     @Path("foodItem")

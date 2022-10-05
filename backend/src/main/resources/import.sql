@@ -58,6 +58,8 @@ insert into drinkitem(id, volume, warm)
 values (7, 330, false),
       (9, 500, false);
 
+insert into klimabox (product_id, rabat, fromDate, toDate)
+values (1, 50, '022-03-03T10:15:30', '022-03-03T10:15:30');
 
 insert into orderet(orderposition, customer_id, employee_id, msg, timeOfOrder, orderstatus, planedtopicktime, readytopicktime)
 values (1, 2, 1, 'Bisschen Scharf', '2022-03-03T10:15:30', 1,'2022-03-03T10:15:30', '2022-03-03T10:15:30'),

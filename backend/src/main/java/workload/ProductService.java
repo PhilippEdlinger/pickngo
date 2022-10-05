@@ -1,8 +1,10 @@
 package workload;
 
+import models.KlimaBox;
 import models.Product;
 
 import javax.enterprise.context.ApplicationScoped;
+import java.util.LinkedList;
 import java.util.List;
 
 @ApplicationScoped
@@ -21,5 +23,17 @@ public class ProductService extends Repository<Product, Long> {
     public List<Product> getDesert() {
         return getEntityManager().createQuery("select p from Product p " +
                 "where p.categoryET.name = 'Desert'").getResultList();
+    }
+
+    public List<Product> getKlimaBox() {
+        var kb = getEntityManager().createQuery("select k from KlimaBox k", KlimaBox.class).getResultList();
+        List<Product> ps = new LinkedList<>();
+        for (var k:kb) {
+            var p = k.getProduct();
+            p.setPrice(p.price*k.getRabat()/100);
+            ps.add(p);
+        }
+
+        return ps;
     }
 }

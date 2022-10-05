@@ -45,6 +45,7 @@ public class OrderResource {
         var orderET = service.persistET(order);
         System.out.println("-----");
         System.out.println( order.customer);
+        System.out.println(order.getId());
 
         Long duration = 0L;
         for (var oi : order.getOrderItems()) {
@@ -53,7 +54,6 @@ public class OrderResource {
 
         if (orderET.getCustomer() != null) {
             String emailAdress = orderET.getCustomer().getEmail();
-            emailAdress = "dp.precup@gmail.com";
             String emailText = "";
             String emailHeader = "\n Vielen Dank, dass Sie beim Cagitzer x Pick'n'Go bestellt haben! \n \n Ihre Bestellung lautet: \n";
             String emailTime = "\n Ihre Bestellung ist in " + duration + " Minuten abholbereit! \n \n";
@@ -66,6 +66,7 @@ public class OrderResource {
 
             }
 
+            System.out.println(orderET.getId());
             System.out.println(orderET.getCustomer().getEmail());
             System.out.println(orderET.getCustomer().id);
 
