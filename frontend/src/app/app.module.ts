@@ -16,7 +16,9 @@ import { MenuImgComponent } from './components/menu-img/menu-img.component';
 import { HomePageProductComponent } from './components/home-page-product/home-page-product.component';
 import { ProductCategoryComponent } from './components/product-category/product-category.component';
 import { ShoppingCartItemComponent } from './components/shopping-cart-item/shopping-cart-item.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { SearchbarComponent } from './components/searchbar/searchbar.component';
+import { SmsComponent } from './components/sms/sms.component';
 
 @NgModule({
   declarations: [
@@ -31,14 +33,17 @@ import {ReactiveFormsModule} from "@angular/forms";
     MenuImgComponent,
     HomePageProductComponent,
     ProductCategoryComponent,
-    ShoppingCartItemComponent
+    ShoppingCartItemComponent,
+    SearchbarComponent,
+    SmsComponent
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
         FontAwesomeModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        FormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

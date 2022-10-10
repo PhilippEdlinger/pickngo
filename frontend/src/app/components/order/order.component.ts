@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Order } from 'src/app/models/Order';
 import { OrderItem } from 'src/app/models/OrderItem';
-import { User } from 'src/app/models/User';
 import { ApiService } from 'src/app/services/api.service';
 import { OrderDataService } from 'src/app/services/order-data.service';
 import { ProductService } from 'src/app/services/product.service';
+import * as twilio from "twilio";
+
 
 @Component({
   selector: 'app-order',
@@ -22,10 +23,25 @@ export class OrderComponent implements OnInit {
   bestellt: boolean = false;
   sum: number = 0;
 
+
   constructor(private orderData: OrderDataService, private fb: FormBuilder, private productService: ProductService, private ls: ApiService) {
     this.form = this.fb.group({
       tele: [null, Validators.required, Validators.minLength(7), Validators.maxLength(20)]
     });
+  }
+
+  accountSid = 'AC218c13853e6d8dbcbe22ac0eb73f7a7d';
+  authToken = '760e4f3e60907694dab36adaca55264f';
+  client = twilio(this.accountSid, this.authToken);
+  /* SMS */
+  sendSms() {
+    this.client.messages
+        .create({
+          to: '+4367761174680',
+          from: '+15617822658',
+          body: 'hallooo',
+        })
+        .then((message: { sid: any; }) => console.log(message.sid));
   }
 
   ngOnInit(): void {
@@ -68,6 +84,7 @@ export class OrderComponent implements OnInit {
 
       this.bestellt = true;
       this.ordered = true;
+      this.sendSms();
     }
   }
 

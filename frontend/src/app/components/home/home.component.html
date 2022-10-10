@@ -22,6 +22,7 @@
 
     <!-- ======= Icon Boxes Section ======= -->
     <section id="sectionDave" class="col-md-12 col-lg-12 icon-boxes">
+      <app-searchbar (textChanged)="onSearchTextEntered($event)"></app-searchbar>
 
       <div id="menuBox" *ngIf="menus">
         <h1 class="centerText">Spezialitäten</h1>
@@ -38,6 +39,7 @@
 
       <br>
 
+      <div *ngIf="searchText === '' || products.name.toLowerCase().includes(searchText)"></div>
       <app-product-category [urlName]="'vorspeise'" [title]="'Vorspeise'"></app-product-category>
       <app-product-category [urlName]="'hauptspeise'" [title]="'Hauptspeise'"></app-product-category>
       <app-product-category [urlName]="'desert'" [title]="'Nachspeise'"></app-product-category>

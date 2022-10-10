@@ -15,12 +15,15 @@ export class HomePageProductComponent implements OnInit {
   order: Order;
   bestellt: boolean = false;
 
+
   constructor(private orderData: OrderDataService) { }
 
   ngOnInit(): void {
     this.product.imageName = 'http://localhost:8080/product/img/' + this.product.imageName;
     this.orderData.currentOrder.subscribe(order => this.order = order);
   }
+
+
 
   onClick() {
     let oi = new OrderItem();
