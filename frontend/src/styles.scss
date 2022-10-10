@@ -84,7 +84,7 @@ a {
 
 
 /* <!-- Anmelde Formular --> */
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 517px) {
 
   #login-body {
     margin: 0;
@@ -125,10 +125,11 @@ a {
     width: 46%;
     border-bottom: 2px solid #edf1f5;
     margin-left: -2.5%;
+    margin-top: -1%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 40px;
+    font-size: 60px;
     font-family: 'comforta', serif;
     font-weight: bold;
   }
@@ -187,7 +188,7 @@ a {
 
 }
 
-@media only screen and (min-width: 430px) {
+@media only screen and (min-width: 518px) {
   #login-body {
     margin: 0;
     font-family: nunito, serif;
@@ -291,7 +292,7 @@ a {
 }
 
 /* <!-- Registier Formular --> */
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 517px) {
   #signup-body {
     margin: 0;
     font-family: nunito, serif;
@@ -326,10 +327,11 @@ a {
     height: 100%;
     width: 46%;
     margin-left: -1.5%;
+    margin-top: -1%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
+    font-size: 60px;
     font-family: 'comforta', serif;
     font-weight: bold;
   }
@@ -390,7 +392,7 @@ a {
   }
 }
 
-@media only screen and (min-width: 421px) {
+@media only screen and (min-width: 518px) {
   #signup-body {
     margin: 0;
     font-family: nunito, serif;
