@@ -30,10 +30,10 @@ export class OrderComponent implements OnInit {
     });
   }
 
-  accountSid = 'AC218c13853e6d8dbcbe22ac0eb73f7a7d';
+/*accountSid = 'AC218c13853e6d8dbcbe22ac0eb73f7a7d';
   authToken = '760e4f3e60907694dab36adaca55264f';
   client = twilio(this.accountSid, this.authToken);
-  /* SMS */
+   // SMS
   sendSms() {
     this.client.messages
         .create({
@@ -43,6 +43,7 @@ export class OrderComponent implements OnInit {
         })
         .then((message: { sid: any; }) => console.log(message.sid));
   }
+  */
 
   ngOnInit(): void {
     this.bestellt = false;
