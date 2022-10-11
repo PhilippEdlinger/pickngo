@@ -11,10 +11,10 @@ export class OrderDataService {
 
   constructor() {
     let order = localStorage.getItem('order');
-    console.log(order);
+    // console.log(order);
     if (order != null) {
       let o: Order = JSON.parse(order);
-      console.log(o);
+      // console.log(o);
       // this.changeOrder(o);
     }
   }

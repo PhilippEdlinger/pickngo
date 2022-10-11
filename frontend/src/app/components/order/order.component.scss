@@ -83,7 +83,7 @@ input {
   display: grid !important;
   align-items: center !important;
   justify-content: center !important;
-  margin-right: 4vw;
+  // margin-right: 4vw;
 }
 
 input:focus {
@@ -151,10 +151,11 @@ input:not(:valid):not(:focus)+label+.icon {
   align-items: center;
 }
 
-.imageBox .textBox > p:first-of-type {
+.imageBox .textBox>p:first-of-type {
   text-align: left;
 }
-.imageBox .textBox > p:last-of-type {
+
+.imageBox .textBox>p:last-of-type {
   text-align: right;
 }
 
@@ -190,10 +191,11 @@ input:not(:valid):not(:focus)+label+.icon {
   grid-auto-flow: column;
 }
 
-#orderPrice > h5 {
+#orderPrice>h5 {
   font-size: 1.5rem;
 }
-#orderPrice > p {
+
+#orderPrice>p {
   text-align: right;
   font-size: 1.7rem;
   padding-right: calc(2rem + 5px);
@@ -204,17 +206,53 @@ input:not(:valid):not(:focus)+label+.icon {
   display: grid;
   justify-content: center;
 }
-.orderSection > div > div {
+
+.orderBox>div {
   display: grid;
-  grid-template-columns: 30vw 1fr;
+  grid-template-columns: 7fr 3fr;
+  gap: 2rem;
   place-items: center;
   justify-content: center;
   width: 90vw;
 }
 
+.orderBox {
+  display: grid;
+  grid-template-rows: 1fr 100px;
+}
 
-.orderSection > div > div > div {
+.inputBox {
+  height: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .orderBox>div {
+    grid-template-columns: 7fr 3fr;
+  }
+}
+
+#second {
   width: 100%;
+}
+
+.inputBox div {
+  height: 100%;
+}
+
+.telefonNRBox {
+  display: grid;
+  grid-template-rows: 9fr 1fr;
+}
+
+.inputBox form {
+  height: 80% !important;
+  display: grid;
+  grid-template-rows: 1fr .1fr 7fr;
+  gap: 1vh;
+}
+
+.orderSection>div>div>div {
+  // width: 100%;
 }
 
 @keyframes shake-shake {
@@ -378,7 +416,7 @@ button:active {
 --------------------------------------------------------------*/
 
 #preloader {
-  background: url(../../../assets/img/Walk.gif) no-repeat center center ;
+  background: url(../../../assets/img/Walk.gif) no-repeat center center;
   height: 100vh;
   width: 100%;
   position: fixed;
@@ -395,9 +433,10 @@ button:active {
 }
 
 @media screen and (max-width: 1070px) {
-  .orderSection > div > div {
+  .orderSection>div>div {
     grid-template-columns: 98vw;
   }
+
   .orderSection p {
     font-size: 90%;
   }
@@ -418,7 +457,7 @@ button:active {
     color: #6161ff !important;
   }
 
-  .floating-label h4{
+  .floating-label h4 {
     font-size: 23px !important;
   }
 

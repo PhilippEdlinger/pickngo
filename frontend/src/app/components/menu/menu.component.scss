@@ -27,6 +27,7 @@ header > div {
     display: grid;
     align-items: center;
     grid-template-columns: auto auto;
+    // grid-template-columns: auto auto auto;
     justify-content: space-between;
     width: 90vw;
 }
@@ -39,6 +40,10 @@ header > div {
 .menuBox > div, .menuBox > a {
     display: grid;
     grid-template-columns: 50px 100px;
+}
+
+.menuBox .logoText {
+    margin: 0 0 0 -40px;
 }
 
 span .pickngo {

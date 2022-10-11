@@ -27,4 +27,8 @@ export class ProductService {
     console.log(order);
     return this.http.post<Order>('http://localhost:8080/order', order, httpOptions);
   }
+
+  getAllOrder(): Observable<Order[]> {
+    return this.http.get<Order[]>('http://localhost:8080/order');
+  }
 }

@@ -17,6 +17,8 @@ import { HomePageProductComponent } from './components/home-page-product/home-pa
 import { ProductCategoryComponent } from './components/product-category/product-category.component';
 import { ShoppingCartItemComponent } from './components/shopping-cart-item/shopping-cart-item.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { AdminPageComponent } from './components/admin-page/admin-page.component';
+import { AdminPageItemComponent } from './components/admin-page-item/admin-page-item.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import {ReactiveFormsModule} from "@angular/forms";
     MenuImgComponent,
     HomePageProductComponent,
     ProductCategoryComponent,
-    ShoppingCartItemComponent
+    ShoppingCartItemComponent,
+    AdminPageComponent,
+    AdminPageItemComponent
   ],
     imports: [
         BrowserModule,

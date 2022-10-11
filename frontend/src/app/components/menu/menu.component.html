@@ -2,8 +2,10 @@
     <div class="container d-flex align-items-center justify-content-between">
         <div class="container d-flex align-items-center justify-content-center justify-content-md-between menuBox">
             <a routerLink="./" class="contact-info d-flex align-items-center activeMenuItem" style="color:white;">
-                <img src="../../../assets/img/pickngo_logo.png" width="50px" alt="pickngo-logo"><span>Pick'n Go</span>
+                <img src="../../../assets/img/pickngo_logo.png" width="50px" alt="pickngo-logo">
+                <span class="logoText">Pick'n Go</span>
             </a>
+            <!-- <a routerLink="./adminPage">Admin Page</a> -->
             <div class="right-icons">
                 <fa-icon (click)="onClickShoppingCart()" id="shoppingCartB"
                     style="font-size:30px; padding: 15px;color:white;" [icon]="shoppingCartIcon">
