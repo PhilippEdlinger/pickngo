@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Product } from '../models/Product';
 import { Order } from '../models/Order';
+import {Menu} from "../models/Menu";
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -20,6 +21,11 @@ export class ProductService {
 
   getProductCategory(urlName: String): Observable<Product[]> {
     const u = `${this.apiUrl}/${urlName}`;
+    return this.http.get<Product[]>(u);
+  }
+
+  getAllProducts(): Observable<Product[]> {
+    const u = `${this.apiUrl}`;
     return this.http.get<Product[]>(u);
   }
 
