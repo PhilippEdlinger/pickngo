@@ -218,12 +218,18 @@ input:not(:valid):not(:focus)+label+.icon {
 }
 
 .telefonNRBox {
-  border: 1px solid red;
   height: 70vh !Important;
 }
 
 .inputBox {
   height: 70vh !Important;
+}
+
+
+#textBox {
+  height: 30vh;
+  padding: 10px;
+  pointer-events: none;
 }
 
 .floating-label {
@@ -596,10 +602,6 @@ section {
   margin: 0 auto 20px auto;
   display: inline-block;
   text-align: center;
-}
-
-#textBox {
-  height: 20vh;
 }
 
 .icon-boxes .icon i {
