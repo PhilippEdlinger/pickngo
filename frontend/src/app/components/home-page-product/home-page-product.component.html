@@ -3,7 +3,7 @@
   <div class="floating-label speisenProdukt">
     <img src={{product.imageName}} alt={{product.name}} class="imgBox productImg">
     <h4 class="title productName" style="text-align:center;">{{product.name}}</h4>
-    <h4 class="title productPrice" style="text-align:center;">{{product.price.toFixed(2)}}€</h4>
+    <h4 class="title productPrice" style="text-align:center;">{{product.price.toFixed(2).replace('.', ',')}}€</h4>
     <div class="buttonDiv">
       <button (click)="onClick()" class="buttonDave">In den Warenkorb</button>
     </div>
