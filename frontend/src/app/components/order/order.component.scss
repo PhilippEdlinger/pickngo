@@ -214,6 +214,25 @@ input:not(:valid):not(:focus)+label+.icon {
   place-items: center;
   justify-content: center;
   width: 90vw;
+  max-height: 100vh !important;
+}
+
+.telefonNRBox {
+  border: 1px solid red;
+  height: 70vh !Important;
+}
+
+.inputBox {
+  height: 70vh !Important;
+}
+
+.floating-label {
+  height: 50vh !Important;
+}
+
+#login-form {
+  height: 10vh !Important;
+
 }
 
 .orderBox {
