@@ -85,7 +85,7 @@ export class OrderComponent implements OnInit {
 
       this.bestellt = true;
       this.ordered = true;
-      this.sendSms();
+      /*this.sendSms();*/
     }
   }
 
