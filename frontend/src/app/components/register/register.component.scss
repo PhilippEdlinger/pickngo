@@ -18,11 +18,11 @@ button.register-button {
 }
 
 button.register-button:hover {
-  background-color: rgb(85, 129, 176);
+  background-color: c.$color2;
 }
 
 #login-button {
-  background-color: c.$backGC;
+  background-color: c.$color3;
   color: white;
   border-radius: 28px;
   height: 45px;
@@ -39,5 +39,5 @@ button.register-button:hover {
 }
 
 #login-button:hover {
-  background-color: c.$color2;
+  background-color: c.$headerC;
 }
