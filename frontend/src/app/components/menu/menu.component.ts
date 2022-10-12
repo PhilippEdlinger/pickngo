@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
@@ -8,11 +8,20 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 })
 export class MenuComponent implements OnInit {
   @Output() onHideShoppC = new EventEmitter();
+  @Input() text =  (<HTMLInputElement>document.getElementById("searchbar")).value;
   shoppingCartIcon = faShoppingCart;
+
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  searchText: string = '';
+
+  onSearchTextEntered(searchValue: string) {
+    this.searchText = searchValue;
+    console.log(this.searchText);
   }
 
   onClickShoppingCart() {

@@ -4,7 +4,9 @@
             <a routerLink="./" class="contact-info d-flex align-items-center activeMenuItem" style="color:white;">
                 <img src="../../../assets/img/pickngo_logo.png" width="50px" alt="pickngo-logo">
                 <span class="logoText">Pick'n Go</span>
+                <app-searchbar id="searchbar" (textChanged)="onSearchTextEntered($event)"></app-searchbar>
             </a>
+
             <!-- <a routerLink="./adminPage">Admin Page</a> -->
             <div class="right-icons">
                 <fa-icon (click)="onClickShoppingCart()" id="shoppingCartB"

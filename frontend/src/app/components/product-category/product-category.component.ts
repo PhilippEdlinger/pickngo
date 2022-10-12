@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, SimpleChanges} from '@angular/core';
 import { Product } from 'src/app/models/Product';
 import { ProductService } from 'src/app/services/product.service';
+import {MenuComponent} from "../menu/menu.component";
 
 @Component({
   selector: 'app-product-category',
@@ -17,6 +18,9 @@ export class ProductCategoryComponent implements OnInit {
   ngOnInit(): void {
       this.initProducts();
   }
+
+
+  searchText: string = '';
 
   initProducts() {
     this.productService.getProductCategory(this.urlName).subscribe(p => this.products = p);
