@@ -1,17 +1,19 @@
-<header id="header"  class="fixed-bottom d-flex align-items-center ">
+<header id="header" class="fixed-bottom d-flex align-items-center ">
     <div class="container d-flex align-items-center justify-content-between">
         <div class="container d-flex align-items-center justify-content-center justify-content-md-between menuBox">
             <a routerLink="./" class="contact-info d-flex align-items-center activeMenuItem" style="color:white;">
                 <img src="../../../assets/img/pickngo_logo.png" width="50px" alt="pickngo-logo">
                 <span class="logoText">Pick'n Go</span>
             </a>
-            <!-- <a routerLink="./adminPage">Admin Page</a> -->
+            <a routerLink="./adminPage">Admin Page</a>
             <div class="right-icons">
                 <fa-icon (click)="onClickShoppingCart()" id="shoppingCartB"
                     style="font-size:30px; padding: 15px;color:white;" [icon]="shoppingCartIcon">
                 </fa-icon>
                 <a href="login">
-                    <i class="fa fa-user-circle" style="font-size:30px;color:white;" routerLink="login"></i>
+                    <fa-icon id="shoppingCartB"
+                        style="font-size:30px; padding: 15px;color:white;" [icon]="userIcon">
+                    </fa-icon>
                 </a>
             </div>
         </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { faShoppingCart, faUser } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-menu',
@@ -9,6 +9,7 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 export class MenuComponent implements OnInit {
   @Output() onHideShoppC = new EventEmitter();
   shoppingCartIcon = faShoppingCart;
+  userIcon = faUser;
 
   constructor() { }
 

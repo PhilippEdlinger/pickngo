@@ -1,7 +1,8 @@
 <div *ngIf="order">
-    <p>{{order.orderPosition}}</p>
+    <p>NR: {{order.orderPosition}}</p>
     <!-- <p>{{customerIdent}}</p> -->
-    <p>{{order.orderStatus}}</p>
-    <p>{{order.planedToPickTime}}</p>
+    <!-- <p>{{order.orderStatus}}</p> -->
+    <p>Tel: {{order.customer.lastname}}</p>
+    <p>Fertig um: {{order.planedToPickTime}}</p>
     <p>{{order.orderItems}}</p>
 </div>
