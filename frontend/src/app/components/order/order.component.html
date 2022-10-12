@@ -17,7 +17,7 @@
                             </div>
                             <div id="orderPrice">
                                 <h5>Gesamt</h5>
-                                <p id="shoppingCartPrice">{{sum.toFixed(2)}}€</p>
+                                <p id="shoppingCartPrice">{{sum.toFixed(2).replace('.', ',')}}€</p>
                             </div>
                         </div>
                     </div>
@@ -37,7 +37,7 @@
                                             type="tel" name="tel" id="tel" autocomplete="off" />
                                         <!-- <div> -->
                                         <h1>Notiz:</h1>
-                                        <textarea id="textBox" cols="30" rows="10"></textarea>
+                                        <textarea readonly id="textBox" cols="30" rows="10"></textarea>
                                         <!-- </div> -->
                                     </form>
                                 </div>

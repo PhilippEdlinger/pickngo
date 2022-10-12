@@ -11,15 +11,17 @@ public class KlimaBox {
     @ManyToOne
     private Product product;
     private Double rabat;
+    private Integer number;
     private LocalDateTime fromDate;
     private LocalDateTime toDate;
 
     public KlimaBox() {
     }
 
-    public KlimaBox(Product product, Double rabat, LocalDateTime fromDate, LocalDateTime toDate) {
+    public KlimaBox(Product product, Double rabat, Integer number, LocalDateTime fromDate, LocalDateTime toDate) {
         this.product = product;
         this.rabat = rabat;
+        this.number = number;
         this.fromDate = fromDate;
         this.toDate = toDate;
     }
@@ -46,6 +48,14 @@ public class KlimaBox {
 
     public void setRabat(Double rabat) {
         this.rabat = rabat;
+    }
+
+    public Integer getNumber() {
+        return number;
+    }
+
+    public void setNumber(Integer number) {
+        this.number = number;
     }
 
     public LocalDateTime getFromDate() {
