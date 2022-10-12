@@ -22,13 +22,6 @@ export class HomeComponent implements OnInit {
     this.initMenus();
   }
 
-  searchText: string = '';
-
-  onSearchTextEntered(searchValue: string) {
-    this.searchText = searchValue;
-    console.log(this.searchText);
-  }
-
   initMenus(): void {
     this.menuService.getDishOfTheDay().subscribe(m => this.menus = m);
   }

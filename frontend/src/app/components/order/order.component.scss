@@ -229,7 +229,7 @@ input:not(:valid):not(:focus)+label+.icon {
 #textBox {
   height: 30vh;
   padding: 10px;
-  pointer-events: none;
+  resize: none;
 }
 
 .floating-label {
@@ -383,7 +383,6 @@ button:active {
   display: inline-block;
   font-size: 25px;
   margin: 0;
-
 }
 
 .imageBox .price {

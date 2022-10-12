@@ -23,6 +23,13 @@ header > div {
     place-items: center;
 }
 
+#searchbar {
+    border: 1px solid red;
+    position: fixed;
+    left: 44%;
+    top: 3%;
+}
+
 .menuBox {
     display: grid;
     align-items: center;
