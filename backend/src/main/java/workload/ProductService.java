@@ -36,4 +36,9 @@ public class ProductService extends Repository<Product, Long> {
 
         return ps;
     }
+
+    public List<Product> getAperitif() {
+        return getEntityManager().createQuery("select p from Product p " +
+                "where p.categoryET.name = 'Aperitif'").getResultList();
+    }
 }

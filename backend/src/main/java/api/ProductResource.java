@@ -20,11 +20,11 @@ public class ProductResource {
 
 
     @Inject
-    private ProductService productService;
+    ProductService productService;
     @Inject
-    private FoodItemRepo foodItemRepo;
+    FoodItemRepo foodItemRepo;
     @Inject
-    private DrinkItemRepo drinkItemRepo;
+    DrinkItemRepo drinkItemRepo;
 
     @GET
     public Response getProducts() {
@@ -73,6 +73,12 @@ public class ProductResource {
     @Path("desert")
     public Response getDesert() {
         return Response.ok(productService.getDesert()).build();
+    }
+
+    @GET
+    @Path("aperitif")
+    public Response getAperitif() {
+        return Response.ok(productService.getAperitif()).build();
     }
 
 

@@ -12,8 +12,8 @@ public class FoodItem extends Product{
     public FoodItem() {
     }
 
-    public FoodItem(String name, Double price, String imagePath, String allergies, Integer preparationTime, List<OrderItem> orderItems, CategoryET categoryET, List<Menu> menus, List<Tag> tags, Boolean isVegan, Boolean isVegetarian, Boolean isDishOfTheDay) {
-        super(name, price, imagePath, allergies, preparationTime, orderItems, categoryET, menus, tags);
+    public FoodItem(String name, Double price, String description, String imagePath, String allergies, Integer preparationTime, List<OrderItem> orderItems, CategoryET categoryET, List<Menu> menus, List<Tag> tags, Boolean isVegan, Boolean isVegetarian, Boolean isDishOfTheDay) {
+        super(name, price, description, imagePath, allergies, preparationTime, orderItems, categoryET, menus, tags);
         this.isVegan = isVegan;
         this.isVegetarian = isVegetarian;
         this.isDishOfTheDay = isDishOfTheDay;
