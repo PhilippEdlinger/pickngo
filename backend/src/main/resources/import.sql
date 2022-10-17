@@ -34,7 +34,7 @@ values
       ('Fanta', 2.99,'hallo', 5, 'fanta.jpg', null, 0),
       ('Mineralwasser', 2.99,'', 5, 'Voeslauer-prickelnd.jpg', null, 0),
       ('Hausgemachter Hollundersaft', 2.50,'', 5, 'hollundersaft.jpg', null, 0),
-      ('Gegrillter Schafkäse', 10,'mit Kürbis im Speckmantel auf Blattsalat', 1, 'schafkäse.jpg', null, 0),
+      ('Gegrillter Schafkäse', 10,'mit Kürbis im Speckmantel auf Blattsalat', 1, 'schafkaese.jpg', null, 0),
       ('Beef Tatar', 13,'mit gebackenem Ei / Kürbishumus', 1, 'beef-tatar.jpg', null, 0),
       ('Rindsuppe', 4.50,'mit Frittaten oder Leberknödel', 1, 'frittatensuppe.jpg', null, 0),
       ('Kürbiscremesuppe', 5.50,'', 1, 'kuerbiscremesuppe.jpg', null, 0),
