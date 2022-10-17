@@ -28,9 +28,9 @@ public class ProductService extends Repository<Product, Long> {
     public List<Product> getKlimaBox() {
         var kb = getEntityManager().createQuery("select k from KlimaBox k", KlimaBox.class).getResultList();
         List<Product> ps = new LinkedList<>();
-        for (var k:kb) {
+        for (var k : kb) {
             var p = k.getProduct();
-            p.setPrice(p.price*k.getRabat()/100);
+            p.setPrice(p.price * k.getRabat() / 100);
             ps.add(p);
         }
 
@@ -39,6 +39,8 @@ public class ProductService extends Repository<Product, Long> {
 
     public List<Product> search(String sw) {
         return getEntityManager().createQuery("select p from Product p where lower(p.name) like lower(concat('%', :name, '%')) ").setParameter("name", sw).getResultList();
+    }
+
     public List<Product> getAperitif() {
         return getEntityManager().createQuery("select p from Product p " +
                 "where p.categoryET.name = 'Aperitif'").getResultList();
