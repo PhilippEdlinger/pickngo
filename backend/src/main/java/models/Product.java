@@ -14,6 +14,7 @@ public class Product extends PanacheEntityBase {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
     public String name;
+    public String description;
     public Double price;
     public String imageName;
     public String allergies;
@@ -60,9 +61,10 @@ public class Product extends PanacheEntityBase {
     public Product() {
     }
 
-    public Product(String name, Double price, String imageName, String allergies, Integer preparationTime, List<OrderItem> orderItems, CategoryET categoryET, List<Menu> menus, List<Tag> tags) {
+    public Product(String name, Double price, String description,String imageName, String allergies, Integer preparationTime, List<OrderItem> orderItems, CategoryET categoryET, List<Menu> menus, List<Tag> tags) {
         this.name = name;
         this.price = price;
+        this.description = description;
         this.imageName = imageName;
         this.allergies = allergies;
         this.preparationTime = preparationTime;
@@ -94,6 +96,14 @@ public class Product extends PanacheEntityBase {
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getImageName() {
