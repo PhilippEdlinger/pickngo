@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import {MatInputModule} from '@angular/material/input';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -21,6 +22,7 @@ import { AdminPageComponent } from './components/admin-page/admin-page.component
 import { AdminPageItemComponent } from './components/admin-page-item/admin-page-item.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { SmsComponent } from './components/sms/sms.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -45,9 +47,11 @@ import { SmsComponent } from './components/sms/sms.component';
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
+        MatInputModule,
         FontAwesomeModule,
         ReactiveFormsModule,
-        FormsModule
+        FormsModule,
+        BrowserAnimationsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

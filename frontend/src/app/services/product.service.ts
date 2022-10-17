@@ -29,6 +29,11 @@ export class ProductService {
     return this.http.get<Product[]>(u);
   }
 
+  getSearchResult(sw: String): Observable<Product[]> {
+    const u = `${this.apiUrl}/search/${sw}`;
+    return this.http.get<Product[]>(u);
+  }
+
   order(order: Order): Observable<Order> {
     console.log(order);
     return this.http.post<Order>('http://localhost:8080/order', order, httpOptions);

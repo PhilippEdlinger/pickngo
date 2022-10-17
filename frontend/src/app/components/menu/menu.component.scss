@@ -21,13 +21,7 @@ header {
 header > div {
     display: grid;
     place-items: center;
-}
-
-#searchbar {
-    border: 1px solid red;
-    position: fixed;
-    left: 44%;
-    top: 3%;
+    height: 100%;
 }
 
 .menuBox {
@@ -44,9 +38,14 @@ header > div {
     place-items: center;
 }
 
-.menuBox > div, .menuBox > a {
+.menuBox > a {
     display: grid;
     grid-template-columns: 50px 100px;
+}
+
+.menuBox > div {
+    display: grid;
+    grid-template-columns: auto auto auto;
 }
 
 .menuBox .logoText {

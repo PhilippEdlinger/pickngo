@@ -37,6 +37,8 @@ public class ProductService extends Repository<Product, Long> {
         return ps;
     }
 
+    public List<Product> search(String sw) {
+        return getEntityManager().createQuery("select p from Product p where lower(p.name) like lower(concat('%', :name, '%')) ").setParameter("name", sw).getResultList();
     public List<Product> getAperitif() {
         return getEntityManager().createQuery("select p from Product p " +
                 "where p.categoryET.name = 'Aperitif'").getResultList();

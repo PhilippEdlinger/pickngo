@@ -1,4 +1,7 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Product } from 'src/app/models/Product';
+import { ProductService } from 'src/app/services/product.service';
+import { SearchbarService } from 'src/app/services/searchbar.service';
 
 @Component({
   selector: 'app-searchbar',
@@ -6,19 +9,17 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
   styleUrls: ['./searchbar.component.scss']
 })
 export class SearchbarComponent implements OnInit {
+  @Input() value: String;
+  results: Product[]
 
-  constructor() { }
+  constructor(private service: SearchbarService, private ps: ProductService) { }
 
   ngOnInit(): void {
+    this.valueChanged();
   }
 
-  searchValue: string = '';
-
-  @Output()
-  textChanged: EventEmitter<string> = new EventEmitter<string>();
-
-  onSearchTextChanged() {
-    this.textChanged.emit(this.searchValue);
+  valueChanged() {
+    // this.service.changeValue(this.value);
+    this.ps.getSearchResult(this.value).subscribe(p => this.results = p);
   }
-
 }
