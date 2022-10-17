@@ -27,8 +27,8 @@ header > div {
 .menuBox {
     display: grid;
     align-items: center;
-    // grid-template-columns: auto auto;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto;
+    // grid-template-columns: auto auto auto;
     justify-content: space-between;
     width: 90vw;
 }
