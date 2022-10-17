@@ -1,3 +1,14 @@
-<div class="search-container">
-    <input type="text" [(ngModel)]="searchValue" (input)="onSearchTextChanged()">
+<div class="container">
+  <div class="bgBox"></div>
+  <!-- <mat-form-field class="form-field" appearance="fill"> -->
+  <!-- <mat-label>Produktname...</mat-label> -->
+  <input placeholder="Produktname..." type="text" [(ngModel)]="value" (ngModelChange)="valueChanged()">
+
+  <div class="results">
+    <div>
+      <app-home-page-product *ngFor="let p of results" [product]=(p)></app-home-page-product>
+
+    </div>
+  </div>
+  <!-- </mat-form-field> -->
 </div>

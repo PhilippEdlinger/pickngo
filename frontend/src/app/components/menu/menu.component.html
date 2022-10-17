@@ -4,16 +4,15 @@
             <a routerLink="./" class="contact-info d-flex align-items-center activeMenuItem" style="color:white;">
                 <img src="../../../assets/img/pickngo_logo.png" width="50px" alt="pickngo-logo">
                 <span class="logoText">Pick'n Go</span>
-                <app-searchbar id="searchbar" (textChanged)="onSearchTextEntered($event)"></app-searchbar>
             </a>
             <a routerLink="./adminPage">Admin Page</a>
             <div class="right-icons">
+                <app-searchbar id="searchbar"></app-searchbar>
                 <fa-icon (click)="onClickShoppingCart()" id="shoppingCartB"
                     style="font-size:30px; padding: 15px;color:white;" [icon]="shoppingCartIcon">
                 </fa-icon>
                 <a href="login">
-                    <fa-icon id="shoppingCartB"
-                        style="font-size:30px; padding: 15px;color:white;" [icon]="userIcon">
+                    <fa-icon id="shoppingCartB" style="font-size:30px; padding: 15px;color:white;" [icon]="userIcon">
                     </fa-icon>
                 </a>
             </div>

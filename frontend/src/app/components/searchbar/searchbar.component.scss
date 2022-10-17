@@ -1,0 +1,82 @@
+.container {
+  width: 15vw;
+  min-width: 300px;
+  max-width: 500px;
+  position: relative;
+  // background-color: rgb(208, 208, 208);
+  border-radius: 20px;
+  height: 60%;
+}
+
+.bgBox {
+  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: #0000009a;
+}
+
+.form-field .mat-form-field-label {
+  color: white;
+}
+
+input {
+  // height: 40px;
+  // padding: 5px;
+  // border: 1px solid black;
+  // border-radius: 10px;
+  // background-color: rgb(213, 213, 213);
+  height: 40px;
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
+}
+
+.container:focus-within :is(.results, .bgBox) {
+  display: grid;
+}
+
+// .form-field *:focus ~ :is(.results) {
+//   display: grid;
+// }
+
+// .results:focus {
+//   display: grid;
+// }
+
+// .form-field *:focus {
+//   border: 5px solid red;
+// }
+
+.results {
+  display: none;
+  position: absolute;
+  height: fit-content;
+  max-height: 80vh;
+  width: calc(100%);
+  background-color: rgb(255, 255, 255);
+  justify-items: center;
+  overflow-y: auto;
+  margin: 1em 0 2em 0;
+  padding: 1em;
+  border-radius: 0 0 20px 20px;
+}
+
+.results>div {
+  display: grid;
+  gap: 1em;
+  padding: .5em 0 1em 0;
+}
+
+.results>div>* {
+  padding: 5px 0;
+  border-bottom: 2px dashed rgba(0, 0, 0, 0.423);
+}
+
+.productCart .buttonDave {
+  margin-top: 0;
+}

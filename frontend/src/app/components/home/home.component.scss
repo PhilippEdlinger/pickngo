@@ -13,19 +13,20 @@
 }
 
 #sectionDave {
-margin: 10vh;  
+  margin: 10vh;
+  padding-bottom: 1em;
 }
 
-#sectionDave > h1 {
+#sectionDave>h1 {
   font-size: 2.2rem;
   margin-bottom: 2vh;
 }
 
-#menuBox > h1 {
+#menuBox>h1 {
   font-size: 1.8rem;
 }
 
-#menuBox > hr {
+#menuBox>hr {
   margin: 2vh 0;
 }
 
@@ -223,6 +224,7 @@ margin: 10vh;
     text-align: center;
     padding-bottom: .3vh;
   }
+
   .icon-boxes {
     position: relative;
     top: 0;
