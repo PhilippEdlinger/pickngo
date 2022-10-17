@@ -40,6 +40,12 @@ public class ProductResource {
     }
 
     @GET
+    @Path("search/{w}")
+    public Response searchProduct(@PathParam("w") String searchWord) {
+        return Response.ok(productService.search(searchWord)).build();
+    }
+
+    @GET
     @Path("drinks")
     public Response getDrinks() {
         return Response.ok(drinkItemRepo.findAll().list()).build();
