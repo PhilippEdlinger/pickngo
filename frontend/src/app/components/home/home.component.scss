@@ -136,6 +136,21 @@
   height: 30px;
 }
 
+#klimabox {
+  font-size: 3rem;
+  text-align: center;
+  margin: 0 0 6vh 0;
+  color: #faf3f8;
+}
+
+.klimabox {
+  background-color: rgba(115,149,111, .7);
+  height: 40vh;
+  border-radius: 5%;
+  margin: 0 0 10vh 0;
+  display: grid;
+  justify-content: center;
+}
 
 /* #datePickerB {
     background-color: var(--preferedTimeAreaColor);

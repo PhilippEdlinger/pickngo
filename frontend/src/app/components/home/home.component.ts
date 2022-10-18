@@ -28,11 +28,20 @@ export class HomeComponent implements OnInit {
     alt: 'alt of image',
     title: 'title of image'
   }, {
-    image: 'suppe.jpg', // Support base64 image
-    thumbImage: 'suppe.jpg', // Support base64 image
+    image: 'assets/img/products/backhendl.jpg', // Support base64 image
+    thumbImage: 'assets/img/products/backhendl.jpg', // Support base64 image
     title: 'Image title', //Optional: You can use this key if want to show image with title
     alt: 'Image alt', //Optional: You can use this key if want to show image with alt
-    order: 1 //Optional: if you pass this key then slider images will be arrange according @input: slideOrderType
+  }, {
+    image: 'assets/img/products/schweinsbraten.jpg', // Support base64 image
+    thumbImage: 'assets/img/products/schweinsbraten.jpg', // Support base64 image
+    title: 'Image title', //Optional: You can use this key if want to show image with title
+    alt: 'Image alt', //Optional: You can use this key if want to show image with alt
+  }, {
+    image: 'assets/img/products/rehbraten.jpg', // Support base64 image
+    thumbImage: 'assets/img/products/rehbraten.jpg', // Support base64 image
+    title: 'Image title', //Optional: You can use this key if want to show image with title
+    alt: 'Image alt', //Optional: You can use this key if want to show image with alt
   }
   ];
 

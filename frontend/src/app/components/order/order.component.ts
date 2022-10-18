@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Order } from 'src/app/models/Order';
 import { OrderItem } from 'src/app/models/OrderItem';
 import { ApiService } from 'src/app/services/api.service';
@@ -17,14 +17,14 @@ export class OrderComponent implements OnInit {
   order: Order;
   orderCopy: Order;
   ordered = false;
-  form: FormGroup;
+  form: UntypedFormGroup;
   logedIn: boolean = false;
   user: any;
   bestellt: boolean = false;
   sum: number = 0;
 
 
-  constructor(private orderData: OrderDataService, private fb: FormBuilder, private productService: ProductService, private ls: ApiService) {
+  constructor(private orderData: OrderDataService, private fb: UntypedFormBuilder, private productService: ProductService, private ls: ApiService) {
     this.form = this.fb.group({
       tele: [null, Validators.required, Validators.minLength(7), Validators.maxLength(20)]
     });

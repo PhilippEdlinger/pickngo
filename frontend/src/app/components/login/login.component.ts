@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormBuilder, UntypedFormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from "@angular/router";
 import {ApiService} from "../../services/api.service";
 import {first} from "rxjs";
@@ -12,12 +12,12 @@ import {LogInDTO} from "../../models/LogInDTO";
 })
 export class LoginComponent implements OnInit {
 
-  form: FormGroup;
+  form: UntypedFormGroup;
   loading = false;
   submitted = false;
   login: LogInDTO = new LogInDTO();
 
-  constructor(private fb: FormBuilder,
+  constructor(private fb: UntypedFormBuilder,
               private route: ActivatedRoute,
               private router: Router,
               private service: ApiService) {
