@@ -23,6 +23,7 @@ import { AdminPageItemComponent } from './components/admin-page-item/admin-page-
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { SmsComponent } from './components/sms/sms.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgImageSliderModule } from 'ng-image-slider';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
     imports: [
         BrowserModule,
+        NgImageSliderModule,
         AppRoutingModule,
         HttpClientModule,
         MatInputModule,

@@ -31,6 +31,7 @@
     "https-browserify": "^1.0.0",
     "jsonwebtoken": "^8.5.1",
     "net": "^1.0.2",
+    "ng-image-slider": "^6.1.0",
     "node-jsonwebtoken": "0.0.1",
     "os-browserify": "^0.3.0",
     "process": "^0.11.10",

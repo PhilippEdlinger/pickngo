@@ -22,6 +22,20 @@ export class HomeComponent implements OnInit {
     this.initMenus();
   }
 
+  imageObject: Array<object> = [{
+    image: 'assets/img/schnitzel.jpg',
+    thumbImage: 'assets/img/schnitzel.jpg',
+    alt: 'alt of image',
+    title: 'title of image'
+  }, {
+    image: 'suppe.jpg', // Support base64 image
+    thumbImage: 'suppe.jpg', // Support base64 image
+    title: 'Image title', //Optional: You can use this key if want to show image with title
+    alt: 'Image alt', //Optional: You can use this key if want to show image with alt
+    order: 1 //Optional: if you pass this key then slider images will be arrange according @input: slideOrderType
+  }
+  ];
+
   initMenus(): void {
     this.menuService.getDishOfTheDay().subscribe(m => this.menus = m);
   }
