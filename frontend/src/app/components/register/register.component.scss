@@ -14,30 +14,184 @@ button.register-button {
   font-family: comforta, serif;
   text-align: center;
   border: none;
-  padding: 0 15px 0 15px;
 }
+
 
 button.register-button:hover {
   background-color: c.$color2;
+}
+
+#signup-title {
+  font-size: 7vw !important;
+}
+
+#signup-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-group {
+  width: 30vw !important;
+  place-content: center !important;
+}
+
+#login-form {
+  width: 30vw !important;
+}
+
+.container {
+  margin-top: 5vh !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important
+}
+
+.input-label-signup {
+  font-size: 1.2vw !important;
+}
+
+input {
+  font-size: 1.2vw !important;
+}
+
+button {
+  width: 11vw !important;
+  height: 6vh !important;
 }
 
 #login-button {
   background-color: c.$color3;
   color: white;
   border-radius: 28px;
-  height: 45px;
-  width: auto;
-  margin-top: 5%;
-  margin-bottom: 10px;
-  line-height: 45px;
-  font-weight: bolder;
-  font-size: larger;
+  font-size: 1.5vw !important;
   font-family: comforta, serif;
   text-align: center;
   border: none;
-  padding: 0 10px 0 10px;
+  margin-left: 1vw !important;
+}
+
+#login-button p {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.register-button p {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 #login-button:hover {
-  background-color: c.$headerC;
+  background-color: c.$color2;
 }
+
+.register-button {
+  font-size: 1.5vw !important;
+}
+
+@media only screen and (max-width: 730px) {
+  button {
+    width: 11vw !important;
+    height: 4vh !important;
+  }
+  .register-button {
+    font-size: 1.1vw !important;
+  }
+  #login-button {
+    font-size: 1.1vw !important;
+  }
+}
+
+@media (max-width: 1200px) {
+
+  #signup-body {
+     border: 1px solid red;
+  }
+}
+
+@media (max-width: 600px) {
+  .signup-input {
+    margin-bottom: 0 !important;
+    height: 3vh !important;
+  }
+}
+
+.right-icons {
+  border: 1px solid red !important;
+}
+
+
+  #signup-body {
+    margin: 0;
+    font-family: nunito, serif;
+  }
+
+  #signup-title {
+    height: 100%;
+    width: 46%;
+    border-bottom: 2px solid #edf1f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 90px;
+    font-family: 'comforta', serif;
+    font-weight: bold;
+    color: #8ad2f1;
+  }
+
+#signup-title {
+  margin-top: 5vh;
+}
+
+  /*
+  #login-form{
+      margin: auto;
+      height: 12%;
+      width: 25%;
+  }*/
+  #signup-header {
+    margin-top: 0.5%;
+    margin-bottom: 4%;
+    display: inline-flex;
+    height: 10vh;
+    width: 100%;
+  }
+
+  .signup-input {
+    height: 40px;
+    width: 100%;
+    color: #8ad2f1;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid #8ad2f1;
+    outline: none;
+    font-size: large;
+    font-family: comforta, serif;
+    font-weight: bolder;
+    margin-bottom: 5%;
+  }
+
+  .signup-input::placeholder {
+    color: #8ad2f1;
+  }
+
+  #signup-text {
+    font-size: larger;
+  }
+
+  .signup-buttons {
+    background-color: #3e3e3e;
+    color: white;
+    border-radius: 15px;
+    height: 45px;
+    width: 30%;
+    margin-top: 5%;
+    font-weight: bolder;
+    font-size: larger;
+    font-family: comforta, serif;
+    line-height: 45px;
+    text-align: center;
+    display: inline-block;
+  }
+

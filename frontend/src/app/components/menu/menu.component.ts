@@ -1,5 +1,6 @@
-import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
+import {Component, OnInit, Output, EventEmitter, Input, SimpleChanges} from '@angular/core';
 import { faShoppingCart,faUser } from "@fortawesome/free-solid-svg-icons";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -11,11 +12,18 @@ export class MenuComponent implements OnInit {
   @Input() text: String;
   shoppingCartIcon = faShoppingCart;
   userIcon = faUser;
+  isOnLoginPage = false;
 
-  constructor() { }
+  constructor(private router: Router) {
+    this.router.events.subscribe(e => {
+      this.isOnLoginPage = !(this.router.url.includes('register') || this.router.url.includes('login'));
+    })
+  }
 
   ngOnInit(): void {
+
   }
+
 
   searchText: string = '';
 

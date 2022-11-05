@@ -6,7 +6,7 @@
                 <span class="logoText">Pick'n Go</span>
             </a>
             <!-- <a routerLink="./adminPage">Admin Page</a> -->
-            <div class="right-icons">
+            <div *ngIf="isOnLoginPage" class="right-icons">
                 <app-searchbar id="searchbar"></app-searchbar>
                 <fa-icon (click)="onClickShoppingCart()" id="shoppingCartB"
                     style="font-size:30px; padding: 15px;color:white;" [icon]="shoppingCartIcon">

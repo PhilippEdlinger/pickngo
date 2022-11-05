@@ -10,8 +10,6 @@
 
 <body id="login-body">
     <header id="login-header">
-        <div id="logo-container">
-        </div>
         <div id="login-title">Anmelden</div>
     </header>
 
@@ -36,7 +34,7 @@
             <div class="form-group">
                 <button [disabled]="loading" class="login-button">
                     <span *ngIf="login.success" class="spinner-border spinner-border-sm mr-1"></span>
-                    Anmelden
+                    <p>Anmelden</p>
                 </button>
                 <div class="register-link">
                     <br><a routerLink="../register" id="signup-text" class="btn btn-link cta">

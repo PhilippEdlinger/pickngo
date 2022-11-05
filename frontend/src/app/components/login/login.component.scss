@@ -1,5 +1,129 @@
 @use '../../color.scss' as c;
 
+#login-title {
+    font-size: 7vw !important;
+}
+
+#login-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#login-title {
+  margin-top: 5vh;
+}
+
+#login-form {
+  width: 30vw !important;
+}
+
+button {
+  width: 11vw !important;
+  height: 6vh !important;
+}
+
+input {
+  font-size: 1.2vw !important;
+}
+
+.login-button p {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 900px) {
+  input {
+    font-size: 2vw !important;
+  }
+  .input-label {
+    font-size: 2vw !important;
+  }
+}
+
+@media (max-width: 450px) {
+  .login-input {
+    margin-bottom: 1vh !important;
+    height: 4vh !important;
+  }
+}
+
+@media (max-width: 500px) {
+  input {
+    font-size: 2.5vw !important;
+  }
+  .input-label {
+    font-size: 2.5vw !important;
+  }
+  #login-form {
+    width: 50vw !important;
+  }
+  .cta {
+    padding: 13px 30px !important;
+  }
+  .cta svg {
+    width: 1.2vw !important;
+    margin-top: .5vh !important;
+  }
+  .cta:before {
+    height: 5vh !important;
+  }
+  .register-link {
+    height: 10vh;
+    width: 50vw !important;
+  }
+}
+
+@media (max-width: 900px) {
+  button {
+    width: 11vw !important;
+    height: 4vh !important;
+  }
+  .register-button {
+    font-size: 1.1vw !important;
+  }
+  .login-button {
+    font-size: 1.1vw !important;
+  }
+  .register-link {
+    height: 10vh !important;
+  }
+}
+
+.register-link {
+  height: 5.5vh !important;
+  border: 1px solid red;
+}
+
+.register-link span {
+  font-size: 1vw !important;
+}
+
+@media (max-width: 1114px) {
+  .register-link {
+    width: 40vw;
+    height: 6vh !important;
+  }
+  .register-link span {
+    font-size: 1vw !important;
+  }
+  .cta {
+    height: 1vh !important;
+  }
+}
+
+.input-label {
+  font-size: 1.2vw;
+}
+
+.container {
+  margin-top: 5vh !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important
+}
+
 .login-button {
   background-color: c.$color3;
   color: white;
@@ -14,21 +138,12 @@
   font-family: comforta, serif;
   text-align: center;
   border: none;
-  padding: 0 10px 0 10px;
 }
 
 .login-button:hover {
   background-color: c.$color2;
 }
 
-html, body {
-  height: 100%;
-}
-
-body {
-  /*display: grid;*/
-  color: #111;
-}
 
 a {
   text-decoration: none;
@@ -54,8 +169,8 @@ a {
   display: block;
   border-radius: 28px;
   background: c.$color3;
-  width: 56px;
-  height: 56px;
+  width: 4vw;
+  height: 6vh;
   transition: all 0.3s ease;
 }
 .cta span {
