@@ -1,7 +1,5 @@
 <div id="signup-body">
     <header id="signup-header">
-        <div id="logo-container-signup">
-        </div>
         <div id="signup-title">Registrieren</div>
     </header>
 
@@ -58,9 +56,11 @@
                 <button class="register-button">
                     <span *ngIf="loading" routerLink="/" id="signup-button"
                         class="spinner-border spinner-border-sm mr-1"></span>
-                    Register
+                    <p>Register</p>
                 </button>
-                <a routerLink="../login" id="login-button" class="btn btn-link signup-buttons">Anmelden</a>
+                <button routerLink="../login" id="login-button" class="btn btn-link signup-buttons">
+                    <p>Anmelden</p>
+                </button>
             </div>
         </form>
     </div>

@@ -10,15 +10,13 @@
 
 <body id="login-body">
     <header id="login-header">
-        <div id="logo-container">
-        </div>
         <div id="login-title">Anmelden</div>
     </header>
 
     <div class="container">
         <form [formGroup]="form" id="login-form" (ngSubmit)="onSubmit()">
             <div class="form-group">
-                <label class="input-label">USERNAMEsE</label>
+                <label class="input-label">USERNAME</label>
                 <input formControlName="username" class="login-input form-control" type="text" placeholder="Username eingeben ..." id="login-email-user-input"
                        [ngClass]="{ 'is-invalid': submitted && f['username'].errors }" />
 
@@ -36,7 +34,7 @@
             <div class="form-group">
                 <button [disabled]="loading" class="login-button">
                     <span *ngIf="login.success" class="spinner-border spinner-border-sm mr-1"></span>
-                    Anmelden
+                    <p>Anmelden</p>
                 </button>
                 <div class="register-link">
                     <br><a routerLink="../register" id="signup-text" class="btn btn-link cta">

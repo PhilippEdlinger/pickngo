@@ -22,6 +22,29 @@ export class HomeComponent implements OnInit {
     this.initMenus();
   }
 
+  imageObject: Array<object> = [{
+    image: 'assets/img/schnitzel.jpg',
+    thumbImage: 'assets/img/schnitzel.jpg',
+    alt: 'alt of image',
+    title: 'title of image'
+  }, {
+    image: 'assets/img/products/backhendl.jpg', // Support base64 image
+    thumbImage: 'assets/img/products/backhendl.jpg', // Support base64 image
+    title: 'Image title', //Optional: You can use this key if want to show image with title
+    alt: 'Image alt', //Optional: You can use this key if want to show image with alt
+  }, {
+    image: 'assets/img/products/schweinsbraten.jpg', // Support base64 image
+    thumbImage: 'assets/img/products/schweinsbraten.jpg', // Support base64 image
+    title: 'Image title', //Optional: You can use this key if want to show image with title
+    alt: 'Image alt', //Optional: You can use this key if want to show image with alt
+  }, {
+    image: 'assets/img/products/rehbraten.jpg', // Support base64 image
+    thumbImage: 'assets/img/products/rehbraten.jpg', // Support base64 image
+    title: 'Image title', //Optional: You can use this key if want to show image with title
+    alt: 'Image alt', //Optional: You can use this key if want to show image with alt
+  }
+  ];
+
   initMenus(): void {
     this.menuService.getDishOfTheDay().subscribe(m => this.menus = m);
   }
