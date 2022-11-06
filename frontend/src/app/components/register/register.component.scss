@@ -103,24 +103,12 @@ button {
   }
 }
 
-@media (max-width: 1200px) {
-
-  #signup-body {
-     border: 1px solid red;
-  }
-}
-
 @media (max-width: 600px) {
   .signup-input {
     margin-bottom: 0 !important;
     height: 3vh !important;
   }
 }
-
-.right-icons {
-  border: 1px solid red !important;
-}
-
 
   #signup-body {
     margin: 0;
