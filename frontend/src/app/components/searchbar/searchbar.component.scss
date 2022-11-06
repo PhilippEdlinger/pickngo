@@ -23,7 +23,7 @@
   color: white;
 }
 
-input {
+.searchbarBox input {
   // height: 40px;
   // padding: 5px;
   // border: 1px solid black;
@@ -34,6 +34,12 @@ input {
   border-radius: 10px;
   padding: 10px;
   border: none;
+}
+
+#searchBarB {
+  font-size: 30px;
+  padding: 15px;
+  color: white;
 }
 
 .container:focus-within :is(.results, .bgBox) {
@@ -79,4 +85,19 @@ input {
 
 .productCart .buttonDave {
   margin-top: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .searchbarBox {
+    // max-width: 50px;
+    min-width: 30px;
+  }
+
+ .searchbarBox input {
+  display: none;
+ }
+
+ #searchBarB {
+  display: block !important;
+ }
 }

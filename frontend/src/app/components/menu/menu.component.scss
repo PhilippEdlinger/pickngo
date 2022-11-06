@@ -18,7 +18,8 @@
 header {
     z-index: 110;
 }
-header > div {
+
+header>div {
     display: grid;
     place-items: center;
     height: 100%;
@@ -38,12 +39,12 @@ header > div {
     place-items: center;
 }
 
-.menuBox > a {
+.menuBox>a {
     display: grid;
     grid-template-columns: 50px 100px;
 }
 
-.menuBox > div {
+.menuBox>div {
     display: grid;
     grid-template-columns: auto auto auto;
 }
@@ -59,7 +60,7 @@ span .pickngo {
 @media screen and (max-width: 600px) {
     .menuBox {
         display: grid !important;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
         place-items: center;
     }
 
@@ -98,18 +99,20 @@ span .pickngo {
 
     #header {
         position: fixed;
-        bottom: 0;
+        bottom: 0px;
+        top: unset !important;
         left: 0;
         width: 100vw;
     }
-}
 
-@media screen and (max-width: 600px) {
-    #header {
-        position: fixed;
-        top: unset !important;
-        bottom: 0;
-    }
+    // }
+
+    // @media screen and (max-width: 600px) {
+    // #header {
+    //     position: fixed;
+    //     top: unset !important;
+    //     bottom: 0;
+    // }
 
     #shoppingCartBody {
         display: grid;
@@ -175,43 +178,6 @@ span .pickngo {
         padding: 0 !important;
     }
 
-    .menuBox {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr 1fr;
-        place-items: center;
-    }
-
-    /*
-    .menuBox > div {
-        display: grid;
-        grid-auto-flow: column;
-        align-items: center;
-        gap: 5vw;
-    } */
-    .menuBox>div {
-        display: contents;
-    }
-
-    .menuBox>a,
-    .menuBox>div> :is(i, a) {
-        display: grid !important;
-        place-items: center;
-        height: 100%;
-        width: 100%;
-    }
-    .menuBox>a>span {
-        display: none;
-    }
-
-    :is(.menuBox>a,
-        .menuBox>div> :is(i, a)):not(.activeMenuItem):hover {
-            background-color: rgb(89, 48, 255);
-        }
-
-    .activeMenuItem {
-        background-color: rgb(76, 1, 182);
-    }
-
     #sectionDave {
         position: relative;
         margin-top: 2vh;
@@ -229,8 +195,9 @@ span .pickngo {
         text-align: center;
         padding-bottom: .3vh;
     }
+
     .icon-boxes {
         position: relative;
         top: 0%;
-      }
+    }
 }

@@ -72,7 +72,7 @@ input {
 }
 
 #tel {
-  width: 20vw !important;
+  // width: 20vw !important;
 }
 
 #login-form {
@@ -207,6 +207,11 @@ input:not(:valid):not(:focus)+label+.icon {
   justify-content: center;
 }
 
+.orderBox {
+  display: grid;
+  place-items: center;
+}
+
 .orderBox>div {
   display: grid;
   grid-template-columns: 7fr 3fr;
@@ -251,8 +256,34 @@ input:not(:valid):not(:focus)+label+.icon {
 }
 
 @media screen and (max-width: 600px) {
+  .orderBox {
+    margin-bottom: 200px;
+    // height: ;
+  }
+
   .orderBox>div {
-    grid-template-columns: 7fr 3fr;
+    grid-template-columns: 1fr;
+  }
+
+  .orderDetailBox {
+    order: 2;
+  }
+
+  #productBox {
+    margin-bottom: 90px;
+  }
+
+  .inputBox {
+    order: 1;
+    width: 100%;
+  }
+
+  #login-form {
+    width: 80% !important;
+  }
+
+  .telefonNRBox {
+    height: 65vh !important;
   }
 }
 
@@ -264,10 +295,10 @@ input:not(:valid):not(:focus)+label+.icon {
   height: 100%;
 }
 
-.telefonNRBox {
-  display: grid;
-  grid-template-rows: 9fr 1fr;
-}
+// .telefonNRBox {
+//   display: grid;
+//   grid-template-rows: 9fr 1fr;
+// }
 
 .inputBox form {
   height: 80% !important;
@@ -578,9 +609,9 @@ section {
 .icon-boxes {
   padding-top: 0;
   z-index: 100;
-  position: absolute;
-  top: 15%;
-  margin-top: 1vh;
+  // position: absolute;
+  // top: 15%;
+  margin-top: 7.5%;
 }
 
 .icon-boxes .icon-box {
