@@ -37,7 +37,7 @@
                                             type="tel" name="tel" id="tel" autocomplete="off" />
                                         <!-- <div> -->
                                         <h1>Notiz:</h1>
-                                        <textarea id="textBox" cols="30" rows="10"></textarea>
+                                        <textarea id="textBox" [ngStyle]="{'height': logedIn ? '48vh' : '30vh'}" cols="30" rows="10"></textarea>
                                         <!-- </div> -->
                                         <button class="buttonDiv">Bestätigen</button>
                                     </form>
