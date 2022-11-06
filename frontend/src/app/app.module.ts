@@ -24,6 +24,7 @@ import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { SmsComponent } from './components/sms/sms.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgImageSliderModule } from 'ng-image-slider';
+import {MatCheckboxModule} from "@angular/material/checkbox";
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { NgImageSliderModule } from 'ng-image-slider';
         FontAwesomeModule,
         ReactiveFormsModule,
         FormsModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        MatCheckboxModule
     ],
   providers: [],
   bootstrap: [AppComponent]

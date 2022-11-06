@@ -16,6 +16,7 @@ export class ShoppingCartComponent implements OnInit {
   @Output() closeShoppC = new EventEmitter();
   faClose = faXmark;
   sum: number = 0;
+  checked = false;
 
   constructor(private orderData: OrderDataService) { }
 
