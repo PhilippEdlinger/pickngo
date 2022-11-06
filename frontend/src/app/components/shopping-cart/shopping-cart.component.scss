@@ -185,3 +185,13 @@ $preferedTimeAreaColor: #2072ff;
     font-size: 1rem;
   }
 }
+
+.mat-checkbox-background{
+  background-color: #298648 !important;
+}
+.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+  background-color: #298648 !important;
+}
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+  background-color: #298648 !important;
+}
