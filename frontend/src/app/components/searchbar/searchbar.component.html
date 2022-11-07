@@ -1,7 +1,8 @@
-<div class="container">
+<div class="container searchbarBox">
   <div class="bgBox"></div>
   <!-- <mat-form-field class="form-field" appearance="fill"> -->
   <!-- <mat-label>Produktname...</mat-label> -->
+  <fa-icon id="searchBarB" style="display: none;" [icon]="searchIcon"></fa-icon>
   <input placeholder="Produktname..." type="text" [(ngModel)]="value" (ngModelChange)="valueChanged()">
 
   <div class="results">

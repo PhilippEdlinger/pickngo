@@ -34,7 +34,7 @@ a {
 
 #login-title {
   margin-top: 5vh;
-  color: c.$logInFontC  !important;
+  color: c.$logInFontC !important;
 }
 
 // div.container {
@@ -42,29 +42,29 @@ a {
 // }
 
 .login-input::placeholder {
-  color: c.$logInFontC  !important;
+  color: c.$logInFontC !important;
 }
 
 .login-input {
-  color: c.$logInFontC  !important;
-  border-bottom: 2px solid c.$logInFontC  !important;
+  color: c.$logInFontC !important;
+  border-bottom: 2px solid c.$logInFontC !important;
 }
 
 .input-label {
-  color: c.$color3  !important;
+  color: c.$color3 !important;
 }
 
 #signup-title {
-  color: c.$registerC  !important;
+  color: c.$registerC !important;
 }
 
 .signup-input {
-  color: c.$registerC  !important;
-  border-bottom: 2px solid c.$registerC  !important;
+  color: c.$registerC !important;
+  border-bottom: 2px solid c.$registerC !important;
 }
 
 .signup-input::placeholder {
-  color: c.$registerC  !important;
+  color: c.$registerC !important;
 }
 
 @media screen and (max-width: 600px) {
@@ -72,7 +72,7 @@ a {
     padding: 10px !important;
   }
 
-  .buttonDiv > .buttonDave {
+  .buttonDiv>.buttonDave {
     min-width: none;
     padding: 15px 20px;
   }
@@ -331,11 +331,11 @@ a {
 }
 
 .fa-user-circle {
-  color: white  !important;
+  color: white !important;
 }
 
 .fa-user-circle:before {
-  color: white  !important;
+  color: white !important;
 }
 
 .right {
@@ -514,4 +514,8 @@ svg.svg-inline--fa .fa-trash {
 #sectionDave .row:last-of-type {
   margin-bottom: 3vh;
 }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

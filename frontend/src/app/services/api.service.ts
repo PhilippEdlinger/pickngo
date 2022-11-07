@@ -17,10 +17,15 @@ export class ApiService {
   public success: boolean = false;
 
   constructor(private http: HttpClient, private router: Router) {
-    this.userSubject = new BehaviorSubject<User | null>(JSON.parse(localStorage.getItem('user') || '{}'));
-    this.user = this.userSubject.asObservable();
-    // this.checkUser();
-    this.user.subscribe(u => console.log(u));
+    console.log(this.userSubject);
+    if(localStorage.getItem('user') !== undefined && localStorage.getItem('user') !== null) {
+      console.log("hi");
+      this.userSubject = new BehaviorSubject<User | null>(JSON.parse(localStorage.getItem('user') || '{}'));
+      console.log(this.userSubject);
+      this.user = this.userSubject.asObservable();
+      // this.checkUser();
+      this.user.subscribe(u => console.log(u));
+    }
   }
 
   public get userValue(): User | null {
