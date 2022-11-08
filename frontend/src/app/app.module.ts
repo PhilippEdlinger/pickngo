@@ -25,6 +25,7 @@ import { SmsComponent } from './components/sms/sms.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgImageSliderModule } from 'ng-image-slider';
 import {MatCheckboxModule} from "@angular/material/checkbox";
+import {MatSlideToggleModule} from '@angular/material/slide-toggle'; 
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
     AdminPageComponent,
     AdminPageItemComponent,
     SearchbarComponent,
-    SmsComponent
+    SmsComponent, 
+    
   ],
     imports: [
         BrowserModule,
@@ -55,7 +57,8 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
         ReactiveFormsModule,
         FormsModule,
         BrowserAnimationsModule,
-        MatCheckboxModule
+        MatCheckboxModule,
+        MatSlideToggleModule
     ],
   providers: [],
   bootstrap: [AppComponent]

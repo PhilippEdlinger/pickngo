@@ -10,10 +10,11 @@
             <p>Gesamt</p>
             <p id="shoppingCartPrice">{{sum.toFixed(2).replace('.', ',')}}€</p>
         </div>
-        <p id="orderInfo">Wenn sie jetzt bestellen, können Sie Ihre Bestellung am {{order.planedToPickTime.getDate()}}.{{order.planedToPickTime.getMonth() + 1}}.{{order.planedToPickTime.getFullYear()}} um <span> {{order.planedToPickTime.getHours()}}:{{order.planedToPickTime.getMinutes()}} Uhr</span> abholen.
+        <p id="orderInfo" *ngIf="toogleSlider==false">Wenn sie jetzt bestellen, können Sie Ihre Bestellung am {{order.planedToPickTime.getDate()}}.{{order.planedToPickTime.getMonth() + 1}}.{{order.planedToPickTime.getFullYear()}} um <span> {{order.planedToPickTime.getHours()}}:{{order.planedToPickTime.getMinutes()}} Uhr</span> abholen.
         </p>
         <section class="example-section">
-            <mat-checkbox class="example-margin" [(ngModel)]="checked">Dort Essen!</mat-checkbox>
+            <!-- <mat-checkbox class="example-margin" [(ngModel)]="checked">Dort Essen!</mat-checkbox> -->
+            Zum Mitnehmen <mat-slide-toggle [(ngModel)]="toogleSlider">Hier Essen</mat-slide-toggle>
         </section>
         <div id="preferedTimeBox">
             <select name="preferedTime" id="preferedTime">
