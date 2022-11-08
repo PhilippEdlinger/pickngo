@@ -51,6 +51,10 @@ h6 {
   font-family: "Raleway", sans-serif;
 }
 
+h4 {
+  line-height: 1;
+}
+
 /*--------------------------------------------------------------
 # Telefonnummer form
 --------------------------------------------------------------*/
@@ -221,6 +225,8 @@ input:not(:valid):not(:focus)+label+.icon {
   width: 90vw;
   max-height: 100vh !important;
 }
+
+
 
 .telefonNRBox {
   height: 70vh !Important;

@@ -103,7 +103,20 @@ button {
   }
 }
 
+#login-button p {
+  line-height: 6.1vh !important;
+}
+.register-button p {
+  line-height: 6.1vh !important;
+}
+
 @media (max-width: 600px) {
+  #signup-body {
+        margin-top: 5vh !important;
+    }
+  .form-group {
+    margin-top: 1vh;
+  }
   .signup-input {
     margin-bottom: 0 !important;
     height: 3vh !important;

@@ -50,6 +50,18 @@ input {
 }
 
 @media (max-width: 500px) {
+  .cta {
+    background-color: #3e3e3e !important;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 28px;
+  }
+  .cta:before {
+    content: none !important;
+  }
   input {
     font-size: 2.5vw !important;
   }
@@ -72,6 +84,17 @@ input {
   .register-link {
     height: 10vh;
     width: 50vw !important;
+  }
+}
+
+.login-button p {
+  line-height: 6.1vh !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 600px) {
+  body {
+    margin-top: 5vh !important;
   }
 }
 
