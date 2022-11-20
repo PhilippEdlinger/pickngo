@@ -33,6 +33,25 @@ input {
   transform: translateY(-50%);
 }
 
+.register-button {
+  color: white;
+  border-radius: 28px;
+  height: 45px;
+  width: auto;
+  margin-top: 5%;
+  margin-bottom: 10px;
+  line-height: 45px;
+  font-weight: bolder;
+  font-size: larger;
+  font-family: comforta, serif;
+  text-align: center;
+  border: none;
+}
+
+.register-button:hover {
+  background-color: c.$color3;
+}
+
 @media (max-width: 900px) {
   input {
     font-size: 2vw !important;
