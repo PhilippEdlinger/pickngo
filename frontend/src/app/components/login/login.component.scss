@@ -1,5 +1,9 @@
 @use '../../color.scss' as c;
 
+* {
+  font-family: comforta, sans-serif !important;
+}
+
 #login-title {
     font-size: 7vw !important;
 }
@@ -28,9 +32,34 @@ input {
 }
 
 .login-button p {
+  font-size: 1.3vw !important;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.register-button {
+  color: black;
+  border-radius: 28px;
+  height: auto;
+  width: 20vw !important;
+  font-weight: bolder;
+  font-family: comforta, serif;
+  text-align: center;
+  border: none;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-transform: uppercase;
+  font-size: 1.3vw;
+  letter-spacing: .2vw;
+}
+.register-button p {
+  margin: 0;
+}
+
+.register-button:hover {
+  background-color: c.$registerC;
 }
 
 @media (max-width: 900px) {
@@ -50,6 +79,14 @@ input {
 }
 
 @media (max-width: 500px) {
+  .login-button {
+    border-radius: 15px !important;
+    height: 2.5vh !important;
+  }
+  .register-button {
+    border-radius: 15px !important;
+    height: 2.5vh !important;
+  }
   .cta {
     background-color: #3e3e3e !important;
     content: "";
