@@ -18,8 +18,16 @@
     gap: 1vw;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
     #products {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    .buttonDave {
+        font-size: 2vw !important;
+    }
+}
+@media screen and (max-width: 950px) {
+    #products {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
