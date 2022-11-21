@@ -13,6 +13,12 @@ public class PersonService {
     @Inject
     private PersonRepo repo;
 
+    /**
+     * login function of the login form by username and password
+     * @param username name of the user
+     * @param password password of the user
+     * @return returns a signup object which is going to be trasfered
+     */
     public SignUPDTO signIn(String username, String password) {
         SignUPDTO signUPDTO;
         if (repo.findByUsername(username) != null) {
@@ -28,6 +34,12 @@ public class PersonService {
         return signUPDTO;
     }
 
+    /**
+     * login by email and password
+     * @param email the email of the user
+     * @param password the password of the user
+     * @return
+     */
     public SignUPDTO signInWithEmail(String email, String password) {
         SignUPDTO signInDTO = new SignUPDTO();
         if (repo.getEntityManager().createQuery("select c from Customer c " +
@@ -43,6 +55,12 @@ public class PersonService {
         return signInDTO;
     }
 
+    /**
+     * login function of the login form by username and password
+     * @param username name of the user
+     * @param password password of the user
+     * @return returns a signup object which is going to be trasfered
+     */
     public SignUPDTO signInWithusernaem(String username, String password) {
         SignUPDTO signInDTO = new SignUPDTO();
         if (repo.getEntityManager().createQuery("select p from Person p " +

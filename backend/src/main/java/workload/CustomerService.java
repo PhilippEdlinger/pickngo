@@ -14,7 +14,11 @@ import java.util.regex.Pattern;
 public class CustomerService {
     @Inject
     private CustomerRepository repo;
-
+    
+    /**
+     * get all customers
+     * @return returns a list from all Customer
+     */
     public List<Customer> findAll() {
         return repo.findAll().list();
     }
