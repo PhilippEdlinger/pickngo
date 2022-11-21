@@ -23,15 +23,30 @@ public class CustomerService {
         return repo.findAll().list();
     }
 
+    /**
+     * get Customer by id
+     * @param id
+     * @return returns desired customer
+     */
     public Customer findById(Long id) {
         return repo.findById(id);
     }
 
+    /**
+     * update Customer 
+     * @param customer to be updated customer
+     * @return returns updated customer
+     */
     public Customer updateET(Customer customer) {
         repo.updateET(customer);
         return customer;
     }
 
+    /**
+     * signup customer
+     * @param customer to be persistet cutomer
+     * @return returns a signUpDTO object
+     */
     public SignUPDTO signUP(Customer customer) {
         SignUPDTO signUPDTO = checkCustomer(customer);;
 
@@ -63,6 +78,11 @@ public class CustomerService {
         return signInDTO;
     }*/
 
+    /**
+     * checks if the customer informations are viable
+     * @param customer customer object which is going to be checked
+     * @return returns a SignUPDTO
+     */
     private SignUPDTO checkCustomer(Customer customer) {
         SignUPDTO signUPDTO = new SignUPDTO();
 
@@ -103,12 +123,22 @@ public class CustomerService {
         return signUPDTO;
     }
 
+    /**
+     * checks if the username exists 
+     * @param username to be checked username
+     * @return returns a boolean depending on if it's true.
+     */
     private boolean usernameExists(String username) {
         return repo.getEntityManager().createQuery("select c from Customer c " +
                         "where c.username= :username", Customer.class)
                 .setParameter("username", username).getResultList().size() > 0;
     }
 
+    /**
+     * checks if the past email is aviable 
+     * @param email to be checked email
+     * @return return a boolean depending on if the statement is true
+     */
     private boolean emailExists(String email) {
         return repo.getEntityManager().createQuery("select c from Customer c " +
                         "where c.email = :email", Customer.class)
