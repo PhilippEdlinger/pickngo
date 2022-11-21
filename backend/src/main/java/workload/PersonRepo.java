@@ -6,6 +6,11 @@ import javax.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
 public class PersonRepo extends Repository<Person, Long> {
+    /**
+     * gets a person/user by name
+     * @param username name of the past user
+     * @return returns a person object of the desired person
+     */
     public Person findByUsername(String username) {
         return getEntityManager().createQuery("select p from Person p " +
                         "where p.username = :un", Person.class)
