@@ -81,5 +81,6 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.KEY }}
           port: 22
-          source: "deploy.tar"
-          target: "destination/folder"
+          source: "/backend/target/pickngo-1.0.0-SNAPSHOT-runner.jar"
+          target: "/home/ubuntu"
+"
