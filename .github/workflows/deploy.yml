@@ -71,4 +71,5 @@ jobs:
         run: |
          # scp backend/target/pickngo-1.0.0-SNAPSHOT-runner.jar server
          # scp frontend/dist.tar.gz server
-         ssh server ls -al
+         # ssh server ls -al
+         ls -al
