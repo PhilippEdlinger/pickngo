@@ -67,8 +67,25 @@ jobs:
             backend/target/pickngo-1.0.0-SNAPSHOT-runner.jar
             frontend/dist.tar.gz
       
+      - name: quarkus backend build jar file
+        run: |
+          cd backend/
+          mvn package -Dquarkus.package.type=uber-jar
+          ls target/*.jar
+      - name: build angular dist folder
+        run: |
+          cd frontend/
+          npm install -g @angular/cli
+          npm install
+          ng build
+          tar -czvf dist.tar.gz dist 
+
       - name: copy components to vm
         run: |
+          touch key.key
+          echo ${{ secrets.KEY }} > key.key
+          sudo scp -i  key.key backend/target/pickngo-1.0.0-SNAPSHOT-runner.jar ${{ secrets.SERVER_USER }}@${{ secrets.SERVER }}:~/
+          sudo scp -i  key.key frontend/dist.tar.gz ${{ secrets.SERVER_USER }}@${{ secrets.SERVER }}:~/
          # scp backend/target/pickngo-1.0.0-SNAPSHOT-runner.jar server
          # scp frontend/dist.tar.gz server
           ssh server ls -al
