@@ -25,7 +25,8 @@ import { SmsComponent } from './components/sms/sms.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgImageSliderModule } from 'ng-image-slider';
 import {MatCheckboxModule} from "@angular/material/checkbox";
-import {MatSlideToggleModule} from '@angular/material/slide-toggle'; 
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { GreenBoxComponent } from './components/green-box/green-box.component'; 
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     AdminPageComponent,
     AdminPageItemComponent,
     SearchbarComponent,
-    SmsComponent, 
+    SmsComponent,
+    GreenBoxComponent, 
     
   ],
     imports: [

@@ -34,6 +34,14 @@ header>div {
     width: 90vw;
 }
 
+.klimabox {
+    position: absolute;
+    top: 2.5vh;
+    left: 20vw;
+    font-size: 1.3vw;
+    color: c.$fontC;
+}
+
 .menuBox * {
     height: fit-content;
     place-items: center;
