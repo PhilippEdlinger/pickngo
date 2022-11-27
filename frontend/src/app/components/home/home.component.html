@@ -24,7 +24,7 @@
     <section id="sectionDave" class="col-md-12 col-lg-12 icon-boxes">
 
       <div id="menuBox" *ngIf="menus">
-        <h1 class="centerText">Spezialitäten</h1>
+        <h1 class="centerText">Spezialitätens</h1>
         <hr>
         <div id="menuProductBox">
           <app-product-menu *ngFor="let m of menus; let i = index" [menu]=(m) [name]="'Mittagsmenü #' + (i + 1)">
