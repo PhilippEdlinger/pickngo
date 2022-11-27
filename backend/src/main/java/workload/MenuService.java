@@ -1,4 +1,4 @@
-dpackage workload;
+package workload;
 
 import models.Menu;
 
