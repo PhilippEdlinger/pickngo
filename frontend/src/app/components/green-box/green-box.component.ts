@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Menu} from "../../models/Menu";
+import {Product} from "../../models/Product";
+import {MenuService} from "../../services/menu.service";
+import {ProductService} from "../../services/product.service";
 
 @Component({
   selector: 'app-green-box',
@@ -6,6 +10,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./green-box.component.scss']
 })
 export class GreenBoxComponent implements OnInit {
+  menus: Menu[];
+  @Input() products: Product;
 
   ngOnInit(): void {
   }
@@ -13,7 +19,7 @@ export class GreenBoxComponent implements OnInit {
   config: any;
   fullpage_api: any;
 
-  constructor() {
+  constructor(private menuService: MenuService, private productService: ProductService) {
 
     // for more details on config options please visit fullPage.js docs
     this.config = {

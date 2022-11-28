@@ -83,6 +83,7 @@ h1 {
 #text-image {
   width: 30vw !important;
   height: auto;
+  border-radius: 10%;
 }
 
 #main-image {
@@ -98,7 +99,7 @@ h1 {
 }
 
 #klima-box {
-  background-color: #f6b024;
+  background-color: #ffffff;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -138,4 +139,19 @@ h1 {
   .text-box {
     line-height: 12px;
   }
+}
+
+element.style {
+}
+
+
+.klimaBoxStyle {
+    padding: 40px 30px;
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 5px 10px 29px 0 rgb(68 88 144 / 20%);
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;
+    width: 100%;
 }
