@@ -34,6 +34,14 @@ header>div {
     width: 90vw;
 }
 
+.klimabox {
+    position: absolute;
+    top: 2.5vh;
+    left: 20vw;
+    font-size: 1.3vw;
+    color: c.$fontC;
+}
+
 .menuBox * {
     height: fit-content;
     place-items: center;
@@ -57,7 +65,7 @@ span .pickngo {
     color: c.$fontC;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
     .menuBox {
         display: grid !important;
         grid-template-columns: 1fr 1fr 1fr 1fr;

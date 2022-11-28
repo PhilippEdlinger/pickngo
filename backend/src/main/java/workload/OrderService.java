@@ -18,21 +18,39 @@ public class OrderService {
     @Inject
     private OrderRepository repo;
 
+    /**
+     * get all orders
+     * @return returns a list of all orders
+     */
     public List<OrderET> findAll() {
         return repo.findAll().list();
     }
 
-
+    /**
+     * find orders by id
+     * @param orderId the id of the desired order
+     * @return returns an object of the order
+     */
     public OrderET findById(Long orderId) {
         return repo.findById(orderId);
     }
 
+    /**
+     *  a list of all items/products which are in an order
+     * @param id identification of the past order
+     * @return returns a list of all orderitems of this particular order
+     */
     public List<OrderItem> getAllOrderItemsFrom(Long id) {
         return repo.getEntityManager().createQuery("select oi from OrderItem oi " +
                         "where oi.orderItemId.orderET.id = :orderID", OrderItem.class)
                 .setParameter("orderID", id).getResultList();
     }
 
+    /**
+     * persist an order
+     * @param order the to be persisted order
+     * @return returns the newly added order
+     */
     public OrderET persistET(OrderET order) {
         var id = repo.getEntityManager().createQuery("select max(o.id) from OrderET o", Long.class).getSingleResult();
         var orderPosition = repo.getEntityManager().createQuery("select o.orderPosition " +
@@ -57,6 +75,11 @@ public class OrderService {
         return findById(id + 1);
     }
 
+    /**
+     * removes an order by id
+     * @param orderId id of the removed order object 
+     * @return returns a boolean
+     */
     public Boolean removeById(Long orderId) {
         return repo.removeById(orderId);
     }

@@ -3,6 +3,7 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { Order } from 'src/app/models/Order';
 import { OrderItem } from 'src/app/models/OrderItem';
 import { OrderDataService } from 'src/app/services/order-data.service';
+import { TollFreeInstance } from 'twilio/lib/rest/api/v2010/account/availablePhoneNumber/tollFree';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -16,11 +17,13 @@ export class ShoppingCartComponent implements OnInit {
   @Output() closeShoppC = new EventEmitter();
   faClose = faXmark;
   sum: number = 0;
-  checked = false;
+  @Input()
+  toogleSlider: boolean 
 
   constructor(private orderData: OrderDataService) { }
 
   ngOnInit(): void {
+    this.toogleSlider = false;
     this.orderData.currentOrder.subscribe(o => {
       this.order = o;
       this.sum = 0;

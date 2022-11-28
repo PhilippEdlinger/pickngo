@@ -51,6 +51,10 @@ h6 {
   font-family: "Raleway", sans-serif;
 }
 
+h4 {
+  line-height: 1;
+}
+
 /*--------------------------------------------------------------
 # Telefonnummer form
 --------------------------------------------------------------*/
@@ -83,6 +87,7 @@ input {
   display: grid !important;
   align-items: center !important;
   justify-content: center !important;
+  margin-top: 2vh !important;
   // margin-right: 4vw;
 }
 
@@ -222,6 +227,8 @@ input:not(:valid):not(:focus)+label+.icon {
   max-height: 100vh !important;
 }
 
+
+
 .telefonNRBox {
   height: 70vh !Important;
 }
@@ -232,7 +239,7 @@ input:not(:valid):not(:focus)+label+.icon {
 
 
 #textBox {
-  height: 25vh;
+  height: 35vh !important;
   padding: 10px;
   resize: none;
 }
@@ -256,6 +263,17 @@ input:not(:valid):not(:focus)+label+.icon {
 }
 
 @media screen and (max-width: 600px) {
+
+  .inputBox {
+    display: grid;
+    place-items: center;
+  }
+  .icon-boxes .title {
+    font-size: 3vw !important;
+  }
+  #textBox {
+    height: 25vh !important;
+  }
   .orderBox {
     margin-bottom: 200px;
     // height: ;
@@ -343,7 +361,6 @@ button {
   border-radius: 24px;
   text-align: center;
   padding: 15px 40px;
-  margin-top: 35px;
   background-color: c.$color2;
   color: #fff;
   font-size: 14px;
@@ -640,7 +657,7 @@ section {
 .icon-boxes .title {
   font-weight: 700;
   margin-bottom: 15px;
-  font-size: 18px;
+  font-size: 1.5vw;
 }
 
 .icon-boxes .title a {
