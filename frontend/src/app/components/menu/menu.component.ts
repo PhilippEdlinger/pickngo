@@ -1,5 +1,5 @@
 import {Component, OnInit, Output, EventEmitter, Input, SimpleChanges} from '@angular/core';
-import { faShoppingCart,faUser } from "@fortawesome/free-solid-svg-icons";
+import { faShoppingCart,faUser, faPiggyBank } from "@fortawesome/free-solid-svg-icons";
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,6 +11,7 @@ export class MenuComponent implements OnInit {
   @Output() onHideShoppC = new EventEmitter();
   @Input() text: String;
   shoppingCartIcon = faShoppingCart;
+  klimaBoxIcon = faPiggyBank;
   userIcon = faUser;
   isOnLoginPage = false;
 
