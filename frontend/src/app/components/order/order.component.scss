@@ -263,6 +263,14 @@ input:not(:valid):not(:focus)+label+.icon {
 }
 
 @media screen and (max-width: 600px) {
+
+  .inputBox {
+    display: grid;
+    place-items: center;
+  }
+  .icon-boxes .title {
+    font-size: 3vw !important;
+  }
   #textBox {
     height: 25vh !important;
   }
@@ -649,7 +657,7 @@ section {
 .icon-boxes .title {
   font-weight: 700;
   margin-bottom: 15px;
-  font-size: 18px;
+  font-size: 1.5vw;
 }
 
 .icon-boxes .title a {
