@@ -61,6 +61,21 @@ h1 {
   width: 60%;
 }
 
+.headline {
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50vh !important;
+  font-size: 5vw;
+  background-color: black;
+  opacity: .5;
+}
+
+.headline h1 {
+  z-index: 9999;
+}
+
 .fp-tableCell {
   height: 20vw !important;
 }
@@ -73,7 +88,7 @@ h1 {
 #main-image {
   width: 100vw !important;
   height: 48vw !important;
-  background-image: url('~src/assets/img/klimaboxOther.png');
+  background-image: url('~src/assets/img/klimaboxOther2.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
