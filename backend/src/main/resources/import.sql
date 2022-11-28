@@ -59,10 +59,8 @@ values
 insert into menu_product(product_id, menu_id)
 values (8, 1),
        (18,1),
-       (1,1),
        (7,2),
-       (5,2),
-       (3,2);
+       (5,2);
 
 insert into fooditem(id, isdishoftheday, isvegan, isvegetarian)
 values (1, false, false, false),
