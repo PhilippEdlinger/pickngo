@@ -230,23 +230,23 @@ input:not(:valid):not(:focus)+label+.icon {
 
 
 .telefonNRBox {
-  height: 70vh !Important;
+  // height: 70vh !Important;
 }
 
 .inputBox {
-  height: 70vh !Important;
+  height: 70vh;
 }
 
 
 #textBox {
-  height: 35vh !important;
+  // height: 35vh !important;
   padding: 10px;
   resize: none;
 }
 
-.floating-label {
-  height: 50vh !Important;
-}
+// .floating-label {
+//   height: 50vh !Important;
+// }
 
 #login-form {
   height: 10vh !Important;
@@ -260,6 +260,7 @@ input:not(:valid):not(:focus)+label+.icon {
 
 .inputBox {
   height: 100%;
+  width: 100%;
 }
 
 @media screen and (max-width: 600px) {
@@ -267,6 +268,9 @@ input:not(:valid):not(:focus)+label+.icon {
   .inputBox {
     display: grid;
     place-items: center;
+    order: 1;
+    width: 100%;
+    height: 47vh;
   }
   .icon-boxes .title {
     font-size: 3vw !important;
@@ -291,18 +295,13 @@ input:not(:valid):not(:focus)+label+.icon {
     margin-bottom: 90px;
   }
 
-  .inputBox {
-    order: 1;
-    width: 100%;
-  }
-
   #login-form {
     width: 80% !important;
   }
 
-  .telefonNRBox {
-    height: 65vh !important;
-  }
+  // .telefonNRBox {
+  //   height: 65vh !important;
+  // }
 }
 
 #second {
@@ -311,6 +310,7 @@ input:not(:valid):not(:focus)+label+.icon {
 
 .inputBox div {
   height: 100%;
+  width: 100%;
 }
 
 // .telefonNRBox {

@@ -38,7 +38,7 @@ header>div {
     position: absolute;
     top: 2.5vh;
     left: 20vw;
-    font-size: 1.3vw;
+    // font-size: 1.3vw;
     color: c.$fontC;
 }
 
@@ -68,7 +68,7 @@ span .pickngo {
 @media screen and (max-width: 650px) {
     .menuBox {
         display: grid !important;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         place-items: center;
     }
 
