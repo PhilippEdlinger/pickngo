@@ -26,7 +26,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgImageSliderModule } from 'ng-image-slider';
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import { GreenBoxComponent } from './components/green-box/green-box.component'; 
+import { GreenBoxComponent } from './components/green-box/green-box.component';
+import { AngularFullpageModule } from '@fullpage/angular-fullpage';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { GreenBoxComponent } from './components/green-box/green-box.component';
         FormsModule,
         BrowserAnimationsModule,
         MatCheckboxModule,
-        MatSlideToggleModule
+        MatSlideToggleModule,
+        AngularFullpageModule
     ],
   providers: [],
   bootstrap: [AppComponent]
