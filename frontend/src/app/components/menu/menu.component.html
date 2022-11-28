@@ -6,7 +6,10 @@
                 <span class="logoText">Pick'n Go</span>
             </a>
             <div class="klimabox">
-                <a routerLink="./klimabox">Klimabox</a>
+                <a routerLink="./klimabox">
+                    <fa-icon title="Klima Box" id="klimaboxB" style="font-size:30px; padding: 15px;color:white;" [icon]="klimaBoxIcon">
+                    </fa-icon>
+                </a>
             </div>
             <!-- <a routerLink="./adminPage">Admin Page</a> -->
             <div *ngIf="isOnLoginPage" class="right-icons">
