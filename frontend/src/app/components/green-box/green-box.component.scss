@@ -1,8 +1,24 @@
+@import url(~fullpage.js/dist/fullpage.min.css);
+
 section {
   width: 100%;
   float: left;
   height: 100vh;
   scroll-snap-align: center;
+}
+
+.section #main-image {
+  height: 10vw !important;
+}
+
+#fp-nav ul li, .fp-slidesNav ul li {
+  display: block;
+  width: 14px;
+  height: 13px;
+  margin: 7px;
+  position: relative;
+  z-index: 9999;
+  border: 1px solid red;
 }
 
 h1 {
@@ -45,15 +61,21 @@ h1 {
   width: 60%;
 }
 
+.fp-tableCell {
+  height: 20vw !important;
+}
+
 #text-image {
   width: 30vw !important;
   height: auto;
 }
 
 #main-image {
-  background-image: url(~src/assets/img/main-image.png);
-  background-size: cover;
-  height: 75vh !important;
+  width: 100vw !important;
+  height: 48vw !important;
+  background-image: url('~src/assets/img/klimaboxOther.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 #explanation {
@@ -76,5 +98,29 @@ h1 {
     height: 100vh;
     scroll-snap-align: start;
     scroll-margin: 0;  /* nicht nötig */
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .text-box {
+    line-height: 25px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .text-box {
+    line-height: 18px;
+  }
+  h1 {
+    padding: 0 0 .5rem 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  h1 {
+    padding: 0;
+  }
+  .text-box {
+    line-height: 12px;
   }
 }
