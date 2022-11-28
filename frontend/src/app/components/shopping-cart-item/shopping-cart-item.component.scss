@@ -11,102 +11,135 @@ $ProductsTextColor: #323232;
 $preferedTimeAreaColor: #2072ff;
 
 .product {
-    display: grid;
-    grid-template-columns: 1fr 3fr 2px 1.3fr;
-    align-items: center;
-    gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 3fr 2px 1.3fr;
+  align-items: center;
+  gap: 20px;
+}
+
+.product>img {
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+  border-radius: 20%;
+}
+
+.textBox {
+  display: grid;
+  align-items: center;
+  gap: 2vh;
+  margin: 0;
+}
+
+.textBox>div {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  color: var(--ProductsTextColor);
+}
+
+.textBox h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.textBox p {
+  font-size: 1.2rem;
+}
+
+.borderBTW {
+  border: 0.5px solid rgb(160, 160, 160);
+  height: 70%;
+  width: 0px;
+}
+
+.modificationBox {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 70px;
+  // padding-right: 10px;
+}
+
+.modificationBox>div {
+  background-color: c.$color2;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 70px;
+  height: 30px;
+  border-radius: 20px;
+  vertical-align: middle;
+  color: var(--cartBgC);
+}
+
+.modificationBox>div :is(p, button) {
+  font-size: 1.25rem;
+  line-height: 120%;
+}
+
+.modificationBox button {
+  border: none;
+}
+
+.minusB,
+.plusB {
+  color: var(--cartBgC);
+  width: 27px;
+  height: 100%;
+  background-color: c.$color2;
+}
+
+.productNumberP {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+
+.minusB {
+  border-radius: 20px 0 0 20px;
+}
+
+.plusB {
+  border-radius: 0 20px 20px 0;
+}
+
+:is(.minusB, .plusB):active {
+  background-color: #20720e;
+}
+
+.deleteB {
+  // height: 30px;
+  font-size: 2em;
+}
+
+@media screen and (max-width: 650px) {
+  .product {
+    gap: 7px;
   }
-  
-  .product>img {
-    object-fit: cover;
-    width: 100px;
-    height: 100px;
-    border-radius: 20%;
-  }
-  
+
   .textBox {
-    display: grid;
-    align-items: center;
-    gap: 2vh;
+    gap: 5px;
   }
-  
-  .textBox>div {
-    display: grid;
-    grid-template-columns: auto auto;
-    justify-content: space-between;
-    color: var(--ProductsTextColor);
-  }
-  
-  .textBox h3 {
-    font-size: 1.2rem;
-    font-weight: 700;
-  }
-  
-  .textBox p {
-    font-size: 1.2rem;
-  }
-  
-  .borderBTW {
-    border: 0.5px solid rgb(160, 160, 160);
-    height: 70%;
-    width: 0px;
-  }
-  
-  .modificationBox {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    height: 70px;
-    padding-right: 10px;
-  }
-  
-  .modificationBox>div {
-    background-color: c.$color2;
-    display: grid;
-    grid-auto-flow: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 70px;
-    height: 30px;
-    border-radius: 20px;
-    vertical-align: middle;
-    color: var(--cartBgC);
-  }
-  
+
+  .textBox :is(h3, p),
   .modificationBox>div :is(p, button) {
-    font-size: 1.25rem;
-    line-height: 120%;
+    font-size: 1rem;
   }
-  
-  .modificationBox button {
-    border: none;
+
+  .textBox h3 {
+    font-weight: 500;
   }
-  
-  .minusB,
-  .plusB {
-    color: var(--cartBgC);
-    width: 27px;
-    height: 100%;
-    background-color: c.$color2;
-  }
-  
-  .productNumberP {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-  }
-  
-  .minusB {
-    border-radius: 20px 0 0 20px;
-  }
-  
-  .plusB {
-    border-radius: 0 20px 20px 0;
-  }
-  
-  :is(.minusB, .plusB):active {
-    background-color: #20720e;
-  }
-  
-  .deleteB {
-    height: 30px;
-  }
+
+  .product>img {
+    width: calc(60px + 5vw);
+    height: calc(60px + 5vw);
+    }
+}
+
+@media screen and (max-width: 450px) {
+  .product>img {
+    width: 60px;
+    height: 60px;
+    }
+}
