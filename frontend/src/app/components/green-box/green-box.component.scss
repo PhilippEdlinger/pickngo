@@ -1,0 +1,184 @@
+@use './../../color.scss' as c;
+
+@import url(~fullpage.js/dist/fullpage.min.css);
+
+section {
+  width: 100%;
+  float: left;
+  height: 100vh;
+  scroll-snap-align: center;
+}
+
+.section #main-image {
+  height: 10vw !important;
+}
+
+#fp-nav ul li, .fp-slidesNav ul li {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 7px;
+  position: relative;
+  z-index: 9999;
+  opacity: 1;
+}
+
+#fp-nav span {
+  background: red !important;
+}
+
+
+.explanation-container h1 {
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 5vh;
+  font-size: 2.8vw;
+  border-bottom: 2px solid black;
+  padding: 0 0 1rem 0;
+}
+
+.explanation-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-box {
+  padding: 4vh 5vw 0 5vw;
+  line-height: 35px;
+  font-size: 1.5vw;
+}
+
+.img-box {
+  padding: 4vh 5vw 0 5vw;
+}
+
+.container {
+}
+
+.column {
+  float: left;
+}
+
+.left {
+  width: 40%;
+}
+
+.right {
+  width: 60%;
+}
+
+.headline {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  width: 100%;
+  padding-top: 35vh !important;
+  background-color: rgba(0,0,0,.5);
+  z-index: 1;
+}
+
+.headline h1{
+  background: -webkit-linear-gradient(150deg, c.$fontC 50%, c.$logInFontC 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-size: 6vw;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  text-align: center;
+  border: none !important;
+  opacity: 1;
+  width: auto;
+  height: 12vh;
+}
+
+
+.fp-tableCell {
+  height: 20vw !important;
+}
+
+#text-image {
+  width: 30vw !important;
+  height: auto;
+  border-radius: 10%;
+}
+
+#main-image {
+  position: relative;
+  width: 100vw !important;
+  height: 48vw !important;
+  background-image: url('~src/assets/img/klimaboxOther2.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+#explanation {
+  background-color: #72c091;
+}
+
+#klima-box {
+  background-color: #ffffff;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body {
+    margin: 0;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    scroll-padding: 0; /* nicht nötig */
+  }
+
+  section {
+    height: 100vh;
+    scroll-snap-align: start;
+    scroll-margin: 0;  /* nicht nötig */
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .text-box {
+    line-height: 25px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .text-box {
+    line-height: 18px;
+  }
+  h1 {
+    padding: 0 0 .5rem 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  h1 {
+    padding: 0;
+  }
+  .text-box {
+    line-height: 12px;
+  }
+}
+
+element.style {
+}
+
+
+.klimaBoxStyle {
+    padding: 40px 30px;
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 5px 10px 29px 0 rgb(68 88 144 / 20%);
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;
+    width: 100%;
+}

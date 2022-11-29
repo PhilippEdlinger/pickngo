@@ -34,6 +34,13 @@ header>div {
     width: 90vw;
 }
 
+.klimabox {
+    position: absolute;
+    left: 20vw;
+    // font-size: 1.3vw;
+    color: c.$fontC;
+}
+
 .menuBox * {
     height: fit-content;
     place-items: center;
@@ -82,6 +89,10 @@ span .pickngo {
         place-items: center;
         height: 100%;
         width: 100%;
+    }
+
+    #searchbar {
+        display: none;
     }
 
     .menuBox>a>span {

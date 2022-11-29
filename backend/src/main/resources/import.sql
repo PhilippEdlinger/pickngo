@@ -59,10 +59,8 @@ values
 insert into menu_product(product_id, menu_id)
 values (8, 1),
        (18,1),
-       (1,1),
        (7,2),
-       (5,2),
-       (3,2);
+       (5,2);
 
 insert into fooditem(id, isdishoftheday, isvegan, isvegetarian)
 values (1, false, false, false),
@@ -81,10 +79,10 @@ values (1, 500, false),
       (25, 330, false);
 
 insert into klimabox (product_id, rabat, number, fromDate, toDate)
-values (18, 50, 5, '022-03-03T10:15:30', '022-03-03T10:15:30'),
-       (5, 50, 3, '022-03-03T10:15:30', '022-03-03T10:15:30'),
-       (8, 50, 12, '022-03-03T10:15:30', '022-03-03T10:15:30'),
-       (7, 50, 7,'022-03-03T10:15:30', '022-03-03T10:15:30');
+values (8, 50, 5, '022-03-03T10:15:30', '022-03-03T10:15:30'),
+       (18, 50, 3, '022-03-03T10:15:30', '022-03-03T10:15:30'),
+       (7, 50, 12, '022-03-03T10:15:30', '022-03-03T10:15:30'),
+       (5, 50, 7,'022-03-03T10:15:30', '022-03-03T10:15:30');
 
 insert into orderet(orderposition, customer_id, employee_id, msg, timeOfOrder, orderstatus, planedtopicktime, readytopicktime)
 values (1, 2, 1, 'Bisschen Scharf', '2022-03-03T10:15:30', 1,'2022-03-03T10:15:30', '2022-03-03T10:15:30'),
