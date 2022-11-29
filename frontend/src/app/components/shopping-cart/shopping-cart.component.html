@@ -17,12 +17,11 @@
             Zum Mitnehmen <mat-slide-toggle [(ngModel)]="toogleSlider">Hier Essen</mat-slide-toggle>
         </section>
         <div id="preferedTimeBox">
-            <select name="preferedTime" id="preferedTime">
-                <option value="gleich">Gleich Abholen</option>
+            <select [(ngModel)]="firstSelectValue" name="preferedTime" id="preferedTime">
+                <option value="gleich" selected>Gleich Abholen</option>
                 <option value="andere">Andere Zeit</option>
-
             </select>
-            <input [ngStyle]="{'display': hideInput ? 'none' : 'block'}" type="datetime-local" id="preferedTimePicker">
+            <input *ngIf="firstSelectValue=='andere'" type="datetime-local" value="document.getElementById('myLocalDate').value"  id="preferedTimePicker">
         </div>
 
         <a id="orderB" routerLink="order" (click)="onClose()">Bestellen</a>
