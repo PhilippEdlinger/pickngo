@@ -1,16 +1,23 @@
 @use './../../color.scss' as c;
 
-@import url(~fullpage.js/dist/fullpage.min.css);
-
-section {
-  width: 100%;
-  float: left;
-  height: 100vh;
-  scroll-snap-align: center;
+html {
+  scroll-behavior: smooth;
 }
 
 .section #main-image {
-  height: 10vw !important;
+  scroll-margin-top: 50px;
+}
+
+.section {
+
+}
+
+#section2 {
+  margin-top: 2vh !important;
+}
+
+.section1 {
+  height: 100vh !important;
 }
 
 #fp-nav ul li, .fp-slidesNav ul li {
@@ -69,28 +76,38 @@ section {
 }
 
 .headline {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -60%);
   width: 100%;
-  padding-top: 35vh !important;
+  z-index: 9;
+}
+
+#topText {
+  z-index: 9;
+}
+
+.border-box {
+  width: 100% !important;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  left: 50%;
+  margin-top: 24vw;
+  transform: translate(-50%, -50%);
+  z-index: 9 !important;
+  height: 30vh !important;
   background-color: rgba(0,0,0,.5);
-  z-index: 1;
 }
 
 .headline h1{
+  margin-top: 24vw;
   background: -webkit-linear-gradient(150deg, c.$fontC 50%, c.$logInFontC 50%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   position: absolute;
-  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0;
   font-size: 6vw;
   letter-spacing: 2px;
   white-space: nowrap;
@@ -106,19 +123,15 @@ section {
   height: 20vw !important;
 }
 
+#backgroundImg {
+  width: 100% !important;
+  z-index: 1;
+}
+
 #text-image {
   width: 30vw !important;
   height: auto;
   border-radius: 10%;
-}
-
-#main-image {
-  position: relative;
-  width: 100vw !important;
-  height: 48vw !important;
-  background-image: url('~src/assets/img/klimaboxOther2.png');
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
 }
 
 #explanation {
@@ -145,21 +158,39 @@ section {
 }
 
 @media screen and (max-width: 1200px) {
+  .section1 {
+    height: 70vh !important;
+  }
   .text-box {
     line-height: 25px;
+  }
+  .border-box {
+    height: 20vh !important;
   }
 }
 
 @media screen and (max-width: 800px) {
+  .section1 {
+    height: 55vh !important;
+  }
   .text-box {
     line-height: 18px;
   }
   h1 {
     padding: 0 0 .5rem 0;
   }
+  .border-box {
+    height: 15vh !important;
+  }
 }
 
 @media screen and (max-width: 500px) {
+  .section1 {
+    height: 33vh !important;
+  }
+  .border-box {
+    height: 10vh !important;
+  }
   h1 {
     padding: 0;
   }

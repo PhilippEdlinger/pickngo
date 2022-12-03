@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, HostListener, Input, OnInit} from '@angular/core';
 import {Menu} from "../../models/Menu";
 import {Product} from "../../models/Product";
 import {MenuService} from "../../services/menu.service";
@@ -14,33 +14,20 @@ export class GreenBoxComponent implements OnInit {
   @Input() products: Product;
 
   ngOnInit(): void {
+
   }
+
+ /* @HostListener('window:scroll', ['$event']) // for window scroll events
+  onScroll() {
+    console.log("dff123");
+    const element = document.querySelector("#section2")
+    element?.scrollIntoView();
+  }*/
+
 
   config: any;
-  fullpage_api: any;
 
   constructor(private menuService: MenuService, private productService: ProductService) {
-
-    // for more details on config options please visit fullPage.js docs
-    this.config = {
-
-      // fullpage options
-      licenseKey: 'YOUR LICENSE KEY HERE',
-      anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'lastPage'],
-      menu: '#menu',
-
-      // fullpage callbacks
-      afterResize: () => {
-        console.log("After resize");
-      },
-      afterLoad: (origin: { index: any; }, destination: any, direction: any) => {
-        console.log(origin.index);
-      }
-    };
-  }
-
-  getRef(fullPageRef: any) {
-    this.fullpage_api = fullPageRef;
   }
 
 }
