@@ -27,6 +27,8 @@ import { NgImageSliderModule } from 'ng-image-slider';
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { GreenBoxComponent } from './components/green-box/green-box.component';
+import { KlimaBoxPageComponent } from './components/klima-box-page/klima-box-page.component';
+import { KlimaBoxCategoryComponent } from './components/klima-box-category/klima-box-category.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { GreenBoxComponent } from './components/green-box/green-box.component';
     AdminPageItemComponent,
     SearchbarComponent,
     SmsComponent,
-    GreenBoxComponent, 
+    GreenBoxComponent,
+    KlimaBoxPageComponent,
+    KlimaBoxCategoryComponent, 
     
   ],
     imports: [

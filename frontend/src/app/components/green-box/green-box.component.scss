@@ -186,7 +186,10 @@ html {
 
 @media screen and (max-width: 500px) {
   .section1 {
-    height: 33vh !important;
+    height: 40vh !important;
+  }
+  .section2 > div > div > div > p{
+   font-size: 1.8em !important;
   }
   .border-box {
     height: 10vh !important;
@@ -218,4 +221,10 @@ element.style {
   font-size: 1.6em;
   color: #385938;
   font-style: oblique;
+}
+
+#textKostenG{
+  font-style: italic;
+  font-size: 1.3em;
+  color: #4c654c;
 }

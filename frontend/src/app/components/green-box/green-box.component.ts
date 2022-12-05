@@ -9,6 +9,7 @@ import {ProductService} from "../../services/product.service";
   templateUrl: './green-box.component.html',
   styleUrls: ['./green-box.component.scss']
 })
+
 export class GreenBoxComponent implements OnInit {
   menus: Menu[];
   @Input() products: Product;

@@ -1,0 +1,23 @@
+@use './../../color.scss' as c;
+
+.icon-box {
+  display: grid;
+  place-items: center;
+  height: 100%;
+}
+
+#bestellungInfo {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: c.$color3;
+  color: rgb(245, 245, 245);
+  height: 60px;
+  width: 400px;
+  padding: 20px 10px;
+  z-index: 9999;
+}
+
+#count{
+  color: #94b494;
+}
