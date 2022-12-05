@@ -4,6 +4,11 @@
   font-family: comforta, sans-serif !important;
 }
 
+body {
+  margin-top: 4vw !important;
+}
+
+
 #login-title {
     font-size: 7vw !important;
 }
@@ -32,7 +37,7 @@ input {
 }
 
 .login-button p {
-  font-size: 1.3vw !important;
+  font-size: 1.3vw;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
@@ -62,42 +67,14 @@ input {
   background-color: c.$registerC;
 }
 
-@media (max-width: 900px) {
-  input {
-    font-size: 2vw !important;
-  }
-  .input-label {
-    font-size: 2vw !important;
-  }
-}
-
-@media (max-width: 450px) {
-  .login-input {
-    margin-bottom: 1vh !important;
-    height: 4vh !important;
-  }
-}
-
 @media (max-width: 500px) {
-  .login-button {
-    border-radius: 15px !important;
-    height: 2.5vh !important;
-  }
   .register-button {
-    border-radius: 15px !important;
-    height: 2.5vh !important;
+    width: 30vw !important;
+    font-size: 2vw !important;
   }
-  .cta {
-    background-color: #3e3e3e !important;
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    border-radius: 28px;
-  }
-  .cta:before {
-    content: none !important;
+  .login-button {
+    width: 30vw !important;
+    height: 5vh !important;
   }
   input {
     font-size: 2.5vw !important;
@@ -108,21 +85,31 @@ input {
   #login-form {
     width: 50vw !important;
   }
-  .cta {
-    padding: 13px 30px !important;
-  }
-  .cta svg {
-    width: 1.2vw !important;
-    margin-top: .5vh !important;
-  }
-  .cta:before {
-    height: 5vh !important;
-  }
   .register-link {
     height: 10vh;
     width: 50vw !important;
   }
 }
+
+@media (max-width: 900px) {
+  input {
+    font-size: 2vw !important;
+  }
+  .input-label {
+    font-size: 2vw !important;
+  }
+}
+
+@media (max-width: 450px) {
+  .register-link {
+    margin-top: 0 !important;
+  }
+  .login-input {
+    margin-bottom: 1vh !important;
+    height: 4vh !important;
+  }
+}
+
 
 .login-button p {
   line-height: 6.1vh !important;
@@ -136,20 +123,39 @@ input {
 }
 
 @media (max-width: 900px) {
-  button {
-    width: 11vw !important;
-    height: 4vh !important;
-  }
-  .register-button {
-    font-size: 1.1vw !important;
-  }
-  .login-button {
-    font-size: 1.1vw !important;
-  }
   .register-link {
     height: 10vh !important;
   }
-}
+    button {
+      width: 17vw !important;
+      height: 5vh !important;
+    }
+    .login-button {
+      font-size: 2vw !important;
+      margin-top: 0;
+      width: 15vw !important;
+      height: 6vh !important;
+    }
+  .login-button p {
+    font-size: 2vw !important;
+  }
+    #login-form {
+      width: 50vw !important;
+    }
+    .form-group {
+      width: 50vw !important;
+      margin-top: 3vh;
+    }
+    .signup-input {
+      margin-bottom: 0 !important;
+      height: 3vh !important;
+      font-size: 2vw !important;
+    }
+    .input-label-signup {
+      font-size: 2vw !important;
+    }
+  }
+
 
 .register-link {
   height: 5.5vh !important;
