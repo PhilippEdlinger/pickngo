@@ -19,10 +19,12 @@ export class ShoppingCartComponent implements OnInit {
   sum: number = 0;
   @Input()
   toogleSlider: boolean 
+  firstSelectValue: string
 
   constructor(private orderData: OrderDataService) { }
 
   ngOnInit(): void {
+    this.firstSelectValue = "gleich"
     this.toogleSlider = false;
     this.orderData.currentOrder.subscribe(o => {
       this.order = o;

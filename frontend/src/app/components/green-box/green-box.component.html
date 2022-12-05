@@ -1,39 +1,32 @@
 
 
-<div fullpage id="fullpage" [options]="config" (ref)="getRef($event)">
-    <div id="fp-nav" class="fp-right" style="margin-top: -33.5px;">
-        <ul>
-            <li>
-                <a href="#page1" class=""><span class="fp-sr-only">page1</span>
-                    <span></span>
-                </a>
-            </li>
-            <li>
-                <a href="#page2" class="active"><span class="fp-sr-only">page2</span>
-                    <span class="fp-sr-only">page3</span><span></span></a></li></ul></div>
     <div class="section" id="main-image">
         <div class="headline">
-            <h1>Eat green, stay clean</h1>
+            <div class="border-box"></div>
+            <h1 id="topText">Eat green  stay clean</h1>
+            <img id="backgroundImg" src="assets/img/klimaboxOther.png">
         </div>
     </div>
-    <div class="section" (click)="fullpage_api.moveSectionDown()">
+    <div class="section section1" id="section2">
         <div class="explanation-container">
             <h1>Warum gibt es die Klimabox?</h1>
         </div>
         <div class="row">
             <div class="column img-box left">
-                <img id="text-image" src="assets/img/salat.jpg" alt="image">
+                <img id="text-image" src="assets/img/elternCagitz.png" alt="image">
             </div>
             <div class="column text-box right">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                Warum KlimaBox? Wir wollen dafür sorgen, dass Lebensmittel gegessen statt verschwendet werden.
+                Jeden Tag werden in Cafés, Bäckereien, Supermärkten, Hotels & Co. gute Lebensmittel weggeworfen – nur weil sie nicht verkauft wurden.
+                Mit der KlimaBox will das Gasthaus Cagitz dies Problem für Ihr Restaurant lösen.
+                Mit der Klimabox kannst du unsere Lebensmittel zu einem vergünstigten Preis kaufen.
             </div>
         </div>
     </div>
-    <div class="section" id="klima-box">
-        <div class="slide">Slide 2.1</div>
-        <div class="slide">Slide 2.2</div>
-        <div class="slide">Slide 2.3</div>
-    </div>
-    <div class="section" (click)="fullpage_api.moveTo('secondPage', 2)">Some section4</div>
-</div>
 
+
+    <div class="section section1" id="klima-box">
+        <div class="klimaBoxStyle">
+            <app-product-category [urlName]="'klimaBox'" [title]="'Klima Box'"></app-product-category>
+        </div>
+    </div>
