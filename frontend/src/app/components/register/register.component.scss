@@ -1,6 +1,10 @@
 @use '../../color.scss' as c;
 
-button.register-button {
+#signup-body {
+  margin-top: 4vw !important;
+}
+
+.register-button {
   background-color: c.$registerC;
   color: white;
   border-radius: 28px;
@@ -92,14 +96,29 @@ button {
 
 @media only screen and (max-width: 730px) {
   button {
-    width: 11vw !important;
-    height: 4vh !important;
+    width: 17vw !important;
+    height: 5vh !important;
   }
   .register-button {
-    font-size: 1.1vw !important;
+    font-size: 2vw !important;
   }
   #login-button {
-    font-size: 1.1vw !important;
+    font-size: 2vw !important;
+  }
+  #login-form {
+    width: 50vw !important;
+  }
+  .form-group {
+    width: 50vw !important;
+    margin-top: 3vh;
+  }
+  .signup-input {
+    margin-bottom: 0 !important;
+    height: 3vh !important;
+    font-size: 2vw !important;
+  }
+  .input-label-signup {
+    font-size: 2vw !important;
   }
 }
 
@@ -111,16 +130,7 @@ button {
 }
 
 @media (max-width: 600px) {
-  #signup-body {
-        margin-top: 5vh !important;
-    }
-  .form-group {
-    margin-top: 1vh;
-  }
-  .signup-input {
-    margin-bottom: 0 !important;
-    height: 3vh !important;
-  }
+
 }
 
   #signup-body {
