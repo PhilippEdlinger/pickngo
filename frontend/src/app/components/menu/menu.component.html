@@ -7,16 +7,19 @@
             </a>
             <div class="klimabox">
                 <a routerLink="./klimabox">
-                    <fa-icon title="Klima Box" id="klimaboxB" style="font-size:30px; padding: 15px;color:white;" [icon]="klimaBoxIcon">
+                    <fa-icon title="Klima Box" id="klimaboxB" style="font-size:30px; padding: 15px;color:white;"
+                        [icon]="klimaBoxIcon">
                     </fa-icon>
                 </a>
             </div>
             <!-- <a routerLink="./adminPage">Admin Page</a> -->
             <div *ngIf="isOnLoginPage" class="right-icons">
                 <app-searchbar id="searchbar"></app-searchbar>
-                <fa-icon (click)="onClickShoppingCart()" id="shoppingCartB"
-                    style="font-size:30px; padding: 15px;color:white;" [icon]="shoppingCartIcon">
-                </fa-icon>
+                <div matBadge="{{shoppingCartItemCounter}}" matBadgeOverlap="true" matBadgeColor="warn" class="demo-section" style="margin: 15px;color:white;">
+                    <fa-icon (click)="onClickShoppingCart()"
+                        id="shoppingCartB" style="font-size:30px;" [icon]="shoppingCartIcon">
+                    </fa-icon>
+                </div>
                 <a href="login">
                     <fa-icon id="shoppingCartB" style="font-size:30px; padding: 15px;color:white;" [icon]="userIcon">
                     </fa-icon>

@@ -14,6 +14,7 @@ export class MenuComponent implements OnInit {
   klimaBoxIcon = faPiggyBank;
   userIcon = faUser;
   isOnLoginPage = false;
+  shoppingCartItemCounter: number = 99;
 
   constructor(private router: Router) {
     this.router.events.subscribe(e => {

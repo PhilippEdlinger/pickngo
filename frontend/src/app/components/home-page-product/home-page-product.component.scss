@@ -16,4 +16,15 @@
     width: 400px;
     padding: 20px 10px;
     z-index: 9999;
-  }
+}
+
+.icon-box {
+    padding: 40px 30px;
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 5px 10px 29px 0 rgba(68, 88, 144, 0.2);
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;
+    width: 100%;
+}

@@ -4,13 +4,18 @@
     <div id="shoppingCart">
         <h1>Warenkorb</h1>
         <div id="products">
-            <app-shopping-cart-item *ngFor="let oi of order.orderItems; let i = index;" [(orderItem)]="order.orderItems[i]" (deleteOrderItem)="deleteOrderItem(oi)" (orderItemChange)="change(oi)"></app-shopping-cart-item>
+            <app-shopping-cart-item *ngFor="let oi of order.orderItems; let i = index;"
+                [(orderItem)]="order.orderItems[i]" (deleteOrderItem)="deleteOrderItem(oi)"
+                (orderItemChange)="change(oi)"></app-shopping-cart-item>
         </div>
         <div id="priceBox">
             <p>Gesamt</p>
             <p id="shoppingCartPrice">{{sum.toFixed(2).replace('.', ',')}}€</p>
         </div>
-        <p id="orderInfo" *ngIf="toogleSlider==false">Wenn sie jetzt bestellen, können Sie Ihre Bestellung am {{order.planedToPickTime.getDate()}}.{{order.planedToPickTime.getMonth() + 1}}.{{order.planedToPickTime.getFullYear()}} um <span> {{order.planedToPickTime.getHours()}}:{{order.planedToPickTime.getMinutes()}} Uhr</span> abholen.
+        <p id="orderInfo" *ngIf="toogleSlider==false">Wenn sie jetzt bestellen, können Sie Ihre Bestellung am
+            {{order.planedToPickTime.getDate()}}.{{order.planedToPickTime.getMonth() +
+            1}}.{{order.planedToPickTime.getFullYear()}} um <span>
+                {{order.planedToPickTime.getHours()}}:{{order.planedToPickTime.getMinutes()}} Uhr</span> abholen.
         </p>
         <section class="example-section">
             <!-- <mat-checkbox class="example-margin" [(ngModel)]="checked">Dort Essen!</mat-checkbox> -->
@@ -21,7 +26,8 @@
                 <option value="gleich" selected>Gleich Abholen</option>
                 <option value="andere">Andere Zeit</option>
             </select>
-            <input *ngIf="firstSelectValue=='andere'" type="datetime-local" value="document.getElementById('myLocalDate').value"  id="preferedTimePicker">
+            <input *ngIf="firstSelectValue=='andere'" type="datetime-local"
+                value="document.getElementById('myLocalDate').value" id="preferedTimePicker">
         </div>
 
         <a id="orderB" routerLink="order" (click)="onClose()">Bestellen</a>
