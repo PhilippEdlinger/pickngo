@@ -47,7 +47,7 @@ public class ProductService extends Repository<Product, Long> {
         List<Product> ps = new LinkedList<>();
         for (var k : kb) {
             var p = k.getProduct();
-            p.setPrice(p.price * k.getRabat() / 100);
+            p.setPrice(p.price * k.getDiscount() / 100);
             ps.add(p);
         }
 
