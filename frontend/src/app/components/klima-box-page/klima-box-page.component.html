@@ -1,0 +1,16 @@
+<div class="icon-box productCart">
+    <i class="bi bi-apple" style="font-size:1vw; color:green; opacity: 0.6;"> </i>
+    <div matBadge="{{count}}" matBadgeOverlap="true" matBadgeColor="warn" matBadgeSize="large" class="floating-label speisenProdukt">
+        <img src={{product.imageName}} alt={{product.name}} class="imgBox productImg">
+        <h4 class="title productName" style="text-align:center;">{{product.name}}</h4>
+        <h4 class="title productName" id="count" style="text-align:center;">noch {{count}} stück erhältlich!</h4>
+        <h4 class="title productPrice" style="text-align:center;">{{product.price.toFixed(2).replace('.', ',')}}€</h4>
+        <div class="buttonDiv">
+            <button (click)="onClick()" class="buttonDave">In den Warenkorb</button>
+        </div>
+    </div>
+</div>
+
+<div [ngStyle]="{'display': !bestellt ? 'none' : 'block'}" id="bestellungInfo">
+    <p>Das Produkt wurde in den Warenkorb platziert!</p>
+</div>

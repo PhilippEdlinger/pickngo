@@ -28,6 +28,8 @@ import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { GreenBoxComponent } from './components/green-box/green-box.component';
 import {MatBadgeModule} from "@angular/material/badge";
+import { KlimaBoxPageComponent } from './components/klima-box-page/klima-box-page.component';
+import { KlimaBoxCategoryComponent } from './components/klima-box-category/klima-box-category.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,9 @@ import {MatBadgeModule} from "@angular/material/badge";
     SearchbarComponent,
     SmsComponent,
     GreenBoxComponent,
-
+    KlimaBoxPageComponent,
+    KlimaBoxCategoryComponent, 
+    
   ],
     imports: [
         BrowserModule,

@@ -1,0 +1,38 @@
+#categoryBox {
+  margin: 0 0 5rem 0;
+  // display: grid;
+  // place-items: center;
+}
+
+#categoryBox > h2 {
+  font-size: 1.9rem;
+}
+
+#categoryBox > hr {
+  margin: 2vh 0 1.5vh 0;
+}
+
+#products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1vw;
+}
+
+@media screen and (max-width: 800px) {
+  #products {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .buttonDave {
+    font-size: 2vw !important;
+  }
+}
+@media screen and (max-width: 950px) {
+  #products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+#datumAnzahl{
+  text-align: center;
+  color: #4c654c;
+}

@@ -140,6 +140,7 @@ html {
 
 #klima-box {
   background-color: #ffffff;
+  margin: 0 10px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -186,7 +187,10 @@ html {
 
 @media screen and (max-width: 500px) {
   .section1 {
-    height: 33vh !important;
+    height: 40vh !important;
+  }
+  .section2 > div > div > div > p{
+   font-size: 1.8em !important;
   }
   .border-box {
     height: 10vh !important;
@@ -212,4 +216,16 @@ element.style {
     transition: all 0.3s ease-in-out;
     border-radius: 10px;
     width: 100%;
+}
+
+#einDrittel{
+  font-size: 1.6em;
+  color: #385938;
+  font-style: oblique;
+}
+
+#textKostenG{
+  font-style: italic;
+  font-size: 1.3em;
+  color: #4c654c;
 }
