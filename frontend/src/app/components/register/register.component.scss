@@ -95,30 +95,36 @@ button {
 }
 
 @media only screen and (max-width: 730px) {
+  .form-group {
+    margin-top: 3vh !important;
+  }
+}
+
+@media only screen and (max-width: 730px) {
   button {
     width: 17vw !important;
     height: 5vh !important;
   }
   .register-button {
-    font-size: 2vw !important;
+    font-size: 2.5vw !important;
   }
   #login-button {
-    font-size: 2vw !important;
+    font-size: 2.5vw !important;
   }
   #login-form {
     width: 50vw !important;
   }
   .form-group {
     width: 50vw !important;
-    margin-top: 3vh;
+    margin-top: 4vh;
   }
   .signup-input {
     margin-bottom: 0 !important;
     height: 3vh !important;
-    font-size: 2vw !important;
+    font-size: 2.5vw !important;
   }
   .input-label-signup {
-    font-size: 2vw !important;
+    font-size: 2.5vw !important;
   }
 }
 

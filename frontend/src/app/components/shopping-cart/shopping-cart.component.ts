@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, SimpleChanges} from '@angular/core';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { Order } from 'src/app/models/Order';
 import { OrderItem } from 'src/app/models/OrderItem';
@@ -20,8 +20,17 @@ export class ShoppingCartComponent implements OnInit {
   @Input()
   toogleSlider: boolean 
   firstSelectValue: string
+  @ViewChild('myElem') myDiv: ElementRef;
+  date: Date;
+
 
   constructor(private orderData: OrderDataService) { }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if(this.firstSelectValue == "andere") {
+      //this.date = this.myDiv.nativeElement.value.toDate();
+    }
+  }
 
   ngOnInit(): void {
     this.firstSelectValue = "gleich"
@@ -46,6 +55,7 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   change(orderItem: OrderItem): void {
+    //console.log(this.myDiv.nativeElement.value.toDate);
     this.order.orderItems[this.order.orderItems.findIndex(oi => oi.orderItemId.product.id === orderItem.orderItemId.product.id)] = orderItem;
     console.log(this.order);
     this.orderData.changeOrder(this.order);

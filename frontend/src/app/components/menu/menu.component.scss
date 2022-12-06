@@ -36,7 +36,7 @@ header>div {
 
 .klimabox {
     position: absolute;
-    left: 20vw;
+    left: 16vw;
     // font-size: 1.3vw;
     color: c.$fontC;
 }
@@ -62,6 +62,16 @@ header>div {
 
 span .pickngo {
     color: c.$fontC;
+}
+@media (max-width: 1000px) {
+    .klimabox {
+        left: 22vw;
+    }
+}
+@media (max-width: 680px) {
+    .klimabox {
+        left: 20vw;
+    }
 }
 
 @media screen and (max-width: 650px) {
