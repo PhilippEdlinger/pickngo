@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -17,16 +17,17 @@ import { MenuImgComponent } from './components/menu-img/menu-img.component';
 import { HomePageProductComponent } from './components/home-page-product/home-page-product.component';
 import { ProductCategoryComponent } from './components/product-category/product-category.component';
 import { ShoppingCartItemComponent } from './components/shopping-cart-item/shopping-cart-item.component';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AdminPageComponent } from './components/admin-page/admin-page.component';
 import { AdminPageItemComponent } from './components/admin-page-item/admin-page-item.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { SmsComponent } from './components/sms/sms.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgImageSliderModule } from 'ng-image-slider';
-import {MatCheckboxModule} from "@angular/material/checkbox";
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { MatCheckboxModule } from "@angular/material/checkbox";
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { GreenBoxComponent } from './components/green-box/green-box.component';
+import {MatBadgeModule} from "@angular/material/badge";
 import { KlimaBoxPageComponent } from './components/klima-box-page/klima-box-page.component';
 import { KlimaBoxCategoryComponent } from './components/klima-box-category/klima-box-category.component';
 
@@ -64,7 +65,8 @@ import { KlimaBoxCategoryComponent } from './components/klima-box-category/klima
         FormsModule,
         BrowserAnimationsModule,
         MatCheckboxModule,
-        MatSlideToggleModule
+        MatSlideToggleModule,
+        MatBadgeModule
     ],
   providers: [],
   bootstrap: [AppComponent]

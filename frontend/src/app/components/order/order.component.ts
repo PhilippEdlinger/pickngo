@@ -58,7 +58,8 @@ export class OrderComponent implements OnInit {
     console.log(this.order);
     // this.order = new Order();
     console.log(this.orderCopy);
-    this.ls.user.subscribe(u => { this.logedIn = (u != null && u.id >= 0); console.log(u); this.user = u; })
+    this.ls.user?.subscribe(u => { this.logedIn = (u != null && u.id >= 0); console.log(u); this.user = u; })
+    console.log(this.ordered)
   }
 
   deleteOrderItem(orderItem: OrderItem): void {

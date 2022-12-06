@@ -1,6 +1,7 @@
-import {Component, OnInit, Output, EventEmitter, Input, SimpleChanges} from '@angular/core';
-import { faShoppingCart,faUser, faPiggyBank } from "@fortawesome/free-solid-svg-icons";
+import { Component, OnInit, Output, EventEmitter, Input, SimpleChanges } from '@angular/core';
+import { faShoppingCart, faUser, faPiggyBank } from "@fortawesome/free-solid-svg-icons";
 import { Router } from '@angular/router';
+import { OrderDataService } from 'src/app/services/order-data.service';
 
 @Component({
   selector: 'app-menu',
@@ -14,15 +15,18 @@ export class MenuComponent implements OnInit {
   klimaBoxIcon = faPiggyBank;
   userIcon = faUser;
   isOnLoginPage = false;
+  shoppingCartItemCounter: number = 99;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private orderData: OrderDataService) {
     this.router.events.subscribe(e => {
       this.isOnLoginPage = !(this.router.url.includes('register') || this.router.url.includes('login'));
     })
   }
 
   ngOnInit(): void {
-
+    this.orderData.currentOrder.subscribe(o => {
+      this.shoppingCartItemCounter = o.orderItems.length;
+    });
   }
 
 

@@ -237,7 +237,6 @@ input:not(:valid):not(:focus)+label+.icon {
   height: 70vh;
 }
 
-
 #textBox {
   // height: 35vh !important;
   padding: 10px;
@@ -259,9 +258,15 @@ input:not(:valid):not(:focus)+label+.icon {
 }
 
 .inputBox {
-  height: 100%;
+  // height: 100%;
   width: 100%;
 }
+
+// @media screen and (min-width: 600px) {
+//   .inputBox {
+//     height: 70vh;
+//   }
+// }
 
 @media screen and (max-width: 600px) {
 
@@ -270,7 +275,7 @@ input:not(:valid):not(:focus)+label+.icon {
     place-items: center;
     order: 1;
     width: 100%;
-    height: 47vh;
+    height: 62vh;
   }
   .icon-boxes .title {
     font-size: 3vw !important;
