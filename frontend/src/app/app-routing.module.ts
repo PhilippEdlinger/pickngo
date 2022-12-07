@@ -17,9 +17,7 @@ const routes: Routes = [
   { path: 'adminPage', component: AdminPageComponent,
     canActivate: [AuthGuardService]
   },
-  { path: 'klimabox', component: GreenBoxComponent,
-    canActivate: [AuthGuardService]
-  }
+  { path: 'klimabox', component: GreenBoxComponent}
 ];
 
 @NgModule({
