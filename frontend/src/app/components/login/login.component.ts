@@ -4,6 +4,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {ApiService} from "../../services/api.service";
 import {first} from "rxjs";
 import {LogInDTO} from "../../models/LogInDTO";
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,8 @@ export class LoginComponent implements OnInit {
   constructor(private fb: UntypedFormBuilder,
               private route: ActivatedRoute,
               private router: Router,
-              private service: ApiService) {
+              private service: ApiService,
+              private authService: AuthService) {
 
         this.form = this.fb.group({
           username: ['',Validators.required],
@@ -39,10 +41,12 @@ export class LoginComponent implements OnInit {
             return;
         }
 
-        this.service.login(this.f['username'].value, this.f['password'].value)
+        this.authService.login(this.f['username'].value, this.f['password'].value)
             .subscribe(u => {
                 if (u.success) {
                     this.login.success = true;
+                    localStorage.setItem('id_token', u.token);
+                    localStorage.setItem('expires_at', u.expires_at);
                     this.router.navigate(['/']);
                     console.log('Success')
                 } else {

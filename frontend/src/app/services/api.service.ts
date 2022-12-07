@@ -40,23 +40,6 @@ export class ApiService {
   //   }
   // }
 
-  login(username: any, password: any) {
-    return this.http.post<LogInDTO>(`http://localhost:8080/person/signIn/${username}/${password}`, {username, password})
-        .pipe(map((user: LogInDTO) => {
-          // store user details and jwt token in local storage to keep user logged in between page refreshes
-          console.log(user);
-          localStorage.setItem('user', JSON.stringify(user.person));
-          this.userSubject.next(user.person);
-          return user;
-        }));
-  }
-
-  logout() {
-    // remove user from local storage and set current user to null
-    localStorage.removeItem('user');
-    this.userSubject.next(null);
-    this.router.navigate(['/login']);
-  }
 
   register(user: User): Observable<LogInDTO> {
     console.log(user);
