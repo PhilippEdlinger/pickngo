@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { timeStamp } from 'console';
 import { BehaviorSubject } from 'rxjs';
 import { Order } from '../models/Order';
 
@@ -12,11 +13,10 @@ export class OrderDataService {
 
   constructor() {
     let order = localStorage.getItem('order');
-    // console.log(order);
     if (order != null) {
       let o: Order = JSON.parse(order);
-      // console.log(o);
-      // this.changeOrder(o);
+      o.planedToPickTime = new Date(o.planedToPickTime);
+      this.changeOrder(o);
     }
   }
 

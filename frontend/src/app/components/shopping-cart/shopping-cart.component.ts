@@ -42,6 +42,9 @@ export class ShoppingCartComponent implements OnInit {
         this.sum += oi.orderItemId.product.price * oi.quantity;
       }
     });
+
+    console.log(this.order)
+    console.log(this.order.planedToPickTime);
   }
 
   onClose(): void {
