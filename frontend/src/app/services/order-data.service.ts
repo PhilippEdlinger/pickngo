@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { timeStamp } from 'console';
 import { BehaviorSubject } from 'rxjs';
 import { Order } from '../models/Order';
+import { ApiService } from './api.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,7 @@ export class OrderDataService {
   currentOrder = this.orderSource.asObservable();
 
 
-  constructor() {
+  constructor(private ls: ApiService) {
     let order = localStorage.getItem('order');
     if (order != null) {
       let o: Order = JSON.parse(order);

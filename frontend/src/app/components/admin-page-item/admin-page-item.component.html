@@ -2,7 +2,7 @@
     <p>NR: {{order.orderPosition}}</p>
     <!-- <p>{{customerIdent}}</p> -->
     <!-- <p>{{order.orderStatus}}</p> -->
-    <p>Tel: {{order.customer.lastname}}</p>
+    <p>Tel: {{order.customer?.lastname}}</p>
     <p>Fertig um: {{order.planedToPickTime}}</p>
     <p>{{order.orderItems}}</p>
 </div>

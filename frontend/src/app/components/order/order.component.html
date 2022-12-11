@@ -10,7 +10,7 @@
                         <div id="productBox" class="icon-box">
                             <h4 class="order">Meine Bestellung</h4>
                             <div id="orderProduct">
-                                <app-shopping-cart-item *ngFor="let oi of orderCopy.orderItems; let i = index;"
+                                <app-shopping-cart-item *ngFor="let oi of order.orderItems; let i = index;"
                                     [(orderItem)]="order.orderItems[i]" (deleteOrderItem)="deleteOrderItem(oi)"
                                     (orderItemChange)="change(oi)">
                                 </app-shopping-cart-item>
