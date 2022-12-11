@@ -27,17 +27,21 @@
                             class="col-4 d-flex align-items-stretch mb-5 mb-lg-0" id="first" data-aos="fade-up">
                             <div class="icon-box telefonNRBox">
                                 <div class="floating-label">
-                                    <h4 [ngStyle]="{'display': logedIn ? 'none' : 'block'}" class="title"
-                                        style="text-align:center;">Für die Bestellbestätigung benötigen wir
-                                    </h4>
-                                    <h4 [ngStyle]="{'display': logedIn ? 'none' : 'block'}" class="title"
-                                        style="text-align:center;">Ihre Telefonnummer</h4>
-                                    <form [formGroup]="form" id="login-form" (ngSubmit)="onSubmit()">
-                                        <input [ngStyle]="{'display': logedIn ? 'none' : 'block'}" placeholder="Tel."
-                                            type="tel" name="tel" id="tel" autocomplete="off" />
+                                    <form [formGroup]="form" id="login-form" (ngSubmit)="onSubmit()" ngClass="logedIn ? 'logedIn' : 'notLogedIn'">
+                                        <div>
+                                            <h4 [ngStyle]="{'display': logedIn ? 'none' : 'block'}" class="title"
+                                                style="text-align:center;">Für die Bestellbestätigung benötigen wir
+                                            </h4>
+                                            <h4 [ngStyle]="{'display': logedIn ? 'none' : 'block'}" class="title"
+                                                style="text-align:center;">Ihre Telefonnummer</h4>
+                                            <input [ngStyle]="{'display': logedIn ? 'none' : 'block'}"
+                                                placeholder="Tel." type="tel" name="tel" id="tel" autocomplete="off" />
+
+                                        </div>
+
                                         <!-- <div> -->
                                         <h1>Notiz:</h1>
-                                        <textarea id="textBox" [ngStyle]="{'height': logedIn ? '48vh' : '35vh'}" cols="30" rows="10"></textarea>
+                                        <textarea id="textBox" cols="30" rows="10"></textarea>
                                         <!-- </div> -->
                                         <button class="buttonDiv">Bestätigen</button>
                                     </form>
