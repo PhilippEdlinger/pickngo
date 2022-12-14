@@ -1,0 +1,19 @@
+.group {
+  margin-top: 5vw;
+  border: 1px solid grey;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  margin-bottom: 2vw;
+}
+
+.orderNotiz {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
