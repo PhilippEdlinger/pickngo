@@ -13,4 +13,8 @@ export class AdminPageItemComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.order);
   }
+
+  finishOrder() {
+    console.log("Order finished");
+  }
 }

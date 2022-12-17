@@ -1,8 +1,11 @@
+@use './../../color.scss' as c;
+
 .group {
   margin-top: 5vw;
-  border: 1px solid grey;
+  border: 3px solid #282727;
   border-radius: 15px;
   padding: 10px;
+  min-height: 20vw;
 }
 
 .header {
@@ -10,10 +13,54 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
   margin-bottom: 2vw;
+  border-bottom: 1px solid grey;
 }
 
-.orderNotiz {
+span {
+  width: 50%;
+}
+
+.orderItems {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   grid-gap: 10px;
+  width: 50%;
+  min-height: 12vw;
+  padding: 1vw;
+}
+
+.notizButton {
+  float: right;
+  width: 50%;
+  padding: 1vw;
+}
+
+.notiz h2 {
+  border-bottom: 1px solid grey;
+  text-align: center;
+  margin: 1.5vw;
+}
+
+.notiz p {
+  text-align: center;
+}
+
+.notizButton button {
+  background-color: c.$color2;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 20px;
+  text-decoration: none;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  text-align: center;
+  width: 100%;
+  margin: 1vw 0 0 0;
+}
+
+.notiz {
+  border: 1px solid grey;
+  border-radius: 50px;
+  padding-bottom: 7vh;
 }
