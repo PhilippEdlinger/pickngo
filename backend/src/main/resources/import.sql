@@ -78,12 +78,11 @@ values (1, 500, false),
       (4, 500, false),
       (25, 330, false);
 
-insert into klimabox (product_id, discount, number, fromDate, toDate)
-values (8, 50, 5, '022-03-03T10:15:30', '022-03-03T10:15:30'),
-       (18, 50, 3, '022-03-03T10:15:30', '022-03-03T10:15:30'),
-       (7, 50, 12, '022-03-03T10:15:30', '022-03-03T10:15:30'),
-       (5, 50, 7,'022-03-03T10:15:30', '022-03-03T10:15:30');
-       (5, 50, 7,'022-03-03T10:15:30', '022-03-03T10:15:30');
+insert into klimabox (product_id, discount, fromDate, toDate, quantity)
+values (10, 50, '022-03-03T10:15:30', '022-03-03T10:15:30', 20),
+       (14, 50, '022-03-03T10:15:30', '022-03-03T10:15:30', 20),
+       (21, 50, '022-03-03T10:15:30', '022-03-03T10:15:30', 20),
+       (12, 50,'022-03-03T10:15:30', '022-03-03T10:15:30', 20);
 
 insert into orderet(orderposition, customer_id, employee_id, msg, timeOfOrder, orderstatus, planedtopicktime, readytopicktime)
 values (1, 2, 1, 'Bisschen Scharf', '2022-03-03T10:15:30', 1,'2022-03-03T10:15:30', '2022-03-03T10:15:30'),
