@@ -21,7 +21,7 @@ export class KlimaBoxPageComponent implements OnInit {
   bestellt: boolean = false;
   realCount: any;
 
-  constructor(private orderData: OrderDataService, private apiService: ApiService, private productService:ProductService) {
+  constructor(private orderData: OrderDataService, private apiService: ApiService, private productService: ProductService) {
 
   }
 
@@ -41,22 +41,24 @@ export class KlimaBoxPageComponent implements OnInit {
 
 
   onClick() {
-    let oi = new OrderItem();
-    let oiId = new OrderItemID();
-    oiId.product = this.product;
-    oi.orderItemId = oiId;
-    this.order.orderItems.push(oi);
+    if (this.klimabox.quantity > 0) {
+      let oi = new OrderItem();
+      let oiId = new OrderItemID();
+      oiId.product = this.product;
+      oi.orderItemId = oiId;
+      this.order.orderItems.push(oi);
 
 
-    console.log(this.order);
-    this.orderData.changeOrder(this.order);
+      console.log(this.order);
+      this.orderData.changeOrder(this.order);
 
 
-    this.bestellt = true;
-    setTimeout(() => {
-      this.bestellt = false;
-    }, 7000);
+      this.bestellt = true;
+      setTimeout(() => {
+        this.bestellt = false;
+      }, 7000);
 
-    this.productService.updateKlimabox(this.klimabox.id).subscribe(klimabox => this.klimabox = klimabox);
+      this.productService.updateKlimabox(this.klimabox.id).subscribe(klimabox => this.klimabox = klimabox);
+    }
   }
 }
