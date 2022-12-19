@@ -27,7 +27,10 @@ export class ShoppingCartComponent implements OnInit {
 
   ngOnChanges(changes: SimpleChanges) {
     if (this.firstSelectValue == "andere") {
-      //this.date = this.myDiv.nativeElement.value.toDate();
+      console.log(this.myDiv.nativeElement.value);
+      this.orderData.currentOrder.subscribe(o => {
+        o.planedToPickTime = new Date(this.myDiv.nativeElement.value);
+      });
     }
   }
 
