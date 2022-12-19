@@ -84,10 +84,10 @@ input {
 }
 
 .buttonDiv {
-  display: grid !important;
-  align-items: center !important;
-  justify-content: center !important;
-  margin-top: 2vh !important;
+  // display: grid !important;
+  // align-items: center !important;
+  // justify-content: center !important;
+  // margin-top: 2vh !important;
   // margin-right: 4vw;
 }
 
@@ -248,7 +248,7 @@ input:not(:valid):not(:focus)+label+.icon {
 // }
 
 #login-form {
-  height: 10vh !Important;
+  // height: 10vh !Important;
 
 }
 
@@ -277,12 +277,15 @@ input:not(:valid):not(:focus)+label+.icon {
     width: 100%;
     height: 62vh;
   }
+
   .icon-boxes .title {
     font-size: 3vw !important;
   }
+
   #textBox {
     height: 25vh !important;
   }
+
   .orderBox {
     margin-bottom: 200px;
     // height: ;
@@ -324,15 +327,28 @@ input:not(:valid):not(:focus)+label+.icon {
 // }
 
 .inputBox form {
-  height: 80% !important;
+  height: 100% !important;
   display: grid;
-  grid-template-rows: 1fr .1fr 7fr;
+  grid-template-rows: 30px 1fr 50px;
   gap: 1vh;
 }
 
-.orderSection>div>div>div {
-  // width: 100%;
+.logedIn {
+  grid-template-rows: 170px 30px 1fr 50px !important;
 }
+
+.inputBox #textBox {
+  // grid-area: 3 /1;
+  margin-bottom: 20px;
+}
+
+// .inputBox form button {
+//   grid-area: 4 / 1;
+// }
+
+// .orderSection>div>div>div {
+//   // width: 100%;
+// }
 
 @keyframes shake-shake {
   0% {
@@ -494,7 +510,7 @@ button:active {
 --------------------------------------------------------------*/
 
 #preloader {
-  background: url(../../../assets/img/Walk.gif) no-repeat center center;
+  background: url(../../../assets/img/walk.gif) no-repeat center center;
   height: 100vh;
   width: 100%;
   position: fixed;

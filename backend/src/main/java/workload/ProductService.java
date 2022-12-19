@@ -1,6 +1,7 @@
 package workload;
 
 import models.KlimaBox;
+import models.Menu;
 import models.Product;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -42,16 +43,13 @@ public class ProductService extends Repository<Product, Long> {
      * gets a list of all products which are type of Klimabox
      * @return returns a list of products 
      */
-    public List<Product> getKlimaBox() {
+    public List<KlimaBox> getKlimaBox() {
         var kb = getEntityManager().createQuery("select k from KlimaBox k", KlimaBox.class).getResultList();
-        List<Product> ps = new LinkedList<>();
         for (var k : kb) {
-            var p = k.getProduct();
-            p.setPrice(p.price * k.getDiscount() / 100);
-            ps.add(p);
+            k.getProduct().setPrice(k.getProduct().price * k.getDiscount() / 100);
         }
 
-        return ps;
+        return kb;
     }
 
     /**
@@ -71,4 +69,5 @@ public class ProductService extends Repository<Product, Long> {
         return getEntityManager().createQuery("select p from Product p " +
                 "where p.categoryET.name = 'Aperitif'").getResultList();
     }
+
 }

@@ -3,8 +3,10 @@ package api;
 import io.smallrye.mutiny.Uni;
 import models.DrinkItem;
 import models.FoodItem;
+import models.KlimaBox;
 import workload.DrinkItemRepo;
 import workload.FoodItemRepo;
+import workload.KlimaboxService;
 import workload.ProductService;
 
 import javax.inject.Inject;
@@ -25,6 +27,8 @@ public class ProductResource {
     FoodItemRepo foodItemRepo;
     @Inject
     DrinkItemRepo drinkItemRepo;
+    @Inject
+    KlimaboxService klimaboxService;
 
     @GET
     public Response getProducts() {
@@ -87,7 +91,17 @@ public class ProductResource {
         return Response.ok(productService.getAperitif()).build();
     }
 
+    @PUT
+    @Path("klimaBox/{id}")
+    public Response updateKlimabox(@PathParam("id") Long id) {
+        return Response.ok(klimaboxService.updateKlimabox(id)).build();
+    }
 
+    @GET
+    @Path("klimaBox/{id}")
+    public Response getKlimaboxById(@PathParam("id") Long id) {
+        return Response.ok(klimaboxService.getKlimaBoxById(id)).build();
+    }
 
     @POST
     @Path("foodItem")

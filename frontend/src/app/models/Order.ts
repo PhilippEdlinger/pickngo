@@ -9,7 +9,7 @@ export class Order {
     planedToPickTime: Date = new Date();
     readyToPickTime: Date;
     msg: string;
-    customer: User;
+    customer: User | null;
     phoneNr: String;
     employee: User;
     orderItems: OrderItem[] = [];

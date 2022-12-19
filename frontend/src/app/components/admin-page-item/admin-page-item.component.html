@@ -1,8 +1,23 @@
-<div *ngIf="order">
-    <p>NR: {{order.orderPosition}}</p>
-    <!-- <p>{{customerIdent}}</p> -->
-    <!-- <p>{{order.orderStatus}}</p> -->
-    <p>Tel: {{order.customer.lastname}}</p>
-    <p>Fertig um: {{order.planedToPickTime}}</p>
-    <p>{{order.orderItems}}</p>
+<div class="group" *ngIf="order">
+    <div class="header"><p>NR: {{order.orderPosition}}</p>
+        <!-- <p>{{customerIdent}}</p> -->
+        <!-- <p>{{order.orderStatus}}</p> -->
+        <p>Tel: {{order.customer?.lastname}}</p>
+        <p>Fertig um: {{order.planedToPickTime}}</p>
+    </div>
+    <div class="wrapper">
+        <div class="notizButton">
+            <div class="notiz">
+                <h2>Notiz</h2>
+                <p>{{ order.msg }}</p>
+            </div>
+            <button (click)="finishOrder()">Bestellung als fertig</button>
+        </div>
+        <div class="orderItems" *ngFor="let orderItems of order.orderItems">
+            <span><img src="./assets/img/products/{{orderItems.orderItemId.product.imageName}}" alt="dish"
+                 style="max-height: 100px; max-width: 100px;">
+            <p>{{orderItems.orderItemId.product.name}}</p>
+            <p>{{orderItems.orderItemId.product.price.toFixed(2)}} €</p></span>
+        </div>
+    </div>
 </div>

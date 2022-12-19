@@ -1,15 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import {map, Observable} from "rxjs";
 import { Product } from '../models/Product';
 import { Order } from '../models/Order';
 import {Menu} from "../models/Menu";
+import { Klimabox } from '../models/Klimabox';
+import { NumberSymbol } from '@angular/common';
 
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json'
   })
 }
+
+const BASE_URL = 'http://localhost:8080';
 
 @Injectable({
   providedIn: 'root'
@@ -41,5 +45,15 @@ export class ProductService {
 
   getAllOrder(): Observable<Order[]> {
     return this.http.get<Order[]>('http://localhost:8080/order');
+  }
+
+  getAllKlimaBox(): Observable<Klimabox[]> {
+    return this.http.get<Klimabox[]>(BASE_URL + '/product/klimaBox');
+  }
+
+  updateKlimabox(id: number): Observable<Klimabox> {
+    const url = BASE_URL + '/product/klimaBox/' + id;
+    console.log(url);
+    return this.http.put<Klimabox>(url, httpOptions);
   }
 }

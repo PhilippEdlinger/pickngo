@@ -6,13 +6,17 @@ import {HomeComponent} from "./components/home/home.component";
 import {LoginComponent} from "./components/login/login.component";
 import {OrderComponent} from "./components/order/order.component";
 import {RegisterComponent} from "./components/register/register.component";
+import {AuthGuardService} from "./auth/auth.guard";
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'order', component: OrderComponent },
-  { path: 'adminPage', component: AdminPageComponent},
+  { path: 'logout', component: LoginComponent },
+  { path: 'adminPage', component: AdminPageComponent,
+    canActivate: [AuthGuardService]
+  },
   { path: 'klimabox', component: GreenBoxComponent}
 ];
 

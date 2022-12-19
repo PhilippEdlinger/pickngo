@@ -12,7 +12,7 @@
             <p>Gesamt</p>
             <p id="shoppingCartPrice">{{sum.toFixed(2).replace('.', ',')}}€</p>
         </div>
-        <p id="orderInfo" *ngIf="toogleSlider==false">Wenn sie jetzt bestellen, können Sie Ihre Bestellung am {{date}} {{order.planedToPickTime.getDate()}}.{{order.planedToPickTime.getMonth() + 1}}.{{order.planedToPickTime.getFullYear()}} um <span> {{order.planedToPickTime.getHours()}}:{{order.planedToPickTime.getMinutes()}} Uhr</span> abholen.
+        <p id="orderInfo" *ngIf="toogleSlider==false">Wenn sie jetzt bestellen, können Sie Ihre Bestellung am {{order.planedToPickTime.getDay() + order.planedToPickTime.getMonth() }} {{order.planedToPickTime.getDate()}}.{{order.planedToPickTime.getMonth() + 1}}.{{order.planedToPickTime.getFullYear()}} um <span> {{order.planedToPickTime.getHours()}}:{{order.planedToPickTime.getMinutes()}} Uhr</span> abholen.
         </p>
         <section class="example-section">
             <!-- <mat-checkbox class="example-margin" [(ngModel)]="checked">Dort Essen!</mat-checkbox> -->
@@ -23,7 +23,7 @@
                 <option value="gleich" selected>Gleich Abholen</option>
                 <option value="andere">Andere Zeit</option>
             </select>
-            <input #myElem *ngIf="firstSelectValue=='andere'" type="datetime-local" value="document.getElementById('myLocalDate').value"  id="preferedTimePicker">
+            <input #myElem *ngIf="firstSelectValue=='andere'" type="datetime-local" id="preferedTimePicker">
         </div>
 
         <a id="orderB" routerLink="order" (click)="onClose()">Bestellen</a>

@@ -40,23 +40,6 @@ export class ApiService {
   //   }
   // }
 
-  login(username: any, password: any) {
-    return this.http.post<LogInDTO>(`http://localhost:8080/person/signIn/${username}/${password}`, {username, password})
-        .pipe(map((user: LogInDTO) => {
-          // store user details and jwt token in local storage to keep user logged in between page refreshes
-          console.log(user);
-          localStorage.setItem('user', JSON.stringify(user.person));
-          this.userSubject.next(user.person);
-          return user;
-        }));
-  }
-
-  logout() {
-    // remove user from local storage and set current user to null
-    localStorage.removeItem('user');
-    this.userSubject.next(null);
-    this.router.navigate(['/login']);
-  }
 
   register(user: User): Observable<LogInDTO> {
     console.log(user);
@@ -74,7 +57,22 @@ export class ApiService {
     return this.http.get<User>(`${this.apiUrl}/customer/${id}`);
   }
 
- /* update(id: any, params: any) {
+  getKlimaboxById(id: string) {
+    return this.http.get<User>(`${this.apiUrl}/product/klimaBox/${id}`);
+  }
+
+  delete(id: string) {
+    return this.http.delete(`${this.apiUrl}/customer/${id}`)
+        .pipe(map(x => {
+          // auto logout if the logged in user deleted their own record
+          /*if (id == this.userValue.id) {
+            this.logout();
+          }*/
+          return x;
+        }));
+  }
+
+  /* update(id: any, params: any) {
     return this.http.put(`${this.apiUrl}/customer/${id}`, params)
         .pipe(map(x => {
           // update stored user if the logged in user updated their own record
@@ -89,17 +87,6 @@ export class ApiService {
           return x;
         }));
   }*/
-
-  delete(id: string) {
-    return this.http.delete(`${this.apiUrl}/customer/${id}`)
-        .pipe(map(x => {
-          // auto logout if the logged in user deleted their own record
-          /*if (id == this.userValue.id) {
-            this.logout();
-          }*/
-          return x;
-        }));
-  }
 
   getPeople(): Observable<User[]> {
     return this.http.get<User[]>('http://localhost:8080/customer', {

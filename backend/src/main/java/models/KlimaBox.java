@@ -11,19 +11,19 @@ public class KlimaBox {
     @ManyToOne
     private Product product;
     private Double discount;
-    private Integer number;
     private LocalDateTime fromDate;
     private LocalDateTime toDate;
+    private Integer quantity;
 
     public KlimaBox() {
     }
 
-    public KlimaBox(Product product, Double discount, Integer number, LocalDateTime fromDate, LocalDateTime toDate) {
+    public KlimaBox(Product product, Double discount, LocalDateTime fromDate, LocalDateTime toDate, Integer quantity) {
         this.product = product;
         this.discount = discount;
-        this.number = number;
         this.fromDate = fromDate;
         this.toDate = toDate;
+        this.quantity = quantity;
     }
 
     public Long getId() {
@@ -50,14 +50,6 @@ public class KlimaBox {
         this.discount = discount;
     }
 
-    public Integer getNumber() {
-        return number;
-    }
-
-    public void setNumber(Integer number) {
-        this.number = number;
-    }
-
     public LocalDateTime getFromDate() {
         return fromDate;
     }
@@ -72,5 +64,13 @@ public class KlimaBox {
 
     public void setToDate(LocalDateTime toDate) {
         this.toDate = toDate;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
 }

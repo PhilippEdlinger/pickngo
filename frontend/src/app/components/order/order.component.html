@@ -10,7 +10,7 @@
                         <div id="productBox" class="icon-box">
                             <h4 class="order">Meine Bestellung</h4>
                             <div id="orderProduct">
-                                <app-shopping-cart-item *ngFor="let oi of orderCopy.orderItems; let i = index;"
+                                <app-shopping-cart-item *ngFor="let oi of order.orderItems; let i = index;"
                                     [(orderItem)]="order.orderItems[i]" (deleteOrderItem)="deleteOrderItem(oi)"
                                     (orderItemChange)="change(oi)">
                                 </app-shopping-cart-item>
@@ -27,17 +27,21 @@
                             class="col-4 d-flex align-items-stretch mb-5 mb-lg-0" id="first" data-aos="fade-up">
                             <div class="icon-box telefonNRBox">
                                 <div class="floating-label">
-                                    <h4 [ngStyle]="{'display': logedIn ? 'none' : 'block'}" class="title"
-                                        style="text-align:center;">Für die Bestellbestätigung benötigen wir
-                                    </h4>
-                                    <h4 [ngStyle]="{'display': logedIn ? 'none' : 'block'}" class="title"
-                                        style="text-align:center;">Ihre Telefonnummer</h4>
-                                    <form [formGroup]="form" id="login-form" (ngSubmit)="onSubmit()">
-                                        <input [ngStyle]="{'display': logedIn ? 'none' : 'block'}" placeholder="Tel."
-                                            type="tel" name="tel" id="tel" autocomplete="off" />
+                                    <form [formGroup]="form" id="login-form" (ngSubmit)="onSubmit()" ngClass="logedIn ? 'logedIn' : 'notLogedIn'">
+                                        <div>
+                                            <h4 [ngStyle]="{'display': logedIn ? 'none' : 'block'}" class="title"
+                                                style="text-align:center;">Für die Bestellbestätigung benötigen wir
+                                            </h4>
+                                            <h4 [ngStyle]="{'display': logedIn ? 'none' : 'block'}" class="title"
+                                                style="text-align:center;">Ihre Telefonnummer</h4>
+                                            <input [ngStyle]="{'display': logedIn ? 'none' : 'block'}"
+                                                placeholder="Tel." type="tel" name="tel" id="tel" autocomplete="off" />
+
+                                        </div>
+
                                         <!-- <div> -->
                                         <h1>Notiz:</h1>
-                                        <textarea id="textBox" [ngStyle]="{'height': logedIn ? '48vh' : '35vh'}" cols="30" rows="10"></textarea>
+                                        <textarea id="textBox" cols="30" rows="10"></textarea>
                                         <!-- </div> -->
                                         <button class="buttonDiv">Bestätigen</button>
                                     </form>
@@ -51,7 +55,7 @@
                                     <h4 class="title" style="text-align:center;font-size:40px;">Ihre Bestellung ist
                                         abholbereit um</h4>
                                     <img src="../../../assets/img/comp_3.gif" style="width:465px;height:auto;">
-                                    <h4 class="title" style="text-align:center;font-size:60px;">14:30</h4>
+                                    <h4 class="title" style="text-align:center;font-size:60px;">{{ ("0" + (planedPickupTime.getHours())).slice(-2) + ":" + ("0" + (planedPickupTime.getMinutes())).slice(-2) }}</h4>
                                 </div>
                             </div>
                         </div>

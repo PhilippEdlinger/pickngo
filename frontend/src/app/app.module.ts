@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { MatInputModule } from '@angular/material/input';
 
 import { AppComponent } from './app.component';
@@ -30,6 +30,7 @@ import { GreenBoxComponent } from './components/green-box/green-box.component';
 import {MatBadgeModule} from "@angular/material/badge";
 import { KlimaBoxPageComponent } from './components/klima-box-page/klima-box-page.component';
 import { KlimaBoxCategoryComponent } from './components/klima-box-category/klima-box-category.component';
+import {AuthInterceptor} from "./auth/auth.interceptor";
 
 @NgModule({
   declarations: [
@@ -68,7 +69,12 @@ import { KlimaBoxCategoryComponent } from './components/klima-box-category/klima
         MatSlideToggleModule,
         MatBadgeModule
     ],
-  providers: [],
+  providers: [
+      {
+          provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor,
+          multi: true
+      }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
