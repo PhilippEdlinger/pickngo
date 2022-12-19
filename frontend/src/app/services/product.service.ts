@@ -47,6 +47,6 @@ export class ProductService {
   }
 
   getAllKlimaBox(): Observable<Klimabox[]> {
-    return this.http.get<Klimabox[]>(BASE_URL + 'klimaBox');
+    return this.http.get<Klimabox[]>(BASE_URL + '/klimaBox');
   }
 }

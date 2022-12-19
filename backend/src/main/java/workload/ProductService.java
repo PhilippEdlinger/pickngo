@@ -42,16 +42,13 @@ public class ProductService extends Repository<Product, Long> {
      * gets a list of all products which are type of Klimabox
      * @return returns a list of products 
      */
-    public List<Product> getKlimaBox() {
+    public List<KlimaBox> getKlimaBox() {
         var kb = getEntityManager().createQuery("select k from KlimaBox k", KlimaBox.class).getResultList();
-        List<Product> ps = new LinkedList<>();
         for (var k : kb) {
-            var p = k.getProduct();
-            p.setPrice(p.price * k.getDiscount() / 100);
-            ps.add(p);
+            kb.getProduct().setPrice(p.price * k.getDiscount() / 100);
         }
 
-        return ps;
+        return kb;
     }
 
     /**
