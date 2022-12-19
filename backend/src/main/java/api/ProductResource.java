@@ -92,9 +92,9 @@ public class ProductResource {
     }
 
     @PUT
-    @Path("klimaBox/update/{id}")
-    public Response updateKlimabox(@PathParam("id") Long id, Integer quantity) {
-        return Response.ok(klimaboxService.updateKlimabox(id, quantity)).build();
+    @Path("klimaBox/{id}")
+    public Response updateKlimabox(@PathParam("id") Long id) {
+        return Response.ok(klimaboxService.updateKlimabox(id)).build();
     }
 
     @GET

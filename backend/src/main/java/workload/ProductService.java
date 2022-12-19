@@ -46,7 +46,7 @@ public class ProductService extends Repository<Product, Long> {
     public List<KlimaBox> getKlimaBox() {
         var kb = getEntityManager().createQuery("select k from KlimaBox k", KlimaBox.class).getResultList();
         for (var k : kb) {
-            kb.getProduct().setPrice(p.price * k.getDiscount() / 100);
+            k.getProduct().setPrice(k.getProduct().price * k.getDiscount() / 100);
         }
 
         return kb;

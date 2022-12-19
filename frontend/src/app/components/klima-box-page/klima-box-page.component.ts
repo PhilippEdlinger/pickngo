@@ -5,7 +5,8 @@ import { OrderItemID } from 'src/app/models/OrderItemID';
 import { Product } from 'src/app/models/Product';
 import { ApiService } from 'src/app/services/api.service';
 import { OrderDataService } from 'src/app/services/order-data.service';
-import {Klimabox} from "../../models/Klimabox";
+import { ProductService } from 'src/app/services/product.service';
+import { Klimabox } from "../../models/Klimabox";
 
 @Component({
   selector: 'app-klima-box-page',
@@ -20,22 +21,11 @@ export class KlimaBoxPageComponent implements OnInit {
   bestellt: boolean = false;
   realCount: any;
 
-  constructor(private orderData: OrderDataService,private apiService: ApiService) {
+  constructor(private orderData: OrderDataService, private apiService: ApiService, private productService:ProductService) {
 
-  }
-
-  count = 20;
-  counter(){
-    if (this.count == 0){
-      this.count = 0;
-    }else{
-      this.count--
-      localStorage.setItem('counter', JSON.stringify(this.count-1));
-    }
   }
 
   ngOnChanges() {
-    this.apiService.updateKlimabox("1", this.count).subscribe(klimabox => this.klimabox);
     this.realCount = localStorage.getItem('counter');
   }
 
@@ -44,13 +34,13 @@ export class KlimaBoxPageComponent implements OnInit {
     this.product = this.klimabox.product;
     this.product.imageName = 'http://localhost:8080/product/img/' + this.product.imageName;
     this.orderData.currentOrder.subscribe(order => this.order = order);
+
+    console.log(this.klimabox);
   }
 
 
 
   onClick() {
-    this.counter();
-
     let oi = new OrderItem();
     let oiId = new OrderItemID();
     oiId.product = this.product;
@@ -66,5 +56,7 @@ export class KlimaBoxPageComponent implements OnInit {
     setTimeout(() => {
       this.bestellt = false;
     }, 7000);
+
+    this.productService.updateKlimabox(this.klimabox.id).subscribe(klimabox => this.klimabox = klimabox);
   }
 }

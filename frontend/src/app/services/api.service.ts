@@ -88,13 +88,6 @@ export class ApiService {
         }));
   }*/
 
-  updateKlimabox(id: string, quantity: any) {
-    return this.http.delete(`${this.apiUrl}/products/klimaBox/update/${id}`, quantity)
-        .pipe(map(x => {
-          return x;
-        }));
-  }
-
   getPeople(): Observable<User[]> {
     return this.http.get<User[]>('http://localhost:8080/customer', {
       headers: {},
