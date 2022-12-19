@@ -1,3 +1,5 @@
-<div>
-    <app-admin-page-item *ngFor="let o of orders" [order]=(o)></app-admin-page-item>
+<h1>Bestellungen zu bearbeiten</h1>
+
+<div class="container">
+        <app-admin-page-item class="group" *ngFor="let o of orders" [order]=(o)></app-admin-page-item>
 </div>

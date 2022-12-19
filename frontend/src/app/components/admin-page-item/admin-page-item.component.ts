@@ -8,8 +8,13 @@ import { Order } from 'src/app/models/Order';
 })
 export class AdminPageItemComponent implements OnInit {
   @Input() order: Order;
+
   constructor() { }
   ngOnInit(): void {
     console.log(this.order);
+  }
+
+  finishOrder() {
+    console.log("Order finished");
   }
 }
