@@ -24,6 +24,7 @@ export class OrderComponent implements OnInit {
   user: User | null;
   bestellt: boolean = false;
   sum: number = 0;
+  planedPickupTime: Date;
 
 
   constructor(private orderData: OrderDataService, private fb: UntypedFormBuilder, private productService: ProductService, private ls: ApiService) {
@@ -51,6 +52,7 @@ export class OrderComponent implements OnInit {
     this.bestellt = false;
 
     this.orderSub = this.orderData.currentOrder.subscribe(o => {
+      this.planedPickupTime = new Date(o.planedToPickTime)
       this.order = o;
       this.sum = 0;
       for (let oi of o.orderItems) {

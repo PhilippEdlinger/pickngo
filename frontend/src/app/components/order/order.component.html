@@ -55,7 +55,7 @@
                                     <h4 class="title" style="text-align:center;font-size:40px;">Ihre Bestellung ist
                                         abholbereit um</h4>
                                     <img src="../../../assets/img/comp_3.gif" style="width:465px;height:auto;">
-                                    <h4 class="title" style="text-align:center;font-size:60px;">14:30</h4>
+                                    <h4 class="title" style="text-align:center;font-size:60px;">{{ ("0" + (planedPickupTime.getHours())).slice(-2) + ":" + ("0" + (planedPickupTime.getMinutes())).slice(-2) }}</h4>
                                 </div>
                             </div>
                         </div>
