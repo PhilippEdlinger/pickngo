@@ -3,7 +3,7 @@
     <div matBadge="{{count}}" matBadgeOverlap="true" matBadgeColor="warn" matBadgeSize="large" class="floating-label speisenProdukt">
         <img src={{product.imageName}} alt={{product.name}} class="imgBox productImg">
         <h4 class="title productName" style="text-align:center;">{{product.name}}</h4>
-        <h4 class="title productName" id="count" style="text-align:center;">noch {{count}} stück erhältlich!</h4>
+        <h4 class="title productName" id="count" style="text-align:center;">noch {{product}} stück erhältlich!</h4>
         <h4 class="title productPrice" style="text-align:center;">{{product.price.toFixed(2).replace('.', ',')}}€</h4>
         <div class="buttonDiv">
             <button (click)="onClick()" class="buttonDave">In den Warenkorb</button>
