@@ -1,6 +1,7 @@
 package workload;
 
 import models.KlimaBox;
+import models.Menu;
 import models.Product;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -71,4 +72,5 @@ public class ProductService extends Repository<Product, Long> {
         return getEntityManager().createQuery("select p from Product p " +
                 "where p.categoryET.name = 'Aperitif'").getResultList();
     }
+
 }
