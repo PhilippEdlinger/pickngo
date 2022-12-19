@@ -57,7 +57,22 @@ export class ApiService {
     return this.http.get<User>(`${this.apiUrl}/customer/${id}`);
   }
 
- /* update(id: any, params: any) {
+  getKlimaboxById(id: string) {
+    return this.http.get<User>(`${this.apiUrl}/product/klimaBox/${id}`);
+  }
+
+  delete(id: string) {
+    return this.http.delete(`${this.apiUrl}/customer/${id}`)
+        .pipe(map(x => {
+          // auto logout if the logged in user deleted their own record
+          /*if (id == this.userValue.id) {
+            this.logout();
+          }*/
+          return x;
+        }));
+  }
+
+  /* update(id: any, params: any) {
     return this.http.put(`${this.apiUrl}/customer/${id}`, params)
         .pipe(map(x => {
           // update stored user if the logged in user updated their own record
@@ -73,13 +88,9 @@ export class ApiService {
         }));
   }*/
 
-  delete(id: string) {
-    return this.http.delete(`${this.apiUrl}/customer/${id}`)
+  updateKlimabox(id: string, quantity: any) {
+    return this.http.delete(`${this.apiUrl}/products/klimaBox/update/${id}`, quantity)
         .pipe(map(x => {
-          // auto logout if the logged in user deleted their own record
-          /*if (id == this.userValue.id) {
-            this.logout();
-          }*/
           return x;
         }));
   }

@@ -3,7 +3,9 @@ import { Order } from 'src/app/models/Order';
 import { OrderItem } from 'src/app/models/OrderItem';
 import { OrderItemID } from 'src/app/models/OrderItemID';
 import { Product } from 'src/app/models/Product';
+import { ApiService } from 'src/app/services/api.service';
 import { OrderDataService } from 'src/app/services/order-data.service';
+import {Klimabox} from "../../models/Klimabox";
 
 @Component({
   selector: 'app-klima-box-page',
@@ -13,8 +15,14 @@ import { OrderDataService } from 'src/app/services/order-data.service';
 export class KlimaBoxPageComponent implements OnInit {
 
   @Input() product: Product;
+  @Input() klimabox: Klimabox
   order: Order;
   bestellt: boolean = false;
+  realCount: any;
+
+  constructor(private orderData: OrderDataService,private apiService: ApiService) {
+
+  }
 
   count = 20;
   counter(){
@@ -22,11 +30,15 @@ export class KlimaBoxPageComponent implements OnInit {
       this.count = 0;
     }else{
       this.count--
+      localStorage.setItem('counter', JSON.stringify(this.count-1));
     }
   }
 
+  ngOnChanges() {
+    this.apiService.updateKlimabox("1", this.count).subscribe(klimabox => this.klimabox);
+    this.realCount = localStorage.getItem('counter');
+  }
 
-  constructor(private orderData: OrderDataService) { }
 
   ngOnInit(): void {
     this.product.imageName = 'http://localhost:8080/product/img/' + this.product.imageName;

@@ -13,9 +13,10 @@ import {ProductService} from "../../services/product.service";
 export class GreenBoxComponent implements OnInit {
   menus: Menu[];
   @Input() products: Product;
+  title: String
 
   ngOnInit(): void {
-
+    this.title = "Don't Waste Meal";
   }
 
  /* @HostListener('window:scroll', ['$event']) // for window scroll events
