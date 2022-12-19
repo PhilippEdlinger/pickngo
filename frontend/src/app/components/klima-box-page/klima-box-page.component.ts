@@ -14,7 +14,7 @@ import {Klimabox} from "../../models/Klimabox";
 })
 export class KlimaBoxPageComponent implements OnInit {
 
-  @Input() product: Product;
+  product: Product;
   @Input() klimabox: Klimabox
   order: Order;
   bestellt: boolean = false;
@@ -41,6 +41,7 @@ export class KlimaBoxPageComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.product = this.klimabox.product;
     this.product.imageName = 'http://localhost:8080/product/img/' + this.product.imageName;
     this.orderData.currentOrder.subscribe(order => this.order = order);
   }

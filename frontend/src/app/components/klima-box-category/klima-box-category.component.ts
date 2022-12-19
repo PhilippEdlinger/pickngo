@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output, SimpleChanges} from '@angular/core';
+import { Klimabox } from 'src/app/models/Klimabox';
 import { Product } from 'src/app/models/Product';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -10,15 +11,15 @@ import { ProductService } from 'src/app/services/product.service';
 export class KlimaBoxCategoryComponent implements OnInit {
   @Input() title: String;
   @Input() urlName: String;
-  products: Product[];
+  klimaBox: Klimabox[];
 
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
-    this.initProducts();
+    this.initKlimaBox();
   }
 
-  initProducts() {
-    this.productService.getProductCategory(this.urlName).subscribe(p => this.products = p);
+  initKlimaBox() {
+    this.productService.getAllKlimaBox().subscribe(p => this.klimaBox = p);
   }
 }
