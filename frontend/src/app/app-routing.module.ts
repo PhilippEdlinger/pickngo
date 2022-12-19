@@ -14,8 +14,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'order', component: OrderComponent },
   { path: 'logout', component: LoginComponent },
-  { path: 'adminPage', component: AdminPageComponent,
-    canActivate: [AuthGuardService]
+  { path: 'adminPage', component: AdminPageComponent
   },
   { path: 'klimabox', component: GreenBoxComponent}
 ];
