@@ -16,9 +16,13 @@ public class KlimaboxService extends Repository<KlimaBox, Long> {
         return findById(id);
     }
 
-    public KlimaBox updateKlimabox(Long id, Integer quantity) {
+    public KlimaBox updateKlimabox(Long id) {
         KlimaBox box = getKlimaBoxById(id);
-        box.setQuantity(quantity);
-        return updateET(box);
+        if (box.getQuantity() > 0) {
+            box.setQuantity(box.getQuantity() - 1);
+            box = updateET(box);
+        }
+
+        return box;
     }
 }

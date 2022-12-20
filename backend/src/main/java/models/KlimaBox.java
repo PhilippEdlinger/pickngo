@@ -13,10 +13,7 @@ public class KlimaBox {
     private Double discount;
     private LocalDateTime fromDate;
     private LocalDateTime toDate;
-
     private Integer quantity;
-
-
 
     public KlimaBox() {
     }
@@ -26,14 +23,6 @@ public class KlimaBox {
         this.discount = discount;
         this.fromDate = fromDate;
         this.toDate = toDate;
-        this.quantity = quantity;
-    }
-
-    public Integer getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 
@@ -75,5 +64,13 @@ public class KlimaBox {
 
     public void setToDate(LocalDateTime toDate) {
         this.toDate = toDate;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
 }

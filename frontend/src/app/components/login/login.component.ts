@@ -41,18 +41,18 @@ export class LoginComponent implements OnInit {
             return;
         }
 
-        this.authService.login(this.f['username'].value, this.f['password'].value)
-            .subscribe(u => {
-                if (u.success) {
-                    this.login.success = true;
-                    localStorage.setItem('id_token', u.token);
-                    localStorage.setItem('expires_at', u.expires_at);
-                    this.router.navigate(['/']);
-                    console.log('Success')
-                } else {
-                    this.login.success = false;
-                }
-            });
+        // this.authService.login(this.f['username'].value, this.f['password'].value)
+        //     .subscribe(u => {
+        //         if (u.success) {
+        //             this.login.success = true;
+        //             localStorage.setItem('id_token', u.token);
+        //             localStorage.setItem('expires_at', u.expires_at);
+        //             this.router.navigate(['/']);
+        //             console.log('Success')
+        //         } else {
+        //             this.login.success = false;
+        //         }
+        //     });
         console.log(this.login);
     }
 
