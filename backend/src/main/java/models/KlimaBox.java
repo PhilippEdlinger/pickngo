@@ -21,11 +21,7 @@ public class KlimaBox {
     public KlimaBox() {
     }
 
-<<<<<<< HEAD
-    public KlimaBox(Product product, Double discount, LocalDateTime fromDate, LocalDateTime toDate) {
-=======
     public KlimaBox(Product product, Double discount, LocalDateTime fromDate, LocalDateTime toDate, Integer quantity) {
->>>>>>> 37f30b649c59ef886e676637d11c2d35bb25c461
         this.product = product;
         this.discount = discount;
         this.fromDate = fromDate;
