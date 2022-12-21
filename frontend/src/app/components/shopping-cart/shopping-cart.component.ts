@@ -3,6 +3,8 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { Order } from 'src/app/models/Order';
 import { OrderItem } from 'src/app/models/OrderItem';
 import { OrderDataService } from 'src/app/services/order-data.service';
+import { DatePipe } from '@angular/common';
+
 
 @Component({
   selector: 'app-shopping-cart',
@@ -21,18 +23,35 @@ export class ShoppingCartComponent implements OnInit {
   firstSelectValue: string
   @ViewChild('myElem') myDiv: ElementRef;
   date: Date;
+  date1: any = new Date()
 
-
-  constructor(private orderData: OrderDataService) { }
+  constructor(private orderData: OrderDataService, private datePipe: DatePipe) {
+  }
 
   ngOnChanges(changes: SimpleChanges) {
     if (this.firstSelectValue == "andere") {
-      console.log(this.myDiv.nativeElement.value);
       this.orderData.currentOrder.subscribe(o => {
         o.planedToPickTime = new Date(this.myDiv.nativeElement.value);
       });
     }
   }
+
+  dateChange() {
+    this.orderData.currentOrder.subscribe(o => {
+      o.planedToPickTime = new Date(this.myDiv.nativeElement.value);
+    });
+  }
+
+  onChange() {
+    this.date1 = Date.now();
+    this.date1 = this.datePipe.transform(this.date1, 'yyyy-MM-ddThh:mm');
+    setTimeout(() => {
+      if (this.firstSelectValue == "andere") {
+        this.myDiv.nativeElement.value = this.date1;
+      }
+    }, 1)
+  }
+
 
   ngOnInit(): void {
     this.firstSelectValue = "gleich"

@@ -12,10 +12,12 @@ export class KlimaBoxCategoryComponent implements OnInit {
   @Input() title: String;
   @Input() urlName: String;
   klimaBox: Klimabox[];
+  date: Date;
 
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
+    this.date = new Date(Date.now());
     this.initKlimaBox();
   }
 

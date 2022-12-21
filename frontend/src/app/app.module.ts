@@ -31,6 +31,9 @@ import {MatBadgeModule} from "@angular/material/badge";
 import { KlimaBoxPageComponent } from './components/klima-box-page/klima-box-page.component';
 import { KlimaBoxCategoryComponent } from './components/klima-box-category/klima-box-category.component';
 import {AuthInterceptor} from "./auth/auth.interceptor";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatIconModule} from "@angular/material/icon";
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -52,8 +55,8 @@ import {AuthInterceptor} from "./auth/auth.interceptor";
     SmsComponent,
     GreenBoxComponent,
     KlimaBoxPageComponent,
-    KlimaBoxCategoryComponent, 
-    
+    KlimaBoxCategoryComponent,
+
   ],
     imports: [
         BrowserModule,
@@ -67,9 +70,12 @@ import {AuthInterceptor} from "./auth/auth.interceptor";
         BrowserAnimationsModule,
         MatCheckboxModule,
         MatSlideToggleModule,
-        MatBadgeModule
+        MatBadgeModule,
+        MatDatepickerModule,
+        MatIconModule
     ],
   providers: [
+      DatePipe,
       {
           provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor,
           multi: true
