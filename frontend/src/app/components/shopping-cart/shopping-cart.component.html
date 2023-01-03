@@ -12,7 +12,7 @@
             <p>Gesamt</p>
             <p id="shoppingCartPrice">{{sum.toFixed(2).replace('.', ',')}}€</p>
         </div>
-        <p id="orderInfo" *ngIf="toogleSlider==false">Wenn sie jetzt bestellen, können Sie Ihre Bestellung am {{ ("0" + (order.planedToPickTime.getDate())).slice(-2) }}.{{ ("0" + (order.planedToPickTime.getMonth() + 1)).slice(-2) }}.{{order.planedToPickTime.getFullYear()}} um <span> {{ ("0" + (order.planedToPickTime.getHours())).slice(-2) }}:{{ ("0" + (order.planedToPickTime.getMinutes())).slice(-2) }} Uhr</span> abholen.
+        <p id="orderInfo" *ngIf="toogleSlider==false">Wenn sie jetzt bestellen, können Sie Ihre Bestellung am {{ ("0" + (this.shoppingCartDate.getDate())).slice(-2) }}.{{ ("0" + (this.shoppingCartDate.getMonth() + 1)).slice(-2) }}.{{this.shoppingCartDate.getFullYear()}} um <span> {{ ("0" + (this.shoppingCartDate.getHours())).slice(-2) }}:{{ ("0" + (this.shoppingCartDate.getMinutes())).slice(-2) }} Uhr</span> abholen.
         </p>
         <section class="example-section">
             <!-- <mat-checkbox class="example-margin" [(ngModel)]="checked">Dort Essen!</mat-checkbox> -->

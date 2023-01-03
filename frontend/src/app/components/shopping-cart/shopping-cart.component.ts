@@ -23,12 +23,19 @@ export class ShoppingCartComponent implements OnInit {
   firstSelectValue: string
   @ViewChild('myElem') myDiv: ElementRef;
   date: Date;
-  date1: any = new Date()
+  date1: any = new Date();
+  shoppingCartDate: Date = new Date();
+
 
   constructor(private orderData: OrderDataService, private datePipe: DatePipe) {
   }
 
   ngOnChanges(changes: SimpleChanges) {
+    if(!this.hide) {
+      this.shoppingCartDate = new Date();
+      this.shoppingCartDate.setMinutes(this.shoppingCartDate.getMinutes() + 50);
+    }
+    console.log(this.hide);
     if (this.firstSelectValue == "andere") {
       this.orderData.currentOrder.subscribe(o => {
         o.planedToPickTime = new Date(this.myDiv.nativeElement.value);
