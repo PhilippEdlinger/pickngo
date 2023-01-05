@@ -1,28 +1,31 @@
 <div class="group" *ngIf="order">
-    <div class="header"><p>NR: {{order.orderPosition}}</p>
+    <div class="header">
+        <p>NR: {{order.orderPosition}}</p>
         <!-- <p>{{customerIdent}}</p> -->
         <!-- <p>{{order.orderStatus}}</p> -->
         <p>Tel: {{order.customer?.lastname}}</p>
         <p>Fertig um: {{order.planedToPickTime}}</p>
     </div>
     <div class="wrapper">
+        <div class="orderItems" >
+            <div class="orderitem" *ngFor="let orderItem of order.orderItems">
+                <img src="http://localhost:8080/product/img/{{orderItem.orderItemId.product.imageName}}" alt="bild">
+                <div class="textBox">
+                    <h3 class="productName" title="${name}">{{orderItem.orderItemId.product.name}}</h3>
+                    <div>
+                        <p class="amount">{{orderItem.quantity}}x</p>
+                        <p class="priceP">{{orderItem.orderItemId.product.price.toFixed(2).replace('.', ',')}}€</p>
+                    </div>
+                </div>
+                <div class="borderBTW"></div>
+            </div>
+        </div>
         <div class="notizButton">
             <div class="notiz">
                 <h2>Notiz</h2>
                 <p>{{ order.msg }}</p>
             </div>
             <button (click)="finishOrder()">Bestellung als fertig</button>
-        </div>
-        <div class="orderItems" *ngFor="let orderItem of order.orderItems">
-            <img src="http://localhost:8080/product/img/{{orderItem.orderItemId.product.imageName}}" alt="bild">
-            <div class="textBox">
-                <h3 class="productName" title="${name}">{{orderItem.orderItemId.product.name}}</h3>
-                <div>
-                    <p class="amount">{{orderItem.quantity}}x</p>
-                    <p class="priceP">{{orderItem.orderItemId.product.price.toFixed(2).replace('.', ',')}}€</p>
-                </div>
-            </div>
-            <div class="borderBTW"></div>
         </div>
     </div>
 </div>
