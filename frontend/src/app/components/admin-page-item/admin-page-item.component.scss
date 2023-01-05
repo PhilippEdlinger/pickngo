@@ -40,7 +40,7 @@ span {
   width: 0px;
 }
 
-// .notizButton {
+// .notizBox {
 //   float: right;
 //   width: 50%;
 //   padding: 1vw;
@@ -62,7 +62,7 @@ span {
   text-align: center;
 }
 
-.notizButton button {
+.notizBox button {
   background-color: c.$color2;
   font-size: 1.5rem;
   font-weight: 600;
@@ -87,4 +87,25 @@ span {
   grid-template-columns: auto auto;
   justify-content: space-between;
   color: var(--ProductsTextColor);
+}
+
+.notizBox {
+  padding: 10px 20px 20px 10px;
+}
+
+.totalPrice {
+  font-size: 1.5rem;
+  margin: 0 0 0 37vw;
+}
+
+.totalPriceText {
+  bottom: 10px;
+  left: 10px;
+  font-size: 1.5rem;
+}
+
+.total {
+  padding: 20px 10px 10px 10px;
+  display: flex;
+  border-top: 1px solid grey;
 }

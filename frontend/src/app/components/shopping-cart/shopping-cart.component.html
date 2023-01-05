@@ -25,7 +25,7 @@
             </select>
             <input (change)="dateChange()" #myElem *ngIf="firstSelectValue=='andere'" type="datetime-local" [ngModel]="date"
                     id="preferedTimePicker"
-                   min="{{ date1 }}"
+                   min="{{ minDate }}"
                    max="{{ date1 }}">
         </div>
 

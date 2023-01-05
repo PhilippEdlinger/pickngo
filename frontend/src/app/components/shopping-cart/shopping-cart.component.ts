@@ -25,6 +25,7 @@ export class ShoppingCartComponent implements OnInit {
   date: Date;
   date1: any = new Date();
   shoppingCartDate: Date = new Date();
+  minDate: Date = new Date();
 
 
   constructor(private orderData: OrderDataService, private datePipe: DatePipe) {
@@ -45,15 +46,18 @@ export class ShoppingCartComponent implements OnInit {
 
   dateChange() {
     this.orderData.currentOrder.subscribe(o => {
+      this.shoppingCartDate = new Date(this.myDiv.nativeElement.value);
       o.planedToPickTime = new Date(this.myDiv.nativeElement.value);
     });
   }
 
   onChange() {
-    this.date1 = Date.now();
+    this.date1 = new Date(Date.now());
     this.date1 = this.datePipe.transform(this.date1, 'yyyy-MM-ddThh:mm');
     setTimeout(() => {
       if (this.firstSelectValue == "andere") {
+        this.minDate = new Date(Date.now());
+        this.minDate.setMinutes(this.minDate.getMinutes() + 50);
         this.myDiv.nativeElement.value = this.date1;
       }
     }, 1)
