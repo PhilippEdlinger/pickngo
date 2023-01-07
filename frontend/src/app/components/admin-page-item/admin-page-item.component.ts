@@ -12,7 +12,6 @@ export class AdminPageItemComponent implements OnInit {
   @Input() order: Order;
 
   orders: Order[];
-  order1: Order;
   sum: number = 0;
 
   constructor(private productService: ProductService, private orderData: OrderDataService) { }

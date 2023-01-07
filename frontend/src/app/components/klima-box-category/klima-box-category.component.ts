@@ -12,7 +12,7 @@ export class KlimaBoxCategoryComponent implements OnInit {
   @Input() title: String;
   @Input() urlName: String;
   klimaBox: Klimabox[];
-  date: Date;
+  date: Date = new Date();
 
   constructor(private productService: ProductService) { }
 
