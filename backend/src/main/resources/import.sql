@@ -95,4 +95,5 @@ insert into orderItem(product_id, orderet_id, quantity, message)
 values (1, 1, 5, null),
        (2, 1, 2, null),
        (2, 3, 7, null),
-       (3, 4, 1, null);
+       (3, 4, 1, null),
+       (4, 2, 4, null);

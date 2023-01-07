@@ -3,7 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {map, Observable} from "rxjs";
 import { Product } from '../models/Product';
 import { Order } from '../models/Order';
-import {Menu} from "../models/Menu";
 import { Klimabox } from '../models/Klimabox';
 import { NumberSymbol } from '@angular/common';
 

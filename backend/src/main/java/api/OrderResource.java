@@ -40,6 +40,19 @@ public class OrderResource {
                 .build();
     }
 
+    @GET
+    @Path("allNotClosed")
+    public Response getAllNotClosed() {
+        return Response.ok(service.getAllOpenOrders()).build();
+    }
+
+    @PUT
+    @Path("close/{id}")
+    public Response closeOrder(@PathParam("id") Long id) {
+        service.close(id);
+        return Response.ok().build();
+    }
+
     @POST
     public Response saveOrder(OrderET order) {
         var orderET = service.persistET(order);
