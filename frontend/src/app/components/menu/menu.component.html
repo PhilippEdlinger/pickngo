@@ -11,7 +11,11 @@
                         [icon]="klimaBoxIcon">
                     </fa-icon>
                 </a>
+                <div [hidden]="!isLoggedIn" class="adminPage">
+                    <a routerLink="./adminPage"> Admin Page </a>
+                </div>
             </div>
+
             <!-- <a routerLink="./adminPage">Admin Page</a> -->
             <div *ngIf="isOnLoginPage" class="right-icons">
                 <app-searchbar id="searchbar"></app-searchbar>
