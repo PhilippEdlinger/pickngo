@@ -3,7 +3,7 @@
         <p>NR: {{order.orderPosition}}</p>
         <!-- <p>{{customerIdent}}</p> -->
         <!-- <p>{{order.orderStatus}}</p> -->
-        <p>Tel: {{order.customer?.lastname}}</p>
+        <p>Tel: {{order.customer?.tel}}</p>
         <p>Fertig um: {{order.planedToPickTime}}</p>
     </div>
     <div class="wrapper">
@@ -19,8 +19,12 @@
                 </div>
                 <div class="borderBTW"></div>
             </div>
+            <div class="total">
+                <p class="totalPriceText">Gesamt</p>
+                <p class="totalPrice">{{ sum | number : '.2-2' }}€</p>
+            </div>
         </div>
-        <div class="notizButton">
+        <div class="notizBox">
             <div class="notiz">
                 <h2>Notiz</h2>
                 <p>{{ order.msg }}</p>

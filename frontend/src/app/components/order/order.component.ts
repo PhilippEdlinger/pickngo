@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import {FormControl, UntypedFormBuilder, UntypedFormGroup, Validators} from '@angular/forms';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { Order } from 'src/app/models/Order';
 import { OrderItem } from 'src/app/models/OrderItem';
@@ -25,11 +25,11 @@ export class OrderComponent implements OnInit {
   bestellt: boolean = false;
   sum: number = 0;
   planedPickupTime: Date;
-
+  tel: any;
 
   constructor(private orderData: OrderDataService, private fb: UntypedFormBuilder, private productService: ProductService, private ls: ApiService) {
     this.form = this.fb.group({
-      tele: [null, Validators.required, Validators.minLength(7), Validators.maxLength(20)]
+      tel: [null, [Validators.required, Validators.minLength(7), Validators.maxLength(20)]]
     });
   }
 
