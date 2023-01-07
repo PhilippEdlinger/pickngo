@@ -85,6 +85,9 @@ public class OrderService {
     }
 
     public List<OrderET> getAllOpenOrders() {
+        this.repo.getAllOpenOrders().forEach(orderET -> {
+            System.out.println(orderET.getOrderStatus());
+        });
         return this.repo.getAllOpenOrders();
     }
 

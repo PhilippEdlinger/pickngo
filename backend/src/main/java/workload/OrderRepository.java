@@ -30,6 +30,6 @@ public class OrderRepository extends Repository<OrderET, Long> {
     public void close(Long id) {
         var order = findById(id);
         order.setOrderStatus(OrderStatus.READY);
-        getEntityManager().merge(order);
+        this.updateET(order);
     }
 }

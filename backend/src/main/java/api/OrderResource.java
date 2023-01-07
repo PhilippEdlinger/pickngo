@@ -7,6 +7,7 @@ import workload.OrderService;
 import workload.ProductService;
 
 import javax.inject.Inject;
+import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -41,15 +42,16 @@ public class OrderResource {
     }
 
     @GET
-    @Path("allNotClosed")
+    @Path("allOpen")
     public Response getAllNotClosed() {
         return Response.ok(service.getAllOpenOrders()).build();
     }
 
     @PUT
+    @Transactional
     @Path("close/{id}")
     public Response closeOrder(@PathParam("id") Long id) {
-        service.close(id);
+        this.service.close(id);
         return Response.ok().build();
     }
 
