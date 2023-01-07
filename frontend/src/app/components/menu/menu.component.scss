@@ -222,3 +222,20 @@ span .pickngo {
         top: 0%;
     }
 }
+
+.adminPage {
+    margin-left: 4vw;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.adminPage a {
+    color: #f3f3f3;
+}
+
+@media screen and (max-width: 900px) {
+    .adminPage {
+        display: none;
+        visibility: hidden;
+    }
+}
