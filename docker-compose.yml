@@ -1,0 +1,28 @@
+version: '3.7'
+
+services:
+  postgres-dev:
+    image: postgres:latest
+    container_name: pickngo-db
+    environment:
+      POSTGRES_PASSWORD: app
+      POSTGRES_USER: app
+      POSTGRES_DB: db
+    volumes:
+      - ./db/:/var/lib/postgresql/pickngo-data
+    ports:
+      - "5432:5432"
+  frontend:
+    build: ./frontend
+    container_name: pickngo-frontend
+    ports:
+      - "4200:4200"
+  backend:
+    build: ./backend
+    container_name: pickngo-backend
+    depends_on:
+      - postgres-dev
+    ports:
+      - "8080:8080"
+    links:
+      - postgres-dev:db
