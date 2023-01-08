@@ -1,7 +1,16 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Order } from '../models/Order';
 import { ApiService } from './api.service';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
+}
+
+const BASE_URL = 'http://localhost:8080';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +20,7 @@ export class OrderDataService {
   currentOrder = this.orderSource.asObservable();
 
 
-  constructor(private ls: ApiService) {
+  constructor(private ls: ApiService, private http: HttpClient) {
     let order = localStorage.getItem('order');
     if (order != null) {
       let o: Order = JSON.parse(order);

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { MatInputModule } from '@angular/material/input';
 
 import { AppComponent } from './app.component';
@@ -27,12 +27,12 @@ import { NgImageSliderModule } from 'ng-image-slider';
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { GreenBoxComponent } from './components/green-box/green-box.component';
-import {MatBadgeModule} from "@angular/material/badge";
+import { MatBadgeModule } from "@angular/material/badge";
 import { KlimaBoxPageComponent } from './components/klima-box-page/klima-box-page.component';
 import { KlimaBoxCategoryComponent } from './components/klima-box-category/klima-box-category.component';
-import {AuthInterceptor} from "./auth/auth.interceptor";
-import {MatDatepickerModule} from "@angular/material/datepicker";
-import {MatIconModule} from "@angular/material/icon";
+import { AuthInterceptor } from "./auth/auth.interceptor";
+import { MatDatepickerModule } from "@angular/material/datepicker";
+import { MatIconModule } from "@angular/material/icon";
 import { DatePipe } from '@angular/common';
 
 @NgModule({
@@ -58,28 +58,28 @@ import { DatePipe } from '@angular/common';
     KlimaBoxCategoryComponent,
 
   ],
-    imports: [
-        BrowserModule,
-        NgImageSliderModule,
-        AppRoutingModule,
-        HttpClientModule,
-        MatInputModule,
-        FontAwesomeModule,
-        ReactiveFormsModule,
-        FormsModule,
-        BrowserAnimationsModule,
-        MatCheckboxModule,
-        MatSlideToggleModule,
-        MatBadgeModule,
-        MatDatepickerModule,
-        MatIconModule
-    ],
+  imports: [
+    BrowserModule,
+    NgImageSliderModule,
+    AppRoutingModule,
+    HttpClientModule,
+    MatInputModule,
+    FontAwesomeModule,
+    ReactiveFormsModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatCheckboxModule,
+    MatSlideToggleModule,
+    MatBadgeModule,
+    MatDatepickerModule,
+    MatIconModule
+  ],
   providers: [
-      DatePipe,
-      {
-          provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor,
-          multi: true
-      }
+    DatePipe,
+    {
+      provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })
