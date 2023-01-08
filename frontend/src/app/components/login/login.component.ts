@@ -60,6 +60,7 @@ export class LoginComponent implements OnInit {
                         this.login.success = true;
                         localStorage.setItem('id_token', u.token);
                         localStorage.setItem('expires_at', u.expires_at);
+                        console.log(u)
                         this.router.navigate(['/']);
                         this.loggedIn = true;
                         console.log('Success');

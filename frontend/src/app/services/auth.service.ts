@@ -37,6 +37,7 @@ export class AuthService {
     //return n < exp;
     if(localStorage.getItem('id_token') !== undefined && localStorage.getItem('id_token') !== null) {
       loggedIn = true;
+      console.log(localStorage.getItem('id_token'));
     }
     return loggedIn;
   }
