@@ -23,7 +23,7 @@ export class AdminPageService {
   constructor(private http: HttpClient) { }
 
   getAllOpenOrder(): Observable<Order[]> {
-    return this.http.get<Order[]>(BASE_URL + '/allOpen');
+    return this.http.get<Order[]>(BASE_URL + '/order/allOpen');
   };
 
   updateOrders() {
