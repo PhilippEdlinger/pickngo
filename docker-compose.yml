@@ -19,9 +19,6 @@ services:
       - "4200:4200"
   backend:
     build: ./backend
-
-    volumes:
-      - maven-repository:{$HOME}/.m2
     container_name: pickngo-backend
     depends_on:
       - postgres-dev
@@ -29,5 +26,3 @@ services:
       - "8080:8080"
     links:
       - postgres-dev:db
-volumes:
-  maven-repository:
