@@ -4,6 +4,7 @@ import { OrderItem } from 'src/app/models/OrderItem';
 import { OrderItemID } from 'src/app/models/OrderItemID';
 import { Product } from 'src/app/models/Product';
 import { OrderDataService } from 'src/app/services/order-data.service';
+import {environment} from "../../../environments/environment";
 
 @Component({
   selector: 'app-home-page-product',
@@ -19,7 +20,7 @@ export class HomePageProductComponent implements OnInit {
   constructor(private orderData: OrderDataService) { }
 
   ngOnInit(): void {
-    this.product.imageName = 'http://localhost:8080/product/img/' + this.product.imageName;
+    this.product.imageName = environment.apiUrl + '/product/img/' + this.product.imageName;
     this.orderData.currentOrder.subscribe(order => this.order = order);
   }
 

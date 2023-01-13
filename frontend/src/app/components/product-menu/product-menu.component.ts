@@ -4,6 +4,7 @@ import { Order } from 'src/app/models/Order';
 import { OrderItem } from 'src/app/models/OrderItem';
 import { OrderItemID } from 'src/app/models/OrderItemID';
 import { OrderDataService } from 'src/app/services/order-data.service';
+import {environment} from "../../../environments/environment";
 
 @Component({
   selector: 'app-product-menu',
@@ -25,7 +26,7 @@ export class ProductMenuComponent implements OnInit {
 
     for (let p of this.menu.products) {
       this.menu.price += p.price;
-      p.imageName = 'http://localhost:8080/product/img/' + p.imageName;
+      p.imageName = environment.apiUrl + '/product/img/' + p.imageName;
     }
 
     for (let i = 0; i < p.length - 2; i++) {

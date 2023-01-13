@@ -7,6 +7,7 @@ import { ApiService } from 'src/app/services/api.service';
 import { OrderDataService } from 'src/app/services/order-data.service';
 import { ProductService } from 'src/app/services/product.service';
 import { Klimabox } from "../../models/Klimabox";
+import {environment} from "../../../environments/environment";
 
 @Component({
   selector: 'app-klima-box-page',
@@ -32,7 +33,7 @@ export class KlimaBoxPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.product = this.klimabox.product;
-    this.product.imageName = 'http://localhost:8080/product/img/' + this.product.imageName;
+    this.product.imageName = environment.apiUrl + '/product/img/' + this.product.imageName;
     this.orderData.currentOrder.subscribe(order => this.order = order);
 
     console.log(this.klimabox);

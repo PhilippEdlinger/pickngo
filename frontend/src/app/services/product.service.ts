@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import { Product } from '../models/Product';
 import { Order } from '../models/Order';
 import { Klimabox } from '../models/Klimabox';
+import {environment} from "../../environments/environment";
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -11,7 +12,7 @@ const httpOptions = {
   })
 }
 
-const BASE_URL = 'http://localhost:8080';
+const BASE_URL = environment.apiUrl;
 
 @Injectable({
   providedIn: 'root'

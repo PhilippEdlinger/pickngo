@@ -3,13 +3,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Product } from '../models/Product';
 import { Menu } from '../models/Menu';
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class MenuService {
 
-  private apiUrl: String = 'http://localhost:8080/menu';
+  private apiUrl: String = environment.apiUrl + '/menu';
 
   constructor( private http: HttpClient ) { }
 

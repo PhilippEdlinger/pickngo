@@ -4,13 +4,14 @@ import {User} from "../models/User";
 import {BehaviorSubject, map, Observable} from "rxjs";
 import {Router} from "@angular/router";
 import { LogInDTO } from '../models/LogInDTO';
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-  apiUrl = 'http://localhost:8080';
+  apiUrl = environment.apiUrl;
 
   private userSubject: BehaviorSubject<User | null>;
   public user: Observable<User | null>;
@@ -89,7 +90,7 @@ export class ApiService {
   }*/
 
   getPeople(): Observable<User[]> {
-    return this.http.get<User[]>('http://localhost:8080/customer', {
+    return this.http.get<User[]>(environment.apiUrl + '/customer', {
       headers: {},
     });
   }

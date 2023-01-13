@@ -3,6 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Order } from '../models/Order';
 import { ApiService } from './api.service';
+import {environment} from "../../environments/environment";
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -10,7 +11,7 @@ const httpOptions = {
   })
 }
 
-const BASE_URL = 'http://localhost:8080';
+const BASE_URL = environment.apiUrl;
 
 @Injectable({
   providedIn: 'root'
