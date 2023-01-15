@@ -13,10 +13,16 @@ services:
     ports:
       - "5432:5432"
   frontend:
-    build: ./frontend
+    build:
+      context: ./frontend
+      dockerfile: ./Dockerfile.dev
     container_name: pickngo-frontend
+    volumes:
+      - ./frontend:/frontend
     ports:
       - "4200:4200"
+    environment:
+      CHOKIDAR_USEPOLLING: "true"
   backend:
     build: ./backend
     container_name: pickngo-backend
@@ -26,3 +32,12 @@ services:
       - "8080:8080"
     links:
       - postgres-dev:db
+    volumes:
+      - ./backend:/backend
+      - ./maven-cache:/root/.m2
+    environment:
+      APP_HOST: 0.0.0.0
+      DB_HOST: db
+      DB_NAME: db
+      DB_USER: app
+      DB_PASS: app

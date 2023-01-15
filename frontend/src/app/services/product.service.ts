@@ -22,7 +22,7 @@ export class ProductService {
   constructor(private http: HttpClient) { }
 
   getProductCategory(urlName: String): Observable<Product[]> {
-    const u = `${BASE_URL}/${urlName}`;
+    const u = `${BASE_URL}/product/${urlName}`;
     return this.http.get<Product[]>(u);
   }
 
@@ -32,7 +32,7 @@ export class ProductService {
   }
 
   getSearchResult(sw: String): Observable<Product[]> {
-    const u = `${BASE_URL}/search/${sw}`;
+    const u = `${BASE_URL}/product/search/${sw}`;
     return this.http.get<Product[]>(u);
   }
 

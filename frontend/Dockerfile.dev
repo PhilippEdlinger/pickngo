@@ -1,0 +1,8 @@
+FROM node:lts-alpine
+ENV BASE_URL="/"
+RUN mkdir /frontend
+WORKDIR /frontend
+COPY . .
+EXPOSE 4200
+CMD ["npm", "install"]
+CMD ["npm", "start", "--", "--host", "0.0.0.0", "--disable-host-check", "--poll", "500"]

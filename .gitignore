@@ -7,3 +7,5 @@ target
 .angular
 ./frontend/.angular
 dist
+./backend
+./maven-cache
