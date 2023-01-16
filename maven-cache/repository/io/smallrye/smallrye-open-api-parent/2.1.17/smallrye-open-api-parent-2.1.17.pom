@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>io.smallrye</groupId>
+        <artifactId>smallrye-parent</artifactId>
+        <version>34</version>
+    </parent>
+
+    <artifactId>smallrye-open-api-parent</artifactId>
+    <version>2.1.17</version>
+
+    <packaging>pom</packaging>
+    <name>SmallRye: OpenAPI Parent</name>
+    <url>http://smallrye.io</url>
+
+    <properties>
+        <version.buildhelper.plugin>3.2.0</version.buildhelper.plugin>
+        <version.com.fasterxml.jackson>2.13.1</version.com.fasterxml.jackson>
+        <version.eclipse.microprofile.config>2.0</version.eclipse.microprofile.config>
+        <version.io.smallrye.smallrye-config>2.8.1</version.io.smallrye.smallrye-config>
+        <version.eclipse.microprofile.openapi>2.0.1-RC1</version.eclipse.microprofile.openapi>
+        <version.org.hamcrest>1.3</version.org.hamcrest>
+        <version.org.hamcrest.java-hamcrest>2.0.0.0</version.org.hamcrest.java-hamcrest>
+        <version.org.skyscreamer>1.5.0</version.org.skyscreamer>
+        <version.maven-resources-plugin>3.2.0</version.maven-resources-plugin>
+        <version.com.github.eirslett.frontend-maven-plugin>1.12.0</version.com.github.eirslett.frontend-maven-plugin>
+
+        <version.arquillian.jetty>1.0.0.CR3</version.arquillian.jetty>
+        <version.jetty>9.3.30.v20211001</version.jetty>
+        <version.resteasy>4.7.3.Final</version.resteasy>
+        <version.quarkus>2.6.1.Final</version.quarkus>
+
+        <!--
+            xmlReportPaths must contain an entry for each project that reports coverage.
+            Each module reports execution data in its own target/jacoco.exec. The exec
+            data is then aggregated by testsuite/extra. The list of paths here allows
+            Sonar to find the aggregate report while processing each module.
+          -->
+        <sonar.coverage.jacoco.xmlReportPaths>
+            ${project.basedir}/target/site/jacoco-aggregate/jacoco.xml,
+            ${project.basedir}/../extra/target/site/jacoco-aggregate/jacoco.xml,
+            ${project.basedir}/../testsuite/extra/target/site/jacoco-aggregate/jacoco.xml,
+            ${project.basedir}/testsuite/extra/target/site/jacoco-aggregate/jacoco.xml
+        </sonar.coverage.jacoco.xmlReportPaths>
+    </properties>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/smallrye/smallrye-open-api/issues</url>
+    </issueManagement>
+
+    <scm>
+        <connection>scm:git:git@github.com:smallrye/smallrye-open-api.git</connection>
+        <developerConnection>scm:git:git@github.com:smallrye/smallrye-open-api.git</developerConnection>
+        <url>https://github.com/smallrye/smallrye-open-api/</url>
+        <tag>2.1.17</tag>
+    </scm>
+
+    <modules>
+        <module>core</module>
+        <module>extension-jaxrs</module>
+        <module>extension-spring</module>
+        <module>extension-vertx</module>
+        <module>implementation</module>
+        <module>testsuite</module>
+        <module>ui</module>
+        <module>tools</module>
+    </modules>
+
+    <repositories>
+        <repository>
+            <id>ossrh</id>
+            <name>Sonatype OSSRH Snapshots</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <releases>
+               <enabled>false</enabled>
+            </releases>
+            <snapshots>
+              <enabled>true</enabled>
+           </snapshots>
+        </repository>
+    </repositories>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- MP OpenAPI -->
+            <dependency>
+                <groupId>org.eclipse.microprofile.openapi</groupId>
+                <artifactId>microprofile-openapi-api</artifactId>
+                <version>${version.eclipse.microprofile.openapi}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.microprofile.openapi</groupId>
+                <artifactId>microprofile-openapi-tck</artifactId>
+                <version>${version.eclipse.microprofile.openapi}</version>
+            </dependency>
+
+            <!-- MP Config -->
+            <dependency>
+                <groupId>org.eclipse.microprofile.config</groupId>
+                <artifactId>microprofile-config-api</artifactId>
+                <version>${version.eclipse.microprofile.config}</version>
+            </dependency>
+
+            <!-- Third Party Libraries -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${version.com.fasterxml.jackson}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${version.com.fasterxml.jackson}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.dataformat</groupId>
+                <artifactId>jackson-dataformat-yaml</artifactId>
+                <version>${version.com.fasterxml.jackson}</version>
+            </dependency>
+
+            <!-- SmallRye Projects -->
+            <dependency>
+                <groupId>io.smallrye.config</groupId>
+                <artifactId>smallrye-config</artifactId>
+                <version>${version.io.smallrye.smallrye-config}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- Jakarta EE -->
+            <!-- CDI -->
+            <dependency>
+                <groupId>jakarta.enterprise</groupId>
+                <artifactId>jakarta.enterprise.cdi-api</artifactId>
+                <version>3.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.enterprise</groupId>
+                <artifactId>cdi-api</artifactId>
+                <version>2.0</version>
+            </dependency>
+            <!-- JaxRS -->
+            <dependency>
+                <groupId>jakarta.ws.rs</groupId>
+                <artifactId>jakarta.ws.rs-api</artifactId>
+                <version>3.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.ws.rs</groupId>
+                <artifactId>javax.ws.rs-api</artifactId>
+                <version>2.1.1</version>
+            </dependency>
+            <!-- Bean Validation-->
+            <dependency>
+                <groupId>jakarta.validation</groupId>
+                <artifactId>jakarta.validation-api</artifactId>
+                <version>3.0.1</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.validation</groupId>
+                <artifactId>validation-api</artifactId>
+                <version>2.0.1.Final</version>
+            </dependency>
+            <!-- JsonP -->
+            <dependency>
+                <groupId>jakarta.json</groupId>
+                <artifactId>jakarta.json-api</artifactId>
+                <version>2.0.1</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.json</groupId>
+                <artifactId>javax.json-api</artifactId>
+                <version>1.1.4</version>
+            </dependency>
+            <!-- JsonB -->
+            <dependency>
+                <groupId>jakarta.json.bind</groupId>
+                <artifactId>jakarta.json.bind-api</artifactId>
+                <version>2.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.json.bind</groupId>
+                <artifactId>javax.json.bind-api</artifactId>
+                <version>1.0</version>
+            </dependency>
+            <!-- JAXB -->
+            <dependency>
+                <groupId>jakarta.xml.bind</groupId>
+                <artifactId>jakarta.xml.bind-api</artifactId>
+                <version>3.0.1</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.xml.bind</groupId>
+                <artifactId>jaxb-api</artifactId>
+                <version>2.3.1</version>
+            </dependency>
+            <!-- Annotation -->
+            <dependency>
+                <groupId>jakarta.annotation</groupId>
+                <artifactId>jakarta.annotation-api</artifactId>
+                <version>2.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.annotation</groupId>
+                <artifactId>javax.annotation-api</artifactId>
+                <version>1.3.2</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hamcrest</groupId>
+                <artifactId>hamcrest-all</artifactId>
+                <version>${version.org.hamcrest}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.hamcrest</groupId>
+                <artifactId>java-hamcrest</artifactId>
+                <version>${version.org.hamcrest.java-hamcrest}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.skyscreamer</groupId>
+                <artifactId>jsonassert</artifactId>
+                <version>${version.org.skyscreamer}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- TCK -->
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-bom</artifactId>
+                <version>${version.jetty}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.resteasy</groupId>
+                <artifactId>resteasy-bom</artifactId>
+                <version>${version.resteasy}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- Dependencies provided by the project -->
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>smallrye-open-api-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>smallrye-open-api-jaxrs</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>smallrye-open-api-spring</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>smallrye-open-api-vertx</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>smallrye-open-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <!-- Jakarta EE Test dependencies -->
+        <!-- We add the test dependencies here, to control the Jakarta EE versions.
+             This allows us to create both javax.* and jakarta.* namespace tests.
+             The implementation itself does not depend on any Jakarta EE libraries -->
+
+        <!-- CDI -->
+        <dependency>
+            <groupId>jakarta.enterprise</groupId>
+            <artifactId>jakarta.enterprise.cdi-api</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.enterprise</groupId>
+            <artifactId>cdi-api</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- JaxRS -->
+        <dependency>
+            <groupId>jakarta.ws.rs</groupId>
+            <artifactId>jakarta.ws.rs-api</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- Bean validation -->
+        <dependency>
+            <groupId>jakarta.validation</groupId>
+            <artifactId>jakarta.validation-api</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- JsonP -->
+        <dependency>
+            <groupId>jakarta.json</groupId>
+            <artifactId>jakarta.json-api</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.json</groupId>
+            <artifactId>javax.json-api</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- JsonB -->
+        <dependency>
+            <groupId>jakarta.json.bind</groupId>
+            <artifactId>jakarta.json.bind-api</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.json.bind</groupId>
+            <artifactId>javax.json.bind-api</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- JAXB -->
+        <dependency>
+            <groupId>jakarta.xml.bind</groupId>
+            <artifactId>jakarta.xml.bind-api</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- Annotation -->
+        <dependency>
+            <groupId>jakarta.annotation</groupId>
+            <artifactId>jakarta.annotation-api</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.asciidoctor</groupId>
+                    <artifactId>asciidoctor-maven-plugin</artifactId>
+                    <configuration>
+                        <sourceHighlighter>coderay</sourceHighlighter>
+                        <attributes>
+                            <icons>font</icons>
+                            <pagenums />
+                            <version>${project.version}</version>
+                            <idprefix />
+                            <idseparator>-</idseparator>
+                            <allow-uri-read>true</allow-uri-read>
+                            <revnumber>${project.version}</revnumber>
+                            <revdate>${maven.build.timestamp}</revdate>
+                            <organization>${project.organization.name}</organization>
+                        </attributes>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <version>${version.buildhelper.plugin}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>${version.release.plugin}</version>
+                <configuration>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <tagNameFormat>@{project.version}</tagNameFormat>
+                    <preparationGoals>verify</preparationGoals>
+                    <pushChanges>false</pushChanges>
+                    <localCheckout>true</localCheckout>
+                    <remoteTagging>false</remoteTagging>
+                    <arguments>-DskipTests ${release.arguments}</arguments>
+                    <allowTimestampedSnapshots>true</allowTimestampedSnapshots>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <!-- Version managed by smallrye-parent -->
+                <configuration>
+                    <gpgArguments>
+                        <arg>--pinentry-mode</arg>
+                        <arg>loopback</arg>
+                    </gpgArguments>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>${version.maven-resources-plugin}</version>
+            </plugin>
+            <plugin>
+                <groupId>com.github.eirslett</groupId>
+                <artifactId>frontend-maven-plugin</artifactId>
+                <version>${version.com.github.eirslett.frontend-maven-plugin}</version>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>release</id>
+            <activation>
+                <property>
+                    <name>!release.maven.bug.always.be.active</name>
+                </property>
+            </activation>
+            <modules>
+                <module>release</module>
+            </modules>
+        </profile>
+
+        <profile>
+            <id>jdk11plus</id>
+            <activation>
+                <jdk>[11,)</jdk>
+            </activation>
+            <properties>
+                <jboss.extra.opts>--add-modules java.se</jboss.extra.opts>
+                <maven.compiler.release>8</maven.compiler.release>
+            </properties>
+        </profile>
+    </profiles>
+</project>

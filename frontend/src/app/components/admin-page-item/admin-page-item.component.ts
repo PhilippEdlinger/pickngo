@@ -1,5 +1,8 @@
-import { Component, Input, OnInit} from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Order } from 'src/app/models/Order';
+import { ProductService } from "../../services/product.service";
+import { OrderDataService } from "../../services/order-data.service";
+import { AdminPageService } from 'src/app/services/admin-page.service';
 
 @Component({
   selector: 'app-admin-page-item',
@@ -8,13 +11,21 @@ import { Order } from 'src/app/models/Order';
 })
 export class AdminPageItemComponent implements OnInit {
   @Input() order: Order;
+  sum: number = 0;
 
-  constructor() { }
+  constructor(private productService: ProductService, private orderService: OrderDataService, private adminService: AdminPageService) { }
+
   ngOnInit(): void {
-    console.log(this.order);
+    this.sum = 0;
+    for (let oi of this.order.orderItems) {
+      this.sum += oi.orderItemId.product.price * oi.quantity;
+    }
   }
 
-  finishOrder() {
+  finishOrder(order: number) {
     console.log("Order finished");
+    console.log(this.order.id);
+    console.log(order + " 2nd");
+    this.adminService.close(this.order.id);
   }
 }

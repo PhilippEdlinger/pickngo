@@ -79,7 +79,7 @@ public class CustomerService {
     }*/
 
     /**
-     * checks if the customer informations are viable
+     * checks if the customer information is viable
      * @param customer customer object which is going to be checked
      * @return returns a SignUPDTO
      */

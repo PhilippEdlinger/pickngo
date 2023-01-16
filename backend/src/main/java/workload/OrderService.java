@@ -83,4 +83,15 @@ public class OrderService {
     public Boolean removeById(Long orderId) {
         return repo.removeById(orderId);
     }
+
+    public List<OrderET> getAllOpenOrders() {
+        this.repo.getAllOpenOrders().forEach(orderET -> {
+            System.out.println(orderET.getOrderStatus());
+        });
+        return this.repo.getAllOpenOrders();
+    }
+
+    public void close(Long id) {
+        repo.close(id);
+    }
 }

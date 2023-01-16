@@ -5,7 +5,35 @@
   border: 3px solid #282727;
   border-radius: 15px;
   padding: 10px;
-  min-height: 20vw;
+}
+
+.orderItemBox {
+  display: grid;
+  grid-template-rows: 1fr 50px;
+}
+
+.orderitem img {
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+  border-radius: 20%;
+}
+
+.orderitems {
+  display: grid;
+  // grid-template-columns: 1fr 3fr 2px;
+  grid-template-rows: repeat(auto-fill, 70px);
+  // align-items: center;
+  // gap: 10px;
+}
+
+.orderitem {
+  display: grid;
+  grid-template-columns: 1fr 7fr 5px;
+  // grid-template-rows: repeat(auto-fill, 70px);
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
 }
 
 .header {
@@ -20,19 +48,22 @@ span {
   width: 50%;
 }
 
-.orderItems {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-gap: 10px;
-  width: 50%;
-  min-height: 12vw;
-  padding: 1vw;
+.borderBTW {
+  border: 0.5px solid rgb(160, 160, 160);
+  height: 70%;
+  width: 0px;
 }
 
-.notizButton {
-  float: right;
-  width: 50%;
-  padding: 1vw;
+// .notizBox {
+//   float: right;
+//   width: 50%;
+//   padding: 1vw;
+// }
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 30px;
 }
 
 .notiz h2 {
@@ -45,7 +76,7 @@ span {
   text-align: center;
 }
 
-.notizButton button {
+.notizBox button {
   background-color: c.$color2;
   font-size: 1.5rem;
   font-weight: 600;
@@ -63,4 +94,32 @@ span {
   border: 1px solid grey;
   border-radius: 50px;
   padding-bottom: 7vh;
+}
+
+.textBox div {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  color: var(--ProductsTextColor);
+}
+
+.notizBox {
+  padding: 10px 20px 20px 10px;
+}
+
+.totalPrice {
+  font-size: 1.5rem;
+  margin: 0 0 0 37vw;
+}
+
+.totalPriceText {
+  bottom: 10px;
+  left: 10px;
+  font-size: 1.5rem;
+}
+
+.total {
+  padding: 20px 10px 10px 10px;
+  display: flex;
+  border-top: 1px solid grey;
 }

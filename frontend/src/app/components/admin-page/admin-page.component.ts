@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Order } from 'src/app/models/Order';
+import { AdminPageService } from 'src/app/services/admin-page.service';
 import { ProductService } from '../../services/product.service';
 
 @Component({
@@ -10,11 +11,11 @@ import { ProductService } from '../../services/product.service';
 export class AdminPageComponent implements OnInit {
   orders: Order[];
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService, private adminService: AdminPageService) { }
 
   ngOnInit(): void {
-    this.productService.getAllOrder().subscribe(os => {this.orders = os; console.log(os)});
+    this.adminService.updateOrders();
+    this.adminService.currentOrder.subscribe(os => this.orders = os);
     console.log(this.orders);
   }
-
 }

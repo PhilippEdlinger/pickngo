@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
   loading = false;
   submitted = false;
   login: LogInDTO = new LogInDTO();
+  loggedIn: boolean = false;
 
   constructor(private fb: UntypedFormBuilder,
               private route: ActivatedRoute,
@@ -30,6 +31,13 @@ export class LoginComponent implements OnInit {
         });
   }
 
+    ngOnInit(): void {
+      if(localStorage.getItem('id_token') !== null) {
+          this.loggedIn = true;
+      }
+    }
+
+
     // convenience getter for easy access to form fields
     get f() { return this.form.controls; }
 
@@ -41,22 +49,27 @@ export class LoginComponent implements OnInit {
             return;
         }
 
-        // this.authService.login(this.f['username'].value, this.f['password'].value)
-        //     .subscribe(u => {
-        //         if (u.success) {
-        //             this.login.success = true;
-        //             localStorage.setItem('id_token', u.token);
-        //             localStorage.setItem('expires_at', u.expires_at);
-        //             this.router.navigate(['/']);
-        //             console.log('Success')
-        //         } else {
-        //             this.login.success = false;
-        //         }
-        //     });
-        console.log(this.login);
+        // Already logged in
+        if(this.loggedIn) {
+            console.log('Already logged in');
+            this.router.navigate(['/']);
+        } else {
+            this.authService.login(this.f['username'].value, this.f['password'].value)
+                .subscribe(u => {
+                    if (u.success) {
+                        this.login.success = true;
+                        localStorage.setItem('id_token', u.token);
+                        localStorage.setItem('expires_at', u.expires_at);
+                        console.log(u)
+                        this.router.navigate(['/']);
+                        this.loggedIn = true;
+                        console.log('Success');
+                    } else {
+                        this.login.success = false;
+                        this.loggedIn = false;
+                        console.log('Error');
+                    }
+                });
+        }
     }
-
-    ngOnInit(): void {
-    }
-
 }

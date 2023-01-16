@@ -17,7 +17,7 @@ html {
 }
 
 .section1 {
-  height: 100vh !important;
+  height: 85vh !important;
 }
 
 #fp-nav ul li, .fp-slidesNav ul li {
@@ -172,7 +172,11 @@ html {
 
 @media screen and (max-width: 800px) {
   .section1 {
-    height: 55vh !important;
+    height: 75vh !important;
+  }
+  #explanationText {
+    font-size: 1rem !important;
+    line-height: 1.5rem !important;
   }
   .text-box {
     line-height: 18px;
@@ -203,7 +207,11 @@ html {
   }
 }
 
-element.style {
+@media screen and (max-width: 650px) {
+  #explanationText {
+    font-size: 1.5em !important;
+    line-height: 1.5em !important;
+  }
 }
 
 

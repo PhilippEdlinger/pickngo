@@ -1,8 +1,8 @@
-<div id="categoryBox" *ngIf="klimaBox && klimaBox.length > 0">
+<div style="padding-bottom:50px" id="categoryBox" *ngIf="klimaBox && klimaBox.length > 0">
     <h2 class="centerText">{{title}}</h2>
     <hr>
 
-    <h2 id="datumAnzahl">Am Dienstag den 06.12.2022 gibt es:</h2>
+    <h2 id="datumAnzahl">Am {{ ("0" + (this.date.getDate())).slice(-2) + "." + this.date.getMonth() + 1 }} gibt es:</h2>
     <div id="products">
         <app-klima-box-page *ngFor="let p of klimaBox" [klimabox]=(p)>
         </app-klima-box-page>

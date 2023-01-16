@@ -34,8 +34,8 @@
                                             </h4>
                                             <h4 [ngStyle]="{'display': logedIn ? 'none' : 'block'}" class="title"
                                                 style="text-align:center;">Ihre Telefonnummer</h4>
-                                            <input [ngStyle]="{'display': logedIn ? 'none' : 'block'}"
-                                                placeholder="Tel." type="tel" name="tel" id="tel" autocomplete="off" />
+                                            <input #tel [ngStyle]="{'display': logedIn ? 'none' : 'block'}"
+                                                   formControlName="tel" placeholder="Tel." type="tel" name="tel" id="tel" autocomplete="off" />
 
                                         </div>
 
@@ -43,7 +43,7 @@
                                         <h1>Notiz:</h1>
                                         <textarea id="textBox" cols="30" rows="10"></textarea>
                                         <!-- </div> -->
-                                        <button class="buttonDiv">Bestätigen</button>
+                                        <button [disabled]="tel.value == ''" class="buttonDiv">Bestätigen</button>
                                     </form>
                                 </div>
                             </div>

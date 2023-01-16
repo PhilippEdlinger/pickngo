@@ -4,6 +4,7 @@ import {BehaviorSubject, map, Observable} from "rxjs";
 import {User} from "../models/User";
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +28,7 @@ export class AuthService {
   }
 
   login(username: any, password: any): Observable<any> {
-    return this.http.post(`http://localhost:8080/person/signIn/${username}/${password}`, {username, password});
+    return this.http.post(environment.apiUrl + `/person/signIn/${username}/${password}`, {username, password});
   }
 
   isLoggedIn(): boolean {
@@ -37,6 +38,7 @@ export class AuthService {
     //return n < exp;
     if(localStorage.getItem('id_token') !== undefined && localStorage.getItem('id_token') !== null) {
       loggedIn = true;
+      console.log(localStorage.getItem('id_token'));
     }
     return loggedIn;
   }

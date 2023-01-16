@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {map, Observable} from "rxjs";
+import {Observable} from "rxjs";
 import { Product } from '../models/Product';
 import { Order } from '../models/Order';
-import {Menu} from "../models/Menu";
 import { Klimabox } from '../models/Klimabox';
-import { NumberSymbol } from '@angular/common';
+import {environment} from "../../environments/environment";
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -13,38 +12,39 @@ const httpOptions = {
   })
 }
 
-const BASE_URL = 'http://localhost:8080';
+const BASE_URL = environment.apiUrl;
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-  private apiUrl: String = 'http://localhost:8080/product';
 
   constructor(private http: HttpClient) { }
 
   getProductCategory(urlName: String): Observable<Product[]> {
-    const u = `${this.apiUrl}/${urlName}`;
+    const u = `${BASE_URL}/product/${urlName}`;
+    console.log(u);
     return this.http.get<Product[]>(u);
   }
 
   getAllProducts(): Observable<Product[]> {
-    const u = `${this.apiUrl}`;
+    const u = `${BASE_URL}`;
     return this.http.get<Product[]>(u);
   }
 
   getSearchResult(sw: String): Observable<Product[]> {
-    const u = `${this.apiUrl}/search/${sw}`;
+    const u = `${BASE_URL}/product/search/${sw}`;
+    console.log(u);
     return this.http.get<Product[]>(u);
   }
 
   order(order: Order): Observable<Order> {
     console.log(order);
-    return this.http.post<Order>('http://localhost:8080/order', order, httpOptions);
+    return this.http.post<Order>(BASE_URL + '/order', order, httpOptions);
   }
 
   getAllOrder(): Observable<Order[]> {
-    return this.http.get<Order[]>('http://localhost:8080/order');
+    return this.http.get<Order[]>(BASE_URL + '/order');
   }
 
   getAllKlimaBox(): Observable<Klimabox[]> {
