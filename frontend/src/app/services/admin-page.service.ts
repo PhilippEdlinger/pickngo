@@ -3,7 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from "rxjs";
 import { Order } from '../models/Order';
-import {environment} from "../../environments/environment";
+import { environment } from "../../environments/environment";
 
 
 const httpOptions = {
@@ -28,18 +28,23 @@ export class AdminPageService {
   };
 
   updateOrders() {
-    this.getAllOpenOrder().subscribe(os => this.orderSource.next(os));
+    this.getAllOpenOrder().subscribe(os => {
+      console.log(os);
+      this.orderSource.next(os)
+    });
   }
 
   close(id: number) {
     const url = BASE_URL + '/order/close/' + id;
-    this.http.put(url, httpOptions);
+
+    console.log(url);
+    this.http.put(url, {}, httpOptions);
 
     this.updateOrders();
   }
 
   getOrdersAsArray(): Order[] {
-    let o:Order[] = [];
+    let o: Order[] = [];
     this.getAllOpenOrder().subscribe(os => o = os);
     return o;
   }

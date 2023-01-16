@@ -14,6 +14,7 @@ export class AdminPageComponent implements OnInit {
   constructor(private productService: ProductService, private adminService: AdminPageService) { }
 
   ngOnInit(): void {
+    this.adminService.updateOrders();
     this.adminService.currentOrder.subscribe(os => this.orders = os);
     console.log(this.orders);
   }

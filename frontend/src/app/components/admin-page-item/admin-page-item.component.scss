@@ -7,6 +7,11 @@
   padding: 10px;
 }
 
+.orderItemBox {
+  display: grid;
+  grid-template-rows: 1fr 50px;
+}
+
 .orderitem img {
   object-fit: cover;
   width: 100px;
@@ -14,11 +19,20 @@
   border-radius: 20%;
 }
 
+.orderitems {
+  display: grid;
+  // grid-template-columns: 1fr 3fr 2px;
+  grid-template-rows: repeat(auto-fill, 70px);
+  // align-items: center;
+  // gap: 10px;
+}
+
 .orderitem {
   display: grid;
-  grid-template-columns: 1fr 3fr 2px;
+  grid-template-columns: 1fr 7fr 5px;
+  // grid-template-rows: repeat(auto-fill, 70px);
   align-items: center;
-  gap: 20px;
+  gap: 10px;
   margin-bottom: 15px;
 }
 
@@ -48,7 +62,7 @@ span {
 
 .wrapper {
   display: grid;
-  grid-template-columns:  1.2fr 1fr;
+  grid-template-columns: 1.2fr 1fr;
   gap: 30px;
 }
 

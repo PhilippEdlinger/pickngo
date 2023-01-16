@@ -23,6 +23,7 @@ export class ProductService {
 
   getProductCategory(urlName: String): Observable<Product[]> {
     const u = `${BASE_URL}/product/${urlName}`;
+    console.log(u);
     return this.http.get<Product[]>(u);
   }
 
@@ -33,6 +34,7 @@ export class ProductService {
 
   getSearchResult(sw: String): Observable<Product[]> {
     const u = `${BASE_URL}/product/search/${sw}`;
+    console.log(u);
     return this.http.get<Product[]>(u);
   }
 
