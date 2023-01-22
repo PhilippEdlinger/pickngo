@@ -40,15 +40,18 @@ export class ProductMenuComponent implements OnInit {
   onClick() {
     for (let p of this.menu.products) {
 
-      let oi = new OrderItem();
-      let oiId = new OrderItemID();
-      oiId.product = p;
-      oi.orderItemId = oiId;
-      this.order.orderItems.push(oi);
+      let yo = this.order.orderItems.find(oi2 => oi2.orderItemId.product.id === p.id);
+      if (yo) {
+        yo.quantity++;
+      } else {
+        let oi = new OrderItem();
+        let oiId = new OrderItemID();
+        oiId.product = p;
+        oi.orderItemId = oiId;
+        this.order.orderItems.push(oi);
+      }
     }
 
-
-    console.log(this.order);
     this.orderData.changeOrder(this.order);
 
     this.bestellt = true;

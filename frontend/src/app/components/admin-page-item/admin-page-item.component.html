@@ -24,7 +24,7 @@
             </div>
             <div class="total">
                 <p class="totalPriceText">Gesamt</p>
-                <p class="totalPrice">{{ sum | number : '.2-2' }}€</p>
+                <p class="totalPrice">{{ sum.toFixed(2).replace('.', ',') }}€</p>
             </div>
         </div>
         <div class="notizBox">
