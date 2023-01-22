@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from "rxjs";
 import { Order } from '../models/Order';
 import { environment } from "../../environments/environment";
+import { url } from 'inspector';
 
 
 const httpOptions = {
@@ -20,6 +21,7 @@ const BASE_URL = environment.apiUrl;
 export class AdminPageService {
   private orderSource = new BehaviorSubject<Order[]>(this.getOrdersAsArray());
   currentOrder = this.orderSource.asObservable();
+  currentStat = 'OPEN';
 
   constructor(private http: HttpClient) { }
 
@@ -27,11 +29,22 @@ export class AdminPageService {
     return this.http.get<Order[]>(BASE_URL + '/order/allOpen');
   };
 
+  getAllByOrderStat() {
+    return this.http.get<Order[]>(BASE_URL + '/order/' + this.currentStat);
+  }
+
   updateOrders() {
-    this.getAllOpenOrder().subscribe(os => {
+    console.log(this.currentStat);
+    this.getAllByOrderStat().subscribe(os => {
       console.log(os);
       this.orderSource.next(os)
     });
+  }
+
+  changeOrder(order: Order) {
+    const url = BASE_URL + '/order';
+
+    this.http.put(url, order, httpOptions).subscribe(d => this.updateOrders());
   }
 
   close(id: number) {

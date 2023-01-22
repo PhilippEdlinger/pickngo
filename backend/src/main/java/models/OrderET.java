@@ -32,6 +32,8 @@ public class OrderET extends PanacheEntityBase {
     public LocalDateTime readyToPickTime;
     public String msg;
     @ManyToOne
+    @JsonbTransient
+    @JsonIgnore
     public Customer customer;
     public String phoneNr;
     @JsonIgnore

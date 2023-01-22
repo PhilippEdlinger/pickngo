@@ -5,6 +5,7 @@ import com.twilio.rest.api.v2010.account.Message;
 import io.quarkus.mailer.Mail;
 import io.quarkus.mailer.Mailer;
 import models.OrderET;
+import models.OrderStatus;
 import workload.OrderService;
 import workload.ProductService;
 
@@ -53,6 +54,12 @@ public class OrderResource {
         return Response.ok(service.getAllOpenOrders()).build();
     }
 
+    @GET
+    @Path("{orderStat}")
+    public Response getByOrderStat(@PathParam("orderStat") OrderStatus orderStatus) {
+        return Response.ok(service.getByOrderStat(orderStatus)).build();
+    }
+
     @PUT
     @Transactional
     @Path("close/{id}")
@@ -65,7 +72,7 @@ public class OrderResource {
     public Response saveOrder(OrderET order) {
         var orderET = service.persistET(order);
         System.out.println("-----");
-        System.out.println( order.customer);
+        System.out.println(order.customer);
         System.out.println(order.getId());
 
         Long duration = 0L;
@@ -73,7 +80,7 @@ public class OrderResource {
             duration += oi.orderItemId.getProduct().getPreparationTime();
         }
 
-        if (orderET.getCustomer() != null) {
+        if (orderET != null && orderET.getCustomer() != null) {
             String emailAdress = orderET.getCustomer().getEmail();
             String emailText = "";
             String emailHeader = "\n Vielen Dank, dass Sie beim Cagitzer x Pick'n'Go bestellt haben! \n \n Ihre Bestellung lautet: \n";
@@ -84,7 +91,7 @@ public class OrderResource {
 
             for (var o : order.getOrderItems()) {
                 var p = productService.findById(o.orderItemId.getProduct().id);
-                emailText += o.getQuantity()  + "x " + p.getName() + ": " + p.getPrice() + "0 € " + "\n";
+                emailText += o.getQuantity() + "x " + p.getName() + ": " + p.getPrice() + "0 € " + "\n";
                 //sms
                 phoneText += o.getQuantity() + "x " + p.getName() + ": " + p.getPrice() + "0 €" + "\n";
 
@@ -97,9 +104,9 @@ public class OrderResource {
             //sms
             Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
             Message message = Message.creator(
-                    new com.twilio.type.PhoneNumber("+4369919083352"),
-                    new com.twilio.type.PhoneNumber("+15632278282"),
-                    phoneText)
+                            new com.twilio.type.PhoneNumber("+4369919083352"),
+                            new com.twilio.type.PhoneNumber("+15632278282"),
+                            phoneText)
                     .create();
 
             System.out.println(message.getSid());
@@ -116,6 +123,11 @@ public class OrderResource {
         return Response
                 .ok(orderET)
                 .build();
+    }
+
+    @PUT
+    public Response updateOrder(OrderET order) {
+        return Response.ok(this.service.update(order)).build();
     }
 
     @DELETE

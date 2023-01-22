@@ -91,7 +91,15 @@ public class OrderService {
         return this.repo.getAllOpenOrders();
     }
 
+    public List<OrderET> getByOrderStat(OrderStatus orderStatus) {
+        return this.repo.getByOrderStat(orderStatus);
+    }
+
     public void close(Long id) {
         repo.close(id);
+    }
+
+    public OrderET update(OrderET order) {
+        return this.repo.updateET(order);
     }
 }

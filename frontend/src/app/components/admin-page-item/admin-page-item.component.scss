@@ -87,7 +87,7 @@ span {
   color: white;
   text-align: center;
   width: 100%;
-  margin: 1vw 0 0 0;
+  // margin: 1vw 0 0 0;
 }
 
 .notiz {
@@ -122,4 +122,33 @@ span {
   padding: 20px 10px 10px 10px;
   display: flex;
   border-top: 1px solid grey;
+}
+
+.saveBox {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2vw;
+  margin-top: 20px;
+}
+
+.options {
+  background-color: c.$color2;
+  padding: 20px;
+  text-decoration: none;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  text-align: center;
+}
+
+.options label {
+  font-size: 1.2em;
+}
+
+.options select {
+  height: 30px;
+  font-size: 1.15em;
+  background-color: c.$color2;
+  border: none;
+  color: white;
 }

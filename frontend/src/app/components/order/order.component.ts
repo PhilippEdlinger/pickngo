@@ -58,6 +58,8 @@ export class OrderComponent implements OnInit {
       for (let oi of o.orderItems) {
         this.sum += oi.orderItemId.product.price * oi.quantity;
       }
+
+      console.log(this.logedIn);
     });
 
 
