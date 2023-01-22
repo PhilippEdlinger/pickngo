@@ -38,9 +38,7 @@ export class AdminPageService {
     const url = BASE_URL + '/order/close/' + id;
 
     console.log(url);
-    this.http.put(url, {}, httpOptions);
-
-    this.updateOrders();
+    this.http.put(url, {}, httpOptions).subscribe(d => this.updateOrders());
   }
 
   getOrdersAsArray(): Order[] {

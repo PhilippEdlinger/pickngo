@@ -2,4 +2,5 @@
 
 <div class="container">
         <app-admin-page-item class="group" *ngFor="let o of orders" [order]=(o)></app-admin-page-item>
+        <h2 *ngIf="orders.length <= 0">Zur Zeit keine offene Bestellungen</h2>
 </div>
