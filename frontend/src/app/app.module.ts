@@ -82,8 +82,7 @@ import {APP_BASE_HREF, DatePipe, PlatformLocation } from '@angular/common';
     },
     {
       provide: APP_BASE_HREF,
-      useFactory: (s: PlatformLocation) => '/d.altenhofer/',
-      deps: [PlatformLocation]
+      useValue: '/d.altenhofer/'
     }
   ],
   bootstrap: [AppComponent]
