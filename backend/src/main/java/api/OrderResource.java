@@ -1,5 +1,7 @@
 package api;
 
+import com.twilio.Twilio;
+import com.twilio.rest.api.v2010.account.Message;
 import io.quarkus.mailer.Mail;
 import io.quarkus.mailer.Mailer;
 import models.OrderET;
@@ -25,6 +27,9 @@ public class OrderResource {
     private ProductService productService;
     @Inject
     Mailer mailer;
+
+    public static final String ACCOUNT_SID = System.getenv("AC8cc7955e2ce369ae27a1977f3f784782");
+    public static final String AUTH_TOKEN = System.getenv("adcbca6bbfe79d9eed6cc573cd83513e");
 
     @GET
     public Response getOrders() {
@@ -74,16 +79,27 @@ public class OrderResource {
             String emailTime = "\n Ihre Bestellung ist in " + duration + " Minuten abholbereit! \n \n";
             String emailFooter = "\n Cagitzer x Pick'n'Go! \n Adresse: Mühlbachstraße 91, 4063 Hörsching \n Telefon: 07221 72294 \n";
 
+            String phoneText = "";
 
             for (var o : order.getOrderItems()) {
                 var p = productService.findById(o.orderItemId.getProduct().id);
                 emailText += o.getQuantity()  + "x " + p.getName() + ": " + p.getPrice() + "0 € " + "\n";
-
+                phoneText += o.getQuantity() + "x " + p.getName() + ": " + p.getPrice() + "0 €" + "\n";
             }
 
             System.out.println(orderET.getId());
             System.out.println(orderET.getCustomer().getEmail());
             System.out.println(orderET.getCustomer().id);
+
+            Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
+            Message message = Message.creator(
+                    new com.twilio.type.PhoneNumber("+4369919083352"),
+                    new com.twilio.type.PhoneNumber("+15632278282"),
+                    phoneText)
+                    .create();
+
+            System.out.println(message.getSid());
+
 
             mailer.send(
                     Mail.withText(emailAdress,
