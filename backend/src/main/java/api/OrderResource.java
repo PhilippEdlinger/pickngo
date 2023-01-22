@@ -28,6 +28,7 @@ public class OrderResource {
     @Inject
     Mailer mailer;
 
+    //sms
     public static final String ACCOUNT_SID = System.getenv("AC8cc7955e2ce369ae27a1977f3f784782");
     public static final String AUTH_TOKEN = System.getenv("adcbca6bbfe79d9eed6cc573cd83513e");
 
@@ -84,6 +85,7 @@ public class OrderResource {
             for (var o : order.getOrderItems()) {
                 var p = productService.findById(o.orderItemId.getProduct().id);
                 emailText += o.getQuantity()  + "x " + p.getName() + ": " + p.getPrice() + "0 € " + "\n";
+                //sms
                 phoneText += o.getQuantity() + "x " + p.getName() + ": " + p.getPrice() + "0 €" + "\n";
             }
 
@@ -91,6 +93,7 @@ public class OrderResource {
             System.out.println(orderET.getCustomer().getEmail());
             System.out.println(orderET.getCustomer().id);
 
+            //sms
             Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
             Message message = Message.creator(
                     new com.twilio.type.PhoneNumber("+4369919083352"),
