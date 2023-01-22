@@ -27,15 +27,15 @@
                             class="col-4 d-flex align-items-stretch mb-5 mb-lg-0" id="first" data-aos="fade-up">
                             <div class="icon-box telefonNRBox">
                                 <div class="floating-label">
-                                    <form [formGroup]="form" id="login-form" (ngSubmit)="onSubmit()" ngClass="logedIn ? 'logedIn' : 'notLogedIn'">
-                                        <div>
-                                            <h4 [ngStyle]="{'display': logedIn ? 'none' : 'block'}" class="title"
-                                                style="text-align:center;">Für die Bestellbestätigung benötigen wir
+                                    <form [formGroup]="form" id="login-form" (ngSubmit)="onSubmit()"
+                                        ngClass="logedIn ? 'logedIn' : 'notLogedIn'">
+                                        <div [ngStyle]="{'display': logedIn ? 'none' : 'block'}">
+                                            <h4 class="title" style="text-align:center;">Für die Bestellbestätigung
+                                                benötigen wir
                                             </h4>
-                                            <h4 [ngStyle]="{'display': logedIn ? 'none' : 'block'}" class="title"
-                                                style="text-align:center;">Ihre Telefonnummer</h4>
-                                            <input #tel [ngStyle]="{'display': logedIn ? 'none' : 'block'}"
-                                                   formControlName="tel" placeholder="Tel." type="tel" name="tel" id="tel" autocomplete="off" />
+                                            <h4 class="title" style="text-align:center;">Ihre Telefonnummer</h4>
+                                            <input #tel formControlName="tel" placeholder="Tel." type="tel" name="tel"
+                                                id="tel" autocomplete="off" />
 
                                         </div>
 
@@ -54,8 +54,15 @@
                                 <div class="floating-label">
                                     <h4 class="title" style="text-align:center;font-size:40px;">Ihre Bestellung ist
                                         abholbereit um</h4>
+<<<<<<< HEAD
                                     <img src="../../../assets/img/comp_3.gif" style="width:465px;height:auto;">
+                                    <h4 class="title" style="text-align:center;font-size:60px;">{{ ("0" +
+                                        (planedPickupTime.getHours())).slice(-2) + ":" + ("0" +
+                                        (planedPickupTime.getMinutes())).slice(-2) }}</h4>
+=======
+                                    <img src="assets/img/comp_3.gif" style="width:465px;height:auto;">
                                     <h4 class="title" style="text-align:center;font-size:60px;">{{ ("0" + (planedPickupTime.getHours())).slice(-2) + ":" + ("0" + (planedPickupTime.getMinutes())).slice(-2) }}</h4>
+>>>>>>> f01ff46fbc7fd753fd9ce26a4d8297a82799031d
                                 </div>
                             </div>
                         </div>

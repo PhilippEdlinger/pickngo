@@ -33,7 +33,7 @@ import { KlimaBoxCategoryComponent } from './components/klima-box-category/klima
 import { AuthInterceptor } from "./auth/auth.interceptor";
 import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MatIconModule } from "@angular/material/icon";
-import { DatePipe } from '@angular/common';
+import {APP_BASE_HREF, DatePipe, PlatformLocation } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -79,6 +79,10 @@ import { DatePipe } from '@angular/common';
     {
       provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor,
       multi: true
+    },
+    {
+      provide: APP_BASE_HREF,
+      useValue: '/d.altenhofer/'
     }
   ],
   bootstrap: [AppComponent]

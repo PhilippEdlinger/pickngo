@@ -1,8 +1,11 @@
 package api;
 
+import com.twilio.Twilio;
+import com.twilio.rest.api.v2010.account.Message;
 import io.quarkus.mailer.Mail;
 import io.quarkus.mailer.Mailer;
 import models.OrderET;
+import models.OrderStatus;
 import workload.OrderService;
 import workload.ProductService;
 
@@ -26,6 +29,10 @@ public class OrderResource {
     @Inject
     Mailer mailer;
 
+    //sms
+    public static final String ACCOUNT_SID = System.getenv("AC8cc7955e2ce369ae27a1977f3f784782");
+    public static final String AUTH_TOKEN = System.getenv("adcbca6bbfe79d9eed6cc573cd83513e");
+
     @GET
     public Response getOrders() {
         return Response
@@ -47,6 +54,12 @@ public class OrderResource {
         return Response.ok(service.getAllOpenOrders()).build();
     }
 
+    @GET
+    @Path("{orderStat}")
+    public Response getByOrderStat(@PathParam("orderStat") OrderStatus orderStatus) {
+        return Response.ok(service.getByOrderStat(orderStatus)).build();
+    }
+
     @PUT
     @Transactional
     @Path("close/{id}")
@@ -59,7 +72,7 @@ public class OrderResource {
     public Response saveOrder(OrderET order) {
         var orderET = service.persistET(order);
         System.out.println("-----");
-        System.out.println( order.customer);
+        System.out.println(order.customer);
         System.out.println(order.getId());
 
         Long duration = 0L;
@@ -67,23 +80,37 @@ public class OrderResource {
             duration += oi.orderItemId.getProduct().getPreparationTime();
         }
 
-        if (orderET.getCustomer() != null) {
+        if (orderET != null && orderET.getCustomer() != null) {
             String emailAdress = orderET.getCustomer().getEmail();
             String emailText = "";
             String emailHeader = "\n Vielen Dank, dass Sie beim Cagitzer x Pick'n'Go bestellt haben! \n \n Ihre Bestellung lautet: \n";
             String emailTime = "\n Ihre Bestellung ist in " + duration + " Minuten abholbereit! \n \n";
             String emailFooter = "\n Cagitzer x Pick'n'Go! \n Adresse: Mühlbachstraße 91, 4063 Hörsching \n Telefon: 07221 72294 \n";
 
+            String phoneText = "";
 
             for (var o : order.getOrderItems()) {
                 var p = productService.findById(o.orderItemId.getProduct().id);
-                emailText += o.getQuantity()  + "x " + p.getName() + ": " + p.getPrice() + "0 € " + "\n";
+                emailText += o.getQuantity() + "x " + p.getName() + ": " + p.getPrice() + "0 € " + "\n";
+                //sms
+                phoneText += o.getQuantity() + "x " + p.getName() + ": " + p.getPrice() + "0 €" + "\n";
 
             }
 
             System.out.println(orderET.getId());
             System.out.println(orderET.getCustomer().getEmail());
             System.out.println(orderET.getCustomer().id);
+
+            //sms
+            Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
+            Message message = Message.creator(
+                            new com.twilio.type.PhoneNumber("+4369919083352"),
+                            new com.twilio.type.PhoneNumber("+15632278282"),
+                            phoneText)
+                    .create();
+
+            System.out.println(message.getSid());
+
 
             mailer.send(
                     Mail.withText(emailAdress,
@@ -96,6 +123,11 @@ public class OrderResource {
         return Response
                 .ok(orderET)
                 .build();
+    }
+
+    @PUT
+    public Response updateOrder(OrderET order) {
+        return Response.ok(this.service.update(order)).build();
     }
 
     @DELETE

@@ -24,7 +24,7 @@
             </div>
             <div class="total">
                 <p class="totalPriceText">Gesamt</p>
-                <p class="totalPrice">{{ sum | number : '.2-2' }}€</p>
+                <p class="totalPrice">{{ sum.toFixed(2).replace('.', ',') }}€</p>
             </div>
         </div>
         <div class="notizBox">
@@ -32,7 +32,16 @@
                 <h2>Notiz</h2>
                 <p>{{ order.msg }}</p>
             </div>
-            <button (click)="finishOrder(order.id)">Bestellung abschließen</button>
+            <div class="saveBox">
+                <div class="options">
+                    <label>Bestellung Status:</label>
+                    <select (change)="onSelectChange($event)">
+                        <option *ngFor="let os of orderStats | keyvalue" value={{os.key}}
+                            [selected]="os.key === order.orderStatus">{{ os.value }}</option>
+                    </select>
+                </div>
+                <button (click)="finishOrder(order.id)">Speichern</button>
+            </div>
         </div>
     </div>
 </div>

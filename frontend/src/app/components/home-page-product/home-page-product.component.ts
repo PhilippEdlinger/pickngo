@@ -4,7 +4,7 @@ import { OrderItem } from 'src/app/models/OrderItem';
 import { OrderItemID } from 'src/app/models/OrderItemID';
 import { Product } from 'src/app/models/Product';
 import { OrderDataService } from 'src/app/services/order-data.service';
-import {environment} from "../../../environments/environment";
+import { environment } from "../../../environments/environment";
 
 @Component({
   selector: 'app-home-page-product',
@@ -27,20 +27,22 @@ export class HomePageProductComponent implements OnInit {
 
 
   onClick() {
-    let oi = new OrderItem();
-    let oiId = new OrderItemID();
-    oiId.product = this.product;
-    oi.orderItemId = oiId;
-    this.order.orderItems.push(oi);
+    let yo = this.order.orderItems.find(oi2 => oi2.orderItemId.product.id === this.product.id);
+    if (yo) {
+      yo.quantity++;
+    } else {
+      let oi = new OrderItem();
+      let oiId = new OrderItemID();
+      oiId.product = this.product;
+      oi.orderItemId = oiId;
+      this.order.orderItems.push(oi);
+    }
 
-
-    console.log(this.order);
     this.orderData.changeOrder(this.order);
-
 
     this.bestellt = true;
     setTimeout(() => {
       this.bestellt = false;
-    }, 7000);
+    }, 3000);
   }
 }

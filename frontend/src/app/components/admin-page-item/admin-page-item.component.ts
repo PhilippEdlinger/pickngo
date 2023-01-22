@@ -11,7 +11,15 @@ import { AdminPageService } from 'src/app/services/admin-page.service';
 })
 export class AdminPageItemComponent implements OnInit {
   @Input() order: Order;
+  @Input() buttonText: string;
   sum: number = 0;
+  orderStats = {
+    OPEN: 'Offen',
+    IN_PRODUCTION: 'In Proktion',
+    READY: 'Bereit',
+    SPAM: 'Spam',
+    CLOSED: 'Geschlossen'
+  };
 
   constructor(private productService: ProductService, private orderService: OrderDataService, private adminService: AdminPageService) { }
 
@@ -26,6 +34,13 @@ export class AdminPageItemComponent implements OnInit {
     console.log("Order finished");
     console.log(this.order.id);
     console.log(order + " 2nd");
-    this.adminService.close(this.order.id);
+
+    console.log(order);
+    this.adminService.changeOrder(this.order);
+  }
+
+  onSelectChange(event: Event) {
+    const e = event.currentTarget as HTMLSelectElement;
+    this.order.orderStatus = e.value;
   }
 }

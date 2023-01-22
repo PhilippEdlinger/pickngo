@@ -32,4 +32,10 @@ public class OrderRepository extends Repository<OrderET, Long> {
         order.setOrderStatus(OrderStatus.READY);
         this.updateET(order);
     }
+
+    public List<OrderET> getByOrderStat(OrderStatus orderStatus) {
+        return getEntityManager().createQuery("select o from OrderET o where o.orderStatus = :ost", OrderET.class)
+                .setParameter("ost", orderStatus)
+                .getResultList();
+    }
 }
