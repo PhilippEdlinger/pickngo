@@ -87,7 +87,7 @@ public class OrderResource {
                 emailText += o.getQuantity()  + "x " + p.getName() + ": " + p.getPrice() + "0 € " + "\n";
                 //sms
                 phoneText += o.getQuantity() + "x " + p.getName() + ": " + p.getPrice() + "0 €" + "\n";
-                p.
+
             }
 
             System.out.println(orderET.getId());
