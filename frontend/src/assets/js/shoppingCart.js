@@ -18,7 +18,7 @@ $(() => {
                 const { img, name, amount, price } = p;
                 $('#shoppingCart > #products').append(`
                 <div class="product">
-                    <img src="${img}">
+                    <img loading="lazy" src="${img}">
                     <div class="textBox">
                         <h3 class="productName" title="${name}">${name}</h5>
                         <div>
@@ -33,7 +33,7 @@ $(() => {
                             <p class="productNumberP">${amount}</p>
                             <button class="plusB">+</button>
                         </div>
-                        <img class="deleteB" src="../img/trash-solid.svg">
+                        <img loading="lazy" class="deleteB" src="../img/trash-solid.svg">
                     </div>
                 </div>
                 `);

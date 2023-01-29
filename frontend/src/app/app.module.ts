@@ -34,6 +34,7 @@ import { AuthInterceptor } from "./auth/auth.interceptor";
 import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MatIconModule } from "@angular/material/icon";
 import {APP_BASE_HREF, DatePipe, PlatformLocation } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [

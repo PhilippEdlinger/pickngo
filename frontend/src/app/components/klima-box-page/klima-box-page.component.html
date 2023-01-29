@@ -1,7 +1,7 @@
 <div class="icon-box productCart">
     <i class="bi bi-apple" style="font-size:1vw; color:green; opacity: 0.6;"> </i>
     <div matBadge="{{klimabox.quantity}}" matBadgeOverlap="true" matBadgeColor="warn" matBadgeSize="large" class="floating-label speisenProdukt">
-        <img src={{product.imageName}} alt={{product.name}} class="imgBox productImg">
+        <img loading="lazy" src={{product.imageName}} alt={{product.name}} class="imgBox productImg">
         <h4 class="title productName" style="text-align:center;">{{product.name}}</h4>
         <h4 class="title productName" id="count" style="text-align:center;">noch {{klimabox.quantity}} stück erhältlich!</h4>
         <h4 class="title productPrice" style="text-align:center;">{{product.price.toFixed(2).replace('.', ',')}}€</h4>

@@ -10,7 +10,7 @@
         <div class="orderItemBox">
             <div class="orderItems">
                 <div class="orderitem" *ngFor="let orderItem of order.orderItems">
-                    <img src="http://localhost:8080/product/img/{{orderItem.orderItemId.product.imageName}}" alt="bild">
+                    <img loading="lazy" src="http://localhost:8080/product/img/{{orderItem.orderItemId.product.imageName}}" alt="bild">
                     <div class="textBox">
                         <h3 class="productName" title="${name}">{{orderItem.orderItemId.product.name}}</h3>
                         <div>

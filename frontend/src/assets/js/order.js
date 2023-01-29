@@ -9,7 +9,7 @@ $(() => {
         $('#orderProduct').append(`
         <div class="itemBox">
             <div class="imageBox">
-                <img src="${img}" alt="${name}">
+                <img loading="lazy" src="${img}" alt="${name}">
                 <div class="textBox">
                     <p>${amount}x ${name}</p>
                     <p>${price}</p>

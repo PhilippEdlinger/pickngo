@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 import { AdminPageComponent } from './components/admin-page/admin-page.component';
 import { GreenBoxComponent } from './components/green-box/green-box.component';
 import {HomeComponent} from "./components/home/home.component";
@@ -20,7 +20,13 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+      RouterModule.forRoot(routes, {
+        initialNavigation: 'enabledBlocking',
+        useHash: true,
+        preloadingStrategy: PreloadAllModules,
+      })
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
