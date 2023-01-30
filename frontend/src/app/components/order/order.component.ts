@@ -58,8 +58,6 @@ export class OrderComponent implements OnInit {
       for (let oi of o.orderItems) {
         this.sum += oi.orderItemId.product.price * oi.quantity;
       }
-
-      console.log(this.logedIn);
     });
 
 
@@ -88,6 +86,7 @@ export class OrderComponent implements OnInit {
 
       let p = this.order.planedToPickTime;
       this.order.planedToPickTime = new Date(`${p.getDate()}-${p.getMonth() + 1}-${p.getFullYear()}T${p.getHours()}:${p.getMinutes()}:${p.getSeconds()}`);
+      this.order.phoneNr = this.form.value.tel;
       this.productService.order(this.order).subscribe(o => { console.log(o); });
 
       this.orderData.changeOrder(new Order());
