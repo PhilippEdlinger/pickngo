@@ -2,7 +2,7 @@
     <div class="container d-flex align-items-center justify-content-between">
         <div class="container d-flex align-items-center justify-content-center justify-content-md-between menuBox">
             <a routerLink="./" class="contact-info d-flex align-items-center activeMenuItem" style="color:white;">
-                <img src="assets/img/pickngo_logo.png" width="50px" alt="pickngo-logo">
+                <img loading="lazy" src="assets/img/pickngo_logo.png" width="50px" alt="pickngo-logo">
                 <span class="logoText">Pick'n Go</span>
             </a>
             <div class="klimabox">
@@ -25,7 +25,7 @@
                         [icon]="shoppingCartIcon">
                     </fa-icon>
                 </div>
-                <!-- <a href="login">
+                <!-- <a routerLink="login">
                     <fa-icon id="shoppingCartB" style="font-size:30px; padding: 15px;color:white;" [icon]="userIcon">
                     </fa-icon>
                 </a> -->
@@ -47,7 +47,7 @@
                 </div>
             </div>
             <div *ngIf="!isOnLoginPage">
-                <a href="login">
+                <a routerLink="login">
                     <fa-icon id="asdf1" style="font-size:30px; padding: 15px;color:white;" [icon]="userIcon">
                     </fa-icon>
                 </a>
