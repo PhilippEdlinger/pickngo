@@ -20,28 +20,28 @@ public class OrderET extends PanacheEntityBase {
     private Long id;
     private Long orderPosition;
     @Enumerated(EnumType.ORDINAL)
-    public OrderStatus orderStatus;
+    private OrderStatus orderStatus;
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     @JsonSerialize(using = LocalDateTimeSerializer.class)
-    public LocalDateTime timeOfOrder;
+    private LocalDateTime timeOfOrder;
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     @JsonSerialize(using = LocalDateTimeSerializer.class)
-    public LocalDateTime planedToPickTime;
+    private LocalDateTime planedToPickTime;
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     @JsonSerialize(using = LocalDateTimeSerializer.class)
-    public LocalDateTime readyToPickTime;
-    public String msg;
+    private LocalDateTime readyToPickTime;
+    private String msg;
     @ManyToOne
     @JsonbTransient
     @JsonIgnore
-    public Customer customer;
-    public String phoneNr;
+    private Customer customer;
+    private String phoneNr;
     @JsonIgnore
     @JsonbTransient
     @ManyToOne
-    public Employee employee;
+    private Employee employee;
     @OneToMany(mappedBy = "orderItemId.orderET", cascade = CascadeType.ALL)
-    public List<OrderItem> orderItems;
+    private List<OrderItem> orderItems;
 
     // constructor + getter and setter
 
@@ -49,6 +49,20 @@ public class OrderET extends PanacheEntityBase {
     }
 
     public OrderET(Long orderPosition, OrderStatus orderStatus, LocalDateTime timeOfOrder, LocalDateTime planedToPickTime, LocalDateTime readyToPickTime, String msg, Customer customer, String phoneNr, Employee employee, List<OrderItem> orderItems) {
+        this.orderPosition = orderPosition;
+        this.orderStatus = orderStatus;
+        this.timeOfOrder = timeOfOrder;
+        this.planedToPickTime = planedToPickTime;
+        this.readyToPickTime = readyToPickTime;
+        this.msg = msg;
+        this.customer = customer;
+        this.phoneNr = phoneNr;
+        this.employee = employee;
+        this.orderItems = orderItems;
+    }
+
+    public OrderET(Long id, Long orderPosition, OrderStatus orderStatus, LocalDateTime timeOfOrder, LocalDateTime planedToPickTime, LocalDateTime readyToPickTime, String msg, Customer customer, String phoneNr, Employee employee, List<OrderItem> orderItems) {
+        this.id = id;
         this.orderPosition = orderPosition;
         this.orderStatus = orderStatus;
         this.timeOfOrder = timeOfOrder;
