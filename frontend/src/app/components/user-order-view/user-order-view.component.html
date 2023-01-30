@@ -1,0 +1,7 @@
+<div class="container">
+    <h1>Meine Bestellungen</h1>
+    <div>
+        <app-user-order-view-item *ngFor="let o of orders; let i = index" [order]="o"
+            [orderNumber]="i"></app-user-order-view-item>
+    </div>
+</div>

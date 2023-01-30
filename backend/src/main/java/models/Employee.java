@@ -1,11 +1,16 @@
 package models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 public class Employee extends Person {
     @OneToMany(mappedBy = "employee", cascade = CascadeType.REFRESH)
+    @JsonIgnore
+    @JsonbTransient
     public List<OrderET> orderETs;
 
     // constructor + getter and setter

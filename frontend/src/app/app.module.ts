@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { MatInputModule } from '@angular/material/input';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -33,8 +34,10 @@ import { KlimaBoxCategoryComponent } from './components/klima-box-category/klima
 import { AuthInterceptor } from "./auth/auth.interceptor";
 import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MatIconModule } from "@angular/material/icon";
-import {APP_BASE_HREF, DatePipe, PlatformLocation } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { APP_BASE_HREF, DatePipe, PlatformLocation } from '@angular/common';
+import { UserOrderViewComponent } from './components/user-order-view/user-order-view.component';
+import { OrderItemComponent } from './components/order-item/order-item.component';
+import { UserOrderViewItemComponent } from './components/user-order-view-item/user-order-view-item.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +60,9 @@ import { RouterModule } from '@angular/router';
     GreenBoxComponent,
     KlimaBoxPageComponent,
     KlimaBoxCategoryComponent,
+    UserOrderViewComponent,
+    OrderItemComponent,
+    UserOrderViewItemComponent,
 
   ],
   imports: [
@@ -73,7 +79,8 @@ import { RouterModule } from '@angular/router';
     MatSlideToggleModule,
     MatBadgeModule,
     MatDatepickerModule,
-    MatIconModule
+    MatIconModule,
+    MatMenuModule
   ],
   providers: [
     DatePipe,

@@ -1,5 +1,6 @@
 package api;
 
+import DTO.OrderDTO;
 import com.twilio.Twilio;
 import com.twilio.rest.api.v2010.account.Message;
 import io.quarkus.mailer.Mail;
@@ -40,6 +41,12 @@ public class OrderResource {
     }
 
     @GET
+    @Path("byUserId/{id}")
+    public Response getByUserId (@PathParam("id") Long id) {
+        return Response.ok(this.service.getByUserId(id)).build();
+    }
+
+    @GET
     @Path("{id}/{orderPosition}")
     public Response getOrderById(@PathParam("id") Long orderId, @PathParam("orderPosition") Long orderPosition) {
         return Response
@@ -64,6 +71,13 @@ public class OrderResource {
     @POST
     public Response saveOrder(OrderET order) {
         var orderET = service.persistET(order);
+<<<<<<< HEAD
+        System.out.println("-----");
+        System.out.println(order.getCustomer());
+        System.out.println(order.getId());
+
+=======
+>>>>>>> b26e58cbc233302527e10dd2fb08518f64dc2f1a
         Long duration = 0L;
         String text = "";
 
@@ -99,6 +113,14 @@ public class OrderResource {
                 .build();
     }
 
+<<<<<<< HEAD
+    @PUT
+    public Response updateOrder(OrderDTO order) {
+        return Response.ok(this.service.update(order)).build();
+    }
+
+=======
+>>>>>>> b26e58cbc233302527e10dd2fb08518f64dc2f1a
     @DELETE
     @Path("{id}/{orderPosition}")
     public Response deleteOrderById(@PathParam("id") Long orderId, @PathParam("orderPosition") Long orderPosition) {

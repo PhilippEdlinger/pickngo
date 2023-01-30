@@ -1,0 +1,31 @@
+.orderItem {
+    display: grid;
+
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.orderItem>h2 {
+    border-bottom: 1px dashed black;
+}
+
+.orderItems>* {
+    margin-bottom: 500px;
+}
+
+.footer {
+    border-top: 1px dashed black;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding-top: 20px;
+}
+
+.footer>p {
+    text-align: center;
+}
+
+.footer>p:not(:last-child) {
+    border-right: 1px solid black;
+}
