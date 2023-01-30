@@ -71,13 +71,6 @@ public class OrderResource {
     @POST
     public Response saveOrder(OrderET order) {
         var orderET = service.persistET(order);
-<<<<<<< HEAD
-        System.out.println("-----");
-        System.out.println(order.getCustomer());
-        System.out.println(order.getId());
-
-=======
->>>>>>> b26e58cbc233302527e10dd2fb08518f64dc2f1a
         Long duration = 0L;
         String text = "";
 
