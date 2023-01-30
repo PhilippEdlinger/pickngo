@@ -6,6 +6,7 @@ import com.twilio.rest.api.v2010.account.Message;
 import io.quarkus.mailer.Mail;
 import io.quarkus.mailer.Mailer;
 import models.OrderET;
+import models.OrderStatus;
 import workload.OrderService;
 import workload.ProductService;
 
@@ -60,6 +61,12 @@ public class OrderResource {
         return Response.ok(service.getAllOpenOrders()).build();
     }
 
+    @GET
+    @Path("{orderStat}")
+    public Response getByOrderStat(@PathParam("orderStat") OrderStatus orderStatus) {
+        return Response.ok(service.getByOrderStat(orderStatus)).build();
+    }
+
     @PUT
     @Transactional
     @Path("close/{id}")
@@ -71,13 +78,6 @@ public class OrderResource {
     @POST
     public Response saveOrder(OrderET order) {
         var orderET = service.persistET(order);
-<<<<<<< HEAD
-        System.out.println("-----");
-        System.out.println(order.getCustomer());
-        System.out.println(order.getId());
-
-=======
->>>>>>> b26e58cbc233302527e10dd2fb08518f64dc2f1a
         Long duration = 0L;
         String text = "";
 
@@ -113,14 +113,11 @@ public class OrderResource {
                 .build();
     }
 
-<<<<<<< HEAD
     @PUT
     public Response updateOrder(OrderDTO order) {
         return Response.ok(this.service.update(order)).build();
     }
 
-=======
->>>>>>> b26e58cbc233302527e10dd2fb08518f64dc2f1a
     @DELETE
     @Path("{id}/{orderPosition}")
     public Response deleteOrderById(@PathParam("id") Long orderId, @PathParam("orderPosition") Long orderPosition) {
