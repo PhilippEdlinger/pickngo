@@ -1,0 +1,10 @@
+<div class="product">
+    <img src="http://localhost:8080/product/img/{{orderItem.orderItemId.product.imageName}}" alt="imageName">
+    <div class="textBox">
+        <h3 class="productName" title="${name}">{{orderItem.orderItemId.product.name}}</h3>
+        <div>
+            <p class="amount">{{orderItem.quantity}}x</p>
+            <p class="priceP">{{orderItem.orderItemId.product.price.toFixed(2).replace('.', ',')}}€</p>
+        </div>
+    </div>
+</div>

@@ -63,6 +63,13 @@ header>div {
 span .pickngo {
     color: c.$fontC;
 }
+
+.loginBox button {
+    width: 0;
+    height: 0;
+    border: none;
+}
+
 @media (max-width: 1000px) {
     .klimabox {
         left: 22vw;

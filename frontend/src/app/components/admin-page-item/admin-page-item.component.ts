@@ -30,12 +30,9 @@ export class AdminPageItemComponent implements OnInit {
     }
   }
 
-  finishOrder(order: number) {
-    console.log("Order finished");
-    console.log(this.order.id);
-    console.log(order + " 2nd");
+  finishOrder() {
 
-    console.log(order);
+    console.log(this.order);
     this.adminService.changeOrder(this.order);
   }
 

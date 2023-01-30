@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Order } from '../models/Order';
 import { ApiService } from './api.service';
-import {environment} from "../../environments/environment";
+import { environment } from "../../environments/environment";
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -33,5 +33,9 @@ export class OrderDataService {
   changeOrder(order: Order) {
     this.orderSource.next(order);
     localStorage.setItem('order', JSON.stringify(order));
+  }
+
+  getUserOrders(id: number): Observable<Order[]> {
+    return this.http.get<Order[]>(BASE_URL + '/order/byUserId/' + id);
   }
 }

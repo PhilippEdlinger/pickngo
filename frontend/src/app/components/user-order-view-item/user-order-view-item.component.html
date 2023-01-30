@@ -1,0 +1,11 @@
+<div class="orderItem">
+    <h2>NR: {{orderNumber + 1}}</h2>
+    <div class="orderItems">
+        <app-order-item *ngFor="let oi of order.orderItems" [orderItem]="oi"></app-order-item>
+    </div>
+    <div class="footer">
+        <p>Bestellungstatus: {{status}}</p>
+        <p>Geplant für: {{order.planedToPickTime| date:'dd.MM.yyyy HH:mm'}}</p>
+        <p>Vorausichtlich abholbereit um: {{order.readyToPickTime| date:'dd.MM.yyyy HH:mm'}}</p>
+    </div>
+</div>
